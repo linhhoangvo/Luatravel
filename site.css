@@ -69,3 +69,24 @@ h3{font-size:clamp(1.65rem,2.3vw,2.35rem)}
 .cta{background:#eeede9;padding:95px 20px}
 .footer{background:#1c2220}
 @media(max-width:750px){.wrap{width:calc(100% - 36px)}.header .wrap{padding:17px 0}.nav{gap:13px}.banner{padding:85px 0;min-height:360px}.section{padding:66px 0}.tile img{height:250px}}
+
+/* Compact editorial typography, matching supplied reference screenshots */
+body{font-size:13px;line-height:1.7}
+h1{font-size:clamp(2.5rem,4.2vw,4.1rem);line-height:1.15}
+h2{font-size:clamp(1.8rem,2.7vw,2.9rem);line-height:1.19}
+h3{font-size:clamp(1.25rem,1.7vw,1.7rem);line-height:1.24}
+.eyebrow,.tag{font-size:.61rem;letter-spacing:.14em}
+.nav{font-size:.66rem}
+.brand{font-size:1.35rem}
+.banner{padding:88px 0 96px;min-height:375px}
+.banner p{font-size:.91rem;max-width:550px}
+.section{padding:77px 0}
+.lead{font-size:.92rem;max-width:720px}
+.tile h3{font-size:1.42rem}
+.tile p,.process-step p,.footer p,.facts p,.day p{font-size:.84rem}
+.btn{font-size:.66rem}
+.tile img{height:270px}
+@media(max-width:750px){h1{font-size:2.45rem}h2{font-size:2rem}h3{font-size:1.4rem}.section{padding:58px 0}.banner{padding:75px 0}.tile img{height:240px}}
+/* Image brand displays as a compact mark */
+.header .brand img{width:58px;height:58px;object-fit:contain}
+.footer .brand img{width:72px;height:72px;object-fit:contain}
