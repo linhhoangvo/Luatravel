@@ -29,3 +29,43 @@ h3{font-size:1.24rem}
 .footer{background:#173f39}
 .day{padding:23px 0}
 @media(max-width:750px){.header .wrap{padding:18px 0}.nav{gap:12px}.section{padding:60px 0}}
+
+/* Elite Traveler-inspired editorial system */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap');
+:root{--green:#212b29;--deep:#1d2423;--cream:#fff;--soft:#f5f4f0;--ink:#222522;--muted:#696e69;--gold:#82755e}
+body{background:#fff;color:#222522;font-family:'DM Sans',Arial,sans-serif;font-size:15px;line-height:1.75}
+h1,h2,h3{font-family:'Libre Caslon Display',Georgia,serif;letter-spacing:-.018em;font-weight:400;line-height:1.14}
+h1{font-size:clamp(3.7rem,7.2vw,7.2rem)}
+h2{font-size:clamp(2.55rem,4.5vw,4.5rem)}
+h3{font-size:clamp(1.65rem,2.3vw,2.35rem)}
+.wrap{width:min(1260px,calc(100% - 56px))}
+.header{background:#1f2423;color:#fff;border:0}
+.header .wrap{min-height:76px}
+.brand,.brand span{color:#fff;font-family:Georgia,serif;font-size:1.7rem;font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+.nav{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;gap:26px}
+.nav a:hover{color:#c9ba9d}
+.nav a:last-child{border:1px solid #ffffff8c;background:transparent;color:white;padding:10px 16px}
+.eyebrow,.tag{color:#777263;letter-spacing:.15em;font-size:.67rem;text-transform:uppercase}
+.banner{padding:115px 0 130px;min-height:460px;background:linear-gradient(90deg,#141a19b3,#141a192a),var(--photo) center/cover}
+.banner .eyebrow{color:#ede3d1}
+.banner h1{max-width:920px}
+.banner p{font-size:1.05rem;max-width:660px}
+.section{padding:105px 0}
+.lead{color:#626661;font-size:1.04rem}
+.grid{gap:29px}
+.tile{border:0;background:transparent}
+.tile img{height:300px}
+.tile .body{padding:18px 0 18px}
+.tile h3{margin:8px 0 8px}
+.tile p{font-size:.91rem}
+.tile a.link{font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;border-bottom:1px solid #82755e}
+.btn{background:#232a27;color:white;border:1px solid #232a27;border-radius:0;padding:14px 24px;text-transform:uppercase;font-size:.72rem;letter-spacing:.09em;font-weight:600}
+.btn:hover{background:#464d45}
+.filters{border-top:1px solid #dddcd7;border-bottom:1px solid #dddcd7;padding:16px 0}
+.filters button{border:0;border-radius:0;text-transform:uppercase;letter-spacing:.08em;font-size:.69rem}
+.filters button.active{background:#252b27}
+.facts,.split>div{background:#f5f4f0}
+.day{border-color:#dddcd7}
+.cta{background:#eeede9;padding:95px 20px}
+.footer{background:#1c2220}
+@media(max-width:750px){.wrap{width:calc(100% - 36px)}.header .wrap{padding:17px 0}.nav{gap:13px}.banner{padding:85px 0;min-height:360px}.section{padding:66px 0}.tile img{height:250px}}
