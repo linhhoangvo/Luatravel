@@ -1,0 +1,20 @@
+/* Lua Travel — compact editorial scale */
+body{font-size:13px!important;line-height:1.7!important}
+h1{font-size:clamp(2.8rem,4.7vw,4.9rem)!important;line-height:1.12!important}
+h2{font-size:clamp(1.8rem,2.8vw,3rem)!important;line-height:1.2!important}
+h3{font-size:clamp(1.25rem,1.8vw,1.7rem)!important;line-height:1.24!important}
+.eyebrow,.tag{font-size:.6rem!important;letter-spacing:.13em!important}
+.nav{font-size:.65rem!important;gap:23px!important}
+.logo{font-size:1.45rem!important}
+.hero{min-height:650px!important}
+.hero-inner{padding:105px 0!important}
+.hero h1{font-size:clamp(2.9rem,5.1vw,5.1rem)!important}
+.hero p{font-size:.94rem!important;max-width:500px}
+.section{padding:78px 0!important}
+.section-top p,.tour-copy p,.about-copy p,.process-step p,.partner p{font-size:.85rem!important}
+.destination-info h3{font-size:1.55rem!important}
+.tour-copy h3{font-size:1.5rem!important}
+.process-step h3{font-size:1.36rem!important}
+.about-copy h2{font-size:clamp(1.9rem,3vw,3.1rem)!important}
+.btn,.textlink{font-size:.65rem!important}
+@media(max-width:700px){.hero{min-height:575px!important}.hero-inner{padding:88px 0!important}.hero h1{font-size:2.9rem!important}h2{font-size:2.06rem!important}.section{padding:60px 0!important}}
