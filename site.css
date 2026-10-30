@@ -1,1 +1,31 @@
 :root{--green:#123b34;--deep:#092a23;--cream:#faf9f5;--soft:#eeefe8;--ink:#213c33;--muted:#64736a;--gold:#af8b54}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 "DM Sans",Arial,sans-serif}a{text-decoration:none;color:inherit}img{width:100%;height:100%;object-fit:cover}h1,h2,h3{font-family:Manrope,Arial,sans-serif;letter-spacing:-.045em;line-height:1.15}h1{font-size:clamp(2.8rem,6vw,5.5rem)}h2{font-size:clamp(2rem,3.7vw,3.3rem)}h3{font-size:1.4rem}.wrap{width:min(1180px,calc(100% - 44px));margin:auto}.header{background:var(--deep);color:white}.header .wrap{min-height:78px;display:flex;justify-content:space-between;align-items:center;gap:22px}.brand{font-family:Manrope,sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.06em}.brand span{color:#e2c69b}.nav{display:flex;gap:23px;align-items:center;font-size:.84rem;font-weight:700;flex-wrap:wrap}.nav a:hover{color:#e2c69b}.nav a:last-child{background:white;color:var(--green);padding:9px 15px;border-radius:3px}.eyebrow{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:#a47d47}.banner{color:white;padding:115px 0 125px;background:linear-gradient(90deg,#092a23de,#092a2350),var(--photo) center/cover}.banner h1{max-width:800px;margin:12px 0 18px}.banner p{max-width:660px;font-size:1.08rem}.banner .eyebrow{color:#e7c79b}.section{padding:82px 0}.lead{max-width:780px;color:var(--muted);font-size:1.07rem}.btn{display:inline-block;background:var(--green);color:white;border:0;border-radius:3px;padding:13px 22px;font-size:.86rem;font-weight:700;cursor:pointer}.btn:hover{background:#286154}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.tile{background:white;border:1px solid #e5e8de;border-radius:4px;overflow:hidden}.tile img{height:250px;display:block}.tile .body{padding:24px}.tile h3{margin:12px 0}.tile p{color:var(--muted);font-size:.92rem}.tile a.link{color:var(--green);font-weight:700;font-size:.85rem;border-bottom:1px solid #a4b9a8}.tag{font-size:.73rem;text-transform:uppercase;letter-spacing:.09em;color:#98754c;font-weight:700}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:32px 0}.filters button{background:transparent;border:1px solid #becac0;color:var(--green);border-radius:22px;padding:8px 15px;font-weight:700;cursor:pointer}.filters button.active{background:var(--green);color:white}.two{display:grid;grid-template-columns:1.35fr .65fr;gap:70px}.facts{background:var(--soft);padding:30px;border-radius:4px;align-self:start}.facts h3{margin-top:0}.facts ul{padding-left:20px}.day{border-top:1px solid #d8e0d7;padding:24px 0}.day h3{margin:0 0 8px}.day p{margin:0;color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:38px}.split>div{background:#edf0e9;padding:27px}.cta{background:#e7ece4;text-align:center;padding:70px 20px}.cta p{max-width:600px;margin:0 auto 23px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:65px}.form label{display:block;font-size:.86rem;font-weight:700;margin-bottom:15px}.form input,.form select,.form textarea{display:block;width:100%;margin-top:5px;border:1px solid #cbd5cc;border-radius:3px;padding:12px;background:white;font:inherit}.form textarea{min-height:135px;resize:vertical}.footer{background:var(--deep);color:#d3dfd5;padding:50px 0 25px}.footer .wrap{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer a{color:white}.note{color:var(--muted);font-size:.84rem}@media(max-width:750px){.header .wrap{padding:17px 0;display:block}.nav{margin-top:18px;gap:12px;font-size:.75rem}.banner{padding:80px 0}.grid,.two,.split,.contact{grid-template-columns:1fr}.section{padding:60px 0}.tile img{height:230px}}
+/* Editorial refresh — calmer typography, fewer cards and decorative treatments */
+:root{--green:#164b44;--deep:#163e39;--cream:#fff;--soft:#f7f7f4;--ink:#233b36;--muted:#5e6e68;--gold:#548a74}
+body{font-family:"DM Sans",Arial,sans-serif;color:var(--ink);line-height:1.6}
+h1,h2,h3{font-family:"DM Sans",Arial,sans-serif;font-weight:700;letter-spacing:-.035em}
+h1{font-size:clamp(2.6rem,5.5vw,4.8rem);line-height:1.12}
+h2{font-size:clamp(1.85rem,3vw,2.8rem)}
+h3{font-size:1.24rem}
+.header{background:#fff;color:var(--ink);border-bottom:1px solid #e8eae5}
+.header .wrap{min-height:86px}
+.brand{font-size:1.55rem;letter-spacing:-.04em;color:var(--green)}
+.brand span{color:var(--green)}
+.nav a:hover{color:#47836f}
+.nav a:last-child{background:var(--green);color:#fff;padding:11px 16px}
+.eyebrow,.tag{letter-spacing:.08em;color:#538271}
+.banner{padding:95px 0 100px;background:linear-gradient(90deg,#102e2bbf,#102e2b3b),var(--photo) center/cover}
+.banner .eyebrow{color:#e7efe5}
+.section{padding:82px 0}
+.lead{font-size:1.02rem}
+.tile{border:none;background:#fff;border-radius:0}
+.tile img{height:265px}
+.tile .body{padding:20px 0 10px}
+.tile h3{margin:8px 0 7px}
+.tile p{line-height:1.6}
+.btn{border-radius:2px}
+.filters button{border-radius:3px}
+.facts,.split>div{background:#f3f5f1;border-radius:0}
+.cta{background:#f2f5f1}
+.footer{background:#173f39}
+.day{padding:23px 0}
+@media(max-width:750px){.header .wrap{padding:18px 0}.nav{gap:12px}.section{padding:60px 0}}
