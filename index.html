@@ -156,6 +156,29 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 /* Position yacht sunrise hero so boat and sunset remain visible */
 .hero:before{background-position:center 54%;}
 @media(max-width:700px){.hero:before{background-position:60% center;}}
+
+/* Unified Lua Travel footer */
+.lua-site-footer{background:#1f2523!important;color:#f4f4f0!important;padding:60px 0 24px!important;font-family:'DM Sans',Arial,sans-serif!important}
+.lua-site-footer .lua-footer-inner{width:min(1220px,calc(100% - 48px));margin:0 auto}
+.lua-site-footer .lua-footer-grid{display:grid;grid-template-columns:1.55fr .8fr .9fr 1fr;gap:45px}
+.lua-site-footer h4{font:600 .85rem/1.4 'DM Sans',Arial,sans-serif!important;letter-spacing:0!important;text-transform:none!important;color:#fff!important;margin:4px 0 20px!important}
+.lua-site-footer ul{list-style:none;padding:0;margin:0}.lua-site-footer li{margin:0 0 13px!important;font-size:.88rem!important;color:#d5dcd7!important}
+.lua-site-footer a{color:#dbe0dc;text-decoration:none;transition:color .2s}
+.lua-site-footer a:hover{color:#a7c78e}
+.lua-site-footer .lua-footer-logo{display:block;object-fit:contain;object-position:left center;width:165px;max-width:100%;height:62px;margin:0 0 16px}
+.lua-site-footer .lua-footer-company>a:not(:first-child){display:block;margin:9px 0;font-size:.85rem;overflow-wrap:anywhere}
+.lua-site-footer .lua-footer-address{color:#c4cdc7!important;max-width:320px;font-size:.85rem!important;margin:10px 0 12px!important;line-height:1.65}
+.lua-site-footer .lua-footer-banner{margin:42px 0 34px;padding:23px 30px;display:flex;align-items:center;justify-content:space-between;gap:25px;border-radius:45px;background:#29312e}
+.lua-site-footer .lua-footer-banner strong{display:block;font-size:.91rem;font-weight:600;color:white}
+.lua-site-footer .lua-footer-banner span{display:block;color:#cbd5cc;font-size:.82rem;margin-top:4px}
+.lua-site-footer .lua-footer-banner>a{flex:none;background:#7b9b58;color:white;border-radius:28px;padding:12px 25px;font-weight:600;font-size:.82rem}
+.lua-site-footer .lua-footer-banner>a:hover{background:#90ae6c;color:#fff}
+.lua-site-footer .lua-footer-base{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#c7d0c9;font-size:.76rem}
+.lua-site-footer .lua-footer-social{display:flex;gap:11px}
+.lua-site-footer .lua-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:#fff;color:#202724!important;font-size:1.05rem;line-height:1;font-weight:700}
+.lua-site-footer .lua-footer-social a:hover{background:#a7c78e}
+@media(max-width:900px){.lua-site-footer .lua-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}}
+@media(max-width:600px){.lua-site-footer{padding:45px 0 24px!important}.lua-site-footer .lua-footer-inner{width:calc(100% - 36px)}.lua-site-footer .lua-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px}.lua-site-footer .lua-footer-company{grid-column:1/-1}.lua-site-footer .lua-footer-banner{border-radius:20px;display:block;padding:23px;margin:32px 0}.lua-site-footer .lua-footer-banner>a{display:inline-block;margin-top:18px}.lua-site-footer .lua-footer-base{align-items:flex-start;flex-direction:column}}
 </style><link rel="stylesheet" href="type-scale.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="contact.html?interest=Hotels">Hotels</a><a href="contact.html?interest=Cruise">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -204,6 +227,15 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 </div></div></section>
 <section class="section partner" id="partners"><div class="container partner-inner"><div><span class="eyebrow">For travel agents & partners</span><h2>For the travel trade.</h2><p>We work with travel agents on tailor-made itineraries, private tours and ground arrangements throughout Vietnam.</p></div><a class="btn" href="contact.html?interest=Travel%20trade%20partnership">Partner with Lúa ↗</a></div></section>
 </main>
-<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><p>Tailor-made holidays and private tours in Vietnam.</p></div><div><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="tours.html">Private journeys</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html?interest=Travel%20trade%20partnership">Travel trade</a></li></ul></div><div><h4>Contact us</h4><ul><li><a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a></li><li>Hoi An, Vietnam</li><li><a href="https://luawellnesstravel.com/" target="_blank" rel="noopener">Lua Travel website ↗</a></li></ul></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> Lúa Travel & Tours. All rights reserved.</span><span>Hoi An, Vietnam.</span></div></div></footer>
+<footer class="footer lua-site-footer"><div class="lua-footer-inner">
+<div class="lua-footer-grid">
+<div class="lua-footer-company"><a href="index.html" aria-label="Lua Travel & Tours homepage"><img class="lua-footer-logo" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><p class="lua-footer-address">Group 10, Son Pho 1 Block, Hoi An Dong Ward,<br>Da Nang City, Vietnam</p><a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><a href="https://wa.me/84988849593" target="_blank" rel="noopener noreferrer">WhatsApp: +84 988 849 593</a><a href="tel:+610474425066">Australia: +61 047 442 5066</a></div>
+<div><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="tours.html">Our Tours</a></li><li><a href="contact.html?interest=Hotels">Hotels</a></li><li><a href="contact.html?interest=Cruise">Cruise</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="about.html">About Lúa</a></li><li><a href="contact.html">Contact us</a></li><li><a href="contact.html?interest=Travel%20trade%20partnership">For travel agents</a></li></ul></div>
+<div><h4>Support</h4><ul><li><a href="index.html#travel-questions">FAQs</a></li><li><a href="contact.html">Send an enquiry</a></li><li><a href="tel:+84388855913">Hotline / Zalo: +84 388 855 913</a></li></ul></div>
+</div>
+<div class="lua-footer-banner"><div><strong>Plan your next journey with Lúa</strong><span>Private itineraries, trusted local people and memorable experiences in Vietnam.</span></div><a href="contact.html">Start planning ↗</a></div>
+<div class="lua-footer-base"><div class="lua-footer-social" aria-label="Follow Lua Travel on social media"><a href="https://www.facebook.com/LuaWellnessTravel" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f</a><a href="https://www.instagram.com/lua_wellness_travel" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a><a href="https://www.linkedin.com/company/luatravel/posts/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a></div><span>© 2026 Lua Travel &amp; Tours. All rights reserved.</span></div>
+</div></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();const b=document.querySelector('.menu'),n=document.querySelector('.nav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script>
 </body></html>
