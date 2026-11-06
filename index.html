@@ -179,6 +179,17 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 .lua-site-footer .lua-footer-social a:hover{background:#a7c78e}
 @media(max-width:900px){.lua-site-footer .lua-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}}
 @media(max-width:600px){.lua-site-footer{padding:45px 0 24px!important}.lua-site-footer .lua-footer-inner{width:calc(100% - 36px)}.lua-site-footer .lua-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px}.lua-site-footer .lua-footer-company{grid-column:1/-1}.lua-site-footer .lua-footer-banner{border-radius:20px;display:block;padding:23px;margin:32px 0}.lua-site-footer .lua-footer-banner>a{display:inline-block;margin-top:18px}.lua-site-footer .lua-footer-base{align-items:flex-start;flex-direction:column}}
+
+/* Blend navigation seamlessly into the homepage hero photograph */
+#home{position:relative}
+.header{position:absolute!important;top:0;left:0;right:0;z-index:30;background:linear-gradient(180deg,rgba(11,25,24,.62) 0%,rgba(11,25,24,.18) 65%,transparent 100%)!important;border:0!important;color:#fff!important}
+.header-inner{min-height:92px}
+.header .nav a:not(.nav-cta){color:#fff}
+.header .nav a:not(.nav-cta):hover{color:#f3dfc6}
+.header .nav-cta{border-color:rgba(255,255,255,.85);color:#fff}
+.hero{padding-top:92px}
+.hero-inner{padding-top:100px}
+@media(max-width:700px){.header-inner{min-height:74px}.header .menu{color:white}.hero{padding-top:74px}.hero-inner{padding-top:90px}.header .nav{background:rgba(23,35,32,.97);color:#fff}.header .nav-cta{color:#fff;border-color:#fff}}
 </style><link rel="stylesheet" href="type-scale.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="contact.html?interest=Hotels">Hotels</a><a href="contact.html?interest=Cruise">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
