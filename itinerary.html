@@ -315,6 +315,17 @@
 .lt-tour .lt-unified-enquiry .lt-privacy{font-size:10px!important;line-height:1.6!important;color:#798477!important;margin:13px 0 0!important}
 @media(max-width:900px){.lt-tour .lt-side{display:block!important}.lt-tour .lt-unified-enquiry{max-width:520px}}
 @media(max-width:580px){.lt-tour .lt-unified-enquiry{max-width:none;padding:24px 22px!important}}
+</style><style id="lua-hero-quiet-refresh">
+/* Refined single-image tour hero: gentle scale, measured typography */
+.lt-tour .lt-hero{height:clamp(300px,29vw,405px)!important;border-radius:1px!important}
+.lt-tour .lt-hero>img{object-position:center 48%!important}
+.lt-tour .lt-hero:after{background:linear-gradient(0deg,rgba(13,23,19,.58) 0%,rgba(13,23,19,.1) 57%,rgba(13,23,19,.10) 100%)!important}
+.lt-tour .lt-hero-overlay{padding:26px clamp(25px,3.5vw,56px) 35px!important}
+.lt-tour .lt-hero-heading{display:block!important}
+.lt-tour .lt-hero-heading h1{font-size:clamp(32px,3vw,49px)!important;line-height:1.14!important;margin:10px 0 11px!important;max-width:860px!important}
+.lt-tour .lt-hero-heading p{max-width:620px!important;text-align:left!important;font-size:11px!important;line-height:1.7!important;margin:0!important}
+.lt-tour .lt-hero-overline{font-size:10px!important;letter-spacing:.17em!important}
+@media(max-width:580px){.lt-tour .lt-hero{height:300px!important}.lt-tour .lt-hero-overlay{padding:19px 22px 26px!important}.lt-tour .lt-hero-heading h1{font-size:33px!important}.lt-tour .lt-hero-heading p{font-size:10px!important}}
 </style></head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Vietnam Adventure</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
 <nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#overview">Overview</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a><a class="lt-section-enquire" href="#lt-customise">Enquire ↗</a></div></nav><div class="lt-shell">
@@ -347,11 +358,11 @@ document.querySelector('#lt-kicker').textContent=current.tag||'Private Vietnam t
 document.querySelector('#lt-description').textContent=current.intro;
 document.querySelector('#lt-route').textContent=isAdventure?'Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City':'Private journeys, shaped around you';
 
-document.querySelector('#lt-hero-photo').src=isAdventure?'hero lua.jpg':current.image;
+document.querySelector('#lt-hero-photo').src=isAdventure?'ninh binh.jpg':current.image;
 document.querySelector('#lt-hero-photo').alt=current.title;
 document.querySelector('#lt-highlights').innerHTML=list(current.highlights);
 document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>'<details'+(i===0?' open':'')+'><summary>'+title+'</summary><div class="lt-detail-body"><p>'+copy+'</p></div></details>').join('');
-const galleryPhotos=[isAdventure?'hero lua.jpg':current.image,'Hue.jpg','Ha Giang.jpg','Phong nha.jpg','https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp'];
+const galleryPhotos=[isAdventure?'ninh binh.jpg':current.image,'mai chau.jpg','Hue.jpg','Ha Giang.jpg','Phong nha.jpg','https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp'];
 document.querySelector('#lt-gallery').innerHTML=galleryPhotos.map((src,i)=>'<img src="'+src+'" loading="lazy" alt="Vietnam travel photo '+(i+1)+'">').join('');
 const mapTerm=isAdventure?'Vietnam':'Hoi An Vietnam';document.querySelector('#lt-map').src='https://www.google.com/maps?q='+encodeURIComponent(mapTerm)+'&output=embed';document.querySelector('#lt-map-label').textContent=isAdventure?'Hanoi · Mai Chau · Ninh Binh · Hoi An · Ho Chi Minh City':'Vietnam — itineraries customised to your destinations';
 const related=[['adventure','Vietnam Adventure — 14 Days'],['hue','Private Hue Cultural Experience'],['cycling','Hoi An Countryside by Bicycle'],['food','Hoi An Local Food & Hidden Bars'],['wellness','A Slower Stay in Hoi An'],['honeymoon','Vietnam Honeymoon Escape']];
