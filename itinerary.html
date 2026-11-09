@@ -334,12 +334,21 @@
 .lt-tour .lt-price-amount strong{font:400 29px/1.2 Georgia,'Times New Roman',serif;color:#273c2e;letter-spacing:-.025em}
 .lt-tour .lt-price-amount span{font-size:11px}
 .lt-tour .lt-indicative-price p{font-size:10px!important;line-height:1.6!important;color:#748075!important;margin:0!important}
+</style><style id="lua-detailed-inclusions">
+.lt-tour #includes .lt-inclusions{align-items:start!important;gap:24px!important}
+.lt-tour #includes .lt-inclusions details{background:#f2f4ee!important;padding:4px 19px 13px!important;align-self:start!important}
+.lt-tour #includes .lt-inclusions summary{padding:12px 0 10px!important;font-weight:600!important}
+.lt-tour #includes .lt-inclusions .lt-detail-body{padding:0!important}
+.lt-tour #includes .lt-inclusions ul{padding-left:17px!important;margin:0!important}
+.lt-tour #includes .lt-inclusions li{font-size:12px!important;line-height:1.72!important;color:#505d52!important;margin-bottom:11px!important}
+.lt-tour #includes .lt-note{margin:14px 0 0!important;max-width:790px!important}
+@media(max-width:580px){.lt-tour #includes .lt-inclusions{grid-template-columns:1fr!important;gap:12px!important}}
 </style></head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Vietnam Adventure</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
 <nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#highlights">Highlights</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a><a class="lt-section-enquire" href="#lt-customise">Enquire ↗</a></div></nav><div class="lt-shell">
 <div class="lt-columns"><div class="lt-main">
 <section id="highlights"><span class="lt-section-no">HIGHLIGHTS</span><h2>Experiences worth remembering</h2><ul class="lt-highlights" id="lt-highlights"></ul></section>
-<section id="includes"><span class="lt-section-no">ESSENTIAL DETAILS</span><h2>Included in your journey</h2><div class="lt-inclusions"><details><summary>What's included</summary><div class="lt-detail-body"><p>Services are tailored and confirmed in your quotation. Options can include:</p><ul><li>Private airport and ground transfers</li><li>Local English-speaking guides</li><li>Selected accommodation</li><li>Guided activities and entrance tickets</li><li>Domestic travel arrangements</li></ul></div></details><details><summary>What's not included</summary><div class="lt-detail-body"><ul><li>International flights and visa fees</li><li>Personal expenses and gratuities</li><li>Optional activities not confirmed in writing</li><li>Meals, insurance or other services unless stated in your quotation</li></ul></div></details></div><p class="lt-note">All inclusions are indicative until a personalised proposal is confirmed.</p></section>
+<section id="includes"><span class="lt-section-no">ESSENTIAL DETAILS</span><h2>Included &amp; excluded</h2><div class="lt-inclusions" id="lt-inclusions"><details open><summary>What's included</summary><div class="lt-detail-body"><ul><li>Private airport transfers and ground transportation as listed in your itinerary</li><li>Locally based English-speaking guides for agreed guided visits</li><li>Accommodation selected to suit your preferred comfort and budget</li><li>Pre-arranged experiences and admission tickets listed in your proposal</li><li>Domestic transfers and flights where specified in the quotation</li></ul></div></details><details open><summary>What's not included</summary><div class="lt-detail-body"><ul><li>International flights, visa or e-visa fees</li><li>Travel insurance and personal medical expenses</li><li>Meals and beverages unless expressly listed as included</li><li>Tips, shopping, personal expenses and hotel incidentals</li><li>Optional activities and services not included in your confirmed itinerary</li></ul></div></details></div><p class="lt-note">Indicative services only. Your final quotation will specify exact accommodation, meals, transfers, entrance fees, flights, and exclusions.</p></section>
 <section id="itinerary"><span class="lt-section-no">YOUR ITINERARY</span><h2>The journey, day by day</h2><p>Our suggested day-by-day route is flexible. Click each day for details.</p><div id="lt-days"></div></section>
 
 <section id="journey-map"><span class="lt-section-no">DESTINATIONS</span><h2>Follow the journey</h2><p id="lt-map-label"></p><iframe class="lt-map" id="lt-map" title="Map of Vietnam journey" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><p class="lt-note">The map shows a destination on the suggested route, not a confirmed transportation route.</p></section>
@@ -369,6 +378,31 @@ document.querySelector('#lt-route').textContent=isAdventure?'Hanoi • Mai Chau 
 document.querySelector('#lt-hero-photo').src=isAdventure?'ninh binh.jpg':current.image;
 document.querySelector('#lt-hero-photo').alt=current.title;
 document.querySelector('#lt-highlights').innerHTML=list(current.highlights);
+
+if(isAdventure){
+ document.querySelector('#lt-inclusions').innerHTML=`<details open><summary>What's included</summary><div class="lt-detail-body"><ul>
+<li>13 nights of accommodation in Hanoi, Mai Chau, Ninh Binh, Hoi An and Ho Chi Minh City, with hotel categories tailored to your preferences</li>
+<li>Private arrival and departure airport transfers, plus scheduled road transfers between destinations</li>
+<li>English-speaking local guides on selected sightseeing and cultural experience days</li>
+<li>Hanoi city and local food experiences arranged around your interests</li>
+<li>Mai Chau village visits and countryside walking or cycling experiences</li>
+<li>Ninh Binh sightseeing, with a scenic boat excursion where selected</li>
+<li>Hoi An Ancient Town and countryside experiences, with time for leisure</li>
+<li>Ho Chi Minh City neighbourhood and food experiences</li>
+<li>Domestic flight arrangements between northern, central and southern Vietnam, if requested</li>
+<li>Entrance fees and meals specifically named in the confirmed itinerary</li>
+</ul></div></details><details open><summary>What's not included</summary><div class="lt-detail-body"><ul>
+<li>International flights to and from Vietnam</li>
+<li>Vietnam visa or e-visa fees, if applicable</li>
+<li>Travel insurance, medical expenses and personal purchases</li>
+<li>Lunches, dinners and beverages unless specified as included</li>
+<li>Tips for guides, drivers and hotel staff</li>
+<li>Optional excursions, spa treatments and activities not selected in your quotation</li>
+<li>Room upgrades, minibar charges, laundry and other hotel incidentals</li>
+<li>Additional services arising from changes to the agreed itinerary</li>
+</ul></div></details>`;
+}
+
 document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>'<details'+(i===0?' open':'')+'><summary>'+title+'</summary><div class="lt-detail-body"><p>'+copy+'</p></div></details>').join('');
 const galleryPhotos=[isAdventure?'ninh binh.jpg':current.image,'mai chau.jpg','Hue.jpg','Ha Giang.jpg','Phong nha.jpg','https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp'];
 document.querySelector('#lt-gallery').innerHTML=galleryPhotos.map((src,i)=>'<img src="'+src+'" loading="lazy" alt="Vietnam travel photo '+(i+1)+'">').join('');
