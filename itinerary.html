@@ -360,7 +360,7 @@
 .lt-tour .lt-route-illustration svg{width:100%;height:auto;display:block}
 .lt-tour .lt-route-legend{display:flex;gap:18px;flex-wrap:wrap;background:#f7f7f2;padding:14px 18px;color:#4c554e;font-size:12px}
 .lt-tour .lt-route-legend span{display:flex;align-items:center;gap:9px}.lt-tour .lt-route-legend i{width:31px;height:0;border-top:3px dotted #a98052}.lt-tour .lt-route-legend .lt-route-flight{border-top:3px dashed #4b8193}
-.lt-tour #lt-gallery.lt-interactive-gallery{display:block!important}
+.lt-tour #lt-gallery.lt-gallery.lt-interactive-gallery:not(.lt-gallery-single){display:block!important;grid-template-columns:none!important;grid-template-rows:none!important}
 .lt-tour #lt-gallery.lt-interactive-gallery .lt-gallery-stage{height:clamp(280px,43vw,560px);position:relative;background:#e4e5df;overflow:hidden}
 .lt-tour #lt-gallery.lt-interactive-gallery .lt-gallery-stage>img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;grid-column:auto!important;grid-row:auto!important}
 .lt-tour #lt-gallery .lt-gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:#fff;color:#202a25;border:0;width:49px;height:49px;display:grid;place-items:center;font-size:24px;cursor:pointer;z-index:2}
