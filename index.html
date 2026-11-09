@@ -434,6 +434,50 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:850px){.lua-showcase-inner{width:calc(100% - 32px);padding-top:clamp(105px,15vh,145px)}.lua-showcase-copy h1{font-size:clamp(3rem,9vw,5.6rem)!important}.lua-showcase-gallery{min-height:205px}.lua-showcase-stage{width:min(100%,600px);height:210px}.lua-showcase-card{width:clamp(100px,17vw,150px);height:clamp(130px,25vw,205px)}.lua-showcase-card[data-position="-1"]{transform:translate(-50%,-50%) translateX(-102%) rotateY(19deg)}.lua-showcase-card[data-position="1"]{transform:translate(-50%,-50%) translateX(102%) rotateY(-19deg)}.lua-showcase-card[data-position="-2"]{transform:translate(-50%,-50%) translateX(-171%) rotateY(31deg) scale(.76)}.lua-showcase-card[data-position="2"]{transform:translate(-50%,-50%) translateX(171%) rotateY(-31deg) scale(.76)}}
 @media(max-width:550px){.hero.lua-showcase-hero{height:100svh;min-height:650px!important;max-height:850px}.lua-showcase-inner{padding-top:145px;padding-bottom:22px}.lua-showcase-kicker{font-size:9px;letter-spacing:.16em}.lua-showcase-copy h1{font-size:clamp(2.65rem,9.6vw,4.5rem)!important;margin:14px 0 8px!important;letter-spacing:-.047em!important}.lua-showcase-copy p{font-size:.84rem!important;line-height:1.55!important;max-width:300px}.lua-showcase-cta{margin-top:17px;padding-left:17px;font-size:.8rem}.lua-showcase-gallery{min-height:180px;margin-top:3px}.lua-showcase-stage{height:185px;min-height:170px}.lua-showcase-card{width:105px;height:147px}.lua-showcase-card[data-position="-1"]{transform:translate(-50%,-50%) translateX(-94%) rotateY(20deg) scale(.91)}.lua-showcase-card[data-position="1"]{transform:translate(-50%,-50%) translateX(94%) rotateY(-20deg) scale(.91)}.lua-showcase-card[data-position="-2"]{transform:translate(-50%,-50%) translateX(-148%) rotateY(34deg) scale(.65)}.lua-showcase-card[data-position="2"]{transform:translate(-50%,-50%) translateX(148%) rotateY(-34deg) scale(.65)}.lua-showcase-control{width:30px;height:30px;font-size:24px}.lua-showcase-footer{font-size:8px;letter-spacing:.12em}}
 @media(prefers-reduced-motion:reduce){.lua-showcase-card{transition:none}.lua-showcase-cta{transition:none}.lua-showcase-hero .lua-hero-video{display:none!important}}
+
+/* Reference-image refinement: floating ivory logo tab, generous central title and low 3D photo deck. */
+@media(min-width:1181px){
+ .header{border-bottom:0!important;background:transparent!important}
+ .header .header-inner{min-height:72px}
+ .header .logo{top:0!important;transform:translateX(-50%)!important;height:70px;min-width:185px;padding:0 33px 13px;display:flex!important;align-items:center;justify-content:center;background:#f7f5ef;clip-path:polygon(0 0,100% 0,87% 100%,13% 100%);filter:drop-shadow(0 2px 6px #0002)}
+ .header .logo .lua-mark{width:76px;height:59px;filter:brightness(0) saturate(100%)}
+ .header .nav{gap:clamp(13px,1.55vw,28px)}
+ .header .nav>a:not(.nav-cta){font-size:.77rem;letter-spacing:.005em;text-transform:none;font-weight:500}
+ .header .nav .nav-cta{border:0!important;border-radius:100px!important;padding:13px 23px!important;background:#f7f5ef!important;color:#27372f!important}
+}
+@media(min-width:701px) and (max-width:1180px){
+ .header .logo{top:0!important;transform:translateX(-50%)!important;height:60px;min-width:137px;padding:0 20px 9px;display:flex!important;align-items:center;justify-content:center;background:#f7f5ef;clip-path:polygon(0 0,100% 0,87% 100%,13% 100%)}
+ .header .logo .lua-mark{filter:brightness(0);width:57px;height:50px}
+}
+.hero.lua-showcase-hero{height:100svh;min-height:670px!important;max-height:none}
+.lua-showcase-hero .lua-showcase-inner{padding-top:clamp(115px,14vh,155px);padding-bottom:19px}
+.lua-showcase-copy h1{font-size:clamp(4.4rem,7.6vw,8.6rem)!important}
+.lua-showcase-copy p{max-width:520px;line-height:1.45!important}
+.lua-showcase-gallery{margin-top:5px;min-height:260px;align-items:flex-end;padding-bottom:3px}
+.lua-showcase-stage{height:min(33vh,315px);min-height:240px}
+.lua-showcase-card{width:clamp(140px,16.5vw,235px);height:clamp(190px,23vw,315px);border-radius:12px}
+.lua-showcase-card[data-position="-1"]{transform:translate(-50%,-50%) translateX(-106%) rotateY(13deg) scale(1.00)}
+.lua-showcase-card[data-position="1"]{transform:translate(-50%,-50%) translateX(106%) rotateY(-13deg) scale(1.00)}
+.lua-showcase-card[data-position="-2"]{transform:translate(-50%,-50%) translateX(-191%) rotateY(37deg) scale(.87)}
+.lua-showcase-card[data-position="2"]{transform:translate(-50%,-50%) translateX(191%) rotateY(-37deg) scale(.87)}
+.lua-showcase-control{opacity:.72;width:34px;height:34px;font-size:23px}
+@media(max-width:850px){
+ .lua-showcase-card{width:clamp(100px,17vw,150px);height:clamp(130px,25vw,205px)}
+ .lua-showcase-stage{min-height:180px;height:210px}
+ .lua-showcase-gallery{min-height:205px}
+}
+@media(max-width:550px){
+ .hero.lua-showcase-hero{min-height:650px!important}
+ .lua-showcase-inner{padding-top:145px}
+ .lua-showcase-copy h1{font-size:clamp(2.65rem,9.6vw,4.5rem)!important}
+ .lua-showcase-gallery{min-height:180px}
+ .lua-showcase-stage{height:185px;min-height:170px}
+ .lua-showcase-card{width:105px;height:147px}
+ .lua-showcase-card[data-position="-1"]{transform:translate(-50%,-50%) translateX(-94%) rotateY(20deg) scale(.91)}
+ .lua-showcase-card[data-position="1"]{transform:translate(-50%,-50%) translateX(94%) rotateY(-20deg) scale(.91)}
+ .lua-showcase-card[data-position="-2"]{transform:translate(-50%,-50%) translateX(-148%) rotateY(34deg) scale(.65)}
+ .lua-showcase-card[data-position="2"]{transform:translate(-50%,-50%) translateX(148%) rotateY(-34deg) scale(.65)}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
