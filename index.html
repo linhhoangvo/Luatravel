@@ -508,6 +508,27 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:700px){
  .hero.lua-showcase-hero .lua-showcase-copy p{white-space:normal!important;width:auto!important;max-width:95%!important;font-size:.84rem!important}
 }
+
+/* Lúa philosophy — clean editorial split, one cinematic heritage image. */
+.lua-philosophy{display:grid!important;grid-template-columns:50% 50%!important;min-height:690px!important;background:#f7f5f0!important;color:#4f514a!important;overflow:hidden}
+.lua-philosophy-copy{align-self:center!important;padding:90px clamp(40px,6.65vw,135px)!important;max-width:none!important}
+.lua-philosophy-overline{display:flex;justify-content:space-between;gap:16px;max-width:625px;margin-bottom:65px;font:600 10px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.19em;color:#9a9386}
+.lua-philosophy .lua-handwritten{font:italic 1.15rem/1.3 Georgia,serif!important;color:#98856c!important;margin:0 0 17px!important}
+.lua-philosophy h2{font-family:var(--lua-editorial-serif),Georgia,serif!important;font-size:clamp(3.25rem,4.45vw,5.8rem)!important;letter-spacing:-.035em!important;line-height:1.03!important;font-weight:400!important;margin:0 0 33px!important;max-width:720px}
+.lua-philosophy h2 em{font-weight:400!important;font-style:italic!important;white-space:nowrap}
+.lua-philosophy p{font:400 clamp(.9rem,1vw,1rem)/1.8 'DM Sans',Arial,sans-serif!important;color:#73736e!important;max-width:530px!important;margin:0 0 18px!important}
+.lua-philosophy .lua-outline-link{display:inline-flex;gap:40px;align-items:center;justify-content:space-between;font:500 .85rem/1.3 'DM Sans',Arial,sans-serif!important;color:#484a43!important;border:1px solid #aaa69b!important;border-radius:100px!important;padding:15px 17px 15px 23px!important;margin-top:23px!important;background:transparent;transition:background .2s,color .2s}
+.lua-philosophy .lua-outline-link:hover{background:#eae7df;color:#222}
+.lua-philosophy-art{position:relative!important;min-height:690px!important;background:#3c3d35!important;overflow:hidden!important}
+.lua-philosophy-art .lua-philosophy-main-image{position:absolute!important;inset:0!important;display:block;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;max-width:none!important;box-shadow:none!important;filter:saturate(.86) contrast(.95)}
+.lua-philosophy-art:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(11,19,14,.37),transparent 35%)}
+.lua-philosophy-image-note{position:absolute;left:clamp(24px,4vw,70px);bottom:55px;z-index:1;color:#fff;text-shadow:0 1px 8px #0005}
+.lua-philosophy-image-note span{display:block;font:600 10px 'DM Sans',Arial,sans-serif;letter-spacing:.19em;margin-bottom:13px}
+.lua-philosophy-image-note strong{display:block;font:400 clamp(2rem,2.6vw,3.4rem)/1.02 var(--lua-editorial-serif),Georgia,serif;letter-spacing:-.025em}
+.lua-philosophy-photo-credit{position:absolute;z-index:1;right:24px;bottom:25px;color:#fff;font:600 9px 'DM Sans',Arial,sans-serif;letter-spacing:.18em}
+@media(max-width:1000px){.lua-philosophy-copy{padding:65px 40px!important}.lua-philosophy h2{font-size:clamp(2.75rem,4.5vw,4.2rem)!important}.lua-philosophy-overline{margin-bottom:45px}}
+@media(max-width:750px){.lua-philosophy{grid-template-columns:1fr!important;min-height:0!important}.lua-philosophy-copy{padding:68px 26px 64px!important}.lua-philosophy-overline{margin-bottom:35px}.lua-philosophy h2{font-size:clamp(3rem,8.5vw,4.7rem)!important}.lua-philosophy-art{min-height:480px!important}.lua-philosophy h2 em{white-space:normal}}
+@media(max-width:440px){.lua-philosophy h2{font-size:3.15rem!important}.lua-philosophy-art{min-height:430px!important}.lua-philosophy-image-note{bottom:38px}.lua-philosophy-photo-credit{bottom:13px;right:15px}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -551,16 +572,17 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 </section>
 <section class="lua-philosophy" aria-label="Our philosophy">
  <div class="lua-philosophy-copy">
+  <div class="lua-philosophy-overline"><span>THE LÚA PHILOSOPHY</span><span>01 / 03</span></div>
   <span class="lua-handwritten">The art of travelling well</span>
-  <h2>Not simply where you go,<br>but <em>how it makes you feel.</em></h2>
-  <p>We believe the finest journeys are the ones that feel entirely your own. A quiet morning in the mountains. A table shared with local friends. A story that stays with you long after you return.</p>
-  <p>Rooted in Hoi An, Lúa brings thoughtful planning and local insight to every private journey through Vietnam.</p>
-  <a class="lua-outline-link" href="about.html">The Lúa story <span aria-hidden="true">↗</span></a>
+  <h2>More than a place.<br><em>A feeling that stays.</em></h2>
+  <p>Some of the most memorable moments are the simplest: a quiet morning in the mountains, a meal shared with local friends, a story told along the way.</p>
+  <p>From our home in Hoi An, we thoughtfully create private journeys that feel personal, unhurried and entirely your own.</p>
+  <a class="lua-outline-link" href="about.html">Discover the Lúa story <span aria-hidden="true">↗</span></a>
  </div>
  <div class="lua-philosophy-art">
-  <img class="lua-philosophy-texture" src="sapa%202.jpg" alt="Soft textures of the northern Vietnam highlands" loading="lazy">
-  <img class="lua-philosophy-main-image" src="hoi%20an%205.jpg" alt="Hoi An, Vietnam" loading="lazy">
-  <div class="lua-philosophy-caption">A sense of place. A journey of your own.</div>
+  <img class="lua-philosophy-main-image" src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Golden heritage walls and bougainvillea in Hoi An" loading="lazy">
+  <div class="lua-philosophy-image-note"><span>ROOTED IN VIETNAM</span><strong>Made with care.<br>Remembered forever.</strong></div>
+  <span class="lua-philosophy-photo-credit">HỘI AN, VIETNAM</span>
  </div>
 </section>
 
