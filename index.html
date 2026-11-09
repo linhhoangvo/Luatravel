@@ -274,9 +274,10 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:950px){.lua-dest-carousel .destination-grid .destination{flex-basis:calc((100% - 20px)/2)!important;width:calc((100% - 20px)/2)!important}}
 @media(max-width:600px){.lua-dest-carousel .destination-grid{gap:12px!important}.lua-dest-carousel .destination-grid .destination{flex-basis:80%!important;width:80%!important;height:235px!important}.lua-home-dest-controls{justify-content:flex-start}.lua-home-dest-dots{max-width:calc(100% - 115px);overflow-x:auto}.lua-dest-carousel .destination-info h3{font-size:1.1rem!important}}
 
-/* Homepage hero photo - keep the live page heading and call-to-actions visible. */
-.hero:before{background-image:linear-gradient(90deg,rgba(8,26,23,.62),rgba(8,26,23,.12) 77%),url('hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg');background-position:center center;}
-@media(max-width:700px){.hero:before{background-position:45% center}}
+/* Homepage hero: crop tightly to the ao dai, bicycle and yellow Hoi An wall. */
+.hero{overflow:hidden}
+.hero:before{background-image:linear-gradient(90deg,rgba(8,26,23,.42),rgba(8,26,23,.04) 75%),url('hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg');background-position:center center;background-size:cover;transform:scale(1.15);transform-origin:center center}
+@media(max-width:700px){.hero:before{background-position:46% center;transform:scale(1.10)}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
