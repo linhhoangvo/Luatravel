@@ -396,11 +396,16 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 .hero .hero-inner{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.lua-hero-video{display:none}}
 @media(max-width:700px){.lua-hero-video{object-position:57% center}}
+
+/* Hero headline: keep “Vietnam, your way.” on one line across screen sizes. */
+.hero .lua-hero-copy{max-width:100%}
+.hero .lua-hero-copy h1{white-space:nowrap!important;max-width:none!important;font-size:clamp(3rem,5.2vw,6.5rem)!important;line-height:1.03!important}
+@media(max-width:700px){.hero .lua-hero-copy h1{font-size:clamp(1.75rem,5.65vw,2.7rem)!important;letter-spacing:-.048em!important}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
-<section class="hero"><video class="lua-hero-video" autoplay muted loop playsinline preload="metadata" poster="sapa%20m%E1%BB%9Bi.jpg" aria-hidden="true" tabindex="-1"><source src="https://videos.pexels.com/video-files/37887214/16074547_1920_1080_30fps.mp4" type="video/mp4"></video><div class="container hero-inner"><div class="lua-hero-copy"><span class="lua-hero-eyebrow">PRIVATE JOURNEYS THROUGH VIETNAM</span><h1>Vietnam,<br><em>your</em> way.</h1><p>Thoughtfully tailored journeys. A more personal way to discover Vietnam.</p><div class="hero-actions"><a class="btn white" href="tours.html">Explore our journeys <span aria-hidden="true">↗</span></a><a class="textlink" href="contact.html">Plan your journey</a></div></div><div class="lua-hero-bottom"><span>DISCOVER THE EXTRAORDINARY, NATURALLY.</span><span>SCROLL TO EXPLORE ↓</span></div></div></section>
+<section class="hero"><video class="lua-hero-video" autoplay muted loop playsinline preload="metadata" poster="sapa%20m%E1%BB%9Bi.jpg" aria-hidden="true" tabindex="-1"><source src="https://videos.pexels.com/video-files/37887214/16074547_1920_1080_30fps.mp4" type="video/mp4"></video><div class="container hero-inner"><div class="lua-hero-copy"><span class="lua-hero-eyebrow">PRIVATE JOURNEYS THROUGH VIETNAM</span><h1>Vietnam, <em>your</em> way.</h1><p>Thoughtfully tailored journeys. A more personal way to discover Vietnam.</p><div class="hero-actions"><a class="btn white" href="tours.html">Explore our journeys <span aria-hidden="true">↗</span></a><a class="textlink" href="contact.html">Plan your journey</a></div></div><div class="lua-hero-bottom"><span>DISCOVER THE EXTRAORDINARY, NATURALLY.</span><span>SCROLL TO EXPLORE ↓</span></div></div></section>
 <section class="lua-philosophy" aria-label="Our philosophy">
  <div class="lua-philosophy-copy">
   <span class="lua-handwritten">The art of travelling well</span>
