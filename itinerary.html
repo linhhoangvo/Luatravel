@@ -394,13 +394,25 @@ const params=new URLSearchParams(location.search),selected=params.get('tour')||'
 const tours={...details,adventure:{title:"Amazing Vietnam",tag:"14-day private tour",intro:"Discover Hanoi, enjoy an overnight cruise in Ha Long Bay, return to the capital, then fly to Hue. Continue through Da Nang and Hoi An before flying south to Ho Chi Minh City and exploring the Mekong Delta.",image:"https://luawellnesstravel.com/uploads//Destinations/VietNam/Viet-Nam.jpg",highlights:["Hanoi culture and local life","Overnight Ha Long Bay cruise","Hue Imperial City and local traditions","Hai Van Pass and Da Nang","Hoi An Ancient Town and countryside","Ho Chi Minh City and the Mekong Delta"],days:adventure}};
 const current=isAdventure?tours.adventure:(tours[selected]||tours.heritage),list=(items)=>items.map(v=>'<li>'+v+'</li>').join('');
 const priceCard=document.querySelector('#lt-indicative-price');
-priceCard.hidden=!(isAdventure||selected==='hanoisapa');
-if(selected==='hanoisapa'){
- priceCard.querySelector('.lt-price-label').textContent='Estimated price · 4 days / 3 nights';
- priceCard.querySelector('.lt-price-amount strong').textContent='US$590';
+const referencePrices={
+ adventure:{usd:2190,basis:'14-day sample'},
+ hanoisapa:{usd:590,basis:'4 days / 3 nights'},
+ central:{usd:890,basis:'6 days / 5 nights'},
+ honeymoon:{usd:1890,basis:'10-day sample'},
+ wellness:{usd:450,basis:'3-day sample'},
+ heritage:{usd:990,basis:'7-day sample'},
+ food:{usd:65,basis:'evening experience'},
+ cycling:{usd:55,basis:'half-day experience'},
+ hue:{usd:125,basis:'private day tour'}
+};
+const selectedPrice=referencePrices[isAdventure?'adventure':selected];
+if(selectedPrice){
+ priceCard.hidden=false;
+ priceCard.querySelector('.lt-price-label').textContent='Estimated reference price · '+selectedPrice.basis;
+ priceCard.querySelector('.lt-price-amount strong').textContent='US$'+selectedPrice.usd.toLocaleString('en-US');
  priceCard.querySelector('.lt-price-amount span').textContent='/ person';
- priceCard.querySelector('p').textContent='Estimate for 2 adults sharing a room, private transport, English-speaking local guiding, selected sightseeing and 4-star accommodation. Final price depends on travel dates and confirmed services.';
-}
+ priceCard.querySelector('p').textContent='Illustrative planning estimate only, not a confirmed price or quotation. Based on a sample arrangement for two adults; inclusions, accommodation category and duration may vary. Final pricing is confirmed after travel dates, group size and services are agreed.';
+}else{priceCard.hidden=true;}
 document.title=current.title+' | Lua Travel & Tours';
 document.querySelector('#lt-title').textContent=isAdventure?'Amazing Vietnam':current.title;
 
