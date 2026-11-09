@@ -500,6 +500,14 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  .header .logo{background:transparent!important;clip-path:none!important;filter:none!important;min-width:0!important;height:auto!important;padding:0!important;top:50%!important;transform:translate(-50%,-50%)!important;box-shadow:none!important}
  .header .logo .lua-mark{filter:brightness(0) invert(1)!important;width:68px;height:68px;object-fit:contain}
 }
+
+/* Center hero headline and keep supporting sentence on a single line on desktop. */
+.hero.lua-showcase-hero .lua-showcase-copy{width:100%!important;max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;display:flex;flex-direction:column;align-items:center}
+.hero.lua-showcase-hero .lua-showcase-copy h1{display:block!important;width:100%!important;max-width:none!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;white-space:nowrap!important}
+.hero.lua-showcase-hero .lua-showcase-copy p{width:max-content!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important;white-space:nowrap!important;font-size:clamp(.73rem,1.18vw,1.1rem)!important}
+@media(max-width:700px){
+ .hero.lua-showcase-hero .lua-showcase-copy p{white-space:normal!important;width:auto!important;max-width:95%!important;font-size:.84rem!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
