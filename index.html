@@ -336,36 +336,25 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:750px){.hero,.hero-inner{min-height:700px}.lua-hero-copy{padding-top:130px}.hero h1{font-size:clamp(3.8rem,11vw,6rem)!important}.lua-philosophy{grid-template-columns:1fr}.lua-philosophy-copy{padding:67px 26px 55px}.lua-philosophy-art{min-height:460px}.lua-philosophy-main-image{width:73%;height:88%}.lua-featured{padding:70px 0}.lua-featured-heading{display:block}.lua-featured-heading>a{display:inline-block;margin-top:20px}.lua-featured-grid{grid-template-columns:1fr;gap:20px}.lua-feature{height:530px}.lua-feature h3{font-size:2.7rem}.lua-hero-bottom{font-size:9px}}
 @media(max-width:440px){.hero,.hero-inner{min-height:640px}.hero:before{background-position:57% center}.lua-hero-copy{padding-top:125px}.hero h1{font-size:3.8rem!important}.lua-hero-bottom span:last-child{display:none}.lua-philosophy-art{min-height:365px}.lua-philosophy-main-image{right:3%;width:82%}.lua-feature{height:465px}}
 
-/* Center the Lúa logo in the hero navigation, with balanced link groups. */
-@media(min-width:1051px){
- .header .header-inner{position:relative;display:flex;align-items:center;width:min(1540px,calc(100% - 64px));max-width:none}
- .header .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;z-index:3}
- .header .nav{display:grid;grid-template-columns:max-content max-content max-content minmax(185px,1fr) max-content max-content max-content;gap:clamp(13px,1.6vw,30px);width:100%;align-items:center;margin:0}
- .header .nav>a:nth-child(1){grid-column:1}
- .header .nav>a:nth-child(2){grid-column:2}
- .header .nav>a:nth-child(3){grid-column:3}
- .header .nav>a:nth-child(4){grid-column:5}
- .header .nav>a:nth-child(5){grid-column:6}
- .header .nav>a:nth-child(6){grid-column:7}
+/* Centered Lúa logo with all navigation links left and enquiry button right. */
+.header .header-inner{position:relative}
+.header .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;z-index:3}
+@media(min-width:1181px){
+ .header .header-inner{width:min(1660px,calc(100% - 64px));max-width:none}
+ .header .nav{display:flex;width:100%;align-items:center;justify-content:flex-start;gap:clamp(13px,1.45vw,27px);margin:0;font-size:clamp(.68rem,.79vw,.82rem)}
+ .header .nav>a{white-space:nowrap}
+ .header .nav .nav-cta{margin-left:auto}
 }
-@media(min-width:701px) and (max-width:1050px){
- .header .header-inner{position:relative}
- .header .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
- .header .nav{width:100%;display:grid;grid-template-columns:repeat(3,max-content) minmax(80px,1fr) repeat(3,max-content);gap:10px;align-items:center}
- .header .nav>a:nth-child(4){grid-column:5}
- .header .nav>a:nth-child(5){grid-column:6}
- .header .nav>a:nth-child(6){grid-column:7}
- .header .nav{font-size:.66rem}
- .header .lua-mark{width:46px;height:46px}
-}
-@media(max-width:700px){
- .header .header-inner{position:relative;justify-content:flex-end}
- .header .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3}
- .header .menu{margin-left:auto}
+@media(max-width:1180px){
+ .header .header-inner{min-height:74px;justify-content:flex-end}
+ .header .menu{display:block;margin-left:auto}
+ .header .nav{display:none;position:absolute;top:74px;left:0;right:0;background:rgba(23,35,32,.98);color:white;padding:24px 24px 30px;flex-direction:column;align-items:stretch;gap:18px;width:100%;z-index:5}
+ .header .nav.open{display:flex}
+ .header .nav .nav-cta{margin:3px 0 0;text-align:center}
 }
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
-<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero"><div class="container hero-inner"><div class="lua-hero-copy"><span class="lua-hero-eyebrow">PRIVATE JOURNEYS THROUGH VIETNAM</span><h1>Vietnam,<br><em>your</em> way.</h1><p>Thoughtfully tailored journeys. A more personal way to discover Vietnam.</p><div class="hero-actions"><a class="btn white" href="tours.html">Explore our journeys <span aria-hidden="true">↗</span></a><a class="textlink" href="contact.html">Plan your journey</a></div></div><div class="lua-hero-bottom"><span>DISCOVER THE EXTRAORDINARY, NATURALLY.</span><span>SCROLL TO EXPLORE ↓</span></div></div></section>
 <section class="lua-philosophy" aria-label="Our philosophy">
