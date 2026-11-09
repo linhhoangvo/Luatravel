@@ -478,12 +478,14 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  .lua-showcase-card[data-position="-2"]{transform:translate(-50%,-50%) translateX(-148%) rotateY(34deg) scale(.65)}
  .lua-showcase-card[data-position="2"]{transform:translate(-50%,-50%) translateX(148%) rotateY(-34deg) scale(.65)}
 }
+
+/* Static Sapa hero background; photo carousel rotates automatically. */
+.hero.lua-showcase-hero:before{background-image:url('sapa%20m%E1%BB%9Bi.jpg?v=20261109')!important;background-position:center center!important;background-size:cover!important}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero lua-showcase-hero" aria-label="Discover Vietnam">
- <video class="lua-hero-video" autoplay muted loop playsinline preload="metadata" poster="sapa%20m%E1%BB%9Bi.jpg" aria-hidden="true" tabindex="-1"><source src="https://videos.pexels.com/video-files/37887214/16074547_1920_1080_30fps.mp4" type="video/mp4"></video>
  <div class="lua-showcase-inner">
   <div class="lua-showcase-copy">
    <span class="lua-showcase-kicker">PRIVATE JOURNEYS THROUGH VIETNAM</span>
@@ -590,9 +592,11 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 (function(){
  const stage=document.getElementById('lua-showcase-stage');
  if(!stage)return;
+ const gallery=stage.closest('.lua-showcase-gallery');
  const cards=[...stage.querySelectorAll('.lua-showcase-card')];
  const counter=document.getElementById('lua-showcase-counter');
- let active=2,startX=null;
+ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let active=2,startX=null,timer=null,hovered=false,focused=false;
  function paint(){
   cards.forEach((card,i)=>{
    let delta=i-active;
@@ -605,13 +609,28 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
   counter.textContent=String(active+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')+' · '+cards[active].dataset.title;
  }
  function rotate(shift){active=(active+shift+cards.length)%cards.length;paint();}
- document.querySelector('.lua-showcase-prev').addEventListener('click',()=>rotate(-1));
- document.querySelector('.lua-showcase-next').addEventListener('click',()=>rotate(1));
+ function pause(){if(timer!==null){clearInterval(timer);timer=null;}}
+ function syncAutoplay(){
+  pause();
+  if(!hovered&&!focused&&!document.hidden&&!reducedMotion.matches){
+   timer=setInterval(()=>rotate(1),3500);
+  }
+ }
+ document.querySelector('.lua-showcase-prev').addEventListener('click',()=>{rotate(-1);syncAutoplay();});
+ document.querySelector('.lua-showcase-next').addEventListener('click',()=>{rotate(1);syncAutoplay();});
  stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotate(e.key==='ArrowRight'?1:-1);cards[active].focus();}});
  stage.addEventListener('pointerdown',e=>{startX=e.clientX;});
  stage.addEventListener('pointerup',e=>{if(startX!==null&&Math.abs(e.clientX-startX)>42)rotate(e.clientX<startX?1:-1);startX=null;});
- cards.forEach((card,i)=>card.addEventListener('click',e=>{if(i!==active){e.preventDefault();active=i;paint();}}));
+ cards.forEach((card,i)=>card.addEventListener('click',e=>{if(i!==active){e.preventDefault();active=i;paint();syncAutoplay();}}));
+ gallery.addEventListener('mouseenter',()=>{hovered=true;syncAutoplay();});
+ gallery.addEventListener('mouseleave',()=>{hovered=false;syncAutoplay();});
+ gallery.addEventListener('focusin',()=>{focused=true;syncAutoplay();});
+ gallery.addEventListener('focusout',()=>{focused=gallery.contains(document.activeElement);syncAutoplay();});
+ document.addEventListener('visibilitychange',syncAutoplay);
+ if(reducedMotion.addEventListener)reducedMotion.addEventListener('change',syncAutoplay);
  paint();
+ syncAutoplay();
+
 })();
 </script>
 </body></html>
