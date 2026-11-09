@@ -368,6 +368,14 @@
 .lt-tour #lt-gallery.lt-interactive-gallery .lt-gallery-thumb img,.lt-tour #lt-gallery.lt-interactive-gallery .lt-gallery-thumb img:nth-child(n){width:100%!important;height:100%!important;object-fit:cover!important;grid-column:auto!important;grid-row:auto!important}
 .lt-tour #lt-gallery button:focus-visible{outline:3px solid #3c8178;outline-offset:2px}
 @media(max-width:580px){.lt-tour #lt-gallery.lt-interactive-gallery .lt-gallery-stage{height:260px}.lt-tour #lt-gallery .lt-gallery-arrow{width:38px;height:42px}.lt-tour #lt-gallery .lt-gallery-thumb{height:65px}.lt-tour .lt-route-legend{gap:10px;font-size:11px}}
+
+/* Clean editorial photo grid for Amazing Vietnam; no enlarged blurry slideshow */
+.lt-tour #lt-gallery.lt-gallery.lt-photo-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:none!important;grid-auto-rows:auto!important;gap:14px!important;align-items:start!important}
+.lt-tour #lt-gallery.lt-photo-grid .lt-photo-tile{display:block;margin:0;min-width:0;overflow:hidden;background:#fafaf8}
+.lt-tour #lt-gallery.lt-photo-grid .lt-photo-tile img,.lt-tour #lt-gallery.lt-photo-grid .lt-photo-tile img:nth-child(n){display:block!important;width:100%!important;height:auto!important;aspect-ratio:4/3!important;object-fit:cover!important;grid-column:auto!important;grid-row:auto!important;border-radius:0!important}
+.lt-tour #lt-gallery.lt-photo-grid .lt-photo-tile figcaption{padding:10px 2px 3px;color:#565d57;font-size:12px;line-height:1.4}
+@media(max-width:750px){.lt-tour #lt-gallery.lt-gallery.lt-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}}
+@media(max-width:480px){.lt-tour #lt-gallery.lt-gallery.lt-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.lt-tour #lt-gallery.lt-photo-grid .lt-photo-tile figcaption{font-size:11px;padding:7px 1px}}
 </style></head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Amazing Vietnam</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
 <nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#highlights">Highlights</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a></div></nav><div class="lt-shell">
@@ -440,7 +448,12 @@ const photoLabels=isAdventure?[
 'Ho Chi Minh City','Ho Chi Minh City highlights','Mekong Delta'
 ]:galleryPhotos.map((_,i)=>'Vietnam destination '+(i+1));
 const gallery=document.querySelector('#lt-gallery');
-gallery.classList.remove('lt-gallery-two','lt-gallery-single');
+gallery.classList.remove('lt-gallery-two','lt-gallery-single','lt-interactive-gallery');
+if(isAdventure){
+ gallery.classList.add('lt-photo-grid');
+ gallery.innerHTML=galleryPhotos.map((src,i)=>'<figure class="lt-photo-tile"><img src="'+src+'" alt="'+photoLabels[i]+'" loading="lazy" decoding="async"><figcaption>'+photoLabels[i]+'</figcaption></figure>').join('');
+}else{
+ gallery.classList.remove('lt-gallery-two','lt-gallery-single');
 gallery.classList.add('lt-interactive-gallery');
 gallery.innerHTML='<div class="lt-gallery-stage"><img id="lt-gallery-featured" src="'+galleryPhotos[0]+'" alt="'+photoLabels[0]+'"><button class="lt-gallery-arrow lt-gallery-prev" type="button" aria-label="Previous photo">&#8592;</button><button class="lt-gallery-arrow lt-gallery-next" type="button" aria-label="Next photo">&#8594;</button><span id="lt-gallery-caption" class="lt-gallery-caption">'+photoLabels[0]+'</span><span id="lt-gallery-count" class="lt-gallery-count">1 / '+galleryPhotos.length+'</span></div><div class="lt-gallery-thumbs" aria-label="Choose a photo">'+galleryPhotos.map((src,i)=>'<button type="button" class="lt-gallery-thumb'+(i===0?' active':'')+'" aria-label="View '+photoLabels[i]+'" aria-pressed="'+(i===0)+'" data-photo-index="'+i+'"><img src="'+src+'" alt="" loading="lazy"></button>').join('')+'</div>';
 let selectedPhoto=0;
@@ -448,6 +461,7 @@ function showPhoto(i){selectedPhoto=(i+galleryPhotos.length)%galleryPhotos.lengt
 gallery.querySelector('.lt-gallery-prev').addEventListener('click',()=>showPhoto(selectedPhoto-1));
 gallery.querySelector('.lt-gallery-next').addEventListener('click',()=>showPhoto(selectedPhoto+1));
 gallery.querySelectorAll('.lt-gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>showPhoto(Number(btn.dataset.photoIndex))));
+}
 const mapTerm=isAdventure?'Ha Long Bay Hue Hoi An Ho Chi Minh City Vietnam':'Hoi An Vietnam';document.querySelector('#lt-map').src='https://www.google.com/maps?q='+encodeURIComponent(mapTerm)+'&output=embed';document.querySelector('#lt-map-label').textContent=isAdventure?'Hanoi · Ha Long Bay · Hanoi · Hue · Da Nang · Hoi An · Ho Chi Minh City · Mekong Delta':'Vietnam — itineraries customised to your destinations';
 const related=[['adventure','Amazing Vietnam'],['hue','Private Hue Cultural Experience'],['cycling','Hoi An Countryside by Bicycle'],['food','Hoi An Local Food & Hidden Bars'],['wellness','A Slower Stay in Hoi An'],['honeymoon','Vietnam Honeymoon Escape']];
 document.querySelector('#lt-related-grid').innerHTML=related.filter(x=>x[0]!==selected&&!(isAdventure&&x[0]==='adventure')).slice(0,3).map(([key,title])=>{const tour=tours[key],href=key==='adventure'?'itinerary.html?tour=heritage#vietnam-adventure':'itinerary.html?tour='+encodeURIComponent(key);return '<a class="lt-card" href="'+href+'"><img loading="lazy" src="'+tour.image+'" alt="'+title+'"><div class="lt-card-body"><small>VIETNAM · PRIVATE EXPERIENCE</small><h3>'+title+'</h3><span>Explore this journey ↗</span></div></a>'}).join('');
