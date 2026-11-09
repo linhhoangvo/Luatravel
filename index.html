@@ -481,6 +481,13 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 
 /* Static Sapa hero background; photo carousel rotates automatically. */
 .hero.lua-showcase-hero:before{background-image:url('sapa%20m%E1%BB%9Bi.jpg?v=20261109')!important;background-position:center center!important;background-size:cover!important}
+
+/* Reference motion: continuous horizontal travel with 3D tilt at the edges. */
+.lua-showcase-stage{width:min(100%,1080px)!important;perspective:1300px;touch-action:pan-y;cursor:grab}
+.lua-showcase-stage:active{cursor:grabbing}
+.lua-showcase-card{transition:none!important;backface-visibility:hidden}
+.lua-showcase-gallery{overflow:visible}
+@media(prefers-reduced-motion:reduce){.lua-showcase-card{transition:none!important}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -596,41 +603,73 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  const cards=[...stage.querySelectorAll('.lua-showcase-card')];
  const counter=document.getElementById('lua-showcase-counter');
  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- let active=2,startX=null,timer=null,hovered=false,focused=false;
- function paint(){
+ const count=cards.length;
+ const speed=0.19; // cards per second: calm, continuous movement
+ let position=2,lastTime=0,frame=0,hovered=false,focused=false,dragging=false,startX=0,dragPosition=0,suppressClick=false;
+ const wrap=n=>((n%count)+count)%count;
+ const shortest=(a,b)=>((a-b+count/2)%count+count)%count-count/2;
+ function render(){
+  const width=cards[0].offsetWidth||190;
+  const gap=width*(stage.clientWidth<560?.93:1.11);
   cards.forEach((card,i)=>{
-   let delta=i-active;
-   if(delta>2)delta-=cards.length;
-   if(delta< -2)delta+=cards.length;
-   card.dataset.position=String(delta);
-   card.setAttribute('aria-current',delta===0?'true':'false');
-   card.tabIndex=delta===0?0:-1;
+   const delta=shortest(i,position),abs=Math.abs(delta);
+   const scale=1.11-Math.min(abs,2.5)*.087;
+   const turn=delta===0?0:-Math.sign(delta)*Math.min(39,Math.pow(abs,1.6)*13);
+   const x=delta*gap;
+   const opacity=abs>2.17?Math.max(0,1-(abs-2.17)*3.5):1;
+   card.style.transform='translate(-50%,-50%) translateX('+x.toFixed(2)+'px) rotateY('+turn.toFixed(2)+'deg) scale('+scale.toFixed(3)+')';
+   card.style.opacity=String(opacity);
+   card.style.zIndex=String(Math.max(1,10-Math.round(abs*2)));
+   card.style.pointerEvents=opacity>.32?'auto':'none';
+   const current=abs<.5;
+   card.setAttribute('aria-current',current?'true':'false');
+   card.tabIndex=current?0:-1;
   });
-  counter.textContent=String(active+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')+' · '+cards[active].dataset.title;
+  const closest=wrap(Math.round(position));
+  counter.textContent=String(closest+1).padStart(2,'0')+' / '+String(count).padStart(2,'0')+' · '+cards[closest].dataset.title;
  }
- function rotate(shift){active=(active+shift+cards.length)%cards.length;paint();}
- function pause(){if(timer!==null){clearInterval(timer);timer=null;}}
- function syncAutoplay(){
-  pause();
-  if(!hovered&&!focused&&!document.hidden&&!reducedMotion.matches){
-   timer=setInterval(()=>rotate(1),3500);
+ function paused(){return hovered||focused||dragging||document.hidden||reducedMotion.matches}
+ function tick(t){
+  if(lastTime&&!paused()){position=wrap(position+(Math.min(t-lastTime,64)/1000)*speed);}
+  lastTime=t;
+  render();
+  frame=requestAnimationFrame(tick);
+ }
+ function move(amount){position=wrap(position+amount);render();}
+ document.querySelector('.lua-showcase-prev').addEventListener('click',()=>move(-1));
+ document.querySelector('.lua-showcase-next').addEventListener('click',()=>move(1));
+ stage.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+   e.preventDefault();move(e.key==='ArrowRight'?1:-1);
   }
- }
- document.querySelector('.lua-showcase-prev').addEventListener('click',()=>{rotate(-1);syncAutoplay();});
- document.querySelector('.lua-showcase-next').addEventListener('click',()=>{rotate(1);syncAutoplay();});
- stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotate(e.key==='ArrowRight'?1:-1);cards[active].focus();}});
- stage.addEventListener('pointerdown',e=>{startX=e.clientX;});
- stage.addEventListener('pointerup',e=>{if(startX!==null&&Math.abs(e.clientX-startX)>42)rotate(e.clientX<startX?1:-1);startX=null;});
- cards.forEach((card,i)=>card.addEventListener('click',e=>{if(i!==active){e.preventDefault();active=i;paint();syncAutoplay();}}));
- gallery.addEventListener('mouseenter',()=>{hovered=true;syncAutoplay();});
- gallery.addEventListener('mouseleave',()=>{hovered=false;syncAutoplay();});
- gallery.addEventListener('focusin',()=>{focused=true;syncAutoplay();});
- gallery.addEventListener('focusout',()=>{focused=gallery.contains(document.activeElement);syncAutoplay();});
- document.addEventListener('visibilitychange',syncAutoplay);
- if(reducedMotion.addEventListener)reducedMotion.addEventListener('change',syncAutoplay);
- paint();
- syncAutoplay();
-
+ });
+ stage.addEventListener('pointerdown',e=>{
+  if(e.pointerType==='mouse'&&e.button!==0)return;
+  dragging=true;startX=e.clientX;dragPosition=position;suppressClick=false;
+ });
+ stage.addEventListener('pointermove',e=>{
+  if(!dragging)return;
+  const dx=e.clientX-startX;
+  if(Math.abs(dx)>8)suppressClick=true;
+  const gap=(cards[0].offsetWidth||190)*(stage.clientWidth<560?.93:1.11);
+  position=wrap(dragPosition-dx/gap);render();
+ });
+ const endDrag=()=>{dragging=false;};
+ stage.addEventListener('pointerup',endDrag);
+ stage.addEventListener('pointercancel',endDrag);
+ window.addEventListener('pointerup',endDrag);
+ cards.forEach((card,i)=>card.addEventListener('click',e=>{
+  if(suppressClick){e.preventDefault();suppressClick=false;return;}
+  const delta=shortest(i,position);
+  if(Math.abs(delta)>.5){e.preventDefault();position=wrap(position+delta);render();}
+ }));
+ gallery.addEventListener('mouseenter',()=>{hovered=true;});
+ gallery.addEventListener('mouseleave',()=>{hovered=false;});
+ gallery.addEventListener('focusin',()=>{focused=true;});
+ gallery.addEventListener('focusout',()=>{focused=gallery.contains(document.activeElement);});
+ document.addEventListener('visibilitychange',()=>{lastTime=0;});
+ window.addEventListener('resize',render);
+ render();frame=requestAnimationFrame(tick);
 })();
 </script>
 </body></html>
