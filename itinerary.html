@@ -328,9 +328,8 @@
 @media(max-width:580px){.lt-tour .lt-hero{height:300px!important}.lt-tour .lt-hero-overlay{padding:19px 22px 26px!important}.lt-tour .lt-hero-heading h1{font-size:33px!important}.lt-tour .lt-hero-heading p{font-size:10px!important}}
 </style></head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Vietnam Adventure</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
-<nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#overview">Overview</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a><a class="lt-section-enquire" href="#lt-customise">Enquire ↗</a></div></nav><div class="lt-shell">
+<nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#highlights">Highlights</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a><a class="lt-section-enquire" href="#lt-customise">Enquire ↗</a></div></nav><div class="lt-shell">
 <div class="lt-columns"><div class="lt-main">
-<section id="overview"><p class="lt-intro" id="lt-description"></p></section>
 <section id="highlights"><span class="lt-section-no">HIGHLIGHTS</span><h2>Experiences worth remembering</h2><ul class="lt-highlights" id="lt-highlights"></ul></section>
 <section id="includes"><span class="lt-section-no">ESSENTIAL DETAILS</span><h2>Included in your journey</h2><div class="lt-inclusions"><details><summary>What's included</summary><div class="lt-detail-body"><p>Services are tailored and confirmed in your quotation. Options can include:</p><ul><li>Private airport and ground transfers</li><li>Local English-speaking guides</li><li>Selected accommodation</li><li>Guided activities and entrance tickets</li><li>Domestic travel arrangements</li></ul></div></details><details><summary>What's not included</summary><div class="lt-detail-body"><ul><li>International flights and visa fees</li><li>Personal expenses and gratuities</li><li>Optional activities not confirmed in writing</li><li>Meals, insurance or other services unless stated in your quotation</li></ul></div></details></div><p class="lt-note">All inclusions are indicative until a personalised proposal is confirmed.</p></section>
 <section id="itinerary"><span class="lt-section-no">YOUR ITINERARY</span><h2>The journey, day by day</h2><p>Our suggested day-by-day route is flexible. Click each day for details.</p><div id="lt-days"></div></section>
@@ -355,7 +354,7 @@ document.title=current.title+' | Lua Travel & Tours';
 document.querySelector('#lt-title').textContent=isAdventure?'Vietnam Adventure':current.title;
 
 document.querySelector('#lt-kicker').textContent=current.tag||'Private Vietnam tour';
-document.querySelector('#lt-description').textContent=current.intro;
+
 document.querySelector('#lt-route').textContent=isAdventure?'Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City':'Private journeys, shaped around you';
 
 document.querySelector('#lt-hero-photo').src=isAdventure?'ninh binh.jpg':current.image;
