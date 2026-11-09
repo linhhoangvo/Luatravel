@@ -529,6 +529,24 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:1000px){.lua-philosophy-copy{padding:65px 40px!important}.lua-philosophy h2{font-size:clamp(2.75rem,4.5vw,4.2rem)!important}.lua-philosophy-overline{margin-bottom:45px}}
 @media(max-width:750px){.lua-philosophy{grid-template-columns:1fr!important;min-height:0!important}.lua-philosophy-copy{padding:68px 26px 64px!important}.lua-philosophy-overline{margin-bottom:35px}.lua-philosophy h2{font-size:clamp(3rem,8.5vw,4.7rem)!important}.lua-philosophy-art{min-height:480px!important}.lua-philosophy h2 em{white-space:normal}}
 @media(max-width:440px){.lua-philosophy h2{font-size:3.15rem!important}.lua-philosophy-art{min-height:430px!important}.lua-philosophy-image-note{bottom:38px}.lua-philosophy-photo-credit{bottom:13px;right:15px}}
+
+/* Philosophy refinement v2: restrained editorial layout, no text overlays. */
+.lua-philosophy.lua-philosophy-refined{display:grid!important;grid-template-columns:48% 52%!important;min-height:0!important;overflow:hidden;background:#f7f6f2!important;color:#353c36!important}
+.lua-philosophy-refined .lua-philosophy-copy{padding:clamp(70px,7vw,120px) clamp(44px,6.6vw,128px)!important;align-self:center!important;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.lua-philosophy-refined .lua-philosophy-kicker{font:600 10px/1.5 'DM Sans',Arial,sans-serif!important;letter-spacing:.24em;color:#8a8579;margin-bottom:34px}
+.lua-philosophy-refined h2{font-family:var(--lua-editorial-serif),Georgia,serif!important;font-size:clamp(3.3rem,4.35vw,5.45rem)!important;font-weight:400!important;letter-spacing:-.042em!important;line-height:1.02!important;max-width:660px!important;margin:0 0 29px!important;color:#333b35}
+.lua-philosophy-refined h2 em{font:italic 400 1em var(--lua-editorial-serif),Georgia,serif!important;white-space:normal!important}
+.lua-philosophy-refined .lua-philosophy-rule{width:45px;height:1px;background:#a69c85;display:block;margin:0 0 28px}
+.lua-philosophy-refined p{font:400 clamp(.89rem,.95vw,.99rem)/1.78 'DM Sans',Arial,sans-serif!important;color:#75756f!important;max-width:480px!important;margin:0 0 13px!important}
+.lua-philosophy-refined .lua-philosophy-link{font:500 .86rem 'DM Sans',Arial,sans-serif;color:#34463e;text-decoration:none;display:inline-flex;gap:52px;align-items:center;border-bottom:1px solid #948d7c;padding:0 0 10px;margin-top:27px;transition:gap .2s}
+.lua-philosophy-refined .lua-philosophy-link:hover{gap:64px}
+.lua-philosophy-refined .lua-philosophy-visual{display:flex;align-items:center;justify-content:center;padding:clamp(36px,4.6vw,78px) clamp(36px,5.5vw,94px) clamp(28px,3.2vw,56px) 0;min-width:0}
+.lua-philosophy-refined .lua-philosophy-figure{width:100%;margin:0;max-width:760px}
+.lua-philosophy-refined .lua-philosophy-figure img{display:block;width:100%;height:clamp(440px,35vw,580px);object-fit:cover;object-position:center 54%;filter:saturate(.77) contrast(.93);border-radius:0}
+.lua-philosophy-refined .lua-philosophy-figure figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:16px;color:#8a857b;font:600 9px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.15em}
+@media(max-width:1060px){.lua-philosophy-refined .lua-philosophy-copy{padding:70px 44px!important}.lua-philosophy-refined h2{font-size:clamp(2.8rem,4.5vw,4.3rem)!important}.lua-philosophy-refined .lua-philosophy-visual{padding-right:36px}}
+@media(max-width:750px){.lua-philosophy.lua-philosophy-refined{grid-template-columns:1fr!important}.lua-philosophy-refined .lua-philosophy-copy{padding:64px 27px 41px!important}.lua-philosophy-refined .lua-philosophy-kicker{margin-bottom:25px}.lua-philosophy-refined h2{font-size:clamp(3.25rem,9vw,4.8rem)!important}.lua-philosophy-refined .lua-philosophy-visual{padding:0 27px 49px}.lua-philosophy-refined .lua-philosophy-figure img{height:clamp(330px,95vw,520px)}}
+@media(max-width:430px){.lua-philosophy-refined .lua-philosophy-copy{padding:55px 22px 36px!important}.lua-philosophy-refined h2{font-size:3.05rem!important}.lua-philosophy-refined .lua-philosophy-visual{padding:0 22px 40px}.lua-philosophy-refined .lua-philosophy-figure figcaption{font-size:8px;letter-spacing:.09em}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -570,19 +588,20 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
   <div class="lua-showcase-footer"><span>DISCOVER VIETNAM WITH LÚA</span><span id="lua-showcase-counter" aria-live="polite">03 / 20 · Sapa</span></div>
  </div>
 </section>
-<section class="lua-philosophy" aria-label="Our philosophy">
+<section class="lua-philosophy lua-philosophy-refined" aria-label="Our philosophy">
  <div class="lua-philosophy-copy">
-  <div class="lua-philosophy-overline"><span>THE LÚA PHILOSOPHY</span><span>01 / 03</span></div>
-  <span class="lua-handwritten">The art of travelling well</span>
-  <h2>More than a place.<br><em>A feeling that stays.</em></h2>
-  <p>Some of the most memorable moments are the simplest: a quiet morning in the mountains, a meal shared with local friends, a story told along the way.</p>
-  <p>From our home in Hoi An, we thoughtfully create private journeys that feel personal, unhurried and entirely your own.</p>
-  <a class="lua-outline-link" href="about.html">Discover the Lúa story <span aria-hidden="true">↗</span></a>
+  <span class="lua-philosophy-kicker">THE LÚA PHILOSOPHY</span>
+  <h2>Travel is more<br>than <em>a destination.</em></h2>
+  <span class="lua-philosophy-rule" aria-hidden="true"></span>
+  <p>It is the quiet moments, the people you meet, and the stories you carry home.</p>
+  <p>Based in Hoi An, we craft private journeys through Vietnam with genuine local insight and a personal touch.</p>
+  <a class="lua-philosophy-link" href="about.html">Our approach <span aria-hidden="true">↗</span></a>
  </div>
- <div class="lua-philosophy-art">
-  <img class="lua-philosophy-main-image" src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Golden heritage walls and bougainvillea in Hoi An" loading="lazy">
-  <div class="lua-philosophy-image-note"><span>ROOTED IN VIETNAM</span><strong>Made with care.<br>Remembered forever.</strong></div>
-  <span class="lua-philosophy-photo-credit">HỘI AN, VIETNAM</span>
+ <div class="lua-philosophy-visual">
+  <figure class="lua-philosophy-figure">
+   <img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Bougainvillea and heritage architecture in Hoi An, Vietnam" loading="lazy">
+   <figcaption><span>01 / THE PLACES WE CALL HOME</span><span>HOI AN, VIETNAM</span></figcaption>
+  </figure>
  </div>
 </section>
 
