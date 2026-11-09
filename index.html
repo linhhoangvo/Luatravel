@@ -279,55 +279,20 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 .hero:before{background-image:linear-gradient(90deg,rgba(8,26,23,.42),rgba(8,26,23,.04) 75%),url('hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?v=2c27af7e');background-position:center center;background-size:cover;transform:none}
 @media(max-width:700px){.hero:before{background-position:center center;transform:none}}
 
-/* Lúa editorial refinement — restrained, timeless, photo-led */
-:root{--cream:#faf9f5;--off:#f3f1eb;--ink:#202c29;--muted:#66716c;--accent:#a58b64}
-body{background:#faf9f5;color:var(--ink)}
-h1,h2,h3{letter-spacing:-.025em}
-.hero h1,.section h2,.lua-how h2,.lua-best h2,.lua-editorial-intro h2,.section.partner h2{font-family:'Libre Caslon Display',Georgia,serif!important;font-weight:400!important;letter-spacing:-.035em!important;line-height:1.13!important}
-.hero h1{font-size:clamp(4rem,7.1vw,8.4rem)!important;max-width:1000px;line-height:1.03!important;text-wrap:balance;text-shadow:0 2px 26px #14231d28}
-.hero p{font-weight:400;font-size:clamp(.95rem,1.2vw,1.1rem);line-height:1.75;max-width:480px}
-.hero:before{background-image:linear-gradient(90deg,rgba(8,24,20,.5),rgba(8,24,20,.06) 83%),url('hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg?v=2c27af7e')}
-.hero .btn.white{border-radius:0!important;padding:15px 27px!important;background:#faf9f4;color:#233630}
-.hero .textlink,.nav a{letter-spacing:.02em}
-.section{padding-top:110px;padding-bottom:110px}
-.section-top h2,.lua-how h2,.lua-best h2{font-size:clamp(2.75rem,4.4vw,5rem)!important}
-.eyebrow{font-size:.69rem!important;letter-spacing:.19em!important;font-weight:600!important;color:#9d8563}
-.trust{padding:20px 0;background:#f6f5f0;border-bottom:1px solid #e8e5de}
-.trust-inner{gap:18px}.trust-item{font-weight:500;font-size:.75rem;letter-spacing:.025em;color:#5f6a63}.trust-icon{display:none}
-.lua-editorial-intro{padding:116px 0 94px;background:#faf9f5}
-.lua-editorial-intro-grid{display:grid;grid-template-columns:1.13fr 0.87fr;gap:clamp(40px,8vw,145px);align-items:center}
-.lua-editorial-intro h2{font-size:clamp(3.1rem,5.2vw,6rem)!important;margin:21px 0 0;color:#28372f}
-.lua-editorial-intro h2 em{font-weight:400;color:#8b846e}
-.lua-editorial-intro-text{padding-top:42px;max-width:465px}
-.lua-editorial-intro-text p{font-size:1.02rem;line-height:1.9;color:#626a64;margin:0 0 20px}
-.lua-editorial-intro-text a{display:inline-flex;gap:25px;border-bottom:1px solid #948a72;padding-bottom:8px;margin-top:17px;font-size:.78rem;letter-spacing:.065em;color:#273e34}
-.lua-dest-carousel{padding-top:85px!important;background:#f4f2ed}
-.lua-dest-carousel .destination-grid .destination{border-radius:0!important;height:330px!important}
-.lua-dest-carousel .destination-info h3{font-family:'Libre Caslon Display',Georgia,serif!important;font-size:1.65rem!important;font-weight:400!important;letter-spacing:0!important}
-.lua-home-dest-arrows button{border-radius:0!important;background:#60746b}
-#travel-styles{background:#faf9f5}
-#travel-styles .tour{border-radius:0!important;background:transparent}
-#travel-styles .tour-img{height:285px;border-radius:0}
-#travel-styles .tour-copy{padding:22px 3px 10px}
-#travel-styles .tour-copy h3{font-family:'Libre Caslon Display',Georgia,serif!important;font-size:2rem!important;font-weight:400!important;letter-spacing:-.02em!important;margin-top:9px}
-#travel-styles .tour-copy p{line-height:1.75;font-size:.89rem}
-.lua-how{background:#f3f1eb!important}
-.lua-how-step .lua-step-mark{display:none!important}
-.lua-how-step h3{font-weight:500!important;letter-spacing:0!important}
-.lua-how-feature,.lua-how-feature img{border-radius:0!important}
-.lua-best-card,.lua-best-image,.lua-best-image img{border-radius:0!important}
-.lua-best-copy h3{font-family:'Libre Caslon Display',Georgia,serif!important;font-weight:400!important;letter-spacing:-.02em!important;font-size:1.9rem!important}
-.btn,.nav-cta{border-radius:0!important}
-@media(max-width:800px){.lua-editorial-intro{padding:70px 0}.lua-editorial-intro-grid{grid-template-columns:1fr;gap:10px}.lua-editorial-intro-text{padding-top:0}.trust-inner{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:clamp(3.3rem,9vw,5.8rem)!important}.section{padding-top:72px;padding-bottom:72px}}
-@media(max-width:580px){.lua-editorial-intro h2{font-size:3.2rem!important}.trust{padding:15px 0}.trust-inner{gap:10px}.trust-item{font-size:.66rem}.lua-dest-carousel .destination-grid .destination{height:255px!important}#travel-styles .tour-img{height:235px}}
+/* Typography refinement only. Original homepage layout, spacing, colours and sections retained. */
+.hero h1,.section h2,.lua-how h2,.lua-best h2,.section.partner h2,
+#travel-styles .tour-copy h3,.lua-best-copy h3{
+  font-family:'Libre Caslon Display',Georgia,serif!important;
+  font-weight:400!important;
+  letter-spacing:-.025em!important;
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero"><div class="container hero-inner"><h1>Vietnam, beyond<br>the ordinary.</h1><p>Tailor-made holidays and private journeys across Vietnam, planned by our local team in Hoi An.</p><div class="hero-actions"><a class="btn white" href="tours.html">Explore our journeys ↗</a><a class="textlink" href="contact.html">Tailor my trip</a></div></div></section>
 <div class="trust"><div class="container trust-inner"><div class="trust-item"><span class="trust-icon">✦</span>Vietnam-based local team</div><div class="trust-item"><span class="trust-icon">♡</span>Tailor-made private travel</div><div class="trust-item"><span class="trust-icon">⌖</span>Authentic local experiences</div><div class="trust-item"><span class="trust-icon">✧</span>Support from start to finish</div></div></div>
-<section class="lua-editorial-intro" aria-label="The Lúa philosophy"><div class="container lua-editorial-intro-grid"><div><span class="eyebrow">The Lúa philosophy</span><h2>A deeper way to<br><em>experience Vietnam.</em></h2></div><div class="lua-editorial-intro-text"><p>Some journeys stay with you long after you return. The warmth of a shared meal. A quiet street at first light. The people who make a place feel personal.</p><p>Based in Hoi An, we create considered, privately tailored journeys that let Vietnam reveal itself, naturally and at your own pace.</p><a href="about.html">Discover our story <span aria-hidden="true">↗</span></a></div></div></section>
-<section class="section lua-dest-carousel" id="destinations"><div class="container"><div class="section-top"><div><span class="eyebrow">Destinations</span><h2>Vietnam, in all its beauty</h2></div></div><div class="destination-grid" id="home-dest-track" aria-label="Places to discover" tabindex="0">
+<section class="section lua-dest-carousel" id="destinations"><div class="container"><div class="section-top"><div><span class="eyebrow">Destinations</span><h2>Places to discover</h2></div></div><div class="destination-grid" id="home-dest-track" aria-label="Places to discover" tabindex="0">
 <a class="destination" href="destinations.html" aria-label="Explore Ha Noi"><img src="https://www.novo-monde.com/app/uploads/2022/11/lac-Hoan-Kiem-hanoi1-1600x1066.jpg" alt="Turtle Tower at Hoan Kiem Lake, Hanoi" loading="lazy"><div class="destination-info"><h3>Ha Noi</h3><span aria-hidden="true">↗</span></div></a>
 <a class="destination" href="destinations.html" aria-label="Explore Hoi An"><img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Yellow walls and bougainvillea in Hoi An" loading="lazy"><div class="destination-info"><h3>Hoi An</h3><span aria-hidden="true">↗</span></div></a>
 <a class="destination" href="destinations.html" aria-label="Explore Ha Long Bay"><img src="https://cdn0897.cdn4s1.com/media/halong-bay-cruises/halong-luxury-cruises/arcady-cruises/1.jpg" alt="Limestone islands and cruise boats in Ha Long Bay" loading="lazy"><div class="destination-info"><h3>Ha Long Bay</h3><span aria-hidden="true">↗</span></div></a>
@@ -340,7 +305,7 @@ h1,h2,h3{letter-spacing:-.025em}
 <a class="destination" href="destinations.html" aria-label="Explore Phu Quoc"><img src="phu%20quoc.jpg" alt="Phu Quoc island coast" loading="lazy"><div class="destination-info"><h3>Phu Quoc</h3><span aria-hidden="true">↗</span></div></a>
 </div><div class="lua-home-dest-controls"><div class="lua-home-dest-dots" id="home-dest-dots" aria-label="Destination carousel pages"></div><div class="lua-home-dest-arrows"><button type="button" id="home-dest-prev" aria-label="Previous destinations">‹</button><button type="button" id="home-dest-next" aria-label="Next destinations">›</button></div></div></div></section>
 
-<section class="section" id="travel-styles"><div class="container"><div class="section-top"><div><span class="eyebrow">Travel your way</span><h2>Journeys to make your own</h2></div></div><div class="tours-grid">
+<section class="section" id="travel-styles"><div class="container"><div class="section-top"><div><span class="eyebrow">Travel your way</span><h2>Find the right kind of holiday</h2></div></div><div class="tours-grid">
 <article class="tour"><a class="tour-img" href="tours.html"><img loading="lazy" src="https://luawellnesstravel.com/uploads/Tour/2026_06_02/6a1ebe04b5785499503018.webp" alt="Vietnam cultural landscape"></a><div class="tour-copy"><span class="tag">Culture & discovery</span><h3>Classic Vietnam</h3><p>Historic cities, countryside stops and local experiences on a private trip.</p><a href="tours.html">Explore journeys ↗</a></div></article>
 <article class="tour"><a class="tour-img" href="itinerary.html?tour=heritage#vietnam-adventure"><img loading="lazy" src="https://luawellnesstravel.com/uploads//Destinations/VietNam/Viet-Nam.jpg" alt="Vietnam scenic countryside"></a><div class="tour-copy"><span class="tag">14-day inspiration</span><h3>Amazing Vietnam</h3><p>From Hanoi and the northern valleys to Hoi An and Ho Chi Minh City.</p><a href="itinerary.html?tour=heritage#vietnam-adventure">View itinerary ↗</a></div></article>
 <article class="tour"><a class="tour-img" href="contact.html?interest=Vietnam%20family%20holiday"><img loading="lazy" src="https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp" alt="Hoi An ancient town"></a><div class="tour-copy"><span class="tag">Private & flexible</span><h3>Family Holidays</h3><p>Flexible travel days, activities for different ages and private transport.</p><a href="contact.html?interest=Vietnam%20family%20holiday">Plan a family trip ↗</a></div></article>
@@ -348,7 +313,7 @@ h1,h2,h3{letter-spacing:-.025em}
 
 
 <section class="section lua-how" id="how"><div class="container lua-how-layout">
-<div class="lua-how-steps"><span class="eyebrow">The Lúa approach</span><h2>Thoughtfully planned. Beautifully experienced.</h2>
+<div class="lua-how-steps"><span class="eyebrow">The Lúa approach</span><h2>From an idea to a journey</h2>
 <div class="lua-how-list">
 <div class="lua-how-step"><span class="lua-step-mark" aria-hidden="true">›</span><div><h3>1. Start with what you love</h3><p>A place you've always wanted to see, a favourite activity or simply a few days to unwind.</p></div></div>
 <div class="lua-how-step"><span class="lua-step-mark" aria-hidden="true">›</span><div><h3>2. Tell us what matters</h3><p>Let us know who's travelling, when you'd like to go and the little details that make a holiday yours.</p></div></div>
@@ -357,7 +322,7 @@ h1,h2,h3{letter-spacing:-.025em}
 </div><a class="btn lua-how-cta" href="contact.html">Tell us your plans ↗</a></div>
 <div class="lua-how-feature"><img src="https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f342750c4b6880072802.webp" loading="lazy" alt="A relaxing riverside retreat in Vietnam"><div class="lua-feature-copy"><span class="eyebrow">Made in Hoi An</span><h3>The details matter. So do the people.</h3><p>We know the roads, the quieter corners and the people who make a place memorable. That local perspective shapes every trip we plan.</p><a href="about.html">Get to know Lúa ↗</a></div></div>
 </div></section>
-<section class="section lua-best" id="tours"><span id="best-experiences" class="journey-anchor" aria-hidden="true"></span><div class="container"><div class="section-top lua-best-top"><div><span class="eyebrow">A journey with Lúa</span><h2>Journeys with a sense of place</h2></div></div>
+<section class="section lua-best" id="tours"><span id="best-experiences" class="journey-anchor" aria-hidden="true"></span><div class="container"><div class="section-top lua-best-top"><div><span class="eyebrow">A journey with Lúa</span><h2>Travel your own way</h2></div></div>
 <div class="lua-best-grid">
 <a class="lua-best-card" href="itinerary.html?tour=heritage"><div class="lua-best-image"><img src="https://luawellnesstravel.com/uploads/Tour/2026_06_02/6a1ebe04b5785499503018.webp" loading="lazy" alt="Vietnam cultural discovery"><span>Vietnam</span></div><div class="lua-best-copy"><small>PRIVATE JOURNEY</small><h3>Vietnam Heritage &amp; Nature</h3><em>Culture</em><div class="lua-best-foot"><span>Tailor-made itinerary</span><b aria-hidden="true">↗</b></div></div></a>
 <a class="lua-best-card" href="itinerary.html?tour=honeymoon"><div class="lua-best-image"><img src="honeymoon%20picture.jpg" loading="lazy" alt="Vietnam honeymoon destination"><span>Vietnam</span></div><div class="lua-best-copy"><small>PRIVATE JOURNEY</small><h3>Vietnam Honeymoon Escape</h3><em>Romance</em><div class="lua-best-foot"><span>Tailor-made itinerary</span><b aria-hidden="true">↗</b></div></div></a>
