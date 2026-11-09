@@ -551,6 +551,23 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 /* Home process section: full-width layout after removal of old promotional feature. */
 .lua-how .lua-how-layout{display:block!important}
 .lua-how .lua-how-steps{width:100%!important;max-width:1060px;margin:0 auto}
+
+/* Lúa timeless editorial story — generously spaced image and narrative. */
+.lua-philosophy.lua-philosophy-timeless{display:block!important;min-height:0!important;background:#f4f2ed!important;color:#343d36!important;overflow:visible!important;padding:clamp(84px,9vw,150px) 0!important}
+.lua-philosophy-timeless .lua-timeless-wrap{display:grid;grid-template-columns:minmax(0, .94fr) minmax(0,1fr);gap:clamp(72px,9vw,170px);width:min(1420px,calc(100% - 112px));margin:0 auto;align-items:center}
+.lua-philosophy-timeless .lua-timeless-visual{margin:0;position:relative;max-width:620px;width:100%;justify-self:end}
+.lua-philosophy-timeless .lua-timeless-visual img{display:block;width:100%;height:clamp(480px,41.7vw,690px);object-fit:cover;object-position:54% center;filter:saturate(.7) contrast(.94) brightness(.96);border-radius:0}
+.lua-philosophy-timeless .lua-timeless-visual figcaption{font:500 11px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:.055em;color:#858378;padding-top:18px}
+.lua-philosophy-timeless .lua-timeless-content{padding:12px 0 8px;max-width:580px}
+.lua-philosophy-timeless .lua-timeless-eyebrow{display:block;font:600 11px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.19em;color:#918572;margin-bottom:38px}
+.lua-philosophy-timeless .lua-timeless-content h2{font-family:var(--lua-editorial-serif),Georgia,serif!important;font-size:clamp(4.25rem,5.2vw,7.5rem)!important;line-height:.99!important;letter-spacing:-.045em!important;font-weight:400!important;color:#374039!important;margin:0 0 39px!important;max-width:none!important}
+.lua-philosophy-timeless .lua-timeless-content h2 em{font-family:inherit!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.045em!important;white-space:normal!important}
+.lua-philosophy-timeless .lua-timeless-content p{font:400 clamp(.95rem,1.04vw,1.06rem)/1.9 'DM Sans',Arial,sans-serif!important;letter-spacing:0!important;color:#73766f!important;max-width:470px!important;margin:0 0 19px!important}
+.lua-philosophy-timeless .lua-timeless-link{display:inline-flex;gap:45px;align-items:center;font:500 .87rem/1.4 'DM Sans',Arial,sans-serif;color:#36443a;text-decoration:none;border-bottom:1px solid #777e71;padding-bottom:11px;margin-top:30px;transition:gap .2s ease}
+.lua-philosophy-timeless .lua-timeless-link:hover{gap:55px}
+@media(max-width:1000px){.lua-philosophy-timeless .lua-timeless-wrap{width:calc(100% - 72px);gap:55px}.lua-philosophy-timeless .lua-timeless-content h2{font-size:clamp(3.6rem,6.1vw,5.8rem)!important}}
+@media(max-width:750px){.lua-philosophy.lua-philosophy-timeless{padding:64px 0!important}.lua-philosophy-timeless .lua-timeless-wrap{display:flex;flex-direction:column;width:calc(100% - 48px);gap:42px;align-items:stretch}.lua-philosophy-timeless .lua-timeless-visual{max-width:none}.lua-philosophy-timeless .lua-timeless-visual img{height:clamp(360px,108vw,570px);object-position:center}.lua-philosophy-timeless .lua-timeless-content{padding:0;max-width:none}.lua-philosophy-timeless .lua-timeless-eyebrow{margin-bottom:23px}.lua-philosophy-timeless .lua-timeless-content h2{font-size:clamp(3.6rem,11vw,5.6rem)!important;margin-bottom:25px!important}.lua-philosophy-timeless .lua-timeless-content p{max-width:none!important}}
+@media(max-width:420px){.lua-philosophy-timeless .lua-timeless-wrap{width:calc(100% - 38px)}.lua-philosophy-timeless .lua-timeless-content h2{font-size:3.55rem!important}.lua-philosophy-timeless .lua-timeless-visual img{height:390px}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -592,20 +609,19 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
   <div class="lua-showcase-footer"><span>DISCOVER VIETNAM WITH LÚA</span><span id="lua-showcase-counter" aria-live="polite">03 / 20 · Sapa</span></div>
  </div>
 </section>
-<section class="lua-philosophy lua-philosophy-refined" aria-label="Our philosophy">
- <div class="lua-philosophy-copy">
-  <span class="lua-philosophy-kicker">THE LÚA PHILOSOPHY</span>
-  <h2>Travel is more<br>than <em>a destination.</em></h2>
-  <span class="lua-philosophy-rule" aria-hidden="true"></span>
-  <p>It is the quiet moments, the people you meet, and the stories you carry home.</p>
-  <p>Based in Hoi An, we craft private journeys through Vietnam with genuine local insight and a personal touch.</p>
-  <a class="lua-philosophy-link" href="about.html">Our approach <span aria-hidden="true">↗</span></a>
- </div>
- <div class="lua-philosophy-visual">
-  <figure class="lua-philosophy-figure">
-   <img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Bougainvillea and heritage architecture in Hoi An, Vietnam" loading="lazy">
-   <figcaption><span>01 / THE PLACES WE CALL HOME</span><span>HOI AN, VIETNAM</span></figcaption>
+<section class="lua-philosophy lua-philosophy-timeless" aria-label="The Lúa philosophy">
+ <div class="lua-timeless-wrap">
+  <figure class="lua-timeless-visual">
+   <img src="hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg" alt="A quiet moment beside the heritage walls of Hoi An, Vietnam" loading="lazy">
+   <figcaption>Hội An, Vietnam</figcaption>
   </figure>
+  <div class="lua-timeless-content">
+   <span class="lua-timeless-eyebrow">A DIFFERENT WAY TO TRAVEL</span>
+   <h2>The beauty of<br><em>being here.</em></h2>
+   <p>Beyond the places we visit are the moments we remember — an unexpected conversation, a quiet street at dawn, the feeling of truly belonging somewhere.</p>
+   <p>With deep local roots in Hội An, we shape private journeys through Vietnam that are personal, thoughtful and beautifully unhurried.</p>
+   <a class="lua-timeless-link" href="about.html">The Lúa philosophy <span aria-hidden="true">↗</span></a>
+  </div>
  </div>
 </section>
 
