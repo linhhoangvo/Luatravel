@@ -190,7 +190,7 @@ document.querySelector('#lt-kicker').textContent=current.tag||'Private Vietnam t
 document.querySelector('#lt-description').textContent=current.intro;
 document.querySelector('#lt-route').textContent=isAdventure?'Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City':'Private journeys, shaped around you';
 document.querySelector('#lt-duration').textContent=isAdventure?'14 Days':'Custom duration';
-document.querySelector('#lt-hero-photo').src=current.image;
+document.querySelector('#lt-hero-photo').src=isAdventure?'hero lua.jpg':current.image;
 document.querySelector('#lt-hero-photo').alt=current.title;
 document.querySelector('#lt-highlights').innerHTML=list(current.highlights);
 document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>'<details'+(i===0?' open':'')+'><summary>'+title+'</summary><div class="lt-detail-body"><p>'+copy+'</p></div></details>').join('');
