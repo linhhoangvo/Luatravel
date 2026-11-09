@@ -352,7 +352,7 @@ const params=new URLSearchParams(location.search),selected=params.get('tour')||'
 const tours={...details,adventure:{title:"Vietnam Adventure — 14 Days",tag:"14-day private tour",intro:"Travel from Hanoi through the countryside of Mai Chau and Ninh Binh to Hoi An and Ho Chi Minh City. Explore local culture, food, villages and landscapes with time to make the journey your own.",image:"https://luawellnesstravel.com/uploads//Destinations/VietNam/Viet-Nam.jpg",highlights:["Hanoi Old Quarter and local food","Mai Chau villages and rice fields","Ninh Binh limestone scenery","Hoi An heritage and countryside","Ho Chi Minh City culture and food","Flexible private itinerary"],days:adventure}};
 const current=isAdventure?tours.adventure:(tours[selected]||tours.heritage),list=(items)=>items.map(v=>'<li>'+v+'</li>').join('');
 document.title=current.title+' | Lua Travel & Tours';
-document.querySelector('#lt-title').textContent=current.title;
+document.querySelector('#lt-title').textContent=isAdventure?'Vietnam Adventure':current.title;
 
 document.querySelector('#lt-kicker').textContent=current.tag||'Private Vietnam tour';
 document.querySelector('#lt-description').textContent=current.intro;
