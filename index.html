@@ -488,6 +488,12 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 .lua-showcase-card{transition:none!important;backface-visibility:hidden}
 .lua-showcase-gallery{overflow:visible}
 @media(prefers-reduced-motion:reduce){.lua-showcase-card{transition:none!important}}
+
+/* Twenty-place circular turntable — only the front arc is revealed. */
+.lua-showcase-stage{perspective:1400px!important;overflow:visible!important;touch-action:pan-y}
+.lua-showcase-card{transition:none!important;backface-visibility:hidden}
+.lua-showcase-card img{pointer-events:none}
+@media(prefers-reduced-motion:reduce){.lua-showcase-card{transition:none!important}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -503,15 +509,30 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
   <div class="lua-showcase-gallery" aria-label="Explore featured destinations">
    <button class="lua-showcase-control lua-showcase-prev" type="button" aria-label="Previous destination">‹</button>
    <div class="lua-showcase-stage" id="lua-showcase-stage" tabindex="0" aria-label="Featured destinations, use left and right arrows">
-    <a class="lua-showcase-card" href="destinations.html" data-title="Ha Giang" aria-label="Explore Ha Giang"><img src="Ha%20Giang.jpg" alt="Mountain passes in Ha Giang" loading="eager"><span>Ha Giang</span></a>
-    <a class="lua-showcase-card" href="destinations.html" data-title="Hoi An" aria-label="Explore Hoi An"><img src="hoi%20an%205.jpg" alt="Hoi An heritage town" loading="eager"><span>Hoi An</span></a>
-    <a class="lua-showcase-card" href="itinerary.html?tour=hanoisapa" data-title="Sapa" aria-label="Explore Sapa"><img src="sapa%20m%E1%BB%9Bi.jpg" alt="Sapa mountain and rice terrace landscape" loading="eager"><span>Sapa</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Ha Giang" aria-label="Explore Ha Giang"><img src="Ha%20Giang.jpg" alt="Winding mountain roads in Ha Giang" loading="eager"><span>Ha Giang</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Hoi An" aria-label="Explore Hoi An"><img src="hoi%20an%205.jpg" alt="Hoi An old town" loading="eager"><span>Hoi An</span></a>
+    <a class="lua-showcase-card" href="itinerary.html?tour=hanoisapa" data-title="Sapa" aria-label="Explore Sapa"><img src="sapa%20m%E1%BB%9Bi.jpg" alt="Terraced scenery of Sapa" loading="eager"><span>Sapa</span></a>
     <a class="lua-showcase-card" href="destinations.html" data-title="Ninh Binh" aria-label="Explore Ninh Binh"><img src="ninh%20binh.jpg" alt="Limestone scenery in Ninh Binh" loading="eager"><span>Ninh Binh</span></a>
-    <a class="lua-showcase-card" href="destinations.html" data-title="Phu Quoc" aria-label="Explore Phu Quoc"><img src="phu%20quoc.jpg" alt="Phu Quoc tropical island" loading="eager"><span>Phu Quoc</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Phu Quoc" aria-label="Explore Phu Quoc"><img src="phu%20quoc.jpg" alt="Tropical beaches of Phu Quoc" loading="eager"><span>Phu Quoc</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Hue" aria-label="Explore Hue"><img src="Hue.jpg" alt="Cultural heritage in Hue" loading="lazy"><span>Hue</span></a>
+    <a class="lua-showcase-card" href="cruise.html" data-title="Ha Long Bay" aria-label="Explore Ha Long Bay"><img src="hero%20lua.jpg" alt="Vietnam scenic cruise" loading="lazy"><span>Ha Long Bay</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Hanoi" aria-label="Explore Hanoi"><img src="ha%20noi%201.jpg" alt="Hanoi city and heritage" loading="lazy"><span>Hanoi</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Da Nang" aria-label="Explore Da Nang"><img src="%C4%90%C3%A0%20N%E1%BA%B5ng%201.jpg" alt="Da Nang coastline" loading="lazy"><span>Da Nang</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Mekong Delta" aria-label="Explore Mekong Delta"><img src="mekong%20moi.jpg" alt="Mekong Delta waterways" loading="lazy"><span>Mekong Delta</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Phong Nha" aria-label="Explore Phong Nha"><img src="Phong%20nha.jpg" alt="Phong Nha dramatic landscape" loading="lazy"><span>Phong Nha</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Mai Chau" aria-label="Explore Mai Chau"><img src="mai%20chau.jpg" alt="Mai Chau valley" loading="lazy"><span>Mai Chau</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Da Lat" aria-label="Explore Da Lat"><img src="da%20lat%20moi.jpg" alt="Da Lat scenery" loading="lazy"><span>Da Lat</span></a>
+    <a class="lua-showcase-card" href="itinerary.html?tour=hanoisapa" data-title="Ta Phin" aria-label="Explore Ta Phin"><img src="sapa%206%20%20Ta%20Phin%20Village.jpg" alt="Ta Phin village in northern Vietnam" loading="lazy"><span>Ta Phin</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Ha Giang Loop" aria-label="Explore Ha Giang Loop"><img src="ha%20giang%202.jpg" alt="Ha Giang mountain loop" loading="lazy"><span>Ha Giang Loop</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Hoi An Heritage" aria-label="Explore Hoi An Heritage"><img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Hoi An yellow walls and bougainvillea" loading="lazy"><span>Hoi An Heritage</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Ho Chi Minh City" aria-label="Explore Ho Chi Minh City"><img src="ho%20chi%20minh%20city%201.jpg" alt="Ho Chi Minh City" loading="lazy"><span>Ho Chi Minh City</span></a>
+    <a class="lua-showcase-card" href="itinerary.html?tour=hanoisapa" data-title="Sapa Highlands" aria-label="Explore Sapa Highlands"><img src="sapa%203.jpg" alt="Northern highlands around Sapa" loading="lazy"><span>Sapa Highlands</span></a>
+    <a class="lua-showcase-card" href="itinerary.html?tour=central" data-title="Central Vietnam" aria-label="Explore Central Vietnam"><img src="%C4%90%C3%A0%20N%E1%BA%B5ng%204.jpg" alt="Central Vietnam scenery" loading="lazy"><span>Central Vietnam</span></a>
+    <a class="lua-showcase-card" href="destinations.html" data-title="Vietnam Landscape" aria-label="Explore Vietnam Landscape"><img src="ha%20giang%203.jpg" alt="Mountain landscape of Vietnam" loading="lazy"><span>Vietnam Landscape</span></a>
    </div>
    <button class="lua-showcase-control lua-showcase-next" type="button" aria-label="Next destination">›</button>
   </div>
-  <div class="lua-showcase-footer"><span>DISCOVER VIETNAM WITH LÚA</span><span id="lua-showcase-counter" aria-live="polite">03 / 05 · Sapa</span></div>
+  <div class="lua-showcase-footer"><span>DISCOVER VIETNAM WITH LÚA</span><span id="lua-showcase-counter" aria-live="polite">03 / 20 · Sapa</span></div>
  </div>
 </section>
 <section class="lua-philosophy" aria-label="Our philosophy">
@@ -603,73 +624,80 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  const cards=[...stage.querySelectorAll('.lua-showcase-card')];
  const counter=document.getElementById('lua-showcase-counter');
  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- const count=cards.length;
- const speed=0.19; // cards per second: calm, continuous movement
- let position=2,lastTime=0,frame=0,hovered=false,focused=false,dragging=false,startX=0,dragPosition=0,suppressClick=false;
- const wrap=n=>((n%count)+count)%count;
- const shortest=(a,b)=>((a-b+count/2)%count+count)%count-count/2;
- function render(){
-  const width=cards[0].offsetWidth||190;
-  const gap=width*(stage.clientWidth<560?.93:1.11);
+ const total=cards.length;
+ const wrap=n=>((n%total)+total)%total;
+ const relative=(index,current)=>((index-current+total*1.5)%total)-total/2;
+ const speed=.16; // 3D carousel: one new feature approximately every 6 seconds
+ let phase=2,lastTime=0,hovered=false,focused=false,dragging=false,dragX=0,dragPhase=0,moved=false;
+ function paint(){
+  const w=stage.clientWidth||900;
+  const cardWidth=cards[0].offsetWidth||200;
+  const radius=Math.min(w*.44,cardWidth*(w<560?1.58:2.65));
+  const center=Math.round(phase);
   cards.forEach((card,i)=>{
-   const delta=shortest(i,position),abs=Math.abs(delta);
-   const scale=1.11-Math.min(abs,2.5)*.087;
-   const turn=delta===0?0:-Math.sign(delta)*Math.min(39,Math.pow(abs,1.6)*13);
-   const x=delta*gap;
-   const opacity=abs>2.17?Math.max(0,1-(abs-2.17)*3.5):1;
-   card.style.transform='translate(-50%,-50%) translateX('+x.toFixed(2)+'px) rotateY('+turn.toFixed(2)+'deg) scale('+scale.toFixed(3)+')';
-   card.style.opacity=String(opacity);
-   card.style.zIndex=String(Math.max(1,10-Math.round(abs*2)));
-   card.style.pointerEvents=opacity>.32?'auto':'none';
-   const current=abs<.5;
-   card.setAttribute('aria-current',current?'true':'false');
+   const d=relative(i,phase),a=Math.abs(d);
+   // 3D turntable: front cards fan around an arc; the other 15 orbit out of view.
+   const angle=Math.max(-1.35,Math.min(1.35,d*.51));
+   const x=Math.sin(angle)*radius;
+   const depth=(Math.cos(angle)-1)*Math.min(330,cardWidth*1.75);
+   const y=(1-Math.cos(angle))*24;
+   const tilt=-Math.sin(angle)*49;
+   const scale=.81+.31*Math.cos(angle);
+   const visible=a<3.18;
+   const alpha=visible?Math.min(1,Math.max(0,(3.18-a)*2.8)):0;
+   card.style.transform='translate(-50%,-50%) translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,'+depth.toFixed(2)+'px) rotateY('+tilt.toFixed(2)+'deg) scale('+scale.toFixed(3)+')';
+   card.style.opacity=String(alpha);
+   card.style.visibility=visible?'visible':'hidden';
+   card.style.zIndex=String(Math.max(1,100-Math.round(a*10)));
+   card.style.pointerEvents=visible&&a<2.5?'auto':'none';
+   const current=Math.abs(relative(i,center))<.5;
    card.tabIndex=current?0:-1;
+   card.setAttribute('aria-current',String(current));
   });
-  const closest=wrap(Math.round(position));
-  counter.textContent=String(closest+1).padStart(2,'0')+' / '+String(count).padStart(2,'0')+' · '+cards[closest].dataset.title;
+  const selected=wrap(center);
+  counter.textContent=String(selected+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')+' · '+cards[selected].dataset.title;
  }
- function paused(){return hovered||focused||dragging||document.hidden||reducedMotion.matches}
- function tick(t){
-  if(lastTime&&!paused()){position=wrap(position+(Math.min(t-lastTime,64)/1000)*speed);}
-  lastTime=t;
-  render();
-  frame=requestAnimationFrame(tick);
+ function paused(){return hovered||focused||dragging||document.hidden||reducedMotion.matches;}
+ function animate(now){
+  if(lastTime&&!paused())phase=wrap(phase+Math.min(now-lastTime,70)/1000*speed);
+  lastTime=now;
+  paint();
+  requestAnimationFrame(animate);
  }
- function move(amount){position=wrap(position+amount);render();}
- document.querySelector('.lua-showcase-prev').addEventListener('click',()=>move(-1));
- document.querySelector('.lua-showcase-next').addEventListener('click',()=>move(1));
+ function move(change){phase=wrap(phase+change);paint();}
+ const prev=gallery.querySelector('.lua-showcase-prev'),next=gallery.querySelector('.lua-showcase-next');
+ prev.addEventListener('click',()=>move(-1));
+ next.addEventListener('click',()=>move(1));
  stage.addEventListener('keydown',e=>{
-  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
-   e.preventDefault();move(e.key==='ArrowRight'?1:-1);
-  }
+  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}
  });
  stage.addEventListener('pointerdown',e=>{
   if(e.pointerType==='mouse'&&e.button!==0)return;
-  dragging=true;startX=e.clientX;dragPosition=position;suppressClick=false;
+  dragging=true;dragX=e.clientX;dragPhase=phase;moved=false;
+  stage.setPointerCapture?.(e.pointerId);
  });
  stage.addEventListener('pointermove',e=>{
   if(!dragging)return;
-  const dx=e.clientX-startX;
-  if(Math.abs(dx)>8)suppressClick=true;
-  const gap=(cards[0].offsetWidth||190)*(stage.clientWidth<560?.93:1.11);
-  position=wrap(dragPosition-dx/gap);render();
+  const dx=e.clientX-dragX;
+  if(Math.abs(dx)>8)moved=true;
+  phase=wrap(dragPhase-dx/(stage.clientWidth<560?120:185));
+  paint();
  });
- const endDrag=()=>{dragging=false;};
- stage.addEventListener('pointerup',endDrag);
- stage.addEventListener('pointercancel',endDrag);
- window.addEventListener('pointerup',endDrag);
+ const finish=()=>{dragging=false;};
+ stage.addEventListener('pointerup',finish);
+ stage.addEventListener('pointercancel',finish);
  cards.forEach((card,i)=>card.addEventListener('click',e=>{
-  if(suppressClick){e.preventDefault();suppressClick=false;return;}
-  const delta=shortest(i,position);
-  if(Math.abs(delta)>.5){e.preventDefault();position=wrap(position+delta);render();}
+  if(moved){e.preventDefault();moved=false;return;}
+  const d=relative(i,phase);
+  if(Math.abs(d)>.5){e.preventDefault();move(d);}
  }));
  gallery.addEventListener('mouseenter',()=>{hovered=true;});
  gallery.addEventListener('mouseleave',()=>{hovered=false;});
  gallery.addEventListener('focusin',()=>{focused=true;});
  gallery.addEventListener('focusout',()=>{focused=gallery.contains(document.activeElement);});
  document.addEventListener('visibilitychange',()=>{lastTime=0;});
- window.addEventListener('resize',render);
- render();frame=requestAnimationFrame(tick);
+ window.addEventListener('resize',paint);
+ paint();requestAnimationFrame(animate);
 })();
 </script>
 </body></html>
