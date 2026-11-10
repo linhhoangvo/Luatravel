@@ -1089,6 +1089,88 @@ body{color:var(--lua-heading-ink)!important}
   linear-gradient(0deg,rgba(31,23,19,.52) 0%,rgba(53,37,28,.08) 52%,rgba(53,37,28,.24) 100%),
   rgba(102,74,53,.12)!important;
 }
+
+/* THE LÚA PHILOSOPHY — Namia Stories-inspired editorial narrative with three photos. */
+.lua-philosophy.lua-philosophy-stories{
+ display:block!important;min-height:0!important;
+ padding:clamp(65px,7vw,110px) 0 clamp(70px,7vw,115px)!important;
+ background:#F1EDE5!important;color:#403731!important;
+ overflow:hidden!important;
+}
+.lua-philosophy-stories .lua-stories-intro{
+ width:min(790px,calc(100% - 46px));
+ margin:0 auto clamp(48px,5vw,74px)!important;
+ text-align:center!important;
+}
+.lua-philosophy-stories .lua-stories-eyebrow{
+ display:block;margin:0 0 14px!important;
+ font:500 10px/1.5 'Jost','DM Sans',sans-serif!important;
+ letter-spacing:.23em!important;color:#987E68!important;
+}
+.lua-philosophy-stories .lua-stories-intro h2{
+ margin:0 auto 21px!important;
+ color:#403731!important;
+ font:400 clamp(2.8rem,4vw,4.6rem)/1.03 'Cormorant Garamond',Georgia,serif!important;
+ letter-spacing:-.035em!important;white-space:normal!important;
+}
+.lua-philosophy-stories .lua-stories-intro h2 em{
+ font:italic 400 1em 'Cormorant Garamond',Georgia,serif!important;
+}
+.lua-philosophy-stories .lua-stories-intro p{
+ color:#726960!important;
+ font:400 clamp(.91rem,1vw,1.02rem)/1.85 'Jost','DM Sans',sans-serif!important;
+ max-width:680px!important;margin:0 auto!important;
+}
+.lua-philosophy-stories .lua-stories-link{
+ display:inline-flex;align-items:center;justify-content:center;gap:30px;
+ margin-top:30px!important;padding:11px 24px!important;
+ border:1px solid #9B8B7F!important;color:#403731!important;
+ background:transparent!important;text-decoration:none!important;
+ font:400 .83rem/1.3 'Jost','DM Sans',sans-serif!important;
+ letter-spacing:.05em!important;transition:background .2s ease;
+}
+.lua-philosophy-stories .lua-stories-link:hover{background:#E7DED2!important}
+.lua-philosophy-stories .lua-stories-gallery{
+ width:min(1310px,calc(100% - 70px));margin:0 auto!important;
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:clamp(16px,2.1vw,32px)!important;
+}
+.lua-philosophy-stories .lua-stories-item{margin:0!important;min-width:0!important}
+.lua-philosophy-stories .lua-stories-item img{
+ display:block!important;width:100%!important;height:clamp(260px,27vw,405px)!important;
+ object-fit:cover!important;border-radius:0!important;
+ filter:sepia(.11) saturate(.79) contrast(.96)!important;
+ transition:filter .3s ease;
+}
+.lua-philosophy-stories .lua-stories-item:hover img{filter:sepia(.07) saturate(.9) contrast(.98)!important}
+.lua-philosophy-stories .lua-stories-item:first-child img{object-position:center 40%!important}
+.lua-philosophy-stories .lua-stories-item:nth-child(2) img{object-position:center 48%!important}
+.lua-philosophy-stories .lua-stories-item:nth-child(3) img{object-position:center 50%!important}
+.lua-philosophy-stories .lua-stories-item figcaption{
+ padding-top:16px!important;text-align:left!important;
+ color:#403731!important;
+}
+.lua-philosophy-stories .lua-stories-item figcaption span{
+ display:block;font:500 9px/1.4 'Jost','DM Sans',sans-serif!important;
+ letter-spacing:.17em!important;color:#957F6A!important;
+ margin-bottom:7px!important;
+}
+.lua-philosophy-stories .lua-stories-item figcaption strong{
+ display:block;font:400 clamp(1.55rem,2vw,2.15rem)/1.1 'Cormorant Garamond',Georgia,serif!important;
+ color:#403731!important;letter-spacing:-.012em!important;
+}
+@media(max-width:750px){
+ .lua-philosophy.lua-philosophy-stories{padding:58px 0 64px!important}
+ .lua-philosophy-stories .lua-stories-intro{margin-bottom:38px!important}
+ .lua-philosophy-stories .lua-stories-intro h2{font-size:clamp(2.8rem,8vw,4.1rem)!important}
+ .lua-philosophy-stories .lua-stories-intro p{font-size:.92rem!important;line-height:1.7!important}
+ .lua-philosophy-stories .lua-stories-gallery{
+  width:calc(100% - 42px);grid-template-columns:1fr!important;
+  gap:32px!important;
+ }
+ .lua-philosophy-stories .lua-stories-item img{height:clamp(260px,76vw,430px)!important}
+ .lua-philosophy-stories .lua-stories-item figcaption{padding-top:12px!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"><link rel="stylesheet" href="lua-timeless-theme.css?v=20261110"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -1129,19 +1211,26 @@ body{color:var(--lua-heading-ink)!important}
   
  </div>
 </section>
-<section class="lua-philosophy lua-philosophy-timeless" aria-label="The Lúa philosophy">
- <div class="lua-timeless-wrap">
-  <figure class="lua-timeless-visual">
-   <img src="hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg" alt="A quiet moment beside the heritage walls of Hoi An, Vietnam" loading="lazy">
-   <figcaption>Hội An, Vietnam</figcaption>
+<section class="lua-philosophy lua-philosophy-stories" aria-label="The Lúa philosophy">
+ <div class="lua-stories-intro">
+  <span class="lua-stories-eyebrow">THE LÚA PHILOSOPHY</span>
+  <h2>The beauty of <em>being here.</em></h2>
+  <p>Travel is not simply about the places you see. It is about the people you meet, the quiet moments you share, and the stories you carry home. From Hội An, we create private journeys through Vietnam that are personal, thoughtful, and beautifully unhurried.</p>
+  <a class="lua-stories-link" href="about.html">Discover our story <span aria-hidden="true">↗</span></a>
+ </div>
+ <div class="lua-stories-gallery" aria-label="Our Vietnam travel philosophy in pictures">
+  <figure class="lua-stories-item">
+   <img src="hero%20lua%20m%E1%BB%9Bi%20nh%E1%BA%A5t.jpg" loading="lazy" alt="Woman in áo dài with bicycle in historic Hội An">
+   <figcaption><span>01 — A SENSE OF PLACE</span><strong>Moments that stay</strong></figcaption>
   </figure>
-  <div class="lua-timeless-content">
-   <span class="lua-timeless-eyebrow">A DIFFERENT WAY TO TRAVEL</span>
-   <h2>The beauty of <em>being here.</em></h2>
-   <p>Beyond the places we visit are the moments we remember — an unexpected conversation, a quiet street at dawn, the feeling of truly belonging somewhere.</p>
-   <p>With deep local roots in Hội An, we shape private journeys through Vietnam that are personal, thoughtful and beautifully unhurried.</p>
-   <a class="lua-timeless-link" href="about.html">The Lúa philosophy <span aria-hidden="true">↗</span></a>
-  </div>
+  <figure class="lua-stories-item">
+   <img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" loading="lazy" alt="Colourful bougainvillea and daily life in Hội An">
+   <figcaption><span>02 — LOCAL CONNECTIONS</span><strong>Stories worth sharing</strong></figcaption>
+  </figure>
+  <figure class="lua-stories-item">
+   <img src="ninh%20binh.jpg" loading="lazy" alt="Peaceful river and limestone landscape in Ninh Bình">
+   <figcaption><span>03 — UNHURRIED JOURNEYS</span><strong>Vietnam, your way</strong></figcaption>
+  </figure>
  </div>
 </section>
 
