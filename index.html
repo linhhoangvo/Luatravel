@@ -727,6 +727,28 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  }
  .hero.lua-showcase-hero .lua-showcase-cta{margin-top:20px!important}
 }
+
+/* Ensure the entire hero headline + subtitle + CTA lockup is visually centered. */
+.hero.lua-showcase-hero .lua-showcase-inner{position:relative!important}
+.hero.lua-showcase-hero .lua-showcase-copy{
+ position:absolute!important;left:50%!important;right:auto!important;top:clamp(135px,17vh,190px)!important;
+ transform:translateX(-50%)!important;
+ width:calc(100% - 48px)!important;max-width:1100px!important;
+ margin:0!important;padding:0!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ text-align:center!important;z-index:3!important;
+}
+.hero.lua-showcase-hero .lua-showcase-copy h1,
+.hero.lua-showcase-hero .lua-showcase-copy p{
+ margin-left:auto!important;margin-right:auto!important;text-align:center!important;
+}
+.hero.lua-showcase-hero .lua-showcase-copy .lua-showcase-cta{
+ margin-left:auto!important;margin-right:auto!important;align-self:center!important;
+}
+.hero.lua-showcase-hero .lua-showcase-gallery{margin-top:auto!important}
+@media(max-width:700px){
+ .hero.lua-showcase-hero .lua-showcase-copy{top:clamp(137px,20vh,185px)!important;width:calc(100% - 26px)!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
