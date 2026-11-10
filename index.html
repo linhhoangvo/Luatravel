@@ -581,6 +581,15 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:750px){
  .lua-featured .lua-feature{height:clamp(350px,105vw,450px)!important}
 }
+
+/* Balance the approach section with a quiet, editorial image on the right. */
+.lua-how .lua-how-layout{display:grid!important;grid-template-columns:minmax(0,1.06fr) minmax(0,.86fr);align-items:center;gap:clamp(46px,6vw,110px);width:min(1340px,calc(100% - 80px));max-width:1340px;margin:0 auto}
+.lua-how .lua-how-steps{max-width:670px!important;width:100%!important;margin:0!important}
+.lua-how .lua-how-editorial{min-width:0;margin:0;align-self:center}
+.lua-how .lua-how-editorial img{width:100%;height:clamp(420px,40vw,580px);object-fit:cover;object-position:center;display:block;filter:saturate(.8) contrast(.95)}
+.lua-how .lua-how-editorial figcaption{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding-top:17px;font:600 9px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.13em;color:#87877e}
+@media(max-width:900px){.lua-how .lua-how-layout{width:calc(100% - 52px);grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px}.lua-how .lua-how-editorial img{height:450px}}
+@media(max-width:700px){.lua-how .lua-how-layout{display:flex!important;flex-direction:column;align-items:stretch;width:calc(100% - 36px);gap:45px}.lua-how .lua-how-editorial img{height:clamp(330px,88vw,500px)}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -682,7 +691,10 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 <div class="lua-how-step"><span class="lua-step-mark" aria-hidden="true">›</span><div><h3>3. We bring it together</h3><p>We'll suggest a route, places to stay and experiences that fit, then adjust them with you.</p></div></div>
 <div class="lua-how-step"><span class="lua-step-mark" aria-hidden="true">›</span><div><h3>4. Enjoy Vietnam your way</h3><p>Meet your local guides, settle into the journey and know our team is here when needed.</p></div></div>
 </div><a class="btn lua-how-cta" href="contact.html">Tell us your plans ↗</a></div>
-
+<figure class="lua-how-editorial">
+ <img src="mai%20chau.jpg" alt="A peaceful valley in Mai Chau, Vietnam" loading="lazy">
+ <figcaption><span>A JOURNEY SHAPED AROUND YOU</span><span>VIETNAM, AT YOUR OWN PACE</span></figcaption>
+</figure>
 </div></section>
 <section class="section lua-best" id="tours"><span id="best-experiences" class="journey-anchor" aria-hidden="true"></span><div class="container"><div class="section-top lua-best-top"><div><span class="eyebrow">A journey with Lúa</span><h2>Travel your own way</h2></div></div>
 <div class="lua-best-grid">
