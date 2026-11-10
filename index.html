@@ -987,6 +987,64 @@ body{color:var(--lua-heading-ink)!important}
 @media(max-width:750px){
  .lua-philosophy-timeless .lua-timeless-content h2{font-size:clamp(1.35rem,5.2vw,2.3rem)!important}
 }
+
+/* Namia-inspired Featured Journeys: editorial titles above, understated charcoal actions below.
+   Keep each tour's original image, wording, prices, and destination link. */
+.lua-featured .lua-feature{isolation:isolate;background:#443B35!important}
+.lua-featured .lua-feature::after{
+ background:linear-gradient(180deg,rgba(20,17,16,.44) 0%,rgba(20,17,16,.06) 38%,rgba(20,17,16,.10) 56%,rgba(20,17,16,.53) 100%)!important;
+ z-index:1;
+}
+.lua-featured .lua-feature>img{filter:saturate(.79) contrast(.94);transition:transform .8s ease,filter .35s ease}
+.lua-featured .lua-feature:hover>img{transform:scale(1.035);filter:saturate(.88) contrast(.97)}
+.lua-featured .lua-feature-badge{
+ top:18px!important;left:50%!important;transform:translateX(-50%);
+ width:max-content;max-width:calc(100% - 34px);
+ border:0!important;background:transparent!important;padding:0!important;
+ color:#F1EAE0!important;font-family:var(--lua-ui-sans)!important;
+ font-size:10px!important;font-weight:400!important;letter-spacing:.17em!important;
+ text-align:center;z-index:3;
+}
+.lua-featured .lua-feature-copy{
+ position:absolute!important;inset:0!important;bottom:0!important;top:0!important;
+ left:0!important;right:0!important;z-index:2!important;
+ padding:60px 22px 25px!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:flex-start!important;text-align:center!important;
+}
+.lua-featured .lua-feature-copy h3{
+ order:0!important;margin:12px 0 auto!important;
+ color:#F8F1E7!important;font-family:var(--lua-editorial-serif)!important;
+ font-size:clamp(1.95rem,2.25vw,2.75rem)!important;
+ font-weight:400!important;line-height:1.08!important;
+ letter-spacing:-.025em!important;text-shadow:0 1px 12px #271D1B66;
+}
+.lua-featured .lua-feature-region{
+ order:1!important;margin:0 0 9px!important;color:#EEE8DE!important;
+ font-family:var(--lua-ui-sans)!important;font-size:10px!important;
+ font-weight:400!important;letter-spacing:.16em!important;
+}
+.lua-featured .lua-feature-copy p{
+ order:2!important;margin:0 0 21px!important;color:#F5EEE6!important;
+ font-family:var(--lua-ui-sans)!important;font-weight:400!important;
+ font-size:.83rem!important;line-height:1.45!important;
+}
+.lua-featured .lua-feature-more{
+ order:3!important;display:inline-flex!important;align-items:center;justify-content:center;
+ align-self:center!important;min-height:47px;
+ padding:13px 22px!important;
+ background:#3C322E!important;color:#F6EFE6!important;
+ border:1px solid #3C322E!important;border-radius:0!important;
+ font-family:var(--lua-ui-sans)!important;font-weight:500!important;
+ font-size:.73rem!important;letter-spacing:.12em!important;
+ text-transform:uppercase!important;transition:background .2s ease;
+}
+.lua-featured .lua-feature:hover .lua-feature-more{background:#554740!important;border-color:#554740!important}
+@media(max-width:750px){
+ .lua-featured .lua-feature-copy{padding:56px 20px 22px!important}
+ .lua-featured .lua-feature-copy h3{font-size:clamp(2rem,7vw,2.7rem)!important}
+ .lua-featured .lua-feature-region{font-size:10px!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
