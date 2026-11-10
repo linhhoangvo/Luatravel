@@ -590,6 +590,20 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 .lua-how .lua-how-editorial figcaption{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding-top:17px;font:600 9px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.13em;color:#87877e}
 @media(max-width:900px){.lua-how .lua-how-layout{width:calc(100% - 52px);grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px}.lua-how .lua-how-editorial img{height:450px}}
 @media(max-width:700px){.lua-how .lua-how-layout{display:flex!important;flex-direction:column;align-items:stretch;width:calc(100% - 36px);gap:45px}.lua-how .lua-how-editorial img{height:clamp(330px,88vw,500px)}}
+
+/* Approach visual: smaller, shorter landscape crop for a lighter composition. */
+@media(min-width:901px){
+ .lua-how .lua-how-layout{grid-template-columns:minmax(0,1.12fr) minmax(0,.72fr)!important;gap:clamp(46px,6vw,110px)!important}
+ .lua-how .lua-how-editorial{width:100%;max-width:440px;justify-self:center}
+ .lua-how .lua-how-editorial img{height:clamp(295px,26vw,385px)!important}
+}
+@media(min-width:701px) and (max-width:900px){
+ .lua-how .lua-how-editorial img{height:340px!important}
+}
+@media(max-width:700px){
+ .lua-how .lua-how-editorial{width:100%;max-width:470px;align-self:center}
+ .lua-how .lua-how-editorial img{height:clamp(260px,65vw,360px)!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
