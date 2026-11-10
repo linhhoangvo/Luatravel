@@ -1076,6 +1076,19 @@ body{color:var(--lua-heading-ink)!important}
  font-weight:400!important;
  font-size:.87rem!important;
 }
+
+/* Warm, muted photographic grade for Featured Journeys only (Namia reference). */
+.lua-featured .lua-feature>img{
+ filter:sepia(.19) saturate(.75) contrast(.94) brightness(.91)!important;
+}
+.lua-featured .lua-feature:hover>img{
+ filter:sepia(.15) saturate(.82) contrast(.96) brightness(.94)!important;
+}
+.lua-featured .lua-feature::after{
+ background:
+  linear-gradient(0deg,rgba(31,23,19,.52) 0%,rgba(53,37,28,.08) 52%,rgba(53,37,28,.24) 100%),
+  rgba(102,74,53,.12)!important;
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
