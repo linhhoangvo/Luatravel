@@ -1,0 +1,78 @@
+/* LÚA TRAVEL — Shared Quiet Luxury / Timeless theme, 10 November 2026.
+   Inspired by warm materiality and restrained typography; original Lua identity retained.
+   Loaded after page-specific styles to unify the full site without changing layout. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap');
+:root{
+ --green:#403731;--deep:#362E2B;--cream:#F5F2EB;--soft:#EEEAE2;
+ --ink:#403731;--muted:#746B64;--gold:#9C8069;
+ --forest:#403731;--forest2:#362E2B;--off:#EEEAE2;--sand:#E7E0D5;--accent:#9C8069;
+ --lua-theme-serif:'Cormorant Garamond',Georgia,serif;
+ --lua-theme-sans:'Jost','DM Sans',Arial,sans-serif;
+}
+html{background:#F5F2EB}
+body{background:#F5F2EB!important;color:#403731!important;font-family:var(--lua-theme-sans)!important;font-weight:400}
+body p,body li,body input,body textarea,body select,body button{font-family:var(--lua-theme-sans)}
+h1,h2,h3,.tile h3,.tour h3,.faq-page h1,
+.lua-featured-heading h2,.lua-dest-carousel .section-top h2,
+.lua-philosophy-timeless .lua-timeless-content h2{
+ font-family:var(--lua-theme-serif)!important;font-weight:400!important;
+ letter-spacing:-.025em!important;color:#403731;
+}
+p,.lead,.tile p,.day p,.note,.facts p{color:#746B64}
+.eyebrow,.tag,.tour-type,.lua-timeless-eyebrow{color:#937C66!important;font-family:var(--lua-theme-sans)!important;letter-spacing:.16em!important;font-weight:500!important}
+.section,.journeys,.lua-featured,.lua-dest-carousel{background:#F5F2EB}
+.facts,.split>div,.cta,.lua-best{background:#EEEAE2!important}
+.tile,.tour{background:#F8F6F1}
+.filters{border-color:#CFC4B7}
+.filters button{border-color:#B9ADA0!important;color:#59493F!important;background:transparent;font-family:var(--lua-theme-sans)!important}
+.filters button.active{background:#403731!important;color:#F8F4EC!important;border-color:#403731!important}
+.btn,.form button[type='submit'],button[type='submit']{
+ background:#403731!important;border-color:#403731!important;color:#F8F4EC!important;
+ border-radius:0!important;font-family:var(--lua-theme-sans)!important;
+ font-weight:500!important;letter-spacing:.06em;
+}
+.btn:hover,.form button[type='submit']:hover,button[type='submit']:hover{background:#594A40!important;border-color:#594A40!important}
+.btn.white{background:#F5F2EB!important;color:#403731!important;border-color:#F5F2EB!important}
+.tile a.link,.textlink{color:#58483D!important;border-color:#A59585!important}
+.form label{color:#403731;font-weight:500}
+.form input,.form textarea,.form select{background:#FBF9F5!important;border-color:#C6B9AC!important;color:#403731!important;border-radius:0!important}
+.form input:focus-visible,.form textarea:focus-visible,.form select:focus-visible{outline:2px solid #9C8069;outline-offset:2px}
+.banner{color:#F9F4EB!important}
+.banner h1,.banner p,.banner .eyebrow{color:#F9F4EB!important}
+.banner{background-image:linear-gradient(90deg,rgba(37,29,26,.70),rgba(37,29,26,.22)),var(--photo)!important}
+.banner .btn{background:#F4EEE4!important;color:#403731!important;border-color:#F4EEE4!important}
+.header:not(.lua-showcase-header){background:#F1EDE5!important;color:#403731!important;border-color:#DDD3C7!important}
+.header .brand,.header .brand span{color:#403731!important}
+.header .brand img,.header .logo .lua-mark{filter:brightness(0)!important}
+.header .nav{font-family:var(--lua-theme-sans)!important}
+.header .nav a:not(:last-child){color:#403731!important;font-weight:500!important}
+.header .nav a:hover{color:#866E58!important}
+.header .nav a:last-child{background:transparent!important;color:#403731!important;border:1px solid #736459!important;border-radius:0!important;letter-spacing:.09em!important;font-weight:500!important}
+.footer,.lua-site-footer{background:#362E2B!important;color:#E6DCD0!important;font-family:var(--lua-theme-sans)!important}
+.footer p,.footer a,.lua-site-footer li a,.lua-site-footer .lua-footer-address,
+.lua-site-footer .lua-footer-company>a:not(:first-child){color:#D6C9BA!important}
+.lua-site-footer h4{color:#F2E9DE!important;font-family:var(--lua-theme-sans)!important;letter-spacing:.13em!important;font-weight:500!important;text-transform:uppercase!important}
+.lua-site-footer .lua-footer-banner{background:#423733!important;border-color:#79685C!important;border-radius:0!important}
+.lua-site-footer .lua-footer-banner strong{color:#F2E9DE!important}
+.lua-site-footer .lua-footer-banner>a{background:transparent!important;border:1px solid #B7A799!important;border-radius:0!important;color:#F8F1E8!important}
+.lua-site-footer .lua-footer-base{border-color:#76685E!important}
+.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)!important}
+.lua-site-footer a:hover,.footer a:hover{color:#FFF!important}
+/* Soft warm photo grading for gallery/tour imagery only, never logos. */
+.tile img,.tour-img img,.lt-photo-grid img,.destination img,
+.lua-best-image img,.lua-how-editorial img{
+ filter:sepia(.09) saturate(.86) contrast(.97)!important;
+}
+.tile:hover img,.tour:hover .tour-img img,.destination:hover img{filter:sepia(.07) saturate(.94) contrast(.99)!important}
+/* Homepage already has bespoke layout and palette; only unify foundational color. */
+body:has(.lua-showcase-hero) .header{background:#F1EDE5!important}
+body:has(.lua-showcase-hero) .header .logo .lua-logo-wordmark{color:#403731!important}
+body:has(.lua-showcase-hero) .hero h1,
+body:has(.lua-showcase-hero) .hero p{color:#F8F3EA!important}
+body:has(.lua-showcase-hero) .lua-feature .lua-feature-copy h3,
+body:has(.lua-showcase-hero) .lua-feature .lua-feature-copy p,
+body:has(.lua-showcase-hero) .lua-dest-carousel .destination-info h3{color:#F8F3EA!important}
+@media(max-width:750px){
+ .header .nav{background:#F1EDE5!important;color:#403731!important}
+ .header .nav a{color:#403731!important}
+}
