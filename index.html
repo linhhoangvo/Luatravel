@@ -571,6 +571,16 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 
 /* Homepage hero image: uploaded Ha Long Bay photo (replaces Sapa background only). */
 .hero.lua-showcase-hero::before{background-image:url('Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg?v=20261109')!important;background-position:center center!important;background-size:cover!important}
+
+/* Featured Journeys: more restrained card proportions and spacing. */
+.lua-featured .lua-featured-grid{gap:20px!important}
+.lua-featured .lua-feature{height:clamp(380px,34vw,500px)!important}
+.lua-featured .lua-feature-copy{bottom:25px!important;left:25px!important;right:23px!important}
+.lua-featured .lua-feature h3{font-size:clamp(1.9rem,2.35vw,2.9rem)!important}
+.lua-featured .lua-feature-badge{top:19px!important;left:19px!important}
+@media(max-width:750px){
+ .lua-featured .lua-feature{height:clamp(350px,105vw,450px)!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
