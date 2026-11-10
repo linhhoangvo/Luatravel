@@ -679,6 +679,24 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  .lua-philosophy-timeless .lua-timeless-content p{font-size:.92rem!important;line-height:1.75!important}
  .lua-philosophy-timeless .lua-timeless-link{margin-top:15px!important}
 }
+
+/* Ao dai hero art direction: keep the subject's face unobstructed by headline. */
+@media(min-width:901px){
+ .hero.lua-showcase-hero::before{background-position:center 43%!important}
+ .hero.lua-showcase-hero .lua-showcase-copy{width:min(46%,660px)!important;max-width:660px!important;margin-left:auto!important;margin-right:0!important;align-self:flex-end!important;align-items:flex-start!important;text-align:left!important}
+ .hero.lua-showcase-hero .lua-showcase-copy h1{width:auto!important;text-align:left!important;margin-left:0!important;margin-right:0!important;font-size:clamp(3rem,4vw,5.5rem)!important}
+ .hero.lua-showcase-hero .lua-showcase-copy p{width:auto!important;max-width:100%!important;text-align:left!important;margin-left:0!important;margin-right:0!important}
+}
+@media(min-width:701px) and (max-width:900px){
+ .hero.lua-showcase-hero::before{background-position:center 37%!important}
+ .hero.lua-showcase-hero .lua-showcase-copy{width:54%!important;max-width:none!important;align-self:flex-end!important;align-items:flex-start!important;text-align:left!important;margin-left:auto!important;margin-right:0!important}
+ .hero.lua-showcase-hero .lua-showcase-copy h1{font-size:clamp(2.65rem,4.3vw,3.8rem)!important;text-align:left!important;margin-left:0!important;white-space:nowrap!important}
+ .hero.lua-showcase-hero .lua-showcase-copy p{text-align:left!important;margin-left:0!important;white-space:normal!important}
+}
+@media(max-width:700px){
+ .hero.lua-showcase-hero::before{background-position:center 13%!important}
+ .hero.lua-showcase-hero .lua-showcase-copy{padding-top:4px}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
