@@ -749,6 +749,30 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
 @media(max-width:700px){
  .hero.lua-showcase-hero .lua-showcase-copy{top:clamp(137px,20vh,185px)!important;width:calc(100% - 26px)!important}
 }
+
+/* Hero positioning fix: full-width copy layer, centered relative to the hero, not to a side column. */
+.hero.lua-showcase-hero .lua-showcase-inner{position:relative!important}
+.hero.lua-showcase-hero .lua-showcase-inner > .lua-showcase-copy{
+ position:absolute!important;inset-inline:0!important;left:0!important;right:0!important;
+ top:clamp(135px,17vh,190px)!important;transform:none!important;
+ box-sizing:border-box!important;width:100%!important;max-width:none!important;
+ padding-inline:20px!important;margin:0!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;text-align:center!important;
+}
+.hero.lua-showcase-hero .lua-showcase-inner > .lua-showcase-copy > h1{
+ width:100%!important;max-width:none!important;text-align:center!important;
+ margin-inline:0!important;
+}
+.hero.lua-showcase-hero .lua-showcase-inner > .lua-showcase-copy > p{
+ text-align:center!important;margin-inline:auto!important
+}
+.hero.lua-showcase-hero .lua-showcase-inner > .lua-showcase-copy > .lua-showcase-cta{
+ margin-inline:auto!important;align-self:center!important
+}
+@media(max-width:700px){
+ .hero.lua-showcase-hero .lua-showcase-inner > .lua-showcase-copy{top:clamp(135px,20vh,188px)!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
