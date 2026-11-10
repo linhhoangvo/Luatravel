@@ -609,7 +609,7 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
    </div>
    <button class="lua-showcase-control lua-showcase-next" type="button" aria-label="Next destination">›</button>
   </div>
-  <div class="lua-showcase-footer"><span>DISCOVER VIETNAM WITH LÚA</span><span id="lua-showcase-counter" aria-live="polite">03 / 20 · Sapa</span></div>
+  
  </div>
 </section>
 <section class="lua-philosophy lua-philosophy-timeless" aria-label="The Lúa philosophy">
@@ -733,7 +733,7 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
    card.setAttribute('aria-current',String(current));
   });
   const selected=wrap(center);
-  counter.textContent=String(selected+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')+' · '+cards[selected].dataset.title;
+  if(counter)counter.textContent=String(selected+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')+' · '+cards[selected].dataset.title;
  }
  function paused(){return hovered||focused||dragging||document.hidden||reducedMotion.matches;}
  function animate(now){
