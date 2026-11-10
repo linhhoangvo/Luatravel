@@ -973,6 +973,20 @@ body{color:var(--lua-heading-ink)!important}
 .lua-feature .lua-feature-copy p,
 .destination .destination-info,
 .destination .destination-info h3{color:#F8F3EA!important}
+
+/* Keep philosophy headline on a single refined editorial line. */
+.lua-philosophy-timeless .lua-timeless-content h2{
+ white-space:nowrap!important;
+ font-size:clamp(1.7rem,2.55vw,2.75rem)!important;
+ line-height:1.12!important;
+ letter-spacing:-.035em!important;
+}
+@media(max-width:1000px){
+ .lua-philosophy-timeless .lua-timeless-content h2{font-size:clamp(1.45rem,2.55vw,2.15rem)!important}
+}
+@media(max-width:750px){
+ .lua-philosophy-timeless .lua-timeless-content h2{font-size:clamp(1.35rem,5.2vw,2.3rem)!important}
+}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -1021,7 +1035,7 @@ body{color:var(--lua-heading-ink)!important}
   </figure>
   <div class="lua-timeless-content">
    <span class="lua-timeless-eyebrow">A DIFFERENT WAY TO TRAVEL</span>
-   <h2>The beauty of<br><em>being here.</em></h2>
+   <h2>The beauty of <em>being here.</em></h2>
    <p>Beyond the places we visit are the moments we remember — an unexpected conversation, a quiet street at dawn, the feeling of truly belonging somewhere.</p>
    <p>With deep local roots in Hội An, we shape private journeys through Vietnam that are personal, thoughtful and beautifully unhurried.</p>
    <a class="lua-timeless-link" href="about.html">The Lúa philosophy <span aria-hidden="true">↗</span></a>
