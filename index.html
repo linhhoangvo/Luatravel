@@ -636,9 +636,15 @@ h3{font-size:clamp(1.6rem,2.4vw,2.25rem);font-weight:400}
  .hero.lua-showcase-hero .lua-showcase-card{height:clamp(125px,24vw,160px)!important;width:clamp(91px,17vw,116px)!important}
  .hero.lua-showcase-hero .lua-showcase-stage{height:180px!important;min-height:165px!important}
 }
+
+/* Homepage logo lockup: understated Lúa Travel wordmark below the emblem. */
+.header .logo{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:1px!important;text-decoration:none!important;white-space:nowrap!important}
+.header .logo .lua-mark{width:56px!important;height:56px!important;flex:none}
+.header .logo .lua-logo-wordmark{display:block;color:#fff!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:10px!important;font-weight:600!important;letter-spacing:.19em!important;line-height:1.25!important;text-transform:uppercase!important;text-align:center!important}
+@media(max-width:700px){.header .logo .lua-mark{width:46px!important;height:46px!important}.header .logo .lua-logo-wordmark{font-size:8px!important;letter-spacing:.16em!important}}
 </style><link rel="stylesheet" href="type-scale.css"><link rel="stylesheet" href="compact-typography.css"></head>
 <body>
-<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero lua-showcase-hero" aria-label="Discover Vietnam">
  <div class="lua-showcase-inner">
