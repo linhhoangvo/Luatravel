@@ -1479,6 +1479,29 @@ html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)
  .lua-selected-stays .lua-stays-card h3{font-size:1.55rem!important}
 }
 </style>
+
+<!-- Site-wide compact editorial typography, matching Destinations reference (2026-11-11) -->
+<style id="lua-compact-type-system">
+/* A single smaller, restrained scale for content across all pages. Navigation/footer are unchanged. */
+html body main h1{font-size:clamp(2.15rem,3.6vw,3.25rem)!important;line-height:1.15!important;letter-spacing:-.025em!important}
+html body main h2{font-size:clamp(1.35rem,2vw,1.65rem)!important;line-height:1.25!important;letter-spacing:-.015em!important}
+html body main h3{font-size:clamp(1rem,1.35vw,1.15rem)!important;line-height:1.35!important;letter-spacing:-.01em!important}
+html body main p{font-size:clamp(.78rem,.95vw,.9rem)!important;line-height:1.65!important}
+html body main .eyebrow,html body main .tag{font-size:.64rem!important}
+html body main :is(.lua-stays-card,.lc-card,.tour,.lua-best-card) h3{font-size:clamp(1rem,1.35vw,1.15rem)!important}
+/* Featured homepage heading follows the same restrained editorial hierarchy. */
+html body main .lua-stays-heading h2{font-size:clamp(1.55rem,2.25vw,1.85rem)!important}
+html body main .lua-stays-card h3{font-size:clamp(1rem,1.35vw,1.15rem)!important}
+/* Keep the large first-screen statement as an intentional, but less oversized focal point. */
+html body main .hero h1{font-size:clamp(2.8rem,4.6vw,4.5rem)!important}
+@media(max-width:700px){
+ html body main h1{font-size:clamp(2rem,8vw,2.6rem)!important}
+ html body main h2{font-size:1.35rem!important}
+ html body main h3{font-size:1.03rem!important}
+ html body main .hero h1{font-size:clamp(2.7rem,10vw,3.5rem)!important}
+ html body main .lua-stays-heading h2{font-size:1.5rem!important}
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
