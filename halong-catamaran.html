@@ -223,6 +223,29 @@ html body{background:#fbfbf9!important;color:#202522!important}
 .hc-finale .hc-cta{background:#293c33!important;border:1px solid #293c33!important;color:#fff!important}
 @media(max-width:850px){.hc-overview-editorial .hc-overview-grid{grid-template-columns:1fr!important}.hc-overview-editorial .hc-overview-photo{height:320px!important}.hc-card-grid{grid-template-columns:1fr!important;gap:35px!important}.hc-card-image{height:300px!important}.hc-practical-grid{grid-template-columns:1fr!important;gap:25px!important}}
 @media(max-width:600px){.hc-container{width:calc(100% - 38px)!important}.hc-hero.hc-hero-editorial{height:590px!important;min-height:520px!important;align-items:flex-end!important;padding:0 0 60px!important}.hc-hero-editorial .hc-hero-content{width:calc(100% - 38px)!important}.hc-hero-editorial h1{font-size:clamp(4.1rem,12vw,5.7rem)!important}.hc-overview.hc-overview-editorial{padding:57px 0!important}.hc-journeys{padding:60px 0!important}.hc-card-image{height:235px!important}.hc-practical{padding:55px 0!important}}
+</style><style id="hc-gallery-styles">
+/* Supplier-photography gallery: refined editorial asymmetry */
+.hc-gallery{background:#fff!important;padding:70px 0 80px!important}
+.hc-gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:29px}
+.hc-gallery-heading h2{font:400 clamp(2.8rem,4vw,4.3rem)/1 'Cormorant Garamond',Georgia,serif!important;color:#202522!important;letter-spacing:-.025em!important;margin:12px 0 0!important}
+.hc-gallery-heading h2 em{font-weight:400;font-style:italic}
+.hc-gallery-heading p{font:400 13px/1.65 'Jost',sans-serif!important;color:#68736b!important;margin:0 0 5px!important}
+.hc-gallery-grid{display:grid;grid-template-columns:1.25fr .85fr .85fr;grid-template-rows:repeat(2,220px);gap:12px}
+.hc-gallery-photo{display:block;position:relative;overflow:hidden;background:#eceee9;border:0;padding:0;cursor:zoom-in;min-width:0;min-height:0}
+.hc-gallery-photo-main{grid-row:span 2}
+.hc-gallery-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:none!important;transition:transform .45s ease}
+.hc-gallery-photo:hover img{transform:scale(1.035)}
+.hc-gallery-photo:focus-visible{outline:3px solid #304830;outline-offset:3px}
+.hc-gallery-credit{font:400 11px 'Jost',sans-serif!important;color:#7c8780!important;margin:16px 0 0!important}
+.hc-gallery-dialog{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;border:0;padding:70px 75px 50px;background:#131816f5;color:white;box-sizing:border-box}
+.hc-gallery-dialog::backdrop{background:#131816e8}
+.hc-gallery-dialog:not([open]){display:none}
+.hc-gallery-dialog figure{height:100%;max-width:1200px;margin:auto;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hc-gallery-dialog figure img{display:block;width:100%;max-height:calc(100dvh - 180px);height:auto;object-fit:contain;filter:none!important}
+.hc-gallery-dialog figcaption{margin-top:14px;color:#c9d1ca;font:400 12px 'Jost',sans-serif!important;letter-spacing:.08em}
+.hc-gallery-close,.hc-gallery-prev,.hc-gallery-next{position:absolute;background:transparent;color:#fff;border:0;font:300 40px/1 'Jost',sans-serif;cursor:pointer}
+.hc-gallery-close{top:24px;right:30px}.hc-gallery-prev{left:20px;top:50%;transform:translateY(-50%)}.hc-gallery-next{right:20px;top:50%;transform:translateY(-50%)}
+@media(max-width:750px){.hc-gallery{padding:48px 0 54px!important}.hc-gallery-heading{display:block}.hc-gallery-heading p{margin-top:13px!important}.hc-gallery-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,150px);gap:8px}.hc-gallery-photo-main{grid-row:span 2}.hc-gallery-dialog{padding:70px 40px 55px}.hc-gallery-prev{left:4px}.hc-gallery-next{right:4px}}
 </style></head>
 <body>
 <header class="hc-nav-wrap"><div class="hc-nav">
@@ -248,6 +271,26 @@ html body{background:#fbfbf9!important;color:#202522!important}
 <a class="hc-overview-link" href="#journeys">Explore the programmes ↗</a>
 </div><figure class="hc-overview-photo"><img src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran sailing through Ha Long Bay" loading="lazy"></figure></div>
 </div></section>
+<section class="hc-gallery" id="hc-gallery" aria-labelledby="hc-gallery-title">
+<div class="hc-container">
+ <div class="hc-gallery-heading"><div><span class="hc-kicker">A CLOSER LOOK</span><h2 class="hc-serif" id="hc-gallery-title">Life on the <em>water.</em></h2></div><p>Moments aboard The Halong Catamaran.</p></div>
+ <div class="hc-gallery-grid">
+ <button class="hc-gallery-photo hc-gallery-photo-main" type="button" data-gallery-index="0" aria-label="View photo 1 of 6: The Halong Catamaran — vessel and bay"><img src="https://drive.google.com/thumbnail?id=1B_wXwMr5weqrvSS-QHqZVC1jx1caX3Cv&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — vessel and bay"></button>
+ <button class="hc-gallery-photo" type="button" data-gallery-index="1" aria-label="View photo 2 of 6: The Halong Catamaran — onboard view"><img src="https://drive.google.com/thumbnail?id=1MPmzLJ4fMNhrzAfhftgQb1Pcv3jnct69&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — onboard view"></button>
+ <button class="hc-gallery-photo" type="button" data-gallery-index="2" aria-label="View photo 3 of 6: The Halong Catamaran — cruising experience"><img src="https://drive.google.com/thumbnail?id=1aNX7cd2J0pVK7Gph1UJIK8DOmV1EXbZW&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — cruising experience"></button>
+ <button class="hc-gallery-photo" type="button" data-gallery-index="3" aria-label="View photo 4 of 6: The Halong Catamaran — scenery on board"><img src="https://drive.google.com/thumbnail?id=1S_yi_1icIe6R6125vvJABSpTIj5WXmzI&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — scenery on board"></button>
+ <button class="hc-gallery-photo" type="button" data-gallery-index="4" aria-label="View photo 5 of 6: The Halong Catamaran — deck and vessel"><img src="https://drive.google.com/thumbnail?id=1DY0bN0XCYVFreB2HOjl9-PphU4_AsU6f&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — deck and vessel"></button>
+ <button class="hc-gallery-photo" type="button" data-gallery-index="5" aria-label="View photo 6 of 6: The Halong Catamaran — another view of the boat"><img src="https://drive.google.com/thumbnail?id=1oEVn83jBdvQJqigOB5JzBxXUapYSk_fZ&amp;sz=w1600" loading="lazy" alt="The Halong Catamaran — another view of the boat"></button>
+ </div>
+ <p class="hc-gallery-credit">Photography: The Halong Catamaran · Supplier image collection</p>
+</div>
+</section>
+<dialog class="hc-gallery-dialog" id="hc-gallery-dialog" aria-label="Photo gallery">
+ <button class="hc-gallery-close" type="button" aria-label="Close gallery">×</button>
+ <button class="hc-gallery-prev" type="button" aria-label="Previous photo">‹</button>
+ <figure><img id="hc-gallery-large" alt=""><figcaption id="hc-gallery-counter"></figcaption></figure>
+ <button class="hc-gallery-next" type="button" aria-label="Next photo">›</button>
+</dialog>
 <section class="hc-journeys" id="journeys"><div class="hc-container"><div class="hc-center"><span class="hc-kicker">THE PROGRAMMES</span><h2 class="hc-serif">Choose your sailing.</h2><p>Three options departing from Tuan Chau Marina. Timings are indicative and will be confirmed for your travel date.</p></div>
 <div class="hc-card-grid">
 <article class="hc-card"><img class="hc-card-image" src="https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg" alt="The Halong Catamaran in the limestone bay" loading="lazy"><div class="hc-card-content"><small>FULL DAY · APPROX. 6 HOURS ON BOARD</small><h3>Premium Day Cruise</h3><p>A longer daytime cruise with lunch and activities in Lan Ha Bay.</p><ul><li>Boarding around 11:10–11:45</li><li>Lunch on board</li><li>Kayaking or bamboo boat at Bright &amp; Dark Cave</li><li>Swimming and water activities, weather permitting</li><li>Cooking demonstration and sunset tea</li><li>Return around 17:15–18:00</li></ul><a href="contact.html?interest=Halong%20Catamaran%20Premium%20full-day%20cruise">Enquire ↗</a></div></article>
@@ -264,4 +307,15 @@ html body{background:#fbfbf9!important;color:#202522!important}
 
 <section class="hc-finale"><span class="hc-kicker">PLAN YOUR CRUISE</span><h2 class="hc-serif">The bay is waiting.</h2><p>Share your date and group size. We’ll check the options.</p><a class="hc-cta" href="contact.html?interest=The%20Halong%20Catamaran">Enquire with Lúa <span aria-hidden="true">↗</span></a></section>
 </main><footer class="hc-footer">Lúa Travel &amp; Tours · Thoughtfully crafted journeys in Vietnam · <a href="cruise.html">All cruises</a></footer>
-</body></html>
+<script>
+(()=>{const gallery=document.getElementById('hc-gallery'),dialog=document.getElementById('hc-gallery-dialog');if(!gallery||!dialog)return;
+const buttons=[...gallery.querySelectorAll('[data-gallery-index]')],large=document.getElementById('hc-gallery-large'),counter=document.getElementById('hc-gallery-counter');let active=0;
+function paint(i){active=(i+buttons.length)%buttons.length;const original=buttons[active].querySelector('img');large.src=original.src;large.alt=original.alt;counter.textContent=(active+1)+' / '+buttons.length;}
+buttons.forEach((b,i)=>b.addEventListener('click',()=>{paint(i);dialog.showModal();}));
+dialog.querySelector('.hc-gallery-close').addEventListener('click',()=>dialog.close());
+dialog.querySelector('.hc-gallery-prev').addEventListener('click',()=>paint(active-1));
+dialog.querySelector('.hc-gallery-next').addEventListener('click',()=>paint(active+1));
+dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+dialog.addEventListener('keydown',e=>{if(e.key==='ArrowRight')paint(active+1);if(e.key==='ArrowLeft')paint(active-1);});
+})();
+</script></body></html>
