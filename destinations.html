@@ -363,6 +363,46 @@ html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)
 /* Extra-small section headings — Explore / Company / Support */
 .lua-site-footer h4{font-size:.9rem!important;letter-spacing:.12em!important}
 @media(max-width:640px){.lua-site-footer h4{font-size:.86rem!important}}
+
+/* TIA-inspired subtle CTA integrated with footer — 2026-11-11 */
+.lua-site-footer .lua-footer-banner{
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:14px!important;min-height:58px!important;margin:19px 0 15px!important;
+  padding:11px 18px!important;border:1px solid rgba(225,200,170,.14)!important;
+  border-radius:0!important;background:rgba(255,255,255,.025)!important;
+  box-shadow:none!important;
+}
+.lua-site-footer .lua-footer-banner:before{
+  left:15px!important;top:12px!important;bottom:12px!important;height:auto!important;
+  background:rgba(225,196,167,.36)!important;
+}
+.lua-site-footer .lua-footer-banner>div{padding-left:12px!important}
+.lua-site-footer .lua-footer-banner strong{
+  font:italic 400 1.2rem/1.15 'Cormorant Garamond',Georgia,serif!important;
+  color:#ead7c2!important;letter-spacing:0!important;
+}
+.lua-site-footer .lua-footer-banner span{
+  margin-top:2px!important;font:400 .73rem/1.4 'Jost','DM Sans',sans-serif!important;color:#cbc5bd!important;
+}
+.lua-site-footer .lua-footer-banner>a{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  flex:none!important;margin:0!important;padding:8px 13px!important;
+  background:transparent!important;border:1px solid rgba(230,201,172,.33)!important;
+  border-radius:0!important;color:#e6c9ac!important;
+  font:500 .78rem/1.15 'Jost','DM Sans',sans-serif!important;letter-spacing:.025em!important;
+}
+.lua-site-footer .lua-footer-banner>a:hover{
+  background:rgba(230,201,172,.08)!important;
+  border-color:rgba(230,201,172,.58)!important;color:#f1dcc4!important;
+}
+@media(max-width:640px){
+ .lua-site-footer .lua-footer-banner{display:block!important;min-height:0!important;margin:18px 0 15px!important;padding:13px 15px!important}
+ .lua-site-footer .lua-footer-banner:before{left:13px!important;top:13px!important;bottom:auto!important;height:36px!important}
+ .lua-site-footer .lua-footer-banner>div{padding-left:11px!important}
+ .lua-site-footer .lua-footer-banner strong{font-size:1.13rem!important}
+ .lua-site-footer .lua-footer-banner span{font-size:.7rem!important}
+ .lua-site-footer .lua-footer-banner>a{margin:11px 0 0 11px!important;padding:7px 11px!important;font-size:.76rem!important}
+}
 </style>
 </head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lua-dest-page">
 <section class="lua-dest-hero"><div class="wrap lua-dest-hero-content"><span class="lua-dest-label">Vietnam / Our destinations</span><div class="lua-dest-hero-bottom"><h1>Discover Vietnam</h1><p>From the mountains to the sea, at your own pace.</p></div></div></section>
