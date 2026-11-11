@@ -72,3 +72,43 @@ p,.lead,.note,.facts p{color:#555A58}
 /* Do not recolour or filter client-provided photos. */
 .lua-featured .lua-feature>img,.lua-philosophy-stories img,.lc-card-photo img,.hc-card-image,.hc-overview-photo img{filter:none!important}
 @media(max-width:750px){.header .nav{background:#fff!important}.header .nav a{color:#181818!important}}
+
+/* Footer hard reset — exact high-specificity rules to prevent older Namia overrides */
+html body footer.footer.lua-site-footer,
+html body footer.lua-site-footer,
+html body footer.footer,
+html body .hc-footer,
+html body .lc-detail-footer,
+html body .lj-footer{
+ background-color:#181818!important;
+ background-image:none!important;
+ color:#F7F7F5!important;
+}
+html body footer.lua-site-footer .lua-footer-inner,
+html body footer.lua-site-footer .lua-footer-grid,
+html body footer.lua-site-footer .lua-footer-company{background:transparent!important}
+html body footer.lua-site-footer h4,
+html body footer.lua-site-footer .lua-footer-banner strong{color:#FFFFFF!important}
+html body footer.lua-site-footer a,
+html body footer.lua-site-footer li a,
+html body footer.lua-site-footer .lua-footer-address,
+html body footer.lua-site-footer .lua-footer-company>a:not(:first-child),
+html body footer.lua-site-footer .lua-footer-banner span,
+html body footer.lua-site-footer .lua-footer-base,
+html body footer.lua-site-footer .lua-footer-base span{
+ color:#DADDD9!important;
+}
+html body footer.lua-site-footer .lua-footer-banner{
+ background:#252A27!important;
+ border-color:#454D46!important;
+}
+html body footer.lua-site-footer .lua-footer-banner>a{
+ background:#304830!important;
+ border:1px solid #607660!important;
+ color:#FFFFFF!important;
+}
+html body footer.lua-site-footer .lua-footer-base{border-color:#464B47!important}
+html body footer.lua-site-footer .lua-footer-social a{
+ background:#FFFFFF!important;color:#181818!important;
+}
+html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)!important}
