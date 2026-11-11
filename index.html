@@ -1502,6 +1502,29 @@ html body main .hero h1{font-size:clamp(2.8rem,4.6vw,4.5rem)!important}
  html body main .lua-stays-heading h2{font-size:1.5rem!important}
 }
 </style>
+<style id="lua-featured-cta-contrast">
+/* Featured journeys: high-contrast refined CTA, 2026-11-11 */
+html body main .lua-featured .lua-feature .lua-feature-more{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:41px!important;padding:10px 20px!important;
+  background:#f4eee4!important;color:#272b27!important;
+  border:1px solid #f4eee4!important;border-radius:2px!important;
+  box-shadow:0 3px 15px rgba(0,0,0,.12)!important;
+  font:500 .76rem/1.2 'Jost','DM Sans',sans-serif!important;
+  letter-spacing:.035em!important;text-transform:none!important;
+  transition:background .2s,border-color .2s,transform .2s!important;
+}
+html body main .lua-featured .lua-feature:hover .lua-feature-more,
+html body main .lua-featured .lua-feature:focus-visible .lua-feature-more{
+  background:#fff!important;border-color:#fff!important;color:#202521!important;
+  transform:translateY(-2px);
+}
+@media(max-width:700px){
+ html body main .lua-featured .lua-feature .lua-feature-more{
+   min-height:38px!important;padding:9px 16px!important;font-size:.73rem!important;
+ }
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
