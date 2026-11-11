@@ -1,45 +1,112 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="The Halong Catamaran day cruises: Premium full-day, sunrise and dinner options across Ha Long and Lan Ha Bay."><title>The Halong Catamaran | Lúa Travel &amp; Tours</title>
-<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="lua-timeless-theme.css?v=20261111">
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Explore The Halong Catamaran Premium Day, Sunrise and Dinner Cruises in Ha Long and Lan Ha Bay with Lúa Travel.">
+<title>The Halong Catamaran | Lúa Travel &amp; Tours</title>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="lua-timeless-theme.css?v=20261111">
 <style>
-body{margin:0;background:#F5F2EB!important;color:#403731!important;font-family:'Jost',Arial,sans-serif!important}
-.hc-wrap{max-width:1200px;width:calc(100% - 48px);margin:auto}.hc-head{background:#F1EDE5;padding:20px max(24px,calc((100vw - 1200px)/2));display:flex;justify-content:space-between;gap:20px;align-items:center}
-.hc-head a{color:#403731;text-decoration:none;font:500 .8rem 'Jost',sans-serif}.hc-brand{letter-spacing:.18em!important;font-size:1rem!important}
-.hc-nav{display:flex;gap:24px;flex-wrap:wrap}
-.hc-intro{text-align:center;padding:78px 0 48px}.hc-eyebrow{font:500 .66rem 'Jost',sans-serif!important;letter-spacing:.18em;color:#9A7D63}
-.hc-intro h1{font:400 clamp(3.3rem,6vw,6rem)/1 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;letter-spacing:-.03em;margin:18px 0}
-.hc-intro p{font:400 1rem/1.8 'Jost',sans-serif!important;color:#756A61;max-width:710px;margin:auto}
-.hc-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:14px}.hc-hero img{width:100%;height:clamp(300px,38vw,480px);object-fit:cover;filter:sepia(.08) saturate(.86) contrast(.97)}
-.hc-main{padding:70px 0}.hc-main h2,.hc-options h2{font:400 clamp(2.5rem,4vw,4.2rem)/1.1 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;margin:0 0 20px}
-.hc-main p{max-width:780px;color:#756A61;font:400 .96rem/1.85 'Jost',sans-serif}
-.hc-highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:38px}
-.hc-highlight{background:#E9E0D5;padding:26px 22px;font:400 1rem/1.5 'Jost',sans-serif;color:#403731}
-.hc-highlight small{display:block;color:#977D66;font:500 .64rem 'Jost',sans-serif;letter-spacing:.15em;margin-bottom:12px}
-.hc-options{background:#EAE2D8;padding:70px 0 90px}.hc-options>div>p{color:#756A61;max-width:730px;line-height:1.8;margin:0 0 33px}
-.hc-options-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.hc-option{background:#FBF8F3;padding:32px;display:flex;flex-direction:column;min-height:400px}
-.hc-option .hc-eyebrow{display:block;margin-bottom:16px}.hc-option h3{font:400 2.35rem/1.04 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;margin:0 0 18px}
-.hc-option p{color:#756A61;font:400 .86rem/1.7 'Jost',sans-serif;margin:0 0 14px}
-.hc-option ul{padding-left:18px;margin:0 0 24px;color:#756A61;font:400 .84rem/1.8 'Jost',sans-serif}
-.hc-option a{align-self:flex-start;margin-top:auto;padding:12px 18px;border:1px solid #85766A;color:#403731;font:400 .83rem 'Jost',sans-serif;text-decoration:none}
-.hc-option a:hover{background:#E8DED2}
-.hc-notes{padding:58px 0 75px}.hc-notes h2{font:400 2.7rem 'Cormorant Garamond',Georgia,serif!important;color:#403731!important}
-.hc-notes p,.hc-notes li{font:400 .9rem/1.8 'Jost',sans-serif;color:#756A61}
-.hc-note-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
-.hc-footer{background:#362E2B;color:#E8DDD0;text-align:center;padding:34px;font:400 .8rem 'Jost',sans-serif}.hc-footer a{color:#E8DDD0}
-@media(max-width:900px){.hc-highlights{grid-template-columns:repeat(2,1fr)}.hc-options-grid{grid-template-columns:1fr}.hc-option{min-height:0}}
-@media(max-width:650px){.hc-head{padding:18px;flex-wrap:wrap}.hc-nav{gap:13px}.hc-hero{grid-template-columns:1fr}.hc-hero img{height:280px}.hc-hero img+img{display:none}.hc-intro{padding:55px 0 35px}.hc-highlights{grid-template-columns:1fr 1fr}.hc-highlight{padding:18px}.hc-note-cols{grid-template-columns:1fr;gap:15px}}
-</style></head><body>
-<header class="hc-head"><a class="hc-brand" href="index.html">LÚA TRAVEL</a><nav class="hc-nav" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruises</a><a href="contact.html">Plan your trip ↗</a></nav></header>
+:root{--hc-ivory:#f5f1eb;--hc-beige:#e7d9ca;--hc-taupe:#a17d63;--hc-ink:#403731;--hc-muted:#74675c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--hc-ivory)!important;color:var(--hc-ink)!important;font-family:'Jost','DM Sans',sans-serif!important}
+.hc-container{width:min(1220px,calc(100% - 70px));margin-inline:auto}
+.hc-kicker{font:500 10px/1.5 'Jost',sans-serif!important;text-transform:uppercase;letter-spacing:.21em;color:#99765f!important}
+.hc-serif{font-family:'Cormorant Garamond',Georgia,serif!important;color:var(--hc-ink)!important;font-weight:400!important;letter-spacing:-.025em!important}
+.hc-nav-wrap{background:#f5f1eb;position:relative;z-index:2}
+.hc-nav{width:min(1320px,calc(100% - 70px));margin:auto;min-height:83px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.hc-nav-group{display:flex;gap:27px;align-items:center}
+.hc-nav-group:last-child{justify-content:flex-end}
+.hc-nav a{color:#403731!important;text-decoration:none!important;font:400 12px/1.4 'Jost',sans-serif!important;white-space:nowrap}
+.hc-nav a:hover{color:#99765f!important}
+.hc-brand{display:flex;flex-direction:column;align-items:center;line-height:1;gap:3px}
+.hc-nav .hc-brand span:first-child{font:400 34px/.9 'Cormorant Garamond',Georgia,serif!important;color:#403731;letter-spacing:-.025em}
+.hc-nav .hc-brand span:last-child{font:500 8px/1.5 'Jost',sans-serif!important;letter-spacing:.28em}
+.hc-nav a.hc-enquire{padding:12px 18px;border:1px solid #aa8975;font-size:11px!important;letter-spacing:.075em!important}
+.hc-hero{min-height:min(720px,75vh);display:flex;align-items:center;position:relative;background:#5c706b url('https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg') center 51%/cover no-repeat;padding:64px 0}
+.hc-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,36,32,.30),rgba(31,36,32,.07) 80%)}
+.hc-hero-content{width:min(1250px,calc(100% - 80px));margin:auto;position:relative;z-index:1}
+.hc-hero-panel{width:min(515px,100%);padding:clamp(32px,4vw,59px);background:rgba(247,242,235,.96);box-shadow:0 15px 45px rgba(36,30,25,.07)}
+.hc-hero-panel h1{font:400 clamp(3.55rem,5vw,5.75rem)/.88 'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.048em!important;color:#403731!important;margin:20px 0 20px!important}
+.hc-hero-panel .hc-subline{font:italic 400 clamp(1.65rem,2.3vw,2.2rem)/1.12 'Cormorant Garamond',Georgia,serif!important;color:#56443a!important;margin:0 0 23px}
+.hc-hero-panel p:not(.hc-subline){font:400 14px/1.7 'Jost',sans-serif!important;color:#6e6057!important;margin:0 0 25px}
+.hc-cta{display:inline-flex;align-items:center;gap:25px;background:#7d5942!important;color:#fff7ef!important;text-decoration:none!important;padding:14px 23px;font:500 12px 'Jost',sans-serif!important;letter-spacing:.06em}
+.hc-cta:hover{background:#624634!important}
+.hc-overview{padding:85px 0 28px}
+.hc-overview-grid{display:grid;grid-template-columns:1fr .94fr;gap:clamp(34px,7vw,110px);align-items:center}
+.hc-overview h2{font-size:clamp(3rem,4.3vw,4.4rem)!important;line-height:1.02!important;margin:15px 0 22px}
+.hc-overview p{font:400 15px/1.85 'Jost',sans-serif!important;color:var(--hc-muted)!important;max-width:530px}
+.hc-overview-photo{height:330px;overflow:hidden;margin:0}
+.hc-overview-photo img{width:100%;height:100%;object-fit:cover;filter:sepia(.09) saturate(.83);display:block}
+.hc-highlights{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:55px;padding:26px 0 30px;border-top:1px solid #d5c7b8;border-bottom:1px solid #d5c7b8}
+.hc-highlight{padding:10px 23px;border-right:1px solid #d5c7b8}
+.hc-highlight:first-child{padding-left:0}.hc-highlight:last-child{border:0}
+.hc-highlight-symbol{font:400 35px/1 'Cormorant Garamond',Georgia,serif;color:#a57e63}
+.hc-highlight h3{font:400 1.7rem/1.1 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;margin:6px 0}
+.hc-highlight p{font:400 12px/1.65 'Jost',sans-serif!important;color:#73665c!important;margin:0}
+.hc-journeys{padding:75px 0 100px}
+.hc-center{text-align:center;margin:0 auto 39px;max-width:720px}
+.hc-center h2{font-size:clamp(3rem,4.4vw,4.5rem)!important;line-height:1.05!important;margin:14px 0}
+.hc-center>p{font:400 14px/1.75 'Jost',sans-serif!important;color:#776a60!important}
+.hc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.hc-card{display:flex;flex-direction:column;background:#f9f5ee;border:1px solid #e4d8cc;overflow:hidden}
+.hc-card-image{height:230px;width:100%;object-fit:cover;display:block;filter:sepia(.08) saturate(.86)}
+.hc-card-image.hc-sunrise{object-position:65% 40%}.hc-card-image.hc-dinner{object-position:50% 60%}
+.hc-card-content{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.hc-card small{font:500 10px 'Jost',sans-serif!important;letter-spacing:.12em;color:#957762!important}
+.hc-card h3{font:400 clamp(2rem,2.6vw,2.55rem)/1.02 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;margin:12px 0!important}
+.hc-card p,.hc-card li{font:400 13px/1.7 'Jost',sans-serif!important;color:#6f6259!important}
+.hc-card p{margin:0 0 12px}.hc-card ul{padding:0 0 0 17px;margin:0 0 20px}
+.hc-card a{margin-top:auto;align-self:flex-start;color:#865f47!important;border-bottom:1px solid #b39a88;text-decoration:none!important;padding-bottom:6px;font:500 11px 'Jost',sans-serif!important;letter-spacing:.13em}
+.hc-details{background:#ebe1d6;padding:60px 0 72px}
+.hc-details-wrap{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:stretch}
+.hc-details-img{width:100%;height:370px;object-fit:cover;filter:sepia(.15) saturate(.82)}
+.hc-details-text{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-content:center}
+.hc-details-text h2{font:400 2.35rem/1.05 'Cormorant Garamond',Georgia,serif!important;color:#403731!important;margin:0 0 16px}
+.hc-details-text p,.hc-details-text li{font:400 12px/1.82 'Jost',sans-serif!important;color:#6f6259!important}
+.hc-details-text ul{padding-left:18px;margin:0}
+.hc-notes{padding:55px 0 68px}
+.hc-notes h2{font-size:2.8rem!important;margin:0 0 22px}
+.hc-notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.hc-notes p{font:400 13px/1.85 'Jost',sans-serif!important;color:#706359!important}
+.hc-notes a{color:#82614a!important}
+.hc-finale{background:linear-gradient(90deg,rgba(235,222,206,.90),rgba(235,222,206,.85)),url('https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg') center/cover;padding:70px 24px;text-align:center}
+.hc-finale h2{font-size:clamp(2.9rem,4vw,4rem)!important;line-height:1.05;margin:15px 0}
+.hc-finale p{font:400 14px/1.7 'Jost',sans-serif!important;color:#706359!important}
+.hc-footer{background:#362e2b;color:#e8ddd0;text-align:center;padding:32px 20px;font:400 12px 'Jost',sans-serif!important}
+.hc-footer a{color:#e8ddd0!important}
+@media(max-width:950px){.hc-nav{grid-template-columns:1fr auto;min-height:76px}.hc-nav .hc-brand{grid-column:1;grid-row:1;justify-self:start}.hc-nav-group:first-child{grid-row:2;grid-column:1/-1;padding-bottom:14px}.hc-nav-group:last-child{grid-column:2;grid-row:1}.hc-overview-grid{gap:35px}.hc-details-wrap{grid-template-columns:1fr}.hc-details-img{height:340px}}
+@media(max-width:700px){.hc-container{width:calc(100% - 38px)}.hc-nav{width:calc(100% - 38px)}.hc-nav-group{gap:14px;flex-wrap:wrap}.hc-nav-group a{font-size:11px!important}.hc-nav-group:last-child a:not(.hc-enquire){display:none}.hc-nav a.hc-enquire{padding:10px 12px}.hc-nav .hc-brand span:first-child{font-size:29px!important}.hc-hero{min-height:570px;align-items:flex-end;padding:28px 0}.hc-hero-content{width:calc(100% - 32px)}.hc-hero-panel{padding:30px 27px}.hc-hero-panel h1{font-size:3.7rem!important}.hc-overview{padding:56px 0 23px}.hc-overview-grid{grid-template-columns:1fr}.hc-overview-photo{height:270px}.hc-highlights{grid-template-columns:1fr 1fr;margin-top:34px}.hc-highlight{padding:15px 12px!important;border:0!important}.hc-journeys{padding:55px 0}.hc-card-grid{grid-template-columns:1fr}.hc-card-image{height:230px}.hc-details{padding:43px 0}.hc-details-text{grid-template-columns:1fr}.hc-details-img{height:265px}.hc-notes-grid{grid-template-columns:1fr;gap:0}.hc-finale{padding:55px 18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<header class="hc-nav-wrap"><div class="hc-nav">
+<nav class="hc-nav-group" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruises</a></nav>
+<a href="index.html" class="hc-brand"><span>Lúa Travel</span><span>VIETNAM &amp; BEYOND</span></a>
+<nav class="hc-nav-group" aria-label="More links"><a href="about.html">About Lúa</a><a href="journal.html">Travel Journal</a><a class="hc-enquire" href="contact.html?interest=The%20Halong%20Catamaran">Enquire Now ↗</a></nav>
+</div></header>
 <main>
-<div class="hc-wrap"><div class="hc-intro"><span class="hc-eyebrow">HA LONG BAY · LAN HA BAY</span><h1>The Halong Catamaran</h1><p>A refined day on the water, surrounded by spectacular limestone scenery. Discover kayaking, swimming, time to relax and thoughtful onboard hospitality.</p></div></div>
-<div class="hc-wrap hc-hero"><img src="https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg" alt="The Halong Catamaran Premium vessel on the bay"><img src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran at sea with waterslide and sundeck" loading="lazy"></div>
-<section class="hc-main"><div class="hc-wrap"><span class="hc-eyebrow">THE EXPERIENCE</span><h2>Discover the bay, your way.</h2><p>The Halong Catamaran offers day cruises from Tuan Chau Marina through the limestone landscapes of Ha Long and Lan Ha Bay. Enjoy elegant onboard spaces, open sundecks, lunch and activities on the water. The operator's brochure describes vessels accommodating up to 99 guests, with a choice of cruise experiences.</p>
-<div class="hc-highlights"><div class="hc-highlight"><small>01 · SCENERY</small>Ha Long &amp; Lan Ha Bay</div><div class="hc-highlight"><small>02 · ADVENTURE</small>Kayaking &amp; bamboo boat</div><div class="hc-highlight"><small>03 · ONBOARD</small>Sundeck &amp; relaxation</div><div class="hc-highlight"><small>04 · FLAVOURS</small>Vietnamese cuisine</div></div></div></section>
-<section class="hc-options" id="journeys"><div class="hc-wrap"><span class="hc-eyebrow">CHOOSE YOUR EXPERIENCE</span><h2>Three ways to sail.</h2><p>Choose the schedule that suits your stay. These are sample timings from the cruise operator's documents and may change by date or vessel.</p>
-<div class="hc-options-grid">
-<article class="hc-option"><span class="hc-eyebrow">FULL-DAY · APPROX. 6 HOURS ON BOARD</span><h3>Premium Day Cruise</h3><p>From Tuan Chau Marina, cruise past limestone scenery and explore Lan Ha Bay. A relaxed combination of nature, activities and dining.</p><ul><li>Boarding around 11:10–11:45</li><li>Lunch aboard the catamaran</li><li>Kayaking or bamboo boat at Bright &amp; Dark Cave</li><li>Swimming, water slide and floating trampoline</li><li>Cooking demonstration and sunset tea</li><li>Return around 17:15–18:00</li></ul><a href="contact.html?interest=Halong%20Catamaran%20Premium%20full-day%20cruise">Enquire about this cruise ↗</a></article>
-<article class="hc-option"><span class="hc-eyebrow">MORNING · APPROX. 4 HOURS</span><h3>Sunrise Cruise</h3><p>An early-morning departure with time on the water before returning to the marina around midday.</p><ul><li>Boarding around 06:45–07:00</li><li>Water activities and lagoon scenery</li><li>Kayaking, swimming, water slide or trampoline</li><li>Lunch aboard around 10:00</li><li>Return around 11:00–11:15</li></ul><a href="contact.html?interest=Halong%20Catamaran%20sunrise%204-hour%20cruise">Enquire about this cruise ↗</a></article>
-<article class="hc-option"><span class="hc-eyebrow">EVENING · APPROX. 4 HOURS</span><h3>Dinner Cruise</h3><p>Take in the bay's evening atmosphere aboard a catamaran with dinner and onboard entertainment.</p><ul><li>Welcome aboard 17:30–18:00</li><li>Onboard dinner around 18:30</li><li>Evening views, karaoke and squid fishing</li><li>Return to Tuan Chau 21:00–21:30</li></ul><a href="contact.html?interest=Halong%20Catamaran%20dinner%204-hour%20cruise">Enquire about this cruise ↗</a></article>
+<section class="hc-hero" aria-labelledby="hc-title"><div class="hc-hero-content"><div class="hc-hero-panel"><span class="hc-kicker">A SIGNATURE EXPERIENCE</span><h1 id="hc-title">The Halong<br>Catamaran</h1><p class="hc-subline">Elegant day cruising in<br>Ha Long &amp; Lan Ha Bay</p><p>A refined way to experience the beauty of the bay, with journeys for every time of day.</p><a class="hc-cta" href="#journeys">Explore our journeys <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="hc-overview"><div class="hc-container">
+<div class="hc-overview-grid"><div><span class="hc-kicker">THE EXPERIENCE</span><h2 class="hc-serif">Sail, explore, <em>unwind.</em></h2><p>The Halong Catamaran offers thoughtfully planned day cruises from Tuan Chau Marina through Ha Long Bay and Lan Ha Bay. Admire limestone scenery, relax on open sundecks and enjoy a programme of dining and activities on the water. The operator's documents describe vessels with capacity for up to 99 guests; exact vessel arrangements depend on the selected cruise.</p></div>
+<figure class="hc-overview-photo"><img src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran sailing through Ha Long Bay" loading="lazy"></figure></div>
+<div class="hc-highlights">
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">◒</span><h3>Day cruising</h3><p>A rewarding experience on the water, with time to enjoy the landscape.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">⌁</span><h3>Lan Ha Bay</h3><p>Emerald waterways and dramatic limestone formations.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">↝</span><h3>On-water moments</h3><p>Kayaking or bamboo boats and optional water activities on suitable sailings.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">✧</span><h3>Onboard dining</h3><p>Lunch or dinner according to the cruise programme you choose.</p></div>
 </div></div></section>
-<section class="hc-notes"><div class="hc-wrap"><span class="hc-eyebrow">BEFORE YOU SAIL</span><h2>Good to know.</h2><div class="hc-note-cols"><div><p><strong>Meeting point:</strong> Tuan Chau Marina, Ha Long, Quang Ninh. Hanoi transfers may be included or arranged separately depending on the selected package.</p><p><strong>Food &amp; drinks:</strong> Day-cruise documents list onboard lunch; dinner is offered on the evening cruise. Additional drinks and extras may incur charges.</p></div><div><p><strong>Activities:</strong> Kayaking, swimming and water activities depend on weather, safety conditions and the chosen programme.</p><p><strong>Rates:</strong> Please enquire for confirmed availability, pricing and current inclusions. The operator's documents contain differing vessel specifications and policies across programmes, so final details will be confirmed with the booking.</p></div></div><p><a href="https://drive.google.com/drive/folders/1cU7qdlgafxpf7v0Mtpw0mEjlK-X-RaPH" target="_blank" rel="noopener noreferrer">Operator brochure and programme documents ↗</a></p></div></section>
-</main><footer class="hc-footer">Lúa Travel &amp; Tours · Thoughtfully crafted journeys in Vietnam · <a href="cruise.html">All cruises</a></footer></body></html>
+<section class="hc-journeys" id="journeys"><div class="hc-container"><div class="hc-center"><span class="hc-kicker">CURATED JOURNEYS</span><h2 class="hc-serif">Three ways to experience the bay.</h2><p>From a leisurely day voyage to the early morning light and an evening on the water, choose the journey that suits your stay.</p></div>
+<div class="hc-card-grid">
+<article class="hc-card"><img class="hc-card-image" src="https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg" alt="The Halong Catamaran in the limestone bay" loading="lazy"><div class="hc-card-content"><small>FULL DAY · APPROX. 6 HOURS ON BOARD</small><h3>Premium Day Cruise</h3><p>A full-day journey balancing scenic cruising, outdoor activities and time to relax.</p><ul><li>Boarding around 11:10–11:45</li><li>Lunch on board</li><li>Kayaking or bamboo boat at Bright &amp; Dark Cave</li><li>Swimming and water activities, weather permitting</li><li>Cooking demonstration and sunset tea</li><li>Return around 17:15–18:00</li></ul><a href="contact.html?interest=Halong%20Catamaran%20Premium%20full-day%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
+<article class="hc-card"><img class="hc-card-image hc-sunrise" src="Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg" alt="Morning light in Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>MORNING · APPROX. 4 HOURS</small><h3>Sunrise Cruise</h3><p>Discover the bay early, when the light is soft and the morning unfolds quietly.</p><ul><li>Boarding around 06:45–07:00</li><li>Lagoon scenery and kayaking</li><li>Swimming and water slide or trampoline as conditions permit</li><li>Lunch on board around 10:00</li><li>Return around 11:00–11:15</li></ul><a href="contact.html?interest=Halong%20Catamaran%20sunrise%204-hour%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
+<article class="hc-card"><img class="hc-card-image hc-dinner" src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran experience on Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>EVENING · APPROX. 4 HOURS</small><h3>Dinner Cruise</h3><p>Watch the bay change after sunset and savour an evening aboard.</p><ul><li>Welcome aboard around 17:30–18:00</li><li>Dinner around 18:30</li><li>Evening scenery, karaoke and squid fishing</li><li>Return to Tuan Chau around 21:00–21:30</li></ul><a href="contact.html?interest=Halong%20Catamaran%20dinner%204-hour%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
+</div></div></section>
+<section class="hc-details"><div class="hc-container hc-details-wrap"><img class="hc-details-img" src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran and coastal scenery" loading="lazy"><div class="hc-details-text">
+<div><h2>Thoughtful touches</h2><ul><li>Welcoming onboard crew</li><li>Onboard meal as specified by your programme</li><li>Bay sightseeing and a selection of onboard activities</li><li>English-speaking guide on the day programmes described by the operator</li></ul></div>
+<div><h2>Good to know</h2><p>Duration: approximately 4–6 hours on board, depending on the option.</p><p>Departure: Tuan Chau Marina.</p><p>Hanoi transfers, drinks and activity inclusions vary by programme.</p><p>Rates and availability are confirmed on request.</p></div>
+</div></div></section>
+<section class="hc-notes"><div class="hc-container"><span class="hc-kicker">BEFORE YOU SAIL</span><h2 class="hc-serif">A few useful details.</h2><div class="hc-notes-grid"><div><p><strong>Where to board:</strong> Tuan Chau Marina, Ha Long, Quang Ninh. Transfers from Hanoi may be included or arranged separately, depending on your booking.</p><p><strong>Meals:</strong> The day and morning programmes list lunch, while the evening programme features dinner. Other beverages are typically charged separately.</p></div><div><p><strong>On the water:</strong> Kayaking, swimming, slides and other activities depend on the selected programme, weather and safety conditions.</p><p><strong>Booking:</strong> The operator's documents describe different vessels and policies. We will confirm exact arrangements, inclusions and pricing for your date before booking.</p></div></div></div></section>
+<section class="hc-finale"><span class="hc-kicker">READY TO SET SAIL?</span><h2 class="hc-serif">Plan your Halong Catamaran experience.</h2><p>Let our local team help you choose the right cruise for your journey.</p><a class="hc-cta" href="contact.html?interest=The%20Halong%20Catamaran">Enquire now <span aria-hidden="true">↗</span></a></section>
+</main><footer class="hc-footer">Lúa Travel &amp; Tours · Thoughtfully crafted journeys in Vietnam · <a href="cruise.html">All cruises</a></footer>
+</body></html>
