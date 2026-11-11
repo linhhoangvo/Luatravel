@@ -1344,6 +1344,22 @@ html body footer.lua-site-footer a:not(.lua-footer-social a),html body footer.lu
 html body footer.lua-site-footer .lua-footer-base{border-top-color:#354039!important}
 html body footer.lua-site-footer .lua-footer-social a{background:#f8f9f6!important;color:#111513!important}
 html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)!important}
+</style><style id="lua-stays-style">
+.lua-selected-stays{background:#fff!important;padding:clamp(58px,7vw,95px) 0!important}
+.lua-stays-shell{width:min(1220px,calc(100% - 56px))!important}
+.lua-stays-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:28px}
+.lua-stays-eyebrow{font:500 10px 'Jost',sans-serif!important;letter-spacing:.18em;color:#59705e!important}
+.lua-stays-heading h2{font:400 clamp(2.8rem,4.1vw,4.4rem)/1 'Cormorant Garamond',Georgia,serif!important;color:#202522!important;margin:12px 0 0!important;letter-spacing:-.025em!important}
+.lua-stays-heading h2 em{font-weight:400;font-style:italic}
+.lua-stays-heading>a{font:400 12px 'Jost',sans-serif!important;color:#293c33!important;text-decoration:none;border-bottom:1px solid #9cae9f;padding-bottom:7px;white-space:nowrap}
+.lua-stays-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lua-stays-card{display:block;color:#202522!important;text-decoration:none!important;min-width:0}
+.lua-stays-image{height:clamp(220px,26vw,320px);overflow:hidden;background:#edf0eb}
+.lua-stays-image img{height:100%;width:100%;object-fit:cover;display:block;transition:transform .4s ease;filter:none!important}
+.lua-stays-card:hover img{transform:scale(1.025)}
+.lua-stays-card>span{display:block;margin:17px 0 6px;font:500 10px 'Jost',sans-serif!important;letter-spacing:.16em;color:#58705e!important}
+.lua-stays-card h3{font:400 clamp(1.75rem,2.2vw,2.5rem)/1.1 'Cormorant Garamond',Georgia,serif!important;color:#202522!important;margin:0!important;letter-spacing:-.018em!important}
+@media(max-width:700px){.lua-selected-stays{padding:52px 0!important}.lua-stays-heading{display:block}.lua-stays-heading>a{display:inline-block;margin-top:18px}.lua-stays-grid{grid-template-columns:1fr;gap:26px}.lua-stays-image{height:270px}.lua-stays-card>span{margin-top:11px}}
 </style></head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -1445,6 +1461,16 @@ html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)
 <a class="destination" href="destinations.html" aria-label="Explore Mekong Delta"><img src="mekong%20moi.jpg" alt="Waterways of the Mekong Delta" loading="lazy"><div class="destination-info"><h3>Mekong Delta</h3><span aria-hidden="true">↗</span></div></a>
 <a class="destination" href="destinations.html" aria-label="Explore Phu Quoc"><img src="phu%20quoc.jpg" alt="Phu Quoc island coast" loading="lazy"><div class="destination-info"><h3>Phu Quoc</h3><span aria-hidden="true">↗</span></div></a>
 </div><div class="lua-home-dest-controls"><div class="lua-home-dest-dots" id="home-dest-dots" aria-label="Destination carousel pages"></div><div class="lua-home-dest-arrows"><button type="button" id="home-dest-prev" aria-label="Previous destinations">‹</button><button type="button" id="home-dest-next" aria-label="Next destinations">›</button></div></div></div></section>
+<section class="lua-selected-stays" id="lua-selected-stays" aria-labelledby="lua-stays-title">
+ <div class="container lua-stays-shell">
+  <div class="lua-stays-heading"><div><span class="lua-stays-eyebrow">STAYS WE LOVE</span><h2 id="lua-stays-title">Somewhere worth <em>staying.</em></h2></div><a href="hotels.html">Explore hotels <span aria-hidden="true">↗</span></a></div>
+  <div class="lua-stays-grid">
+   <a class="lua-stays-card" href="hotel-detail.html?hotel=namia-river-retreat"><div class="lua-stays-image"><img src="https://drive.google.com/thumbnail?id=1tyIFkauUnkYGxq6tYSQal0My2WV1SmCi&amp;sz=w1600" onerror="this.onerror=null;this.src='hoi%20an%205.jpg'" alt="Namia River Retreat in Hội An" loading="lazy"></div><span>HỘI AN</span><h3>Namia River Retreat</h3></a>
+   <a class="lua-stays-card" href="hotel-detail.html?hotel=tia-wellness-resort"><div class="lua-stays-image"><img src="https://drive.google.com/thumbnail?id=1LuNkg6uDYVYNEMOKoqlmaNprSNvrvKn0&amp;sz=w1600" onerror="this.onerror=null;this.src='%C4%90%C3%A0%20N%E1%BA%B5ng%201.jpg'" alt="TIA Wellness Resort in Da Nang" loading="lazy"></div><span>DA NANG</span><h3>TIA Wellness Resort</h3></a>
+   <a class="lua-stays-card" href="hotel-detail.html?hotel=avana-retreat"><div class="lua-stays-image"><img src="https://drive.google.com/thumbnail?id=1qa0zTGK85hsqHIDHH4RsqO4C2pgkh9Ov&amp;sz=w1600" onerror="this.onerror=null;this.src='mai%20chau.jpg'" alt="Avana Retreat in Mai Chau" loading="lazy"></div><span>MAI CHAU</span><h3>Avana Retreat</h3></a>
+  </div>
+ </div>
+</section>
 <section class="section lua-how lua-how-split" id="how" aria-label="The Lúa Approach">
  <div class="container lua-how-split-wrap">
   <figure class="lua-how-split-image">
