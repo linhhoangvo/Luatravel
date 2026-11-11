@@ -113,7 +113,78 @@ html body footer.lua-site-footer a:not(.lua-footer-social a),html body footer.lu
 html body footer.lua-site-footer .lua-footer-base{border-top-color:#354039!important}
 html body footer.lua-site-footer .lua-footer-social a{background:#f8f9f6!important;color:#111513!important}
 html body footer.lua-site-footer .lua-footer-logo{filter:brightness(0) invert(1)!important}
-</style></head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-page">
+</style>
+<!-- Lua luxury footer redesign — inspired by TIA Wellness Resort, 2026-11-11 -->
+<style id="lua-luxury-footer-2026">
+.lua-site-footer{background:#191a19!important;color:#f6f0e7!important;padding:78px 0 28px!important;font-family:'Jost','DM Sans',Arial,sans-serif!important;font-weight:400!important}
+.lua-site-footer .lua-footer-inner{width:min(1320px,calc(100% - 76px))!important;margin-inline:auto!important}
+.lua-site-footer .lua-footer-grid{display:grid!important;grid-template-columns:minmax(240px,1.52fr) repeat(3,minmax(135px,1fr))!important;gap:clamp(26px,4.2vw,76px)!important;align-items:start!important}
+.lua-site-footer .lua-footer-company{padding-right:clamp(12px,2.8vw,44px)!important;border-right:1px solid rgba(226,202,174,.33)!important;min-width:0}
+.lua-site-footer .lua-footer-logo{width:170px!important;height:105px!important;max-width:100%!important;object-fit:contain!important;object-position:left center!important;filter:brightness(0) saturate(100%) invert(86%) sepia(17%) saturate(293%) hue-rotate(336deg) brightness(105%) contrast(89%)!important;margin:0 0 19px!important}
+.lua-site-footer .lua-footer-address,.lua-site-footer .lua-footer-company>a:not(:first-child){font:400 .83rem/1.8 'Jost','DM Sans',sans-serif!important;letter-spacing:.01em!important;color:#ddd7cf!important}
+.lua-site-footer .lua-footer-address{margin:0 0 10px!important;max-width:315px!important}
+.lua-site-footer .lua-footer-company>a:not(:first-child){display:block!important;margin:7px 0!important;overflow-wrap:anywhere}
+.lua-site-footer h4{font:500 clamp(1.4rem,2vw,1.9rem)/1.15 'Cormorant Garamond',Georgia,serif!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#e8d0b7!important;margin:14px 0 34px!important;position:relative}
+.lua-site-footer h4:after{content:"";position:absolute;left:0;bottom:-16px;width:42px;height:1px;background:#d8b99a}
+.lua-site-footer ul{margin:0!important;padding:0!important;list-style:none!important}
+.lua-site-footer li{margin:0 0 15px!important;font:400 .91rem/1.5 'Jost','DM Sans',sans-serif!important;letter-spacing:.008em!important;color:#eee9e3!important}
+.lua-site-footer a{color:inherit;text-decoration:none;transition:color .2s ease,background-color .2s ease!important}
+.lua-site-footer a:hover,.lua-site-footer a:focus-visible{color:#e5c29d!important}
+.lua-site-footer .lua-footer-banner{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:25px!important;position:relative;overflow:hidden;margin:72px 0 38px!important;padding:30px 36px!important;min-height:132px;border:1px solid rgba(225,200,170,.34)!important;border-radius:0!important;background:linear-gradient(102deg,#302b28 0%,#282624 53%,#222220 100%)!important}
+.lua-site-footer .lua-footer-banner:before{content:"";position:absolute;left:29px;top:28px;bottom:28px;width:1px;background:#e1c4a7}
+.lua-site-footer .lua-footer-banner>div{position:relative;z-index:1;padding-left:23px}
+.lua-site-footer .lua-footer-banner strong{display:block!important;font:italic 400 clamp(1.7rem,3vw,2.6rem)/1.15 'Cormorant Garamond',Georgia,serif!important;color:#f0d9c2!important;letter-spacing:0!important}
+.lua-site-footer .lua-footer-banner span{display:block!important;margin-top:9px!important;font:400 .88rem/1.6 'Jost','DM Sans',sans-serif!important;color:#e6ded5!important}
+.lua-site-footer .lua-footer-banner>a{position:relative;z-index:1;display:inline-flex!important;align-items:center!important;justify-content:center!important;flex:none;background:#e6c9ac!important;color:#201d1b!important;border:1px solid #e6c9ac!important;border-radius:0!important;padding:15px 29px!important;font:500 1rem/1.2 'Cormorant Garamond',Georgia,serif!important;letter-spacing:.025em!important;white-space:nowrap}
+.lua-site-footer .lua-footer-banner>a:hover{background:#f3ddc6!important;color:#201d1b!important;border-color:#f3ddc6!important}
+.lua-site-footer .lua-footer-base{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;border-top:1px solid rgba(231,210,189,.44)!important;padding-top:26px!important;color:#dfd8d0!important;font:400 .8rem/1.5 'Jost','DM Sans',sans-serif!important}
+.lua-site-footer .lua-footer-social{display:flex!important;gap:13px!important}
+.lua-site-footer .lua-footer-social a{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:34px!important;height:34px!important;border-radius:50%!important;background:#e6c9ac!important;color:#1d1b19!important;font-size:1rem!important;transition:transform .2s,background-color .2s!important}
+.lua-site-footer .lua-footer-social a:hover{background:#f2dfc9!important;color:#1d1b19!important;transform:translateY(-2px)}
+.lua-site-footer .lua-footer-social svg{width:17px!important;height:17px!important;display:block!important}
+@media(max-width:980px){.lua-site-footer .lua-footer-grid{grid-template-columns:1.35fr 1fr 1fr!important;gap:30px!important}.lua-site-footer .lua-footer-company{grid-column:1/-1;border-right:0!important;border-bottom:1px solid rgba(226,202,174,.25)!important;padding:0 0 25px!important}.lua-site-footer .lua-footer-logo{height:85px!important;margin-bottom:10px!important}}
+@media(max-width:640px){.lua-site-footer{padding:52px 0 26px!important}.lua-site-footer .lua-footer-inner{width:calc(100% - 36px)!important}.lua-site-footer .lua-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 20px!important}.lua-site-footer .lua-footer-company{grid-column:1/-1}.lua-site-footer h4{font-size:1.38rem!important;margin:8px 0 30px!important}.lua-site-footer li{font-size:.84rem!important}.lua-site-footer .lua-footer-banner{display:block!important;margin:44px 0 30px!important;padding:26px 22px!important}.lua-site-footer .lua-footer-banner:before{left:20px;top:25px;bottom:auto;height:57px}.lua-site-footer .lua-footer-banner>div{padding-left:15px}.lua-site-footer .lua-footer-banner strong{font-size:1.92rem!important}.lua-site-footer .lua-footer-banner>a{margin:22px 0 0 15px!important}.lua-site-footer .lua-footer-base{flex-direction:column!important;align-items:flex-start!important;gap:17px!important}}
+@media(max-width:360px){.lua-site-footer .lua-footer-grid{grid-template-columns:1fr!important}.lua-site-footer .lua-footer-company{grid-column:1}.lua-site-footer .lua-footer-banner strong{font-size:1.7rem!important}}
+
+/* Compact luxury footer proportions — 2026-11-11 */
+.lua-site-footer{padding:43px 0 18px!important}
+.lua-site-footer .lua-footer-grid{gap:clamp(20px,3vw,45px)!important}
+.lua-site-footer .lua-footer-logo{width:138px!important;height:72px!important;margin:0 0 8px!important}
+.lua-site-footer .lua-footer-address{margin:0 0 5px!important;line-height:1.55!important}
+.lua-site-footer .lua-footer-company>a:not(:first-child){margin:3px 0!important;line-height:1.55!important}
+.lua-site-footer h4{font-size:clamp(1.3rem,1.75vw,1.65rem)!important;margin:8px 0 27px!important}
+.lua-site-footer h4:after{bottom:-12px}
+.lua-site-footer li{margin-bottom:9px!important;font-size:.86rem!important}
+.lua-site-footer .lua-footer-banner{margin:37px 0 23px!important;padding:19px 27px!important;min-height:98px!important;gap:20px!important}
+.lua-site-footer .lua-footer-banner:before{left:25px;top:19px;bottom:19px}
+.lua-site-footer .lua-footer-banner>div{padding-left:17px}
+.lua-site-footer .lua-footer-banner strong{font-size:clamp(1.5rem,2.4vw,2.15rem)!important}
+.lua-site-footer .lua-footer-banner span{margin-top:4px!important;font-size:.82rem!important}
+.lua-site-footer .lua-footer-banner>a{padding:12px 22px!important}
+.lua-site-footer .lua-footer-base{padding-top:17px!important}
+.lua-site-footer .lua-footer-social a{width:30px!important;height:30px!important}
+@media(max-width:980px){.lua-site-footer .lua-footer-company{padding-bottom:16px!important}.lua-site-footer .lua-footer-logo{height:70px!important;margin-bottom:6px!important}}
+@media(max-width:640px){.lua-site-footer{padding:35px 0 19px!important}.lua-site-footer .lua-footer-grid{gap:19px 15px!important}.lua-site-footer .lua-footer-banner{margin:28px 0 22px!important;padding:20px!important;min-height:0!important}.lua-site-footer .lua-footer-banner:before{left:17px;top:19px;height:48px;bottom:auto}.lua-site-footer .lua-footer-banner>div{padding-left:12px}.lua-site-footer .lua-footer-banner strong{font-size:1.75rem!important}.lua-site-footer .lua-footer-banner>a{margin:14px 0 0 12px!important}.lua-site-footer .lua-footer-base{padding-top:17px!important}}
+
+
+/* Smaller Explore / Company / Support headings */
+.lua-site-footer h4{font-size:1.12rem!important;letter-spacing:.10em!important}
+@media(max-width:640px){.lua-site-footer h4{font-size:1.05rem!important}}
+
+/* Compact journey CTA band */
+.lua-site-footer .lua-footer-banner{min-height:70px!important;padding:12px 22px!important;margin:27px 0 18px!important;gap:15px!important}
+.lua-site-footer .lua-footer-banner:before{left:20px!important;top:13px!important;bottom:13px!important}
+.lua-site-footer .lua-footer-banner>div{padding-left:14px!important}
+.lua-site-footer .lua-footer-banner strong{font-size:clamp(1.25rem,1.8vw,1.65rem)!important;line-height:1.12!important}
+.lua-site-footer .lua-footer-banner span{font-size:.74rem!important;line-height:1.4!important;margin-top:3px!important}
+.lua-site-footer .lua-footer-banner>a{padding:9px 16px!important;font-size:.88rem!important}
+@media(max-width:640px){.lua-site-footer .lua-footer-banner{padding:16px!important;margin:23px 0 18px!important;min-height:0!important}.lua-site-footer .lua-footer-banner:before{left:14px!important;top:16px!important;height:43px!important;bottom:auto!important}.lua-site-footer .lua-footer-banner>div{padding-left:12px!important}.lua-site-footer .lua-footer-banner strong{font-size:1.4rem!important}.lua-site-footer .lua-footer-banner>a{margin:12px 0 0 12px!important}}
+
+/* Extra-small section headings — Explore / Company / Support */
+.lua-site-footer h4{font-size:.9rem!important;letter-spacing:.12em!important}
+@media(max-width:640px){.lua-site-footer h4{font-size:.86rem!important}}
+</style>
+</head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-page">
 <section class="lt-top"><div class="wrap lt-top-inner"><div><span class="lt-eyebrow">Lua Travel &amp; Tours</span><h1>Travel through Vietnam</h1><p>Thoughtful private journeys, local discoveries and ideas to make your own.</p></div><a href="contact.html">Plan a private trip ↗</a></div></section>
 <section class="lt-list"><div class="wrap"><div class="lt-count-row"><span><b id="lt-count">21</b> journeys &amp; travel ideas</span><span>Prices are planning estimates only. Your final quote depends on dates, group size and selected services.</span></div><div class="lt-layout">
 <aside class="lt-sidebar"><div class="lt-filter-top"><h2>Explore by interest</h2><button id="lt-reset" type="button">Reset</button></div><label for="lt-location">Destination</label><select id="lt-location"><option value="all">All destinations</option><option value="Across Vietnam">Across Vietnam</option><option value="Northern &amp; Central Vietnam">Northern &amp; Central Vietnam</option><option value="Hanoi">Hanoi</option><option value="Ha Long Bay">Ha Long Bay</option><option value="Sapa">Sapa</option><option value="Ha Giang">Ha Giang</option><option value="Mai Chau">Mai Chau</option><option value="Ninh Binh">Ninh Binh</option><option value="Hoi An">Hoi An</option><option value="Hue">Hue</option><option value="Phong Nha">Phong Nha</option><option value="Mekong Delta">Mekong Delta</option><option value="Phu Quoc">Phu Quoc</option><option value="Dalat">Dalat</option></select><h3>Travel style</h3><div class="lt-chips" role="group" aria-label="Choose travel style"><button type="button" data-style="all" aria-pressed="true" class="active">All styles</button><button type="button" data-style="Culture" aria-pressed="false" class="">Culture</button><button type="button" data-style="Nature" aria-pressed="false" class="">Nature</button><button type="button" data-style="Adventure" aria-pressed="false" class="">Adventure</button><button type="button" data-style="Romance" aria-pressed="false" class="">Romance</button><button type="button" data-style="Wellness" aria-pressed="false" class="">Wellness</button><button type="button" data-style="Active" aria-pressed="false" class="">Active</button><button type="button" data-style="Food" aria-pressed="false" class="">Food</button><button type="button" data-style="Cruise" aria-pressed="false" class="">Cruise</button><button type="button" data-style="Golf" aria-pressed="false" class="">Golf</button><button type="button" data-style="Beach" aria-pressed="false" class="">Beach</button></div><div class="lt-sidebar-note"><h3>Have something else in mind?</h3><p>Share your dates and interests; we'll help put the details together.</p><a href="contact.html">Talk to Lúa ↗</a></div></aside>
