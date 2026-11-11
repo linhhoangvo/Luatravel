@@ -78,6 +78,86 @@ body{margin:0;background:var(--hc-ivory)!important;color:var(--hc-ink)!important
 @media(max-width:950px){.hc-nav{grid-template-columns:1fr auto;min-height:76px}.hc-nav .hc-brand{grid-column:1;grid-row:1;justify-self:start}.hc-nav-group:first-child{grid-row:2;grid-column:1/-1;padding-bottom:14px}.hc-nav-group:last-child{grid-column:2;grid-row:1}.hc-overview-grid{gap:35px}.hc-details-wrap{grid-template-columns:1fr}.hc-details-img{height:340px}}
 @media(max-width:700px){.hc-container{width:calc(100% - 38px)}.hc-nav{width:calc(100% - 38px)}.hc-nav-group{gap:14px;flex-wrap:wrap}.hc-nav-group a{font-size:11px!important}.hc-nav-group:last-child a:not(.hc-enquire){display:none}.hc-nav a.hc-enquire{padding:10px 12px}.hc-nav .hc-brand span:first-child{font-size:29px!important}.hc-hero{min-height:570px;align-items:flex-end;padding:28px 0}.hc-hero-content{width:calc(100% - 32px)}.hc-hero-panel{padding:30px 27px}.hc-hero-panel h1{font-size:3.7rem!important}.hc-overview{padding:56px 0 23px}.hc-overview-grid{grid-template-columns:1fr}.hc-overview-photo{height:270px}.hc-highlights{grid-template-columns:1fr 1fr;margin-top:34px}.hc-highlight{padding:15px 12px!important;border:0!important}.hc-journeys{padding:55px 0}.hc-card-grid{grid-template-columns:1fr}.hc-card-image{height:230px}.hc-details{padding:43px 0}.hc-details-text{grid-template-columns:1fr}.hc-details-img{height:265px}.hc-notes-grid{grid-template-columns:1fr;gap:0}.hc-finale{padding:55px 18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* LÚA HALONG CATAMARAN — QUIET LUXURY REFINEMENT
+   Understated Namia-inspired editorial rhythm, no new claims or media. */
+:root{
+ --hc-ivory:#f5f1ea;--hc-beige:#e8dfd4;--hc-taupe:#947b68;
+ --hc-ink:#403731;--hc-muted:#786d64;
+}
+body{background:var(--hc-ivory)!important}
+.hc-nav-wrap{background:#f5f1ea!important}
+.hc-nav{min-height:92px!important;max-width:1270px!important}
+.hc-nav-group{gap:25px}
+.hc-nav a{letter-spacing:.035em!important}
+.hc-nav a.hc-enquire{padding:12px 23px!important;border:1px solid #88796c!important;background:transparent!important;color:#403731!important;letter-spacing:.12em!important;text-transform:uppercase;font-size:10px!important}
+.hc-nav .hc-brand span:first-child{font-size:37px!important;letter-spacing:.018em!important}
+.hc-nav .hc-brand span:last-child{font-size:7px!important;letter-spacing:.31em!important;color:#8f7966!important}
+.hc-hero{min-height:clamp(570px,66vh,760px)!important;padding:65px 0!important;background-position:center 49%!important}
+.hc-hero:before{background:linear-gradient(90deg,rgba(36,31,27,.19) 0%,rgba(36,31,27,.02) 70%)!important}
+.hc-hero-panel{background:#f5f1e9f0!important;box-shadow:none!important;width:min(490px,100%)!important;padding:clamp(38px,4.6vw,66px)!important}
+.hc-hero-panel h1{font-size:clamp(3.5rem,5.2vw,5.65rem)!important;line-height:.94!important;letter-spacing:-.025em!important;margin:22px 0 23px!important}
+.hc-hero-panel .hc-subline{font-size:clamp(1.6rem,2.1vw,2.15rem)!important;line-height:1.22!important;color:#61534a!important;margin-bottom:19px!important}
+.hc-hero-panel p:not(.hc-subline){font-size:13px!important;max-width:330px!important;line-height:1.85!important;margin-bottom:30px!important}
+.hc-cta{background:#403731!important;border:1px solid #403731!important;border-radius:0!important;box-shadow:none!important;letter-spacing:.075em!important;padding:13px 24px!important;font-size:11px!important;font-weight:400!important;text-transform:none!important}
+.hc-cta:hover{background:#57483d!important}
+.hc-overview{padding-top:105px!important;padding-bottom:25px!important}
+.hc-overview-grid{gap:clamp(45px,7vw,115px)!important}
+.hc-overview h2{font-size:clamp(3.2rem,4.7vw,4.8rem)!important;margin:19px 0 23px!important;max-width:520px}
+.hc-overview p{font-size:14px!important;line-height:2!important}
+.hc-overview-photo{height:320px!important;border-radius:0!important}
+.hc-overview-photo img{filter:sepia(.12) saturate(.75) contrast(.95)!important}
+.hc-highlights{margin-top:65px!important;padding:32px 0!important;border-top:1px solid #d9cec2!important;border-bottom:1px solid #d9cec2!important}
+.hc-highlight{padding:2px 27px!important;border-color:#dfd3c5!important}
+.hc-highlight:first-child{padding-left:0!important}
+.hc-highlight-symbol{display:none!important}
+.hc-highlight h3{font-size:1.8rem!important;margin:0 0 11px!important}
+.hc-highlight p{font-size:11.5px!important;line-height:1.85!important}
+.hc-journeys{padding-top:95px!important;padding-bottom:115px!important}
+.hc-center{margin-bottom:43px!important}
+.hc-center h2{font-size:clamp(3.1rem,4.5vw,4.65rem)!important;margin:15px 0 14px!important}
+.hc-center>p{font-size:13px!important;line-height:1.85!important}
+.hc-card-grid{gap:26px!important}
+.hc-card{border:0!important;background:#f2ece3!important}
+.hc-card-image{height:235px!important;filter:sepia(.14) saturate(.78) contrast(.96)!important}
+.hc-card-content{padding:31px 30px 34px!important}
+.hc-card h3{font-size:clamp(2.2rem,2.8vw,2.8rem)!important;margin:13px 0 15px!important}
+.hc-card p,.hc-card li{font-size:12px!important;line-height:1.85!important}
+.hc-card ul{margin-bottom:28px!important}
+.hc-card a{font-weight:400!important;letter-spacing:.095em!important;color:#534338!important}
+.hc-details{background:#e6dcd0!important;padding:75px 0!important}
+.hc-details-wrap{gap:55px!important;grid-template-columns:1.05fr 1fr!important}
+.hc-details-img{height:320px!important;filter:sepia(.14) saturate(.79) contrast(.96)!important}
+.hc-details-text{gap:32px!important}
+.hc-details-text h2{font-size:2.25rem!important}
+.hc-details-text p,.hc-details-text li{font-size:11.5px!important}
+.hc-notes{padding:75px 0 85px!important}
+.hc-notes h2{font-size:3.1rem!important}
+.hc-finale{padding:88px 22px!important;background:linear-gradient(90deg,rgba(237,228,215,.92),rgba(237,228,215,.89)),url('Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg') center/cover!important}
+.hc-finale h2{font-size:clamp(3rem,4.3vw,4.45rem)!important}
+.hc-footer{padding:34px 20px!important}
+@media(max-width:900px){
+ .hc-details-wrap{grid-template-columns:1fr!important}
+ .hc-overview{padding-top:70px!important}
+ .hc-highlight{padding:8px 14px!important}
+ .hc-highlight:first-child{padding-left:0!important}
+}
+@media(max-width:700px){
+ .hc-nav{min-height:72px!important}
+ .hc-hero{min-height:560px!important;padding:25px 0!important}
+ .hc-hero-panel{padding:33px 28px!important}
+ .hc-hero-panel h1{font-size:3.55rem!important}
+ .hc-overview{padding:58px 0 22px!important}
+ .hc-overview h2{font-size:3.35rem!important}
+ .hc-highlights{margin-top:35px!important;padding:18px 0!important}
+ .hc-highlight{padding:15px 11px!important}
+ .hc-journeys{padding:65px 0 75px!important}
+ .hc-card-image{height:220px!important}
+ .hc-details{padding:44px 0!important}
+ .hc-details-img{height:270px!important}
+ .hc-notes{padding:55px 0 60px!important}
+ .hc-finale{padding:65px 20px!important}
+}
 </style></head>
 <body>
 <header class="hc-nav-wrap"><div class="hc-nav">
