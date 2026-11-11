@@ -267,8 +267,7 @@ document.querySelectorAll('a.lc-card').forEach(card=>{
  let current=0;
  const defaultAlt=img.alt;
  const nav=document.createElement('span');nav.className='lc-photo-nav';
- const counter=document.createElement('span');counter.className='lc-photo-index';
- function change(delta){current=(current+delta+urls.length)%urls.length;img.src=urls[current];img.alt=defaultAlt+' — photo '+(current+1);counter.textContent=(current+1)+' / '+urls.length;}
+ function change(delta){current=(current+delta+urls.length)%urls.length;img.src=urls[current];img.alt=defaultAlt+' — photo '+(current+1);}
  [-1,1].forEach(delta=>{
   const arrow=document.createElement('span');arrow.className='lc-photo-arrow';arrow.setAttribute('role','button');arrow.tabIndex=0;
   arrow.setAttribute('aria-label',delta<0?'Previous hotel photo':'Next hotel photo');arrow.textContent=delta<0?'‹':'›';
@@ -276,7 +275,7 @@ document.querySelectorAll('a.lc-card').forEach(card=>{
   arrow.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();change(delta)}});
   nav.appendChild(arrow);
  });
- photo.append(nav,counter);counter.textContent='1 / '+urls.length;
+ photo.append(nav);
 });
 })();
 </script>
