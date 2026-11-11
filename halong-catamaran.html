@@ -158,63 +158,6 @@ body{background:var(--hc-ivory)!important}
  .hc-notes{padding:55px 0 60px!important}
  .hc-finale{padding:65px 20px!important}
 }
-
-/* Editorial clean-up: less template-driven, more product-led. */
-.hc-nav-wrap{border-bottom:1px solid #e3d9ce}
-.hc-nav .hc-brand span:last-child{display:none!important}
-.hc-hero{min-height:570px!important}
-.hc-hero-panel{width:min(455px,100%)!important;padding:48px!important}
-.hc-hero-panel h1{font-size:clamp(3.4rem,4.6vw,5rem)!important;margin:17px 0!important}
-.hc-hero-panel .hc-subline{font-size:1.75rem!important;font-style:normal!important;margin-bottom:12px!important}
-.hc-hero-panel p:not(.hc-subline){line-height:1.7!important}
-.hc-overview{padding-top:76px!important}
-.hc-overview-grid{grid-template-columns:1fr .85fr!important;gap:70px!important}
-.hc-overview h2{font-size:clamp(2.7rem,3.7vw,3.9rem)!important}
-.hc-overview-photo{height:280px!important}
-.hc-overview p{font-size:14px!important;line-height:1.85!important}
-.hc-highlights{margin-top:48px!important;padding:23px 0!important}
-.hc-highlight{padding:5px 25px!important}
-.hc-highlight h3{font:500 12px/1.4 'Jost',sans-serif!important;letter-spacing:.025em!important;margin:0 0 8px!important}
-.hc-highlight p{font:400 12px/1.7 'Jost',sans-serif!important}
-.hc-journeys{padding:77px 0 86px!important}
-.hc-center{text-align:left!important;max-width:none!important;margin-bottom:32px!important}
-.hc-center h2{font-size:clamp(2.7rem,3.9vw,4.1rem)!important}
-.hc-center>p{max-width:620px!important}
-.hc-card-grid{display:flex!important;flex-direction:column!important;gap:0!important}
-.hc-card{display:grid!important;grid-template-columns:minmax(240px,42%) 1fr!important;min-height:260px;border:0!important;border-top:1px solid #d8ccc0!important;background:transparent!important}
-.hc-card:last-child{border-bottom:1px solid #d8ccc0!important}
-.hc-card:nth-child(even){grid-template-columns:1fr minmax(240px,42%)!important}
-.hc-card:nth-child(even) .hc-card-image{grid-column:2;grid-row:1}
-.hc-card:nth-child(even) .hc-card-content{grid-column:1;grid-row:1}
-.hc-card-image{height:100%!important;min-height:260px!important;max-height:380px!important;object-fit:cover!important;filter:sepia(.06) saturate(.87) contrast(.97)!important}
-.hc-card-content{padding:31px clamp(30px,5vw,75px)!important;justify-content:center}
-.hc-card h3{font-size:clamp(2.25rem,3vw,3.1rem)!important;margin:9px 0!important}
-.hc-card p{max-width:480px}
-.hc-card ul{display:grid;grid-template-columns:1fr 1fr;gap:2px 20px;margin:12px 0 20px!important}
-.hc-card a{margin-top:7px!important;align-self:flex-start!important;text-transform:none!important;letter-spacing:.025em!important;font-size:12px!important}
-.hc-details{padding:58px 0!important;background:#eae2d8!important}
-.hc-details-wrap{display:block!important;max-width:970px!important}
-.hc-details-text{display:grid!important;grid-template-columns:1fr 1fr!important;gap:70px!important}
-.hc-details-text h2{font-size:2.1rem!important;margin-bottom:14px!important}
-.hc-details-text li,.hc-details-text p{font-size:13px!important;line-height:1.85!important}
-.hc-finale{padding:65px 20px!important;background:#e4d9cb!important}
-.hc-finale h2{font-size:clamp(2.8rem,3.8vw,3.8rem)!important}
-.hc-finale p{margin-bottom:23px!important}
-@media(max-width:900px){
-.hc-overview-grid{gap:30px!important}
-.hc-card ul{grid-template-columns:1fr!important}
-.hc-card-content{padding:24px!important}
-}
-@media(max-width:700px){
-.hc-hero{min-height:520px!important}
-.hc-hero-panel{padding:30px!important}
-.hc-overview-grid{grid-template-columns:1fr!important}
-.hc-card,.hc-card:nth-child(even){display:flex!important;flex-direction:column!important}
-.hc-card:nth-child(even) .hc-card-image,.hc-card:nth-child(even) .hc-card-content{grid-column:auto;grid-row:auto}
-.hc-card-image{height:245px!important;min-height:245px!important}
-.hc-card-content{padding:23px 4px 30px!important}
-.hc-details-text{grid-template-columns:1fr!important;gap:25px!important}
-}
 </style></head>
 <body>
 <header class="hc-nav-wrap"><div class="hc-nav">
@@ -223,27 +166,27 @@ body{background:var(--hc-ivory)!important}
 <nav class="hc-nav-group" aria-label="More links"><a href="about.html">About Lúa</a><a href="journal.html">Travel Journal</a><a class="hc-enquire" href="contact.html?interest=The%20Halong%20Catamaran">Enquire Now ↗</a></nav>
 </div></header>
 <main>
-<section class="hc-hero" aria-labelledby="hc-title"><div class="hc-hero-content"><div class="hc-hero-panel"><span class="hc-kicker">HA LONG &amp; LAN HA BAY</span><h1 id="hc-title">The Halong<br>Catamaran</h1><p class="hc-subline">A day out on the bay.</p><p>Three cruise programmes departing from Tuan Chau Marina, with time on the water and views of the limestone islands.</p><a class="hc-cta" href="#journeys">View the cruises <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="hc-hero" aria-labelledby="hc-title"><div class="hc-hero-content"><div class="hc-hero-panel"><span class="hc-kicker">A SIGNATURE EXPERIENCE</span><h1 id="hc-title">The Halong<br>Catamaran</h1><p class="hc-subline">Elegant day cruising in<br>Ha Long &amp; Lan Ha Bay</p><p>A refined way to experience the beauty of the bay, with journeys for every time of day.</p><a class="hc-cta" href="#journeys">Explore our journeys <span aria-hidden="true">↗</span></a></div></div></section>
 <section class="hc-overview"><div class="hc-container">
-<div class="hc-overview-grid"><div><span class="hc-kicker">ON THE WATER</span><h2 class="hc-serif">Time on the bay.</h2><p>Leave Tuan Chau behind and head towards the limestone islands of Ha Long and Lan Ha Bay. The daytime sailings combine lunch with activities such as kayaking, swimming and a cooking demonstration. For a different view of the bay, there is also an evening dinner cruise.</p><p>These are shared departures on vessels carrying up to 99 guests. The exact boat and programme depend on the departure you choose.</p></div>
+<div class="hc-overview-grid"><div><span class="hc-kicker">THE EXPERIENCE</span><h2 class="hc-serif">Sail, explore, <em>unwind.</em></h2><p>The Halong Catamaran offers thoughtfully planned day cruises from Tuan Chau Marina through Ha Long Bay and Lan Ha Bay. Admire limestone scenery, relax on open sundecks and enjoy a programme of dining and activities on the water. The operator's documents describe vessels with capacity for up to 99 guests; exact vessel arrangements depend on the selected cruise.</p></div>
 <figure class="hc-overview-photo"><img src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran sailing through Ha Long Bay" loading="lazy"></figure></div>
 <div class="hc-highlights">
-<div class="hc-highlight"><h3>Departure</h3><p>Tuan Chau Marina, Ha Long</p></div>
-<div class="hc-highlight"><h3>On board</h3><p>Open sundeck and indoor lounge</p></div>
-<div class="hc-highlight"><h3>On the water</h3><p>Kayaking and swimming on selected sailings</p></div>
-<div class="hc-highlight"><h3>Dining</h3><p>Lunch or dinner, depending on the cruise</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">◒</span><h3>Day cruising</h3><p>A rewarding experience on the water, with time to enjoy the landscape.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">⌁</span><h3>Lan Ha Bay</h3><p>Emerald waterways and dramatic limestone formations.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">↝</span><h3>On-water moments</h3><p>Kayaking or bamboo boats and optional water activities on suitable sailings.</p></div>
+<div class="hc-highlight"><span class="hc-highlight-symbol" aria-hidden="true">✧</span><h3>Onboard dining</h3><p>Lunch or dinner according to the cruise programme you choose.</p></div>
 </div></div></section>
-<section class="hc-journeys" id="journeys"><div class="hc-container"><div class="hc-center"><span class="hc-kicker">THE CRUISES</span><h2 class="hc-serif">Choose your sailing.</h2><p>Three options from Tuan Chau. Times shown are based on the operator’s current programme documents and may change.</p></div>
+<section class="hc-journeys" id="journeys"><div class="hc-container"><div class="hc-center"><span class="hc-kicker">CURATED JOURNEYS</span><h2 class="hc-serif">Three ways to experience the bay.</h2><p>From a leisurely day voyage to the early morning light and an evening on the water, choose the journey that suits your stay.</p></div>
 <div class="hc-card-grid">
-<article class="hc-card"><img class="hc-card-image" src="https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg" alt="The Halong Catamaran in the limestone bay" loading="lazy"><div class="hc-card-content"><small>FULL DAY · APPROX. 6 HOURS ON BOARD</small><h3>Premium Day Cruise</h3><p>The longer daytime sailing, with lunch and stops for activities in Lan Ha Bay.</p><ul><li>Boarding around 11:10–11:45</li><li>Lunch on board</li><li>Kayaking or bamboo boat at Bright &amp; Dark Cave</li><li>Swimming and water activities, weather permitting</li><li>Cooking demonstration and sunset tea</li><li>Return around 17:15–18:00</li></ul><a href="contact.html?interest=Halong%20Catamaran%20Premium%20full-day%20cruise">Ask about this cruise ↗</a></div></article>
-<article class="hc-card"><img class="hc-card-image hc-sunrise" src="Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg" alt="Morning light in Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>MORNING · APPROX. 4 HOURS</small><h3>Sunrise Cruise</h3><p>An early departure with time for kayaking or swimming before lunch.</p><ul><li>Boarding around 06:45–07:00</li><li>Lagoon scenery and kayaking</li><li>Swimming and water slide or trampoline as conditions permit</li><li>Lunch on board around 10:00</li><li>Return around 11:00–11:15</li></ul><a href="contact.html?interest=Halong%20Catamaran%20sunrise%204-hour%20cruise">Ask about this cruise ↗</a></div></article>
-<article class="hc-card"><img class="hc-card-image hc-dinner" src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran experience on Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>EVENING · APPROX. 4 HOURS</small><h3>Dinner Cruise</h3><p>A short evening sailing with dinner, karaoke and squid fishing.</p><ul><li>Welcome aboard around 17:30–18:00</li><li>Dinner around 18:30</li><li>Evening scenery, karaoke and squid fishing</li><li>Return to Tuan Chau around 21:00–21:30</li></ul><a href="contact.html?interest=Halong%20Catamaran%20dinner%204-hour%20cruise">Ask about this cruise ↗</a></div></article>
+<article class="hc-card"><img class="hc-card-image" src="https://cdn.getyourguide.com/img/tour/61af1266ab4d06879637249989cf70ac1377aa51b66925027832a135ee5947ed.jpg/148.jpg" alt="The Halong Catamaran in the limestone bay" loading="lazy"><div class="hc-card-content"><small>FULL DAY · APPROX. 6 HOURS ON BOARD</small><h3>Premium Day Cruise</h3><p>A full-day journey balancing scenic cruising, outdoor activities and time to relax.</p><ul><li>Boarding around 11:10–11:45</li><li>Lunch on board</li><li>Kayaking or bamboo boat at Bright &amp; Dark Cave</li><li>Swimming and water activities, weather permitting</li><li>Cooking demonstration and sunset tea</li><li>Return around 17:15–18:00</li></ul><a href="contact.html?interest=Halong%20Catamaran%20Premium%20full-day%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
+<article class="hc-card"><img class="hc-card-image hc-sunrise" src="Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg" alt="Morning light in Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>MORNING · APPROX. 4 HOURS</small><h3>Sunrise Cruise</h3><p>Discover the bay early, when the light is soft and the morning unfolds quietly.</p><ul><li>Boarding around 06:45–07:00</li><li>Lagoon scenery and kayaking</li><li>Swimming and water slide or trampoline as conditions permit</li><li>Lunch on board around 10:00</li><li>Return around 11:00–11:15</li></ul><a href="contact.html?interest=Halong%20Catamaran%20sunrise%204-hour%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
+<article class="hc-card"><img class="hc-card-image hc-dinner" src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran experience on Ha Long Bay" loading="lazy"><div class="hc-card-content"><small>EVENING · APPROX. 4 HOURS</small><h3>Dinner Cruise</h3><p>Watch the bay change after sunset and savour an evening aboard.</p><ul><li>Welcome aboard around 17:30–18:00</li><li>Dinner around 18:30</li><li>Evening scenery, karaoke and squid fishing</li><li>Return to Tuan Chau around 21:00–21:30</li></ul><a href="contact.html?interest=Halong%20Catamaran%20dinner%204-hour%20cruise">ENQUIRE ABOUT THIS CRUISE ↗</a></div></article>
 </div></div></section>
-<section class="hc-details"><div class="hc-container hc-details-wrap"><div class="hc-details-text">
-<div><h2>Included on day sailings</h2><ul><li>Lunch and a welcome drink</li><li>English-speaking guide</li><li>Entrance and sightseeing fees</li><li>Activities listed for your selected cruise</li></ul></div>
-<div><h2>Before booking</h2><p>Hanoi transfers may be included or charged separately, depending on the package.</p><p>Extra drinks and optional activities are generally not included.</p><p>We will confirm the vessel, programme and price for your date.</p></div>
+<section class="hc-details"><div class="hc-container hc-details-wrap"><img class="hc-details-img" src="https://image.kkday.com/v2/image/get/w_1900%2Cc_fit/s1.kkday.com/product_146567/20230705154121_W26cY/jpg" alt="The Halong Catamaran and coastal scenery" loading="lazy"><div class="hc-details-text">
+<div><h2>Thoughtful touches</h2><ul><li>Welcoming onboard crew</li><li>Onboard meal as specified by your programme</li><li>Bay sightseeing and a selection of onboard activities</li><li>English-speaking guide on the day programmes described by the operator</li></ul></div>
+<div><h2>Good to know</h2><p>Duration: approximately 4–6 hours on board, depending on the option.</p><p>Departure: Tuan Chau Marina.</p><p>Hanoi transfers, drinks and activity inclusions vary by programme.</p><p>Rates and availability are confirmed on request.</p></div>
 </div></div></section>
-
-<section class="hc-finale"><span class="hc-kicker">PLAN YOUR VISIT</span><h2 class="hc-serif">Find the right cruise.</h2><p>Tell us your travel date and group size. We’ll check the departure and current rates.</p><a class="hc-cta" href="contact.html?interest=The%20Halong%20Catamaran">Enquire with Lúa <span aria-hidden="true">↗</span></a></section>
-</main><footer class="hc-footer">Lúa Travel &amp; Tours · <a href="cruise.html">All cruises</a></footer>
+<section class="hc-notes"><div class="hc-container"><span class="hc-kicker">BEFORE YOU SAIL</span><h2 class="hc-serif">A few useful details.</h2><div class="hc-notes-grid"><div><p><strong>Where to board:</strong> Tuan Chau Marina, Ha Long, Quang Ninh. Transfers from Hanoi may be included or arranged separately, depending on your booking.</p><p><strong>Meals:</strong> The day and morning programmes list lunch, while the evening programme features dinner. Other beverages are typically charged separately.</p></div><div><p><strong>On the water:</strong> Kayaking, swimming, slides and other activities depend on the selected programme, weather and safety conditions.</p><p><strong>Booking:</strong> The operator's documents describe different vessels and policies. We will confirm exact arrangements, inclusions and pricing for your date before booking.</p></div></div></div></section>
+<section class="hc-finale"><span class="hc-kicker">READY TO SET SAIL?</span><h2 class="hc-serif">Plan your Halong Catamaran experience.</h2><p>Let our local team help you choose the right cruise for your journey.</p><a class="hc-cta" href="contact.html?interest=The%20Halong%20Catamaran">Enquire now <span aria-hidden="true">↗</span></a></section>
+</main><footer class="hc-footer">Lúa Travel &amp; Tours · Thoughtfully crafted journeys in Vietnam · <a href="cruise.html">All cruises</a></footer>
 </body></html>
