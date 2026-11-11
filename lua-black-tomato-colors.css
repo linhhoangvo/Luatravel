@@ -1,0 +1,74 @@
+/* LÚA TRAVEL — Black Tomato-inspired colour palette (2026-11-11)
+   Palette reference: white, near-black, restrained dark forest & slate.
+   Original branding, images, layout and typography remain Lua's own. */
+:root{
+ --lua-white:#FFFFFF;
+ --lua-offwhite:#F5F5F2;
+ --lua-pale:#EBEDE9;
+ --lua-ink:#181818;
+ --lua-secondary:#555A58;
+ --lua-forest:#304830;
+ --lua-slate:#486078;
+ --lua-border:#D8DBD7;
+ --lua-on-dark:#F8F8F6;
+ --green:#304830;--deep:#181818;--cream:#FFFFFF;--soft:#F5F5F2;
+ --ink:#181818;--muted:#555A58;--gold:#486078;
+ --forest:#304830;--forest2:#181818;--off:#F5F5F2;
+ --sand:#EBEDE9;--accent:#486078;
+}
+html,body{background:#fff!important;color:#181818!important}
+body p,body li{color:inherit}
+h1,h2,h3,h4,.lua-how-split-panel h2,.lua-stories-intro h2{color:#181818}
+p,.lead,.note,.facts p{color:#555A58}
+.eyebrow,.tag,.tour-type,.hc-kicker,.hc-eyebrow{color:#486078!important}
+.section,.journeys,.lua-featured,.lua-dest-carousel,.lua-best,.lt-page,.lc-page,.lc-main,.lt-list{background:#fff!important;color:#181818!important}
+.facts,.split>div,.cta,.tile,.tour,.lc-sidebar-help,.lt-sidebar-note{background:#F5F5F2!important}
+.header:not(.lua-showcase-header),.hc-nav-wrap,.hc-nav,.lc-top,.lt-top{background:#fff!important;color:#181818!important;border-color:#D8DBD7!important}
+.header .brand,.header .brand span,.header .nav a:not(:last-child),.hc-nav a,.hc-brand{color:#181818!important}
+.header .nav a:last-child,.hc-nav a.hc-enquire{border:1px solid #181818!important;background:#181818!important;color:white!important;border-radius:0!important}
+.btn,.form button[type='submit'],button[type='submit'],.hc-cta,.hc-detail-button,.lc-top a,.lt-top a,.lc-outro a,.lt-bottom a{
+ background:#181818!important;border-color:#181818!important;color:#fff!important;border-radius:0!important
+}
+.btn.white{background:#fff!important;color:#181818!important;border-color:#fff!important}
+.btn:hover,.form button[type='submit']:hover,button[type='submit']:hover,.hc-cta:hover{background:#304830!important;border-color:#304830!important;color:#fff!important}
+.filters button,.lc-sidebar input,.lc-sidebar select,.form input,.form textarea,.form select{background:#fff!important;border-color:#D8DBD7!important;color:#181818!important}
+.filters button.active{background:#304830!important;color:#fff!important;border-color:#304830!important}
+.tile a.link,.textlink,.lua-stories-discover,.lua-approach-link,.lua-how-split-action{color:#304830!important;border-color:#86998B!important}
+.footer,.lua-site-footer,.hc-footer,.lc-detail-footer,.lj-footer{background:#181818!important;color:#F8F8F6!important}
+.lua-site-footer .lua-footer-banner{background:#272B29!important;border-color:#464C48!important}
+.lua-site-footer .lua-footer-banner>a{background:#304830!important;border:1px solid #829382!important;color:#fff!important}
+.lua-site-footer .lua-footer-social a{background:#fff!important;color:#181818!important}
+.lua-how.lua-how-split,.lua-how.lua-how-editorial-layout,.lua-philosophy.lua-philosophy-stories{background:#F5F5F2!important}
+.lua-how-split .lua-how-split-panel,.lua-interlude-panel,.hc-hero-panel{background:#F5F5F2!important;color:#181818!important}
+.lua-how-split .lua-how-split-panel h2,.lua-how-split .lua-how-split-step h3,.lua-philosophy-stories .lua-stories-intro h2,.lua-philosophy-stories .lua-stories-item figcaption strong,.lua-interlude-panel h2{color:#181818!important}
+.lua-how-split .lua-how-split-step p,.lua-how-split .lua-how-split-lead,.lua-interlude-panel p{color:#555A58!important}
+.lua-philosophy-stories .lua-stories-item figcaption span,.lua-philosophy-stories .lua-stories-eyebrow,.lua-how-split-eyebrow{color:#486078!important}
+.lua-editorial-interlude .lua-interlude-panel{background:#f5f5f2!important}
+.lua-featured .lua-feature-more,.lua-stories-link{color:#304830!important}
+.lc-page,.lc-main,.lc-list,.lc-top{background:#fff!important;color:#181818!important}
+.lc-top h1,.lc-sidebar h2,.lc-sidebar label,.lc-card h3,.lc-outro h2{color:#181818!important}
+.lc-top p,.lc-count,.lc-note,.lc-card-bottom,.lc-outro p{color:#555A58!important}
+.lc-card,.lt-card{background:#fff!important;border-color:#E5E7E4!important}
+.lc-card-badge{background:#EBEDE9!important;color:#304830!important}
+.lc-sidebar-help,.lc-search-empty{background:#F5F5F2!important}
+.lc-reset,.lc-card-bottom b{color:#304830!important}
+.lc-card-body small,.lc-kicker,.lt-eyebrow{color:#486078!important}
+.hc-nav-wrap,.hc-hero-panel{background-color:#fff!important}
+.hc-hero-panel h1,.hc-hero-panel .hc-subline,.hc-overview h2,.hc-card h3,.hc-details-text h2,.hc-center h2,.hc-finale h2{color:#181818!important}
+.hc-hero-panel p:not(.hc-subline),.hc-overview p,.hc-card p,.hc-card li,.hc-details-text p,.hc-details-text li{color:#555A58!important}
+.hc-card,.hc-details,.hc-finale,.hc-options{background:#F5F5F2!important}
+.hc-card{border-color:#D8DBD7!important}
+.hc-card a{color:#304830!important;border-color:#96A99A!important}
+.hc-details{background:#EBEDE9!important}
+.hc-finale{background:linear-gradient(90deg,rgba(245,245,242,.93),rgba(245,245,242,.90)),url('Ha%20Long%20Bay%20hero%20m%E1%BB%9Bi.jpg') center/cover!important}
+.lc-detail-header,.lj-header{background:#fff!important;border-bottom:1px solid #D8DBD7!important}
+.lc-detail-panel,.lc-related,.lj-related{background:#F5F5F2!important}
+.lc-detail-button{background:#181818!important;color:#fff!important}
+.lc-detail-eyebrow,.lj-eyebrow,.lj-card .lj-eyebrow{color:#486078!important}
+.lj-card h2,.lj-article h1,.lj-copy h2,.lc-detail-title h1{color:#181818!important}
+.lj-copy,.lj-card p{color:#555A58!important}
+/* Keep text white wherever it sits directly on photography. */
+.hero h1,.hero p,.banner h1,.banner p,.lua-featured .lua-feature h3,.lua-featured .lua-feature-copy h3,.lua-featured .lua-feature-copy p,.lc-card-photo span,.lua-showcase-hero h1,.lua-showcase-hero p{color:#fff!important}
+/* Do not recolour or filter client-provided photos. */
+.lua-featured .lua-feature>img,.lua-philosophy-stories img,.lc-card-photo img,.hc-card-image,.hc-overview-photo img{filter:none!important}
+@media(max-width:750px){.header .nav{background:#fff!important}.header .nav a{color:#181818!important}}
