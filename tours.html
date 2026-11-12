@@ -215,6 +215,23 @@ footer.lua-site-footer .lua-footer-logo{filter:none!important;background:#f1eee7
  footer.lua-site-footer .lua-footer-invite{margin:20px 0 18px;padding-top:15px}
  footer.lua-site-footer .lua-footer-invite span{font-size:19px}
 }
+
+/* Fix specificity collision: show original green Lua SVG, no footer separator. */
+html body footer.lua-site-footer .lua-footer-logo{
+ filter:none!important;-webkit-filter:none!important;
+ display:block!important;width:78px!important;height:78px!important;
+ padding:6px!important;object-fit:contain!important;object-position:center!important;
+ background:#f3efe6!important;border-radius:4px!important;
+ margin:0 0 12px!important;opacity:1!important;
+}
+html body footer.lua-site-footer .lua-footer-invite{
+ border:0!important;border-top:0!important;
+ padding-top:0!important;margin-top:25px!important;
+}
+@media(max-width:620px){
+ html body footer.lua-site-footer .lua-footer-logo{width:70px!important;height:70px!important}
+ html body footer.lua-site-footer .lua-footer-invite{padding-top:0!important;margin-top:19px!important}
+}
 </style>
 </head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-page">
 <section class="lt-top"><div class="wrap lt-top-inner"><div><span class="lt-eyebrow">Lua Travel &amp; Tours</span><h1>Travel through Vietnam</h1><p>Thoughtful private journeys, local discoveries and ideas to make your own.</p></div><a href="contact.html">Plan a private trip ↗</a></div></section>
