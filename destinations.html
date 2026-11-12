@@ -490,6 +490,53 @@ html body header.header nav.nav > a.nav-cta:focus-visible {
 </style>
 <link rel="stylesheet" href="assets/site-system.css">
 <script src="assets/site-shared.js" defer></script>
+<style id="lua-dest-hero-contrast-layout-fix">
+/* Clear, inset hero copy despite globally shared typography overrides */
+html body main.lua-dest-page .lua-dest-hero{
+ position:relative!important;
+ background-image:linear-gradient(90deg,rgba(10,24,17,.46),rgba(10,24,17,.18) 58%,rgba(10,24,17,.40)),
+ url('https://statics.vinpearl.com/Best-time-to-visit-Sapa-rice-fields-04_1690470250.jpg')!important;
+ background-position:center 48%!important;
+}
+html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-content{
+ box-sizing:border-box!important;
+ width:min(1220px,calc(100% - 80px))!important;
+ max-width:1220px!important;
+ margin-left:auto!important;margin-right:auto!important;
+ padding:38px 0!important;
+}
+html body main.lua-dest-page .lua-dest-hero .lua-dest-label{
+ display:block!important;color:#f4f3e9!important;font-size:10px!important;
+ text-shadow:0 1px 6px rgba(0,0,0,.25)!important;
+}
+html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-bottom{
+ display:flex!important;align-items:flex-end!important;justify-content:space-between!important;
+ gap:35px!important;width:100%!important;
+}
+html body main.lua-dest-page .lua-dest-hero h1{
+ color:#fff!important;font-family:'Cormorant Garamond',Georgia,serif!important;
+ font-size:clamp(38px,4.3vw,62px)!important;font-weight:500!important;
+ line-height:1.05!important;letter-spacing:-.015em!important;
+ text-shadow:0 2px 15px rgba(0,0,0,.25)!important;
+}
+html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-bottom p{
+ color:#fff!important;font-size:13px!important;max-width:310px!important;
+ line-height:1.55!important;margin:0 0 5px!important;text-align:right!important;
+ text-shadow:0 2px 8px rgba(0,0,0,.25)!important;
+}
+@media(max-width:700px){
+ html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-content{
+ width:calc(100% - 38px)!important;padding:26px 0!important;
+ }
+ html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-bottom{
+ display:block!important;
+ }
+ html body main.lua-dest-page .lua-dest-hero h1{font-size:clamp(35px,9vw,49px)!important}
+ html body main.lua-dest-page .lua-dest-hero .lua-dest-hero-bottom p{
+ margin-top:12px!important;text-align:left!important;max-width:280px!important;
+ }
+}
+</style>
 </head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lua-dest-page">
 <section class="lua-dest-hero"><div class="wrap lua-dest-hero-content"><span class="lua-dest-label">Vietnam / Our destinations</span><div class="lua-dest-hero-bottom"><h1>Discover Vietnam</h1><p>From the mountains to the sea, at your own pace.</p></div></div></section>
 <div class="wrap lua-dest-breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">›</span><span>Vietnam</span></div>
