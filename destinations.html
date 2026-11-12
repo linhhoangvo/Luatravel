@@ -412,6 +412,24 @@ html body footer.lua-site-footer .lua-footer-invite{
  html body footer.lua-site-footer .lua-footer-logo{width:70px!important;height:70px!important}
  html body footer.lua-site-footer .lua-footer-invite{padding-top:0!important;margin-top:19px!important}
 }
+
+/* Blend Lua logo into dark footer: no square background, soft sage-green mark */
+html body footer.lua-site-footer .lua-footer-logo {
+  background:transparent!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  width:76px!important;
+  height:76px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:brightness(0) saturate(100%) invert(65%) sepia(20%) saturate(550%) hue-rotate(75deg) brightness(99%) contrast(89%)!important;
+  -webkit-filter:brightness(0) saturate(100%) invert(65%) sepia(20%) saturate(550%) hue-rotate(75deg) brightness(99%) contrast(89%)!important;
+}
+@media(max-width:620px){
+ html body footer.lua-site-footer .lua-footer-logo{width:67px!important;height:67px!important}
+}
 </style>
 </head><body><header class="header"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lua-dest-page">
 <section class="lua-dest-hero"><div class="wrap lua-dest-hero-content"><span class="lua-dest-label">Vietnam / Our destinations</span><div class="lua-dest-hero-bottom"><h1>Discover Vietnam</h1><p>From the mountains to the sea, at your own pace.</p></div></div></section>
