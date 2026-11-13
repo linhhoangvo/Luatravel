@@ -5,7 +5,7 @@ const footerMarkup=`<div class="lua-footer-inner">
 <div class="lua-footer-grid">
 <div class="lua-footer-company"><a href="index.html" aria-label="Lua Travel & Tours homepage"><img class="lua-footer-logo" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><p class="lua-footer-address">Group 10, Son Pho 1 Block, Hoi An Dong Ward,<br>Da Nang City, Vietnam</p><a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><a href="https://wa.me/84988849593" target="_blank" rel="noopener noreferrer">WhatsApp: +84 988 849 593</a><a href="tel:+610474425066">Australia: +61 047 442 5066</a></div>
 <div><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="tours.html">Our Tours</a></li><li><a href="hotels.html">Hotels</a></li><li><a href="cruise.html">Cruise</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="about.html">About Lúa</a></li><li><a href="contact.html">Contact us</a></li><li><a href="travel-agents.html">For Travel Agents</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="about.html">About Lúa</a></li><li><a href="blogs.html">Travel Journal</a></li><li><a href="contact.html">Contact us</a></li><li><a href="travel-agents.html">For Travel Agents</a></li></ul></div>
 <div><h4>Support</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Send an enquiry</a></li><li><a href="tel:+84388855913">Hotline / Zalo: +84 388 855 913</a></li></ul></div></div>
 <div class="lua-footer-base"><div class="lua-footer-social" aria-label="Follow Lua Travel on social media">
 <a href="https://www.facebook.com/LuaWellnessTravel" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
@@ -18,6 +18,15 @@ function prepare(){
     const link=document.createElement('a');link.href=partnerHref;link.className='lua-partner-nav';link.textContent='For Travel Agents';
     const cta=nav.querySelector('.nav-cta,.hc-enquire')||[...nav.querySelectorAll('a')].find(a=>/plan your trip|enquire/i.test(a.textContent));
     if(cta)nav.insertBefore(link,cta);else nav.append(link);
+  }
+  if(nav && !nav.querySelector('a[href="blogs.html"]')){
+    const journal=document.createElement('a');
+    journal.href='blogs.html';
+    journal.textContent='Travel Journal';
+    journal.className='lua-journal-nav';
+    const partner=nav.querySelector('.lua-partner-nav');
+    if(partner)nav.insertBefore(journal,partner);
+    else nav.append(journal);
   }
   const footer=document.querySelector('footer.lua-site-footer');
   if(footer)footer.innerHTML=footerMarkup;
