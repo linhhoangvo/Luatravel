@@ -1,0 +1,184 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Travel Journal | Lua Travel & Tours</title><meta name="description" content="Travel inspiration and practical Vietnam guides by Lua Travel & Tours.">
+<link rel="stylesheet" href="assets/site-system.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f5f2;color:#24342b;font-family:'Jost',Arial,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+header{background:#f3f4f0;border-bottom:1px solid #e7ebe5}
+.head{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+.head img{width:56px;height:56px;object-fit:contain}
+nav{display:flex;gap:19px;align-items:center;flex-wrap:wrap}
+nav a{font:400 12px 'Jost',sans-serif}nav a:hover,.back:hover{color:#618353}
+.nav-cta{border:1px solid #d3d6d0;padding:9px 15px;border-radius:24px;background:#f8f8f6}
+.breadcrumb{font:400 12px 'Jost',sans-serif;color:#708075;margin-top:40px;display:flex;gap:10px;align-items:center}
+article{max-width:760px;margin:0 auto;padding:64px 0 36px}
+.eyebrow{color:#6d896e;font:500 11px 'Jost',sans-serif;text-transform:uppercase;letter-spacing:.16em}
+h1{font:400 clamp(43px,5vw,70px)/1.08 'Cormorant Garamond',Georgia,serif;letter-spacing:-.018em;margin:14px 0 20px}
+.meta{color:#819084;font:400 12px 'Jost',sans-serif;margin-bottom:35px}
+.cover{width:100%;max-height:400px;aspect-ratio:16/9;object-fit:cover;margin:0 0 33px}
+.prose h2{font:400 32px/1.16 'Cormorant Garamond',Georgia,serif;letter-spacing:-.015em;margin:35px 0 14px}
+.prose p,.prose li{font:400 15px/1.85 'Jost',Arial,sans-serif;color:#4d5c52;margin:0 0 17px}
+.prose ul{padding-left:20px}
+.prose .intro{font-size:17px;line-height:1.8;color:#3a4b40}
+.note{border-left:2px solid #adbaad;padding:11px 19px;margin-top:32px;background:#ebefea;color:#68796b;font:400 12px/1.7 'Jost',sans-serif}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid #dfe5db;margin-top:40px;padding-top:18px;flex-wrap:wrap}
+.bottom a{font:500 13px 'Jost',sans-serif;color:#4b7053;border-bottom:1px solid #a2b4a4;padding-bottom:4px}
+.related{background:#eef1ec;padding:52px 0 75px}
+.related h2{font:400 37px 'Cormorant Garamond',serif;margin:0 0 24px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{padding:24px;background:#fff;display:flex;flex-direction:column;min-height:155px}
+.rel-card small{font:500 10px 'Jost',sans-serif;letter-spacing:.12em;color:#78917b;text-transform:uppercase}
+.rel-card strong{font:400 24px/1.12 'Cormorant Garamond',serif;margin:15px 0;flex:1}
+.rel-card span{font:400 12px 'Jost',sans-serif;color:#517159}
+footer{background:#1d2422;padding:22px 0;color:#cad5cb;font:400 12px 'Jost',sans-serif}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:700px){.wrap{width:calc(100% - 36px)}.head{align-items:flex-start;padding:9px 0}nav{justify-content:flex-end;gap:10px}nav a{font-size:11px}article{padding:43px 0 24px}.rel-grid{grid-template-columns:1fr}.rel-card{min-height:120px}h1{font-size:43px}.prose h2{font-size:29px}}
+</style><script src="assets/blog-archive.js" defer></script></head><body>
+<header><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<main><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="blogs.html">Travel Journal</a><span>›</span><span id="crumb">Article</span></div>
+<article id="article" aria-live="polite"><p>Loading article…</p></article></div>
+<section class="related"><div class="wrap"><h2>Continue exploring.</h2><div class="rel-grid" id="related"></div></div></section></main>
+<footer><div class="wrap"><span>© 2026 Lua Travel & Tours</span><a href="contact.html">Plan your journey ↗</a></div></footer>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+const all=window.LUA_BLOG_ARCHIVE||[];
+const id=Number(new URLSearchParams(location.search).get('id'));
+const article=all.find(a=>a.id===id),root=document.getElementById('article'),related=document.getElementById('related');
+if(!article){root.textContent='Sorry, this article could not be found.';return;}
+document.title=article.title+' | Lua Travel Journal';
+document.querySelector('meta[name="description"]').content=article.title+' — Vietnam travel insights and practical ideas by Lua Travel & Tours.';
+document.getElementById('crumb').textContent=article.title;
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+function p(parent,txt,cls){parent.append(el('p',cls||'',txt))}
+function section(parent,heading,paras){parent.append(el('h2','',heading));paras.forEach(t=>p(parent,t))}
+const intro={
+'Wellness':'Wellness travel is about making space for rest, fresh air and a slower rhythm. Vietnam offers a variety of settings for this, from leafy mountain retreats to quiet coastal stays.',
+'Hotels & Stays':'Where you stay shapes the rhythm of a journey. Comfort, location, design and the surrounding experience can matter as much as the room itself.',
+'Itineraries':'A memorable Vietnam journey is rarely about fitting in as many stops as possible. The most rewarding plans balance travel time, local encounters and room to slow down.',
+'Culture & Experiences':'Some of Vietnam’s most rewarding moments happen in the ordinary details: a conversation, a family recipe, a traditional craft or a quiet neighbourhood street.',
+'Travel Tips':'A little planning can make travel in Vietnam feel much easier. Local conditions, journey times and personal preferences all influence the choices that work best for each visitor.',
+'Destinations':'Vietnam’s landscapes and communities change remarkably from one region to another. Taking time to explore beyond the familiar highlights reveals a different side of each place.'
+};
+const guide={
+'Wellness':[
+['Choose the right setting',[
+'A coastal resort can offer long mornings by the sea, while a mountain lodge or riverside retreat creates a quieter sense of distance from busy daily life. Consider the atmosphere you want rather than choosing by star rating alone.',
+'Look at what the stay actually includes. Spa treatments, guided movement, healthy dining and wellness consultations vary widely between properties, and should be confirmed before booking.'
+]],
+['Make room in your schedule',[
+'Balance planned activities with free time. A gentle walk, unhurried breakfast or afternoon without transfers can be as restorative as a formal wellness programme.',
+'If you are combining a retreat with city sightseeing, consider leaving a little space between long journeys and spa or movement sessions.'
+]],
+['Plan the practical details',[
+'Check the local season, accessibility, transport time, meal options and any individual requirements in advance. A smooth arrival helps set the tone for the whole experience.',
+'For treatments or medical-style wellness services, review the provider’s qualifications and discuss health considerations with an appropriate professional.'
+]]],
+'Hotels & Stays':[
+['Start with the experience',[
+'Consider whether you want to wake up close to restaurants and cultural attractions, or prefer privacy in a resort further from the centre. Each makes for a very different trip.',
+'Pool villas, wellness resorts and boutique hotels can all feel special, but the best fit depends on the group, trip purpose and preferred pace.'
+]],
+['Look beyond the photos',[
+'Ask about bed arrangements, breakfast, extra guest charges, beach access, transport and any facilities that matter to your group. The exact room category can change the experience considerably.',
+'It is also worth checking construction notices and seasonal conditions when reviewing hotel options.'
+]],
+['Connect your stays to the route',[
+'Avoid choosing accommodation without considering transfers and the rest of your itinerary. A beautiful hotel can become less enjoyable if it requires lengthy journeys every day.',
+'For multi-destination holidays, match each stay to the activities planned nearby.'
+]]],
+'Itineraries':[
+['Build a comfortable route',[
+'Start with the places and experiences that matter most, then check how much time is needed to travel between them. Domestic flights, mountain roads and transfers can take a meaningful part of the day.',
+'Keeping some unstructured time makes room for personal discoveries without turning each stop into a checklist.'
+]],
+['Mix highlights with local moments',[
+'Famous landmarks are worth considering, but food walks, village visits, coffee stops and conversations with local guides can be just as memorable.',
+'Choose experiences that match your interests instead of adding activities simply to fill the schedule.'
+]],
+['Adapt to your travel party',[
+'A couple, a family with young children and a multigenerational group may need very different pacing. Talk through mobility needs, preferred accommodation and daily start times.',
+'Confirm relevant seasonal conditions and any booking restrictions before finalising the plan.'
+]]],
+'Culture & Experiences':[
+['Discover the everyday side of Vietnam',[
+'Markets, cafés, workshops and family-run food stops offer glimpses of how local traditions connect to daily life. A little curiosity often leads to the most interesting conversations.',
+'Allow time to observe, ask questions and enjoy the moment instead of moving too quickly between stops.'
+]],
+['Travel thoughtfully',[
+'Support local makers and small businesses when possible. Ask permission before photographing people, especially in workshops and residential areas.',
+'If you join a guided activity, share any dietary restrictions or accessibility needs in advance so the experience can be planned appropriately.'
+]],
+['Take a meaningful memory home',[
+'A carefully chosen craft, recipe or story can make a place feel familiar long after you leave. Rather than collecting many souvenirs, look for something that genuinely connects to your experience.',
+'For activities involving food or crafts, learning about the process can be more rewarding than simply seeing the finished result.'
+]]],
+'Travel Tips':[
+['Plan for the place and season',[
+'Vietnam has varied geography and weather conditions. Research the region you will visit, since coastal, northern highland and southern destinations may have different seasonal patterns.',
+'Review current visa, transport and entry requirements through official sources before departure.'
+]],
+['Make each day manageable',[
+'Plan walking time, travel distance and meals realistically. Lightweight clothing, comfortable footwear and a little flexibility can improve most sightseeing days.',
+'Carry essentials appropriate to the activity, such as drinking water, sun protection and any necessary personal medication.'
+]],
+['Use trusted local information',[
+'Ask hotels, professional guides and local operators about transport, opening hours and conditions that might affect your plans.',
+'Keep booking details handy and confirm meeting points in advance, especially for early departures or excursions outside town.'
+]]],
+'Destinations':[
+['Find your own perspective',[
+'Every destination is more than its most photographed viewpoint. Explore its neighbourhoods, food traditions, waterways or countryside to understand what gives the place its character.',
+'Consider staying long enough to experience the rhythm of a morning and evening, rather than making every visit a quick stop.'
+]],
+['Balance nature and culture',[
+'Combine scenic viewpoints with local experiences where appropriate. Walking, cycling, boat trips or heritage visits can offer complementary ways to discover the same region.',
+'Always consider weather, safety and local guidance before outdoor activities.'
+]],
+['Stay flexible',[
+'Travel times and seasonal conditions can shape the best route. Keep a few alternatives in mind and confirm access, opening times and transport arrangements before visiting.',
+'Choosing fewer stops with more meaningful time in each location can make the journey feel more personal.'
+]]]
+};
+const picture={Wellness:'mai%20chau.jpg','Hotels & Stays':'hoi%20an%205.jpg',Itineraries:'ninh%20binh.jpg','Culture & Experiences':'c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg','Travel Tips':'sapa%20m%E1%BB%9Bi.jpg',Destinations:'Ha%20Giang.jpg'};
+const topic=guide[article.topic]?article.topic:'Destinations';
+root.replaceChildren(el('span','eyebrow',topic),el('h1','',article.title),el('div','meta',[article.date,article.author].filter(Boolean).join(' · ')));
+const img=el('img','cover');img.src=picture[topic];img.alt='Vietnam travel inspiration';img.loading='lazy';img.onerror=()=>img.remove();root.append(img);
+const prose=el('div','prose');root.append(prose);
+p(prose,intro[topic]+' This editorial guide explores the ideas behind '+article.title.replace(/[.!?]$/,'')+'.','intro');
+if(article.id===179){
+ const tips=[
+ ['Start early','Check the meeting time and arrive a little early. Morning visits can feel more relaxed before the busiest part of the day.'],
+ ['Choose comfortable clothes','Lightweight clothing and good walking shoes are useful for moving between cafés, street-food stops and neighbourhood lanes.'],
+ ['Leave room for tasting','Avoid a heavy meal immediately beforehand, while respecting your own dietary needs and routines.'],
+ ['Be curious about local food','Ask about ingredients and preparation methods. Let your guide know about allergies or restrictions.'],
+ ['Enjoy coffee at your pace','Traditional Vietnamese coffee can be strong. Ask about portion sizes or alternatives if you are sensitive to caffeine.'],
+ ['Bring water and small cash','Staying hydrated is helpful in warm weather, and cash can be convenient for personal purchases.'],
+ ['Respect local customs','Ask before taking close-up photographs of vendors or residents, and listen to the stories behind each dish.']
+ ];
+ tips.forEach((t,i)=>section(prose,(i+1)+'. '+t[0],[t[1]]));
+}else if(article.id===183){
+ section(prose,'Crafts worth discovering',['Hoi An has strong traditions in pottery, lantern making, textiles and woodcraft. A visit to a workshop can reveal the skill and patience behind something that looks simple on a shop shelf.']);
+ section(prose,'Choose with care',['Ask who made a piece, what materials were used and how to care for it. Choosing something locally made and meaningful can be more rewarding than buying a large number of souvenirs.']);
+ section(prose,'Make the experience personal',['Where possible, watch a demonstration or take part in a guided activity. The memory of making or learning often stays with you as long as the object itself.']);
+}else if(article.id===182){
+ section(prose,'A different Hoi An after sunset',['Evening food stops and intimate bars offer a different atmosphere from the daytime Ancient Town. Taste local specialties, explore small streets and enjoy conversations over drinks at a comfortable pace.']);
+ section(prose,'Plan an enjoyable night',['Choose a walkable route, check opening times and arrange a reliable way back to your accommodation. If drinking alcohol, pace yourself and respect individual preferences.']);
+ section(prose,'Look beyond the obvious',['A local guide can help connect the food and nightlife to the history of the neighbourhood rather than treating the evening as a series of stops.']);
+}else if(article.id===181){
+ section(prose,'Life along the water',['The Thu Bon River has long been part of Hoi An’s daily life and trading history. Its banks reveal changing scenes through the day, from working boats to quiet moments near the old town.']);
+ section(prose,'Enjoy the river thoughtfully',['A riverside walk or suitable boat experience can offer new perspectives. Choose established operators, follow safety instructions and consider the weather before going onto the water.']);
+ section(prose,'Connect with the surrounding villages',['Nearby communities and craft traditions give further context to the river’s role in the region. Allow time for local stories and respectful encounters.']);
+}else{
+ for(const [heading,paras] of guide[topic])section(prose,heading,paras);
+}
+section(prose,'Make the journey yours',[
+'The best choice depends on your interests, dates, travel companions and preferred pace. Lua Travel & Tours can help you connect the highlights with locally informed planning and practical arrangements.',
+'Use this guide as a starting point, and confirm current information with your travel provider before making arrangements.'
+]);
+const info=el('div','note','Editorial overview prepared for the new Lua Travel Journal. The original long-form article and its original images have not yet been imported from the previous CMS.');root.append(info);
+const bottom=el('div','bottom');const back=el('a','back','← All Travel Journal articles');back.href='blogs.html';const plan=el('a','','Plan a journey ↗');plan.href='contact.html';bottom.append(back,plan);root.append(bottom);
+const others=all.filter(a=>a.id!==article.id&&a.topic===article.topic).slice(0,3);
+for(const a of (others.length?others:all.filter(a=>a.id!==article.id).slice(0,3))){
+ const link=el('a','rel-card');link.href=a.url;link.append(el('small','',a.topic),el('strong','',a.title),el('span','','Read story ↗'));related.append(link);
+}
+});
+</script></body></html>
