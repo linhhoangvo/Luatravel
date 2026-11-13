@@ -63,6 +63,17 @@ const all=window.LUA_BLOG_ARCHIVE||[];
 const list=document.getElementById('articles'),bar=document.getElementById('categories'),search=document.getElementById('search'),count=document.getElementById('count'),pager=document.getElementById('pager');
 const cats=['All','Destinations','Travel Tips','Culture & Experiences','Wellness','Hotels & Stays','Itineraries'];
 let category='All',query='',page=1;
+const originalCovers={
+ "175": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/19ab74c340ba2aa09bfcc57cd5023da0.webp",
+ "176": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/40cedbf2a4ca085002b516e3b4d42389.webp",
+ "177": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/86dba2e5c00a8ffc50f5e402b61f60c3.webp",
+ "178": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/reAFLQajZaVrxIXgOaYinYEWQDxbaANH2uZo4kKcUeL4BfPQdoU-dHQSAyWwkWbm3_syQqJHoZ9nUhie8OEM8t7s-mpvbRB-C5PBw0JsgSjvM7fTeTWeHtzFOJCIS0-X2KQtFzxQbrPf5S24CR02EISr6ts3w8TBz-aTqNclozQtWaq2IXdA.webp",
+ "179": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/xN4kuiLPzlchMi0zCNO3mfz6_zV39Uyjm-cXHgjfSPzqmB4vdNebJaZaKKbuf8D2dmaCQwiJDSHnKYxFQbxa9gNGF9C57dNOD_BPVKTpQ0CZBKb6JeY_eQpneMWV8GHwPQTo9o32hqt4OUevssVPTlrcesXubfeTCLwZvvcVz40iJKJtec1f.webp",
+ "180": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/B4UCfvV8ojuVcG4r3019FSY3bWSPwYTu3U7rBcHg9kNhgYNby1eH6QjelagvIqfAeU_JtKbKVBCXAgCwEOX3esjJjeeyfadddHpc7NZPdSt-2VRdSxcDF6huk5QxIHZ-qrHWy3FMyw_YgnnyXJngsCyI5z3qHFgYaPiCT_FZewK56PYLo-yq.webp",
+ "181": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/yTt1HVgppeB6luLdfEszahE4hBvjMez1X7cden6cpN_pXe2UGe7VolGedlqBnq0nVaNQ1PSouizucsJEFCQTaqzvNoMKVXomkHbPdcv3JVnAygpm3wk46shpC2QfTfFTP_vhste8jJqFxfcduPmypC_-rZIp69Okehc0UTfke7AEoUB2lGAq.webp",
+ "182": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/cCho0ft7Fxx05BWMwJCtS8oMeSQGmRZIXAnRdessBARfdL2I7c_M1iPWs0rF-mF_XnVMaF53nifG1Aghqa_R_2vHR0btt553ozGfH-Bg8g9MWIS4dE0MiEaP6kN4Ih9zfr-rx4NqwC29GzfxgQkoxT-hPn4PELIi09duZTSwfB_8klcs-ePb.webp",
+ "183": "https://luawellnesstravel.com/uploads//Nhu-Y-picture/QKuhg8oWFNQpog5QYsdJ5aBQ9ZJ8ZcRJ2JzL9HGfe6VG2d1ZGQe8q77lrwMgKOLFK70Wqob1TMkAhIVjAeaiAwY4g8cUNN2WPsfKs9-F7LV7FoWOfHfVxsTiQm0b9A92gULTzlPjeqp-wz2gm7WPfq0xcBTscLrJesSUAxPfLiCUSD6oDwUk.webp"
+};
 const images={
  'hoi an':'hoi an 5.jpg','thu bon':'hoi an 5.jpg','souvenir':'c4790bc6af2211bea9a9f19bb540dba5 (2).jpg',
  'craft':'c4790bc6af2211bea9a9f19bb540dba5 (2).jpg','calligraphy':'hoi an 5.jpg',
@@ -81,6 +92,7 @@ const images={
 const fallback={'Destinations':'Ha Giang.jpg','Travel Tips':'sapa mới.jpg','Culture & Experiences':'hoi an 5.jpg','Wellness':'mai chau.jpg','Hotels & Stays':'hoi an 5.jpg','Itineraries':'ninh binh.jpg'};
 function coverFor(a){
  if(a.image)return a.image;
+ if(originalCovers[a.id])return originalCovers[a.id];
  const title=a.title.toLocaleLowerCase();
  const matched=Object.keys(images).find(key=>title.includes(key));
  return encodeURI(images[matched]||fallback[a.topic]||'hoi an 5.jpg');
