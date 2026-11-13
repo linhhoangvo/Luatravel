@@ -141,7 +141,7 @@ const guide={
 const picture={Wellness:'mai%20chau.jpg','Hotels & Stays':'hoi%20an%205.jpg',Itineraries:'ninh%20binh.jpg','Culture & Experiences':'c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg','Travel Tips':'sapa%20m%E1%BB%9Bi.jpg',Destinations:'Ha%20Giang.jpg'};
 const topic=guide[article.topic]?article.topic:'Destinations';
 root.replaceChildren(el('span','eyebrow',topic),el('h1','',article.title),el('div','meta',[article.date,article.author].filter(Boolean).join(' · ')));
-const img=el('img','cover');img.src=picture[topic];img.alt='Vietnam travel inspiration';img.loading='lazy';img.onerror=()=>img.remove();root.append(img);
+const img=el('img','cover');img.src=article.image||picture[topic];img.alt=article.title;img.loading='lazy';img.decoding='async';img.onerror=()=>{if(img.src!==new URL(picture[topic],location.href).href){img.onerror=()=>img.remove();img.src=picture[topic]}else img.remove()};root.append(img);
 const prose=el('div','prose');root.append(prose);
 p(prose,intro[topic]+' This editorial guide explores the ideas behind '+article.title.replace(/[.!?]$/,'')+'.','intro');
 if(article.id===179){
