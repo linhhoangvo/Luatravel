@@ -1,0 +1,42 @@
+name: Import original Lua blog articles
+
+on:
+  push:
+    paths:
+      - 'scripts/migrate_lua_blogs.py'
+      - '.github/workflows/import-lua-blogs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install extraction dependencies
+        run: pip install requests beautifulsoup4 trafilatura
+      - name: Import text and inline photographs
+        id: import
+        continue-on-error: true
+        run: python scripts/migrate_lua_blogs.py
+      - name: Commit imported article content
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/blog-content.js assets/blog-inline/ || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Import original Lua Wellness Travel editorial articles and images"
+            git push
+          fi
+      - name: Report incomplete imports
+        if: steps.import.outcome == 'failure'
+        run: echo "Some articles were not imported; see preceding logs." && exit 1
