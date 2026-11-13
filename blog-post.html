@@ -33,6 +33,7 @@ h1{font:400 clamp(43px,5vw,70px)/1.08 'Cormorant Garamond',Georgia,serif;letter-
 footer{background:#1d2422;padding:22px 0;color:#cad5cb;font:400 12px 'Jost',sans-serif}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:700px){.wrap{width:calc(100% - 36px)}.head{align-items:flex-start;padding:9px 0}nav{justify-content:flex-end;gap:10px}nav a{font-size:11px}article{padding:43px 0 24px}.rel-grid{grid-template-columns:1fr}.rel-card{min-height:120px}h1{font-size:43px}.prose h2{font-size:29px}}
 
+ .note .source-original{display:block;margin-top:12px;color:#375d41;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 /* Source-faithful editorial body, presented with Lua Travel's typography */
 .lua-original-article img{display:block;width:auto;max-width:100%;height:auto;max-height:540px;object-fit:contain;margin:24px auto}
 .lua-original-article figure{margin:28px 0}
@@ -197,7 +198,10 @@ section(prose,'Make the journey yours',[
 'The best choice depends on your interests, dates, travel companions and preferred pace. Lua Travel & Tours can help you connect the highlights with locally informed planning and practical arrangements.',
 'Use this guide as a starting point, and confirm current information with your travel provider before making arrangements.'
 ]);
-const info=el('div','note','Editorial overview prepared for the new Lua Travel Journal. The original long-form article and its original images have not yet been imported from the previous CMS.');root.append(info);
+const originalUrl=article.original_url||(article.id===183?'https://luawellnesstravel.com/b183-handmade-souvenirs-in-hoi-an-a-guide-to-local-crafts.html':'');
+const info=el('div','note','This is an editorial summary, not the complete original article. The original text and inline photographs have not yet been imported.');
+if(originalUrl){const sourceLink=el('a','source-original','Read the complete original article and see its photographs ↗');sourceLink.href=originalUrl;sourceLink.target='_blank';sourceLink.rel='noopener noreferrer';info.append(sourceLink);}
+root.append(info);
 const bottom=el('div','bottom');const back=el('a','back','← All Travel Journal articles');back.href='blogs.html';const plan=el('a','','Plan a journey ↗');plan.href='contact.html';bottom.append(back,plan);root.append(bottom);
 const others=all.filter(a=>a.id!==article.id&&a.topic===article.topic).slice(0,3);
 for(const a of (others.length?others:all.filter(a=>a.id!==article.id).slice(0,3))){
