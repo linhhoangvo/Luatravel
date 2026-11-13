@@ -1756,6 +1756,24 @@ html body header.header button.menu{color:#2c392f!important}
  html body header.header a.logo .lua-logo-wordmark{font-size:8px!important}
 }
 </style>
+<style id="lua-header-bg-20261113">
+/* Consistent cooler off-white header on all site pages. */
+html body header.header,
+html body header.lj-header,
+html body header.lc-detail-header,
+html body header.hc-nav-wrap,
+html body header:has(.header-row) {
+ background:#F3F4F0!important;
+ background-color:#F3F4F0!important;
+}
+@media(max-width:900px){
+ html body header.header nav.nav.open,
+ html body header.header nav.nav,
+ html body header.lj-header nav.lj-nav {
+  background-color:#F3F4F0!important;
+ }
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
