@@ -75,7 +75,7 @@ def clean_fragment(fragment, pageurl, itemid):
             name = f"{itemid}-{len(list(IMAGES.glob(str(itemid)+'-*')))+1:02d}{ext}"
             local = IMAGES / name
             try:
-                resp = session.get(src, timeout=24)
+                resp = session.get(src, timeout=7)
                 resp.raise_for_status()
                 ct = resp.headers.get("content-type", "").lower()
                 if len(resp.content) > 1000 and "image" in ct and len(resp.content) < 12_000_000:
