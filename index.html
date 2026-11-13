@@ -1684,6 +1684,78 @@ html body main .lua-how-split .lua-how-split-action span{
 }
 html body main .lua-how-split .lua-how-split-action:hover span{transform:translate(2px,-2px)}
 </style>
+<style id="lua-refined-left-logo-header-20261113">
+/* Balanced editorial header: left-aligned brand, navigation and discreet CTA. */
+html body header.header{
+ position:relative!important;top:auto!important;left:auto!important;right:auto!important;
+ background:#F5F5F2!important;color:#28362c!important;
+ border:0!important;box-shadow:none!important;
+}
+html body header.header .header-inner{
+ position:relative!important;
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ width:min(1260px,calc(100% - 72px))!important;max-width:none!important;
+ min-height:78px!important;gap:36px!important;margin:0 auto!important;
+}
+html body header.header a.logo{
+ position:static!important;left:auto!important;top:auto!important;transform:none!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;flex:0 0 100px!important;gap:0!important;
+ height:auto!important;min-width:0!important;margin:0!important;padding:4px 0!important;
+ clip-path:none!important;background:none!important;filter:none!important;box-shadow:none!important;
+}
+html body header.header a.logo img.lua-mark{
+ width:46px!important;height:46px!important;object-fit:contain!important;filter:none!important;
+}
+html body header.header a.logo .lua-logo-wordmark{
+ display:block!important;color:#355a37!important;
+ font:500 9px/1.2 'Jost',Arial,sans-serif!important;letter-spacing:.12em!important;
+}
+html body header.header nav.nav{
+ position:static!important;display:flex!important;flex-direction:row!important;
+ align-items:center!important;justify-content:flex-end!important;flex:1 1 auto!important;
+ width:auto!important;gap:clamp(12px,1.7vw,25px)!important;margin:0!important;
+ padding:0!important;background:transparent!important;box-shadow:none!important;
+}
+html body header.header nav.nav>a:not(.nav-cta){
+ color:#2f3932!important;font:400 12px/1.4 'Jost',Arial,sans-serif!important;
+ letter-spacing:0!important;text-transform:none!important;white-space:nowrap!important;
+}
+html body header.header nav.nav>a:not(.nav-cta):hover{color:#648444!important}
+html body header.header nav.nav>a.nav-cta{
+ flex:0 0 auto!important;margin:0 0 0 clamp(7px,1vw,18px)!important;
+ min-height:35px!important;padding:9px 17px!important;
+ border:1px solid #789849!important;border-radius:999px!important;
+ color:#fff!important;background:#789849!important;
+ font:500 11px/1.2 'Jost',Arial,sans-serif!important;
+ letter-spacing:0!important;text-transform:none!important;white-space:nowrap!important;
+}
+html body header.header nav.nav>a.nav-cta:hover{background:#648139!important;border-color:#648139!important}
+html body header.header button.menu{color:#2c392f!important}
+@media(max-width:1050px){
+ html body header.header .header-inner{width:calc(100% - 40px)!important;min-height:72px!important;gap:16px!important}
+ html body header.header a.logo{flex-basis:88px!important}
+ html body header.header nav.nav{gap:12px!important}
+ html body header.header nav.nav>a:not(.nav-cta){font-size:11px!important}
+}
+@media(max-width:880px){
+ html body header.header .header-inner{min-height:72px!important}
+ html body header.header button.menu{display:block!important;margin-left:auto!important;flex:none!important}
+ html body header.header nav.nav{display:none!important;position:absolute!important;top:100%!important;left:-20px!important;right:-20px!important;
+   width:calc(100% + 40px)!important;flex-direction:column!important;align-items:stretch!important;
+   gap:0!important;margin:0!important;padding:14px 22px 20px!important;
+   background:#F5F5F2!important;box-shadow:0 12px 20px rgba(20,35,25,.10)!important;z-index:50!important}
+ html body header.header nav.nav.open{display:flex!important}
+ html body header.header nav.nav>a:not(.nav-cta){padding:10px 0!important;font-size:13px!important}
+ html body header.header nav.nav>a.nav-cta{align-self:flex-start!important;margin:12px 0 0!important}
+}
+@media(max-width:480px){
+ html body header.header .header-inner{width:calc(100% - 32px)!important}
+ html body header.header nav.nav{left:-16px!important;right:-16px!important;width:calc(100% + 32px)!important}
+ html body header.header a.logo img.lua-mark{width:41px!important;height:41px!important}
+ html body header.header a.logo .lua-logo-wordmark{font-size:8px!important}
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
