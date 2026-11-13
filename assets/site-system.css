@@ -16,14 +16,16 @@ footer.lua-site-footer .lua-footer-base{margin-top:24px!important}
 @media(max-width:680px){html body main .lua-button{width:auto!important}html body header nav a.lua-partner-nav{font-size:12px!important}}
 
 
-/* Consistent brand olive for all 'Plan your trip' navigation buttons. */
+/* Plan your trip: soft off-white outlined button matching Discover reference. */
 html body header.header nav.nav > a.nav-cta,
 html body header.header nav.nav > a[href="contact.html"].nav-cta{
- background-color:#789849!important;background:#789849!important;
- border-color:#789849!important;color:#fff!important;
+ background:#F8F8F6!important;background-color:#F8F8F6!important;
+ border:1px solid #D3D6D0!important;color:#42564B!important;
  border-radius:999px!important;
+ box-shadow:none!important;
 }
 html body header.header nav.nav > a.nav-cta:hover,
 html body header.header nav.nav > a.nav-cta:focus-visible{
- background-color:#66843e!important;background:#66843e!important;border-color:#66843e!important;color:#fff!important;
+ background:#EFF1EC!important;background-color:#EFF1EC!important;
+ border-color:#AAB8AB!important;color:#304639!important;
 }
