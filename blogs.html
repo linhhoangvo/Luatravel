@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Travel Journal | Vietnam Travel Guides & Stories | Lua Travel & Tours</title>
-<meta name="description" content="Explore 47 travel guides and stories by Lua Travel & Tours on Vietnam, hotels, wellness escapes, food, culture and tailor-made journeys.">
+<meta name="description" content="Explore 51 travel guides and stories by Lua Travel & Tours on Vietnam, hotels, wellness escapes, food, culture and tailor-made journeys.">
 <link rel="icon" href="assets/lua-logo.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/site-system.css">
 <style>
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#F5F5F2;color:#27342d;font-family:'Jost',Arial,sans-serif}a{text-decoration:none;color:inherit}
@@ -47,10 +47,10 @@ footer{background:#1d2422;color:#e5eae5;padding:30px 0}
 <script src="assets/blog-archive.js" defer></script><style id="lua-header-bg-20261113">html body header.header,html body header.lj-header,html body header.lc-detail-header,html body header.hc-nav-wrap,html body header:has(.header-row){background:#F3F4F0!important;background-color:#F3F4F0!important}@media(max-width:900px){html body header.header nav.nav.open,html body header.header nav.nav,html body header.lj-header nav.lj-nav{background-color:#F3F4F0!important}}</style>
 </head>
 <body><header><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lúa Travel & Tours"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan your trip ↗</a></nav></div></header>
-<main><div class="container"><section class="intro"><span class="eyebrow">Stories, guides & inspiration</span><h1>The Lúa Travel Journal.</h1><p>Discover places, perspectives and thoughtful ways to travel through Vietnam. Explore the complete archive from Lua Wellness Travel, now gathered in one place.</p></section>
+<main><div class="container"><section class="intro"><span class="eyebrow">Stories, guides & inspiration</span><h1>The Lúa Travel Journal.</h1><p>Discover places, perspectives and thoughtful ways to travel through Vietnam. Browse our Vietnam travel guides and stories, and read each article directly in the Lua Travel Journal.</p></section>
 <div class="tools"><div class="categories" id="categories" aria-label="Filter articles by topic"></div><input class="search" type="search" id="search" placeholder="Search the journal..." aria-label="Search blog articles"></div>
 <div class="count" id="count" aria-live="polite"></div><div class="grid" id="articles"></div><div class="pager" id="pager"></div>
-<p class="note">Archive entries currently open the original Lua Wellness Travel articles, so you can read the complete guides on the original website.</p>
+
 </div></main>
 <footer><div class="container foot"><a href="index.html"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><p>© 2026 Lua Travel & Tours · Vietnam</p><a href="contact.html">Get in touch ↗</a></div></footer>
 <script>
@@ -66,9 +66,9 @@ function render(){
  const size=9, pages=Math.max(1,Math.ceil(filtered.length/size));page=Math.min(page,pages);
  count.textContent=filtered.length+' articles';list.replaceChildren();
  filtered.slice((page-1)*size,page*size).forEach(a=>{
-  const card=node('a','article');card.href=a.url;card.target='_blank';card.rel='noopener noreferrer';card.setAttribute('aria-label',a.title+' — read original article');
+  const card=node('a','article');card.href=a.url;card.setAttribute('aria-label',a.title+' — read article');
   card.append(node('span','category',a.topic),node('h2','',a.title),node('div','meta',[a.date,a.author].filter(Boolean).join(' · ')));
-  const read=node('div','read');read.append(node('span','','Read original story'),node('span','','↗'));card.append(read);list.append(card);
+  const read=node('div','read');read.append(node('span','','Read story'),node('span','','↗'));card.append(read);list.append(card);
  });
  if(!filtered.length)list.append(node('p','empty','No articles match your search.'));
  pager.replaceChildren();
