@@ -1619,6 +1619,33 @@ html body header.header,html body header.lj-header,html body header.lc-detail-he
 html body header.header .logo{background:transparent!important}
 @media(max-width:900px){html body header.header nav.nav.open{background:#F5F5F2!important}}
 </style>
+<style id="lua-story-cta-editorial-20261113">
+/* Quiet editorial story link: no box, graceful underline and arrow. */
+html body main .lua-philosophy-stories a.lua-stories-link{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ gap:18px!important;width:auto!important;min-width:0!important;
+ margin-top:27px!important;padding:0 0 7px!important;
+ background:transparent!important;border:0!important;border-bottom:1px solid rgba(78,105,76,.48)!important;
+ border-radius:0!important;box-shadow:none!important;
+ color:#35493a!important;text-decoration:none!important;
+ font:400 12px/1.45 'Jost','DM Sans',Arial,sans-serif!important;
+ letter-spacing:.015em!important;text-transform:none!important;
+ transition:color .2s ease,border-color .2s ease!important;
+}
+html body main .lua-philosophy-stories a.lua-stories-link span{
+ display:inline-block!important;font-size:15px!important;line-height:1!important;
+ transition:transform .2s ease!important;
+}
+html body main .lua-philosophy-stories a.lua-stories-link:hover,
+html body main .lua-philosophy-stories a.lua-stories-link:focus-visible{
+ color:#648448!important;background:transparent!important;
+ border-bottom-color:#648448!important;
+}
+html body main .lua-philosophy-stories a.lua-stories-link:hover span,
+html body main .lua-philosophy-stories a.lua-stories-link:focus-visible span{
+ transform:translate(2px,-2px)!important;
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
