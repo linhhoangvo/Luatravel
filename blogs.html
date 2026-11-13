@@ -24,7 +24,11 @@ nav .plan{padding:9px 16px;border:1px solid #d3d6d0;border-radius:24px;backgroun
 .search{width:min(240px,100%);height:38px;background:#fff;border:1px solid #dde3db;border-radius:22px;padding:8px 15px;font:400 12px 'Jost',sans-serif}
 .count{color:#839087;font:400 12px 'Jost',sans-serif;margin-bottom:15px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.article{display:flex;flex-direction:column;min-height:248px;padding:25px;background:#fff;border:1px solid #ebeee9;transition:transform .2s ease,border-color .2s ease}
+.article{display:flex;flex-direction:column;min-height:248px;padding:0;background:#fff;border:1px solid #ebeee9;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+.article .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#e7eae4;transition:transform .35s ease}
+.article:hover .thumb{filter:brightness(.96)}
+.article .card-body{display:flex;flex:1;flex-direction:column;padding:24px 25px 23px}
+.article .thumb-placeholder{width:100%;aspect-ratio:16/9;background:#e7eae4}
 .article:hover{transform:translateY(-2px);border-color:#b6c3b3}
 .article .category{color:#6c836e;font:500 10px/1.3 'Jost',sans-serif;letter-spacing:.12em;text-transform:uppercase}
 .article h2{font:400 clamp(25px,2vw,31px)/1.12 'Cormorant Garamond',Georgia,serif;letter-spacing:-.013em;margin:16px 0 22px;flex:1}
@@ -59,6 +63,28 @@ const all=window.LUA_BLOG_ARCHIVE||[];
 const list=document.getElementById('articles'),bar=document.getElementById('categories'),search=document.getElementById('search'),count=document.getElementById('count'),pager=document.getElementById('pager');
 const cats=['All','Destinations','Travel Tips','Culture & Experiences','Wellness','Hotels & Stays','Itineraries'];
 let category='All',query='',page=1;
+const images={
+ 'hoi an':'hoi an 5.jpg','thu bon':'hoi an 5.jpg','souvenir':'c4790bc6af2211bea9a9f19bb540dba5 (2).jpg',
+ 'craft':'c4790bc6af2211bea9a9f19bb540dba5 (2).jpg','calligraphy':'hoi an 5.jpg',
+ 'da nang':'Đà Nẵng 1.jpg','danang':'Đà Nẵng 1.jpg',
+ 'hue':'Hue.jpg','quang tri':'Hue.jpg','khe sanh':'Hue.jpg',
+ 'ha long':'Ha Long Bay hero mới.jpg','halong':'Ha Long Bay hero mới.jpg',
+ 'ninh binh':'ninh binh.jpg','sapa':'sapa mới.jpg','ha giang':'Ha Giang.jpg',
+ 'hanoi':'ha noi 1.jpg','ha noi':'ha noi 1.jpg','ho chi minh':'ho chi minh city 1.jpg','saigon':'ho chi minh city 1.jpg',
+ 'phong nha':'Phong nha.jpg','mekong':'mekong moi.jpg','phu quoc':'phu quoc.jpg',
+ 'mai chau':'mai chau.jpg','mai châu':'mai chau.jpg','pu luong':'mai chau.jpg',
+ 'moc chau':'mai chau.jpg','mộc châu':'mai chau.jpg',
+ 'honeymoon':'honeymoon picture.jpg','beach resort':'phu quoc.jpg',
+ 'luxury cruise':'Ha Long Bay hero mới.jpg',
+ 'vietnam':'Hero page ao dai moi.png'
+};
+const fallback={'Destinations':'Ha Giang.jpg','Travel Tips':'sapa mới.jpg','Culture & Experiences':'hoi an 5.jpg','Wellness':'mai chau.jpg','Hotels & Stays':'hoi an 5.jpg','Itineraries':'ninh binh.jpg'};
+function coverFor(a){
+ if(a.image)return a.image;
+ const title=a.title.toLocaleLowerCase();
+ const matched=Object.keys(images).find(key=>title.includes(key));
+ return encodeURI(images[matched]||fallback[a.topic]||'hoi an 5.jpg');
+}
 function node(tag,cls,value){const el=document.createElement(tag);if(cls)el.className=cls;if(value!==undefined)el.textContent=value;return el}
 function render(){
  bar.replaceChildren();cats.forEach(cat=>{const b=node('button','filter'+(cat===category?' active':''),cat);b.type='button';b.setAttribute('aria-pressed',String(cat===category));b.onclick=()=>{category=cat;page=1;render()};bar.append(b)});
@@ -67,8 +93,12 @@ function render(){
  count.textContent=filtered.length+' articles';list.replaceChildren();
  filtered.slice((page-1)*size,page*size).forEach(a=>{
   const card=node('a','article');card.href=a.url;card.setAttribute('aria-label',a.title+' — read article');
-  card.append(node('span','category',a.topic),node('h2','',a.title),node('div','meta',[a.date,a.author].filter(Boolean).join(' · ')));
-  const read=node('div','read');read.append(node('span','','Read story'),node('span','','↗'));card.append(read);list.append(card);
+  const cover=node('img','thumb');cover.src=coverFor(a);cover.alt=a.title;cover.loading='lazy';cover.decoding='async';
+  cover.onerror=()=>{cover.onerror=null;cover.src=encodeURI(fallback[a.topic]||'hoi an 5.jpg')};
+  const body=node('div','card-body');
+  body.append(node('span','category',a.topic),node('h2','',a.title),node('div','meta',[a.date,a.author].filter(Boolean).join(' · ')));
+  const read=node('div','read');read.append(node('span','','Read story'),node('span','','↗'));body.append(read);
+  card.append(cover,body);list.append(card);
  });
  if(!filtered.length)list.append(node('p','empty','No articles match your search.'));
  pager.replaceChildren();
