@@ -32,7 +32,7 @@ h1{font:400 clamp(43px,5vw,70px)/1.08 'Cormorant Garamond',Georgia,serif;letter-
 .rel-card span{font:400 12px 'Jost',sans-serif;color:#517159}
 footer{background:#1d2422;padding:22px 0;color:#cad5cb;font:400 12px 'Jost',sans-serif}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:700px){.wrap{width:calc(100% - 36px)}.head{align-items:flex-start;padding:9px 0}nav{justify-content:flex-end;gap:10px}nav a{font-size:11px}article{padding:43px 0 24px}.rel-grid{grid-template-columns:1fr}.rel-card{min-height:120px}h1{font-size:43px}.prose h2{font-size:29px}}
-</style><script src="assets/blog-archive.js" defer></script></head><body>
+</style><script src="assets/blog-archive.js" defer></script><script src="assets/blog-content.js" defer></script></head><body>
 <header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="blogs.html">Travel Journal</a><span>›</span><span id="crumb">Article</span></div>
 <article id="article" aria-live="polite"><p>Loading article…</p></article></div>
@@ -50,6 +50,21 @@ document.getElementById('crumb').textContent=article.title;
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function p(parent,txt,cls){parent.append(el('p',cls||'',txt))}
 function section(parent,heading,paras){parent.append(el('h2','',heading));paras.forEach(t=>p(parent,t))}
+// Original editorial content migrated from Lua Wellness Travel.
+const original=window.LUA_BLOG_CONTENT&&window.LUA_BLOG_CONTENT[String(id)];
+if(original&&original.html){
+  const topic=article.topic||'Destinations';
+  root.replaceChildren(el('span','eyebrow',topic),el('h1','',article.title),el('div','meta',[article.date,article.author].filter(Boolean).join(' · ')));
+  const cover=el('img','cover');cover.src=original.cover||article.image||'';cover.alt=article.title;cover.loading='lazy';
+  cover.onerror=()=>cover.remove();if(cover.src)root.append(cover);
+  const prose=el('div','prose lua-original-article');prose.innerHTML=original.html;root.append(prose);
+  const bottom=el('div','bottom');const back=el('a','','← All stories');back.href='blogs.html';
+  const source=el('a','','Original article ↗');source.href=original.source;source.target='_blank';source.rel='noopener noreferrer';
+  bottom.append(back,source);root.append(bottom);
+  const nearby=all.filter(a=>a.id!==id && a.topic===topic).slice(0,3);
+  nearby.forEach(a=>{const card=el('a','rel-card');card.href=a.url;card.append(el('small','',a.topic),el('strong','',a.title),el('span','','Read story ↗'));related.append(card)});
+  return;
+}
 const intro={
 'Wellness':'Wellness travel is about making space for rest, fresh air and a slower rhythm. Vietnam offers a variety of settings for this, from leafy mountain retreats to quiet coastal stays.',
 'Hotels & Stays':'Where you stay shapes the rhythm of a journey. Comfort, location, design and the surrounding experience can matter as much as the room itself.',
