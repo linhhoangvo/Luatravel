@@ -41,7 +41,33 @@ footer{background:#1d2422;padding:22px 0;color:#cad5cb;font:400 12px 'Jost',sans
 .lua-original-article h3{font:400 26px/1.2 'Cormorant Garamond',Georgia,serif;margin:30px 0 12px}
 .lua-original-article a{color:#496951;text-decoration:underline;text-underline-offset:3px}
 .lua-original-article blockquote{margin:28px 0;padding:8px 20px;border-left:2px solid #a7b6a4;color:#526354}
-</style><script src="assets/blog-archive.js" defer></script><script src="assets/blog-content.js" defer></script></head><body>
+</style><script src="assets/blog-archive.js" defer></script><script src="assets/blog-content.js" defer></script><style id="lua-journal-quiet-editorial-20261116">
+/* Lúa Journal — image-forward, restrained typography; no card dividers. */
+body{background:#fff!important;color:#252b26}
+header{background:#181818!important;border:0!important;color:#f7f7f5!important}
+header nav a{color:#f7f7f5!important}
+header .nav-cta{background:transparent!important;border:1px solid #777e79!important;color:#f7f7f5!important}
+.breadcrumb{margin-top:30px;color:#79877c}
+article{max-width:820px;padding:57px 0 70px}
+article .eyebrow{letter-spacing:.15em;color:#65816c}
+article h1{font-size:clamp(42px,5.5vw,72px);line-height:1.08;max-width:800px}
+article .meta{margin-bottom:26px}
+article .cover{max-height:520px;aspect-ratio:16/9;border-radius:3px;margin-bottom:42px}
+.prose h2{font-size:clamp(29px,3.2vw,38px);margin-top:43px}
+.prose p,.prose li{font-size:15px;line-height:1.95;color:#515e54}
+.prose .intro{font-size:18px;line-height:1.8;letter-spacing:0}
+.note{border:0!important;background:#f6f7f4!important;padding:22px 25px;margin-top:42px;font-size:13px}
+.note .source-original{font-weight:500;text-decoration:none;border:0;display:inline-block;margin-top:10px}
+.bottom{border:0!important;margin-top:32px;padding-top:15px}
+.bottom a{border:0!important}
+.related{background:#f7f7f4!important;padding:55px 0 80px}
+.rel-grid{gap:24px}
+.rel-card{background:transparent!important;padding:0!important;min-height:0!important}
+.rel-card strong{font-size:26px;line-height:1.13}
+.rel-card small{color:#748678}
+footer{background:#181818!important}
+@media(max-width:700px){article{padding:36px 0 55px}.cover{margin-bottom:27px}.rel-grid{gap:30px}}
+</style></head><body>
 <header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="blogs.html">Travel Journal</a><span>›</span><span id="crumb">Article</span></div>
 <article id="article" aria-live="polite"><p>Loading article…</p></article></div>
@@ -167,7 +193,9 @@ const topic=guide[article.topic]?article.topic:'Destinations';
 root.replaceChildren(el('span','eyebrow',topic),el('h1','',article.title),el('div','meta',[article.date,article.author].filter(Boolean).join(' · ')));
 const img=el('img','cover');img.src=article.image||picture[topic];img.alt=article.title;img.loading='lazy';img.decoding='async';img.onerror=()=>{if(img.src!==new URL(picture[topic],location.href).href){img.onerror=()=>img.remove();img.src=picture[topic]}else img.remove()};root.append(img);
 const prose=el('div','prose');root.append(prose);
-p(prose,intro[topic]+' This editorial guide explores the ideas behind '+article.title.replace(/[.!?]$/,'')+'.','intro');
+p(prose,article.id===183
+ ? 'In Hoi An, a handmade souvenir can carry more than a memory. From lanterns and ceramics to textiles and woodwork, traditional crafts offer a closer look at the people and skills behind the town’s everyday beauty.'
+ : intro[topic]+' This editorial guide explores the ideas behind '+article.title.replace(/[.!?]$/,'')+'.','intro');
 if(article.id===179){
  const tips=[
  ['Start early','Check the meeting time and arrive a little early. Morning visits can feel more relaxed before the busiest part of the day.'],
@@ -199,7 +227,7 @@ section(prose,'Make the journey yours',[
 'Use this guide as a starting point, and confirm current information with your travel provider before making arrangements.'
 ]);
 const originalUrl=article.original_url||(article.id===183?'https://luawellnesstravel.com/b183-handmade-souvenirs-in-hoi-an-a-guide-to-local-crafts.html':'');
-const info=el('div','note','This is an editorial summary, not the complete original article. The original text and inline photographs have not yet been imported.');
+const info=el('div','note',article.id===183?'This is a shorter introduction to the original story. For the complete article and its photographs, visit the original Lúa publication.':'This is an editorial summary. The complete original article and its photographs have not yet been imported.');
 if(originalUrl){const sourceLink=el('a','source-original','Read the complete original article and see its photographs ↗');sourceLink.href=originalUrl;sourceLink.target='_blank';sourceLink.rel='noopener noreferrer';info.append(sourceLink);}
 root.append(info);
 const bottom=el('div','bottom');const back=el('a','back','← All Travel Journal articles');back.href='blogs.html';const plan=el('a','','Plan a journey ↗');plan.href='contact.html';bottom.append(back,plan);root.append(bottom);
