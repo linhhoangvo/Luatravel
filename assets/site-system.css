@@ -29,3 +29,21 @@ html body header.header nav.nav > a.nav-cta:focus-visible{
  background:#EFF1EC!important;background-color:#EFF1EC!important;
  border-color:#AAB8AB!important;color:#304639!important;
 }
+
+/* Header colour aligned with the near-black Lua footer — 2026-11-16. */
+html body header.header,
+html body header.lj-header,
+html body header.lc-detail-header,
+html body header.hc-nav-wrap {
+  background:#181818!important;
+  background-color:#181818!important;
+  color:#f7f7f5!important;
+}
+html body header.header .nav a:not(.nav-cta),
+html body header.header .logo .lua-logo-wordmark {color:#f7f7f5!important}
+html body header.header nav.nav > a.nav-cta {color:#f7f7f5!important;background:transparent!important;border-color:#777e79!important}
+html body header.header button.menu {color:#f7f7f5!important}
+@media(max-width:900px) {
+  html body header.header nav.nav,
+  html body header.header nav.nav.open {background:#181818!important;background-color:#181818!important}
+}
