@@ -2197,44 +2197,65 @@ html body>main#home .hero.lua-showcase-hero::after{
  html body>main#home .hero.lua-showcase-hero{height:100svh!important;min-height:670px!important}
 }
 </style>
+
+<style id="lua-cinematic-slideshow-20261119">
+html body>main#home>section.hero.lua-showcase-hero.lua-cinematic-hero{
+ position:relative!important;display:block!important;isolation:isolate!important;
+ height:100svh!important;min-height:670px!important;max-height:none!important;
+ padding:0!important;overflow:hidden!important;background:#17231e!important;
+}
+html body>main#home>section.lua-cinematic-hero::before{display:none!important}
+html body>main#home>section.lua-cinematic-hero::after{
+ content:""!important;position:absolute!important;inset:0!important;z-index:2!important;
+ background:linear-gradient(180deg,rgba(10,16,14,.5) 0%,rgba(10,16,14,.09) 36%,rgba(10,16,14,.25) 65%,rgba(10,16,14,.46) 100%)!important;
+ pointer-events:none!important;
+}
+.lua-cinematic-slides{position:absolute;inset:0;z-index:1;overflow:hidden}
+.lua-cinematic-slide{
+ position:absolute;inset:-1%;background-position:center center;background-size:cover;
+ opacity:0;transform:scale(1.025);
+ transition:opacity 2.4s ease-in-out,transform 9s ease-out;will-change:opacity;
+}
+.lua-cinematic-slide.is-active{opacity:1;transform:scale(1)}
+.lua-cinematic-copy{
+ position:absolute;z-index:5;left:50%;top:51%;transform:translate(-50%,-50%);
+ width:min(1100px,calc(100% - 48px));text-align:center;color:#FBF8F1;
+}
+html body .lua-cinematic-copy h1{
+ font:400 clamp(4.5rem,8vw,9rem)/.97 'Cormorant Garamond',Georgia,serif!important;
+ letter-spacing:-.026em!important;color:#FBF8F1!important;white-space:nowrap!important;
+ margin:0 0 26px!important;text-shadow:0 2px 18px rgba(0,0,0,.13);
+}
+html body .lua-cinematic-copy h1 em{font-weight:400!important;font-style:italic!important;font-family:inherit!important}
+html body .lua-cinematic-copy p{
+ font:300 clamp(14px,1.25vw,17px)/1.7 'Jost',Arial,sans-serif!important;
+ color:#F5F1E8!important;letter-spacing:.035em!important;
+ margin:0 auto!important;max-width:850px!important;
+}
+@media(max-width:700px){
+ html body>main#home>section.hero.lua-showcase-hero.lua-cinematic-hero{min-height:600px!important}
+ .lua-cinematic-copy{width:calc(100% - 36px);top:50%}
+ html body .lua-cinematic-copy h1{font-size:clamp(2.65rem,10.2vw,5.4rem)!important;white-space:nowrap!important;margin-bottom:20px!important}
+ html body .lua-cinematic-copy p{font-size:13px!important;letter-spacing:.02em!important;max-width:345px!important}
+ .lua-cinematic-slide{background-position:57% center}
+}
+@media(prefers-reduced-motion:reduce){.lua-cinematic-slide{transition:none!important;transform:none!important}}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
-<section class="hero lua-showcase-hero" aria-label="Discover Vietnam">
- <div class="lua-showcase-inner">
-  <div class="lua-showcase-copy">
-   <h1>Vietnam, <em>your</em> way.</h1>
-   <p>Private journeys, thoughtfully made for you.</p>
-   
-  </div>
-  <div class="lua-showcase-gallery" aria-label="Explore featured destinations">
-   <button class="lua-showcase-control lua-showcase-prev" type="button" aria-label="Previous destination">‹</button>
-   <div class="lua-showcase-stage" id="lua-showcase-stage" tabindex="0" aria-label="Featured destinations, use left and right arrows">
-    <a class="lua-showcase-card" href="destination-detail.html?place=ha-giang" data-title="Ha Giang" aria-label="Explore Ha Giang"><img src="Ha%20Giang.jpg" alt="Winding mountain roads in Ha Giang" loading="eager"><span>Ha Giang</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=hoi-an" data-title="Hoi An" aria-label="Explore Hoi An"><img src="hoi%20an%205.jpg" alt="Hoi An old town" loading="eager"><span>Hoi An</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=sapa" data-title="Sapa" aria-label="Explore Sapa"><img src="sapa%20m%E1%BB%9Bi.jpg" alt="Terraced scenery of Sapa" loading="eager"><span>Sapa</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ninh-binh" data-title="Ninh Binh" aria-label="Explore Ninh Binh"><img src="ninh%20binh.jpg" alt="Limestone scenery in Ninh Binh" loading="eager"><span>Ninh Binh</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=phu-quoc" data-title="Phu Quoc" aria-label="Explore Phu Quoc"><img src="phu%20quoc.jpg" alt="Tropical beaches of Phu Quoc" loading="eager"><span>Phu Quoc</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=hue" data-title="Hue" aria-label="Explore Hue"><img src="Hue.jpg" alt="Cultural heritage in Hue" loading="lazy"><span>Hue</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ha-long-bay" data-title="Ha Long Bay" aria-label="Explore Ha Long Bay"><img src="hero%20lua.jpg" alt="Vietnam scenic cruise" loading="lazy"><span>Ha Long Bay</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=hanoi" data-title="Hanoi" aria-label="Explore Hanoi"><img src="ha%20noi%201.jpg" alt="Hanoi city and heritage" loading="lazy"><span>Hanoi</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=da-nang" data-title="Da Nang" aria-label="Explore Da Nang"><img src="%C4%90%C3%A0%20N%E1%BA%B5ng%201.jpg" alt="Da Nang coastline" loading="lazy"><span>Da Nang</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=mekong-delta" data-title="Mekong Delta" aria-label="Explore Mekong Delta"><img src="mekong%20moi.jpg" alt="Mekong Delta waterways" loading="lazy"><span>Mekong Delta</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=phong-nha" data-title="Phong Nha" aria-label="Explore Phong Nha"><img src="Phong%20nha.jpg" alt="Phong Nha dramatic landscape" loading="lazy"><span>Phong Nha</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=mai-chau" data-title="Mai Chau" aria-label="Explore Mai Chau"><img src="mai%20chau.jpg" alt="Mai Chau valley" loading="lazy"><span>Mai Chau</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=da-lat" data-title="Da Lat" aria-label="Explore Da Lat"><img src="da%20lat%20moi.jpg" alt="Da Lat scenery" loading="lazy"><span>Da Lat</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ta-phin" data-title="Ta Phin" aria-label="Explore Ta Phin"><img src="sapa%206%20%20Ta%20Phin%20Village.jpg" alt="Ta Phin village in northern Vietnam" loading="lazy"><span>Ta Phin</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ha-giang" data-title="Ha Giang Loop" aria-label="Explore Ha Giang Loop"><img src="ha%20giang%202.jpg" alt="Ha Giang mountain loop" loading="lazy"><span>Ha Giang Loop</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=hoi-an" data-title="Hoi An Heritage" aria-label="Explore Hoi An Heritage"><img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Hoi An yellow walls and bougainvillea" loading="lazy"><span>Hoi An Heritage</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ho-chi-minh-city" data-title="Ho Chi Minh City" aria-label="Explore Ho Chi Minh City"><img src="ho%20chi%20minh%20city%201.jpg" alt="Ho Chi Minh City" loading="lazy"><span>Ho Chi Minh City</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=sapa" data-title="Sapa Highlands" aria-label="Explore Sapa Highlands"><img src="sapa%203.jpg" alt="Northern highlands around Sapa" loading="lazy"><span>Sapa Highlands</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=central-vietnam" data-title="Central Vietnam" aria-label="Explore Central Vietnam"><img src="%C4%90%C3%A0%20N%E1%BA%B5ng%204.jpg" alt="Central Vietnam scenery" loading="lazy"><span>Central Vietnam</span></a>
-    <a class="lua-showcase-card" href="destination-detail.html?place=ha-giang" data-title="Vietnam Landscape" aria-label="Explore Vietnam Landscape"><img src="ha%20giang%203.jpg" alt="Mountain landscape of Vietnam" loading="lazy"><span>Vietnam Landscape</span></a>
-   </div>
-   <button class="lua-showcase-control lua-showcase-next" type="button" aria-label="Next destination">›</button>
-  </div>
-  
+<section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
+ <div class="lua-cinematic-slides" aria-hidden="true">
+  <div class="lua-cinematic-slide is-active" style="background-image:url('Hero%20lua%20travel.jpg?v=feac2f15')"></div>
+  <div class="lua-cinematic-slide" style="background-image:url('hero%20lua.jpg')"></div>
+  <div class="lua-cinematic-slide" style="background-image:url('ninh%20binh.jpg')"></div>
+  <div class="lua-cinematic-slide" style="background-image:url('sapa%20m%E1%BB%9Bi.jpg')"></div>
+  <div class="lua-cinematic-slide" style="background-image:url('phu%20quoc.jpg')"></div>
+ </div>
+ <div class="lua-cinematic-copy">
+  <h1>Vietnam, <em>your</em> way.</h1>
+  <p>Extraordinary places, meaningful encounters, and journeys designed around you.</p>
  </div>
 </section>
 <section class="section lua-dest-carousel" id="destinations"><div class="container"><div class="section-top"><div><span class="eyebrow">Destinations</span><h2>Places to discover</h2></div></div><div class="destination-grid" id="home-dest-track" aria-label="Places to discover" tabindex="0">
@@ -2357,86 +2378,16 @@ html body>main#home .hero.lua-showcase-hero::after{
 <script>const yearNode=document.getElementById('year');if(yearNode)yearNode.textContent=new Date().getFullYear();const b=document.querySelector('.menu'),n=document.querySelector('.nav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script>
 <script>(function(){const track=document.getElementById('home-dest-track'),dots=document.getElementById('home-dest-dots'),prev=document.getElementById('home-dest-prev'),next=document.getElementById('home-dest-next');if(!track||!dots||!prev||!next)return;const cards=[...track.querySelectorAll('.destination')];let positions=[];function metrics(){const x=cards.map(c=>c.offsetLeft-cards[0].offsetLeft);const limit=Math.max(0,track.scrollWidth-track.clientWidth);positions=[...new Set(x.map(v=>Math.min(v,limit)).filter((v,i,a)=>i===0||v>a[i-1]+1))];if(!positions.length)positions=[0];}function activeIndex(){let best=0,dist=Infinity;positions.forEach((x,i)=>{const d=Math.abs(track.scrollLeft-x);if(d<dist){dist=d;best=i}});return best;}function paint(){const n=activeIndex();[...dots.children].forEach((b,i)=>{b.classList.toggle('active',i===n);b.setAttribute('aria-current',String(i===n));});prev.disabled=n===0;next.disabled=n===positions.length-1;}function render(){metrics();dots.replaceChildren();positions.forEach((p,i)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','Show destinations '+(i+1));button.addEventListener('click',()=>track.scrollTo({left:p,behavior:'smooth'}));dots.appendChild(button)});paint();}prev.addEventListener('click',()=>track.scrollTo({left:positions[Math.max(0,activeIndex()-1)],behavior:'smooth'}));next.addEventListener('click',()=>track.scrollTo({left:positions[Math.min(positions.length-1,activeIndex()+1)],behavior:'smooth'}));track.addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true});window.addEventListener('resize',render);render();})();</script><script>
 (function(){
- const stage=document.getElementById('lua-showcase-stage');
- if(!stage)return;
- const gallery=stage.closest('.lua-showcase-gallery');
- const cards=[...stage.querySelectorAll('.lua-showcase-card')];
- const counter=document.getElementById('lua-showcase-counter');
- const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
- const total=cards.length;
- const wrap=n=>((n%total)+total)%total;
- const relative=(index,current)=>((index-current+total*1.5)%total)-total/2;
- const speed=.16; // 3D carousel: one new feature approximately every 6 seconds
- let phase=2,lastTime=0,hovered=false,focused=false,dragging=false,dragX=0,dragPhase=0,moved=false;
- function paint(){
-  const w=stage.clientWidth||900;
-  const cardWidth=cards[0].offsetWidth||200;
-  const radius=Math.min(w*.44,cardWidth*(w<560?1.58:2.65));
-  const center=Math.round(phase);
-  cards.forEach((card,i)=>{
-   const d=relative(i,phase),a=Math.abs(d);
-   // 3D turntable: front cards fan around an arc; the other 15 orbit out of view.
-   const angle=Math.max(-1.35,Math.min(1.35,d*.51));
-   const x=Math.sin(angle)*radius;
-   const depth=(Math.cos(angle)-1)*Math.min(330,cardWidth*1.75);
-   const y=(1-Math.cos(angle))*24;
-   const tilt=-Math.sin(angle)*49;
-   const scale=.81+.31*Math.cos(angle);
-   const visible=a<3.18;
-   const alpha=visible?Math.min(1,Math.max(0,(3.18-a)*2.8)):0;
-   card.style.transform='translate(-50%,-50%) translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,'+depth.toFixed(2)+'px) rotateY('+tilt.toFixed(2)+'deg) scale('+scale.toFixed(3)+')';
-   card.style.opacity=String(alpha);
-   card.style.visibility=visible?'visible':'hidden';
-   card.style.zIndex=String(Math.max(1,100-Math.round(a*10)));
-   card.style.pointerEvents=visible&&a<2.5?'auto':'none';
-   const current=Math.abs(relative(i,center))<.5;
-   card.tabIndex=current?0:-1;
-   card.setAttribute('aria-current',String(current));
-  });
-  const selected=wrap(center);
-  if(counter)counter.textContent=String(selected+1).padStart(2,'0')+' / '+String(total).padStart(2,'0')+' · '+cards[selected].dataset.title;
- }
- function paused(){return hovered||focused||dragging||document.hidden||reducedMotion.matches;}
- function animate(now){
-  if(lastTime&&!paused())phase=wrap(phase+Math.min(now-lastTime,70)/1000*speed);
-  lastTime=now;
-  paint();
-  requestAnimationFrame(animate);
- }
- function move(change){phase=wrap(phase+change);paint();}
- const prev=gallery.querySelector('.lua-showcase-prev'),next=gallery.querySelector('.lua-showcase-next');
- prev.addEventListener('click',()=>move(-1));
- next.addEventListener('click',()=>move(1));
- stage.addEventListener('keydown',e=>{
-  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move(e.key==='ArrowRight'?1:-1);}
- });
- stage.addEventListener('pointerdown',e=>{
-  if(e.pointerType==='mouse'&&e.button!==0)return;
-  dragging=true;dragX=e.clientX;dragPhase=phase;moved=false;
-  stage.setPointerCapture?.(e.pointerId);
- });
- stage.addEventListener('pointermove',e=>{
-  if(!dragging)return;
-  const dx=e.clientX-dragX;
-  if(Math.abs(dx)>8)moved=true;
-  phase=wrap(dragPhase-dx/(stage.clientWidth<560?120:185));
-  paint();
- });
- const finish=()=>{dragging=false;};
- stage.addEventListener('pointerup',finish);
- stage.addEventListener('pointercancel',finish);
- cards.forEach((card,i)=>card.addEventListener('click',e=>{
-  if(moved){e.preventDefault();moved=false;return;}
-  const d=relative(i,phase);
-  if(Math.abs(d)>.5){e.preventDefault();move(d);}
- }));
- gallery.addEventListener('mouseenter',()=>{hovered=true;});
- gallery.addEventListener('mouseleave',()=>{hovered=false;});
- gallery.addEventListener('focusin',()=>{focused=true;});
- gallery.addEventListener('focusout',()=>{focused=gallery.contains(document.activeElement);});
- document.addEventListener('visibilitychange',()=>{lastTime=0;});
- window.addEventListener('resize',paint);
- paint();requestAnimationFrame(animate);
+ const slides=Array.from(document.querySelectorAll('.lua-cinematic-slide'));
+ if(!slides.length||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ let active=0;
+ window.setInterval(()=>{
+  if(document.hidden)return;
+  const next=(active+1)%slides.length;
+  slides[next].classList.add('is-active');
+  slides[active].classList.remove('is-active');
+  active=next;
+ },6500);
 })();
 </script>
 </body></html>
