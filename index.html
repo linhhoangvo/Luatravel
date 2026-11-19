@@ -2241,11 +2241,50 @@ html body .lua-cinematic-copy p{
 }
 @media(prefers-reduced-motion:reduce){.lua-cinematic-slide{transition:none!important;transform:none!important}}
 </style>
+
+<style id="lua-cinematic-header-inside-hero-fix-20261119">
+/* Nest the navigation within the cinematic hero so no standalone ivory bar can remain. */
+html body main#home .lua-cinematic-hero > header.header{
+ position:absolute!important;inset:0 0 auto 0!important;top:0!important;
+ width:100%!important;height:auto!important;z-index:40!important;
+ margin:0!important;padding:0!important;
+ background:transparent!important;background-color:transparent!important;
+ background-image:none!important;border:0!important;box-shadow:none!important;
+ color:#FFFDF7!important;
+}
+html body main#home .lua-cinematic-hero > header.header .header-inner{
+ min-height:104px!important;background:transparent!important;
+}
+html body main#home .lua-cinematic-hero > header.header nav.nav>a:not(.nav-cta){
+ color:#FFFDF7!important;text-shadow:0 1px 12px rgba(0,0,0,.35)!important;
+}
+html body main#home .lua-cinematic-hero > header.header nav.nav>a.nav-cta{
+ color:#FFFDF7!important;background:transparent!important;
+ border:1px solid rgba(255,255,255,.72)!important;border-radius:0!important;
+}
+html body main#home .lua-cinematic-hero > header.header a.logo img.lua-mark{
+ filter:brightness(0) invert(1)!important;
+}
+html body main#home .lua-cinematic-hero > header.header a.logo .lua-logo-wordmark{
+ color:#FFFDF7!important;
+}
+html body main#home .lua-cinematic-hero > header.header button.menu{color:#FFFDF7!important}
+@media(max-width:880px){
+ html body main#home .lua-cinematic-hero > header.header nav.nav.open{
+ background:rgba(20,27,23,.97)!important;
+ }
+}
+@media(max-width:700px){
+ html body main#home .lua-cinematic-hero > header.header .header-inner{min-height:82px!important}
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+
 <main id="home">
 <section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
+<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+
  <div class="lua-cinematic-slides" aria-hidden="true">
   <div class="lua-cinematic-slide is-active" style="background-image:url('Hero%20lua%20travel.jpg?v=feac2f15')"></div>
   <div class="lua-cinematic-slide" style="background-image:url('hero%20lua.jpg')"></div>
