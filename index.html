@@ -2039,6 +2039,53 @@ html body footer.footer.lua-site-footer .lua-footer-logo{filter:none!important}
 html body footer.footer.lua-site-footer .lua-footer-social a{background:#EAECE6!important;color:#3E4A3F!important}
 html body footer.footer.lua-site-footer .lua-footer-base{border-top:1px solid #D8DBD2!important}
 </style>
+
+<style id="lua-destinations-mosaic-fix-20261119">
+/* Override the legacy slider card sizing after switching to an editorial grid. */
+html body section.lua-dest-carousel #home-dest-track.destination-grid{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-auto-flow:row dense!important;grid-auto-rows:minmax(230px,auto)!important;
+ gap:12px!important;overflow:visible!important;max-width:100%!important;
+ scroll-snap-type:none!important;
+}
+html body section.lua-dest-carousel #home-dest-track.destination-grid > a.destination{
+ display:block!important;position:relative!important;box-sizing:border-box!important;
+ flex:initial!important;flex-basis:auto!important;flex-shrink:1!important;
+ width:100%!important;min-width:0!important;max-width:none!important;
+ height:100%!important;min-height:230px!important;
+ border-radius:0!important;overflow:hidden!important;
+ scroll-snap-align:none!important;
+}
+html body section.lua-dest-carousel #home-dest-track.destination-grid > a.destination:first-child{
+ grid-row:span 2!important;
+}
+html body section.lua-dest-carousel #home-dest-track.destination-grid > a.destination:nth-child(6){
+ grid-column:span 2!important;
+}
+html body section.lua-dest-carousel #home-dest-track .destination-info{
+ left:12px!important;right:12px!important;bottom:24px!important;
+ width:auto!important;inset:auto 12px 24px!important;
+}
+html body section.lua-dest-carousel #home-dest-track .destination-info h3{
+ font-size:clamp(29px,3.1vw,43px)!important;
+ line-height:1.03!important;white-space:normal!important;overflow-wrap:normal!important;
+}
+@media(max-width:700px){
+ html body section.lua-dest-carousel #home-dest-track.destination-grid{
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-auto-rows:minmax(195px,auto)!important;gap:8px!important;
+ }
+ html body section.lua-dest-carousel #home-dest-track.destination-grid > a.destination{
+ min-height:195px!important;
+ }
+ html body section.lua-dest-carousel #home-dest-track.destination-grid > a.destination:nth-child(6){
+ grid-column:auto!important;
+ }
+ html body section.lua-dest-carousel #home-dest-track .destination-info h3{
+ font-size:clamp(26px,6.5vw,33px)!important;
+ }
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
