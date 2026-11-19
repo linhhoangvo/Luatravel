@@ -2141,6 +2141,62 @@ html body footer.footer.lua-site-footer .lua-footer-social a{
  background:#E5E9E0!important;color:#34483B!important;
 }
 </style>
+
+<style id="lua-foray-overlay-header-20261119">
+/* Place the Lúa navigation directly over the hero photograph, as in the supplied Foray reference. */
+html body>header.header{
+ position:absolute!important;top:0!important;left:0!important;right:0!important;
+ z-index:100!important;width:100%!important;
+ background:transparent!important;background-color:transparent!important;
+ background-image:none!important;border:0!important;box-shadow:none!important;
+ color:#FCFBF7!important;
+}
+html body>header.header .header-inner{
+ width:min(1320px,calc(100% - 74px))!important;
+ min-height:112px!important;align-items:center!important;
+}
+html body>header.header a.logo img.lua-mark{
+ filter:brightness(0) invert(1)!important;
+ width:60px!important;height:60px!important;
+}
+html body>header.header a.logo .lua-logo-wordmark{
+ color:#FCFBF7!important;font-weight:400!important;
+ letter-spacing:.19em!important;
+}
+html body>header.header nav.nav>a:not(.nav-cta){
+ color:#FCFBF7!important;font:400 12px/1.4 'Jost',sans-serif!important;
+ letter-spacing:.22em!important;text-transform:uppercase!important;
+ text-shadow:0 1px 10px rgba(0,0,0,.18)!important;
+}
+html body>header.header nav.nav>a:not(.nav-cta):hover{color:#E1D5C2!important}
+html body>header.header nav.nav>a.nav-cta{
+ color:#FCFBF7!important;background:transparent!important;
+ border:1px solid rgba(255,255,255,.72)!important;
+ border-radius:0!important;padding:11px 18px!important;
+ font:400 12px/1.4 'Jost',sans-serif!important;
+ letter-spacing:.13em!important;text-transform:uppercase!important;
+}
+html body>header.header nav.nav>a.nav-cta:hover{background:rgba(255,255,255,.14)!important;color:#fff!important}
+html body>header.header button.menu{color:#FCFBF7!important}
+html body>main#home .hero.lua-showcase-hero{
+ height:100svh!important;min-height:690px!important;margin-top:0!important;
+}
+html body>main#home .hero.lua-showcase-hero::after{
+ background:linear-gradient(180deg,rgba(8,16,13,.56) 0%,rgba(8,16,13,.13) 30%,rgba(8,16,13,.08) 48%,rgba(8,16,13,.61) 100%)!important;
+}
+@media(max-width:880px){
+ html body>header.header nav.nav,html body>header.header nav.nav.open{
+ background:rgba(20,27,23,.98)!important;background-color:rgba(20,27,23,.98)!important;
+ }
+ html body>header.header nav.nav>a:not(.nav-cta),
+ html body>header.header nav.nav>a.nav-cta{color:#FCFBF7!important}
+ html body>header.header .header-inner{width:calc(100% - 38px)!important}
+}
+@media(max-width:700px){
+ html body>header.header .header-inner{min-height:84px!important}
+ html body>main#home .hero.lua-showcase-hero{height:100svh!important;min-height:670px!important}
+}
+</style>
 </head>
 <body>
 <header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
