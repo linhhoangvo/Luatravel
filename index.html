@@ -2755,6 +2755,99 @@ html body.lua-page-scrolled>header.header button.menu{color:#344136!important}
 }
 @media(prefers-reduced-motion:reduce){html body>header.header,html body>header.header .header-inner{transition:none!important}}
 </style>
+
+<style id="lua-journal-asymmetric-editorial-20261120">
+/* Lúa Journal: an original asymmetric editorial arrangement inspired by the visual reference. */
+html body main#home section.lua-foray-journal{
+ padding:86px 0 105px!important;
+ background:#E6DDD2!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-wrap{
+ width:min(1130px,calc(100% - 80px))!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-section-heading{
+ margin-bottom:52px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-journal-grid{
+ display:grid!important;
+ grid-template-columns:1.32fr 1fr 1fr!important;
+ gap:clamp(22px,3vw,42px)!important;align-items:start!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story{
+ display:block!important;grid-row:auto!important;min-width:0!important;
+ text-decoration:none!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story:nth-child(2){
+ margin-top:48px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story:nth-child(3){
+ margin-top:108px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image{
+ height:238px!important;aspect-ratio:auto!important;overflow:hidden!important;
+ border-radius:0!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{
+ height:394px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image img{
+ height:100%!important;width:100%!important;object-fit:cover!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story>span{
+ font:400 10px/1.5 'Jost',Arial,sans-serif!important;
+ letter-spacing:.19em!important;margin-top:16px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story h3{
+ font:400 clamp(25px,2.5vw,31px)/1.1 'Cormorant Garamond',Georgia,serif!important;
+ margin:7px 0 12px!important;
+}
+html body main#home section.lua-foray-journal .lua-foray-story p{
+ font:300 13px/1.7 'Jost',Arial,sans-serif!important;
+ letter-spacing:.01em!important;
+}
+@media(max-width:900px){
+ html body main#home section.lua-foray-journal .lua-foray-wrap{
+ width:calc(100% - 46px)!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-journal-grid{
+ grid-template-columns:1.15fr 1fr!important;gap:27px!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story:first-child{
+ grid-row:span 2!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story:nth-child(2),
+ html body main#home section.lua-foray-journal .lua-foray-story:nth-child(3){
+ margin-top:0!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story:nth-child(3){
+ grid-column:2!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image{
+ height:220px!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{
+ height:370px!important;
+ }
+}
+@media(max-width:620px){
+ html body main#home section.lua-foray-journal{padding:65px 0 75px!important}
+ html body main#home section.lua-foray-journal .lua-foray-wrap{width:calc(100% - 36px)!important}
+ html body main#home section.lua-foray-journal .lua-foray-section-heading{margin-bottom:30px!important}
+ html body main#home section.lua-foray-journal .lua-foray-journal-grid{
+ grid-template-columns:1fr!important;gap:34px!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story,
+ html body main#home section.lua-foray-journal .lua-foray-story:nth-child(3){
+ grid-column:auto!important;grid-row:auto!important;margin-top:0!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image{
+ height:260px!important;
+ }
+ html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{
+ height:330px!important;
+ }
+}
+</style>
 </head>
 <body>
 
