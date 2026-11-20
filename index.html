@@ -2670,6 +2670,30 @@ html body main#home section.lua-featured .lua-featured-grid>a.lua-feature>img{
  }
 }
 </style>
+<style id="lua-philosophy-journeys-spacing-fix-20261120">
+/* After removing Philosophy cards, avoid accumulating section padding and the former gallery gap. */
+html body main#home section.lua-philosophy.lua-philosophy-stories{
+ padding-top:0!important;padding-bottom:0!important;margin-bottom:0!important;
+ min-height:0!important;
+}
+html body main#home section.lua-philosophy-stories>.lua-stories-intro{
+ margin-bottom:0!important;
+}
+html body main#home section.lua-featured#travel-styles{
+ padding-top:48px!important;
+}
+@media(max-width:700px){
+ html body main#home section.lua-philosophy.lua-philosophy-stories{
+ padding-bottom:0!important;
+ }
+ html body main#home section.lua-philosophy-stories>.lua-stories-intro{
+ margin-bottom:0!important;
+ }
+ html body main#home section.lua-featured#travel-styles{
+ padding-top:36px!important;
+ }
+}
+</style>
 </head>
 <body>
 
