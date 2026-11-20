@@ -2848,6 +2848,40 @@ html body main#home section.lua-foray-journal .lua-foray-story p{
  }
 }
 </style>
+<style id="lua-sticky-header-hero-overlap-correction-20261120">
+/* Resolve inherited header-layout spacing: hero begins at the very top behind fixed navigation. */
+html body{margin:0!important;padding:0!important}
+html body>main#home{margin-top:0!important;padding-top:0!important;position:relative!important}
+html body>main#home>section.hero.lua-showcase-hero.lua-cinematic-hero{
+ margin:0!important;margin-top:0!important;top:0!important;
+}
+html body>header.header{
+ position:fixed!important;top:0!important;bottom:auto!important;
+ left:0!important;right:0!important;z-index:2147483000!important;
+ height:auto!important;margin:0!important;padding:0!important;
+ transform:none!important;opacity:1!important;
+ background:transparent!important;background-color:transparent!important;
+ border:0!important;box-shadow:none!important;
+}
+html body>header.header .header-inner{background:transparent!important}
+html body.lua-page-scrolled>header.header{
+ background:#FAF9F6!important;background-color:#FAF9F6!important;
+ box-shadow:0 1px 10px rgba(25,35,25,.06)!important
+}
+html body.lua-page-scrolled>header.header .header-inner{background:transparent!important}
+html body.lua-page-scrolled>header.header nav.nav>a:not(.nav-cta),
+html body.lua-page-scrolled>header.header a.logo .lua-logo-wordmark{color:#354138!important}
+html body.lua-page-scrolled>header.header a.logo img.lua-mark{filter:none!important}
+html body.lua-page-scrolled>header.header nav.nav>a.nav-cta{
+ color:#354138!important;background:transparent!important;
+ border-color:#B9BEAF!important;
+}
+html body.lua-page-scrolled>header.header button.menu{color:#354138!important}
+@media(max-width:880px){
+ html body>header.header nav.nav.open{background:#FAF9F6!important}
+ html body>header.header nav.nav.open>a:not(.nav-cta){color:#354138!important}
+}
+</style>
 </head>
 <body>
 
@@ -2992,7 +3026,7 @@ html body main#home section.lua-foray-journal .lua-foray-story p{
  if(!header||!hero)return;
  let pending=false;
  function sync(){
-  const threshold=Math.max(80,hero.getBoundingClientRect().height-110);
+  const threshold=Math.max(100,hero.offsetHeight-110);
   document.body.classList.toggle('lua-page-scrolled',window.scrollY>=threshold);
   pending=false;
  }
