@@ -2644,6 +2644,32 @@ html body main#home section.lua-philosophy-stories .lua-stories-item img{
  }
 }
 </style>
+<style id="lua-featured-journeys-compact-20261120">
+/* Reduce the three featured journey photo cards without altering tour links or copy. */
+html body main#home section.lua-featured>.container{
+ width:min(1110px,calc(100% - 80px))!important;max-width:1110px!important;
+}
+html body main#home section.lua-featured .lua-featured-grid{
+ grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important;
+}
+html body main#home section.lua-featured .lua-featured-grid>a.lua-feature{
+ height:350px!important;min-height:0!important;
+}
+html body main#home section.lua-featured .lua-featured-grid>a.lua-feature>img{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+}
+@media(max-width:750px){
+ html body main#home section.lua-featured>.container{
+ width:calc(100% - 36px)!important;
+ }
+ html body main#home section.lua-featured .lua-featured-grid{
+ grid-template-columns:1fr!important;gap:16px!important;
+ }
+ html body main#home section.lua-featured .lua-featured-grid>a.lua-feature{
+ height:350px!important;
+ }
+}
+</style>
 </head>
 <body>
 
