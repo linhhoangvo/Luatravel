@@ -2694,12 +2694,74 @@ html body main#home section.lua-featured#travel-styles{
  }
 }
 </style>
+
+<style id="lua-fixed-scroll-navigation-20261120">
+/* Fixed navigation: transparent over hero, soft ivory and dark ink while scrolling. */
+html body>header.header{
+ position:fixed!important;inset:0 0 auto 0!important;top:0!important;left:0!important;right:0!important;
+ width:100%!important;z-index:10000!important;box-sizing:border-box!important;
+ background:transparent!important;background-color:transparent!important;
+ background-image:none!important;border:0!important;box-shadow:none!important;
+ transition:background-color .35s ease,box-shadow .35s ease!important;
+}
+html body>header.header .header-inner{min-height:102px!important;background:transparent!important;transition:min-height .3s ease!important}
+html body>header.header a.logo img.lua-mark{filter:brightness(0) invert(1)!important}
+html body>header.header a.logo .lua-logo-wordmark{color:#FFFDF7!important}
+html body>header.header nav.nav>a:not(.nav-cta){
+ color:#FFFDF7!important;text-shadow:0 1px 10px rgba(0,0,0,.2)!important;
+ font:400 11px/1.4 'Jost',Arial,sans-serif!important;letter-spacing:.19em!important;
+}
+html body>header.header nav.nav>a.nav-cta{
+ color:#FFFDF7!important;background:transparent!important;
+ border:1px solid rgba(255,255,255,.75)!important;
+ font:400 11px/1.4 'Jost',Arial,sans-serif!important;letter-spacing:.12em!important;
+}
+html body>header.header button.menu{color:#FFFDF7!important}
+html body.lua-page-scrolled>header.header{
+ background:#FAF9F6!important;background-color:#FAF9F6!important;
+ box-shadow:0 1px 10px rgba(40,43,38,.045)!important;
+}
+html body.lua-page-scrolled>header.header .header-inner{min-height:84px!important}
+html body.lua-page-scrolled>header.header a.logo img.lua-mark{filter:none!important}
+html body.lua-page-scrolled>header.header a.logo .lua-logo-wordmark{color:#303D35!important}
+html body.lua-page-scrolled>header.header nav.nav>a:not(.nav-cta){
+ color:#39423D!important;text-shadow:none!important;
+}
+html body.lua-page-scrolled>header.header nav.nav>a:not(.nav-cta):hover{color:#867761!important}
+html body.lua-page-scrolled>header.header nav.nav>a.nav-cta{
+ color:#354238!important;background:transparent!important;border-color:#B9BEAF!important;
+}
+html body.lua-page-scrolled>header.header button.menu{color:#344136!important}
+@media(max-width:880px){
+ html body>header.header nav.nav,
+ html body>header.header nav.nav.open,
+ html body.lua-page-scrolled>header.header nav.nav,
+ html body.lua-page-scrolled>header.header nav.nav.open{
+ background:#FAF9F6!important;background-color:#FAF9F6!important;
+ }
+ html body>header.header nav.nav>a:not(.nav-cta),
+ html body>header.header nav.nav.open>a:not(.nav-cta),
+ html body.lua-page-scrolled>header.header nav.nav>a:not(.nav-cta){
+ color:#39423D!important;text-shadow:none!important;
+ }
+ html body>header.header nav.nav>a.nav-cta,
+ html body.lua-page-scrolled>header.header nav.nav>a.nav-cta{
+ color:#354238!important;border-color:#B9BEAF!important;
+ }
+}
+@media(max-width:700px){
+ html body>header.header .header-inner{min-height:82px!important}
+ html body.lua-page-scrolled>header.header .header-inner{min-height:72px!important}
+}
+@media(prefers-reduced-motion:reduce){html body>header.header,html body>header.header .header-inner{transition:none!important}}
+</style>
 </head>
 <body>
 
+<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
-<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+
 
  <div class="lua-cinematic-slides" aria-hidden="true">
   <div class="lua-cinematic-slide is-active" style="background-image:url('Hero%20lua%20travel.jpg?v=feac2f15')"></div>
@@ -2828,6 +2890,23 @@ html body main#home section.lua-featured#travel-styles{
   slides[active].classList.remove('is-active');
   active=next;
  },6500);
+})();
+</script>
+<script id="lua-fixed-scroll-navigation-script">
+(function(){
+ const header=document.querySelector('body > header.header');
+ const hero=document.querySelector('main#home .lua-cinematic-hero');
+ if(!header||!hero)return;
+ let pending=false;
+ function sync(){
+  const threshold=Math.max(80,hero.getBoundingClientRect().height-110);
+  document.body.classList.toggle('lua-page-scrolled',window.scrollY>=threshold);
+  pending=false;
+ }
+ function request(){if(pending)return;pending=true;window.requestAnimationFrame(sync)}
+ window.addEventListener('scroll',request,{passive:true});
+ window.addEventListener('resize',request);
+ sync();
 })();
 </script>
 </body></html>
