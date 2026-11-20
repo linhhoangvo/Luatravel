@@ -2974,10 +2974,20 @@ html body main#home section.lua-foray-journal .lua-foray-story h3{
  font-size:35px!important;
  }
 }
+</style><style id="lua-header-verified-state-20261120">
+/* Explicit no-gap stacking layout, with white mobile nav on light popover. */
+html body{margin:0!important;padding:0!important;}
+html body>header.header{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;}
+html body>main#home{padding:0!important;margin:0!important;}
+html body>main#home>section.lua-cinematic-hero{margin:0!important;top:0!important;}
+@media(max-width:880px){
+ html body>header.header nav.nav.open{background:#FAF9F6!important;}
+ html body>header.header nav.nav.open>a{color:#344136!important;}
+}
 </style></head>
 <body>
 
-<header class="header"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header class="header" style="position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:10000!important;background:transparent!important;background-color:transparent!important;border:0!important;box-shadow:none!important;margin:0!important;padding:0!important"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main id="home">
 <section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
 
@@ -3117,15 +3127,38 @@ html body main#home section.lua-foray-journal .lua-foray-story h3{
  const header=document.querySelector('body > header.header');
  const hero=document.querySelector('main#home .lua-cinematic-hero');
  if(!header||!hero)return;
+ const wordmark=header.querySelector('.lua-logo-wordmark');
+ const logo=header.querySelector('img.lua-mark');
+ const menu=header.querySelector('button.menu');
+ const links=[...header.querySelectorAll('nav.nav > a')];
+ const nav=header.querySelector('nav.nav');
  let pending=false;
+ function setImportant(el,name,value){if(el)el.style.setProperty(name,value,'important');}
  function sync(){
-  const threshold=Math.max(100,hero.offsetHeight-110);
-  document.body.classList.toggle('lua-page-scrolled',window.scrollY>=threshold);
-  pending=false;
+   const scrolled=window.scrollY>=Math.max(100,hero.offsetHeight-110);
+   document.body.classList.toggle('lua-page-scrolled',scrolled);
+   setImportant(header,'position','fixed');
+   setImportant(header,'top','0');
+   setImportant(header,'background-color',scrolled?'#FAF9F6':'transparent');
+   setImportant(header,'background',scrolled?'#FAF9F6':'transparent');
+   setImportant(header,'box-shadow',scrolled?'0 1px 10px rgba(25,35,25,.06)':'none');
+   setImportant(wordmark,'color',scrolled?'#303D35':'#FFFDF7');
+   setImportant(logo,'filter',scrolled?'none':'brightness(0) invert(1)');
+   setImportant(menu,'color',scrolled?'#344136':'#FFFDF7');
+   links.forEach(link=>{
+     const c=scrolled?'#39423D':'#FFFDF7';
+     setImportant(link,'color',c);
+     if(link.classList.contains('nav-cta')){
+       setImportant(link,'background','transparent');
+       setImportant(link,'border-color',scrolled?'#B9BEAF':'rgba(255,255,255,.75)');
+     }
+   });
+   pending=false;
  }
- function request(){if(pending)return;pending=true;window.requestAnimationFrame(sync)}
+ function request(){if(!pending){pending=true;requestAnimationFrame(sync);}}
  window.addEventListener('scroll',request,{passive:true});
  window.addEventListener('resize',request);
+ window.addEventListener('pageshow',sync);
  sync();
 })();
 </script>
