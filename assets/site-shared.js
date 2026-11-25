@@ -29,6 +29,16 @@ function prepare(){
     if(partner)nav.insertBefore(journal,partner);
     else nav.append(journal);
   }
+  // Keep navigation labels in title case, even on pages with legacy uppercase styles.
+  if(nav){
+    const labels={'destinations.html':'Destinations','tours.html':'Our Tours','hotels.html':'Hotels','cruise.html':'Cruise','about.html':'About Lúa','blogs.html':'Travel Journal','travel-agents.html':'For Travel Agents'};
+    nav.querySelectorAll('a').forEach(link=>{
+      const label=labels[link.getAttribute('href')];
+      if(label && link.childElementCount===0)link.textContent=label;
+      if(link.childElementCount===0 && /plan your trip/i.test(link.textContent))link.textContent=link.textContent.replace(/plan your trip/i,'Plan Your Trip');
+      link.style.setProperty('text-transform','none','important');
+    });
+  }
   const footer=document.querySelector('footer.lua-site-footer');
   if(footer)footer.innerHTML=footerMarkup;
   document.querySelectorAll('main img').forEach(img=>{
