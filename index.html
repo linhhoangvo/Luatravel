@@ -3530,19 +3530,34 @@ html body main#home section#lua-selected-stays.lua-selected-stays .lua-stays-hea
 }
 </style>
 <style id="lua-planning-steps">
-html body main#home .lua-planning{background:var(--home-ivory);padding:clamp(48px,6vw,88px) 0;scroll-margin-top:96px}
-.lua-planning-inner{width:min(1100px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(26px,6vw,96px);align-items:center}
-html body main#home .lua-planning h2{font-size:clamp(30px,3.2vw,44px);margin:0 0 24px;color:var(--home-forest)}
-.lua-planning ol{margin:0;padding-inline-start:24px}
-.lua-planning li{padding-inline-start:9px}
-.lua-planning li+li{margin-top:17px}
-.lua-planning li::marker{color:var(--home-brass);font-size:14px}
-html body main#home .lua-planning h3{font-size:21px;line-height:1.3;margin:0 0 4px;color:var(--home-forest)}
-html body main#home .lua-planning p{font-size:16px;line-height:1.55;color:var(--home-muted);margin:0}
-.lua-planning-note{padding:clamp(24px,4vw,45px);background:var(--home-linen);border-radius:8px}
-.lua-planning-note img{width:54px;height:54px;object-fit:contain;margin:0 0 10px}
-.lua-planning-note a{display:inline-block;margin-top:20px;color:var(--home-forest);border-bottom:1px solid var(--home-brass);padding-bottom:3px}
-@media(max-width:720px){.lua-planning-inner{grid-template-columns:1fr}}
+html body main#home .lua-planning{
+ background:var(--home-ivory);padding:clamp(40px,5vw,72px) 0;scroll-margin-top:96px;
+}
+.lua-planning-inner{width:min(1100px,calc(100% - 48px));margin:auto}
+html body main#home .lua-planning h2{
+ font-size:clamp(29px,3vw,40px);margin:0 0 24px;color:var(--home-forest);
+}
+.lua-planning ol{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px clamp(20px,3vw,42px);
+ list-style:none;padding:0;margin:0;counter-reset:planning-step;
+}
+.lua-planning li{counter-increment:planning-step}
+.lua-planning li::before{
+ content:counter(planning-step,decimal-leading-zero);display:block;
+ color:var(--home-brass);font-size:13px;margin-bottom:7px;
+}
+html body main#home .lua-planning h3{
+ font-size:20px;font-weight:400;line-height:1.3;margin:0 0 5px;color:var(--home-forest);
+}
+html body main#home .lua-planning p{
+ font-size:15px;line-height:1.55;color:var(--home-muted);margin:0;
+}
+.lua-planning-link{
+ display:inline-flex;gap:8px;margin-top:24px;color:var(--home-forest);
+ border-bottom:1px solid var(--home-brass);padding-bottom:3px;
+}
+@media(max-width:820px){.lua-planning ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:460px){.lua-planning ol{grid-template-columns:1fr}}
 </style>
 <style>html body > header.header.lua-compact-header a.logo .lua-logo-wordmark{text-transform:none!important}</style>
 </head>
@@ -3623,21 +3638,14 @@ html body main#home .lua-planning p{font-size:16px;line-height:1.55;color:var(--
 </aside>
 <section id="how" class="lua-planning" aria-labelledby="lua-planning-title">
  <div class="lua-planning-inner">
-  <div>
-   <h2 id="lua-planning-title">How it works</h2>
-   <ol>
-    <li><h3>Find your inspiration</h3><p>Explore our journeys and see what draws you to Vietnam.</p></li>
-    <li><h3>Tell us what you have in mind</h3><p>Share your dates, interests and how you like to travel.</p></li>
-    <li><h3>Shape the journey together</h3><p>We design a private itinerary and refine it with you.</p></li>
-    <li><h3>Travel with local support</h3><p>Our team coordinates the details and is here when you need us.</p></li>
-   </ol>
-  </div>
-  <aside class="lua-planning-note" aria-labelledby="lua-planning-note-title">
-   <img src="assets/lua-logo.svg?v=09e2846c" alt="" width="54" height="54" loading="lazy">
-   <h3 id="lua-planning-note-title">Plan with Lúa</h3>
-   <p>From our base in Hội An, we work with local guides and hosts across Vietnam to shape your trip around the places and experiences that matter to you.</p>
-   <a href="contact.html">Plan Your Trip <span aria-hidden="true">↗</span></a>
-  </aside>
+  <h2 id="lua-planning-title">How it works</h2>
+  <ol>
+   <li><h3>Explore Vietnam</h3><p>Browse our journeys for places and experiences you’d love to include.</p></li>
+   <li><h3>Share your plans</h3><p>Tell us when you’d like to go and how you like to travel.</p></li>
+   <li><h3>Shape your itinerary</h3><p>We put together a private itinerary and refine it with you.</p></li>
+   <li><h3>Travel with local support</h3><p>Our Hội An team looks after the details while you’re here.</p></li>
+  </ol>
+  <a class="lua-planning-link" href="contact.html">Plan Your Trip <span aria-hidden="true">↗</span></a>
  </div>
 </section>
 
