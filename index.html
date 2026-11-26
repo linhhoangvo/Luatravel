@@ -3336,13 +3336,18 @@ html body > header.header.lua-compact-header nav#navigation.open{
  flex-direction:column!important;align-items:stretch!important;gap:0!important;
  width:min(310px,100%)!important;max-height:70vh;overflow:auto;
  padding:12px 21px!important;margin:0!important;background:var(--home-ivory)!important;
- border:1px solid #ded5c7!important;box-shadow:0 8px 24px #182c271c!important;
+ border:1px solid #e8dfd0!important;border-radius:12px!important;
+ box-shadow:0 10px 30px rgba(26,42,34,.15)!important;
 }
 html body > header.header.lua-compact-header nav#navigation.open > a{
  display:block!important;color:var(--home-forest)!important;text-transform:none!important;
- font:400 15px/1.4 'Jost',sans-serif!important;letter-spacing:.02em!important;padding:10px 0!important;
+ font:400 15px/1.4 'Jost',sans-serif!important;letter-spacing:.02em!important;
+ padding:9px 10px!important;border:0!important;border-radius:6px!important;
+ background:transparent!important;box-shadow:none!important;
 }
-html body > header.header.lua-compact-header nav#navigation.open > a:hover{color:var(--home-brass)!important}
+html body > header.header.lua-compact-header nav#navigation.open > a:is(:hover,:focus-visible){
+ color:var(--home-forest)!important;background:var(--home-linen)!important;
+}
 </style>
 <style id="lua-home-editorial-serif">
 @font-face{font-family:Spectral;src:url("assets/fonts/spectral/Spectral-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
