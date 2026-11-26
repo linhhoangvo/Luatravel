@@ -105,6 +105,33 @@ article .cover{width:calc(100% + 16vw)!important;max-width:calc(100vw - 48px)!im
 footer{background:#1B211C!important}
 @media(max-width:700px){.wrap{width:calc(100% - 38px)}article{padding:48px 0 70px!important}article h1{font-size:clamp(46px,11vw,65px)!important}.cover{margin-bottom:42px!important}.prose p,.prose li{font-size:16px!important}.prose .intro{font-size:18px!important}.related{padding:56px 0!important}.related h2{font-size:43px!important}html body header nav a{font-size:15px!important}}
 </style><link rel="stylesheet" href="assets/spectral-site.css">
+<style id="lua-journal-reading-layout">
+html body main article#article{max-width:1100px!important;width:100%;box-sizing:border-box}
+html body main article#article h1{font-size:clamp(31px,4.2vw,55px)!important;line-height:1.12!important;max-width:24ch}
+html body main article#article .cover{
+ width:100%!important;max-width:none!important;max-height:none!important;left:auto;transform:none;
+ aspect-ratio:2.45!important;border-radius:10px!important;margin:0 0 26px!important;display:block;
+}
+.lua-reading-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(195px,245px);gap:clamp(20px,4vw,52px);margin-top:26px;align-items:start}
+.lua-reading-column{min-width:0}
+html body main article#article .lua-reading-column .prose{width:100%!important;max-width:none!important;margin-inline:0!important}
+.lua-article-toc,.lua-reading-note{padding:20px 22px;background:#efeee8;border-radius:8px;color:#29352c}
+html body main article#article nav.lua-article-toc{display:block;margin:0 0 23px}
+.lua-article-toc ul{margin:8px 0 0;padding-left:18px}
+html body main article#article nav.lua-article-toc a{font-size:15px!important;line-height:1.5!important}
+.lua-reading-note h2{font-size:23px;font-weight:400;line-height:1.2;margin:0 0 9px}
+.lua-reading-note p{font-size:15px;margin:0 0 12px}
+.lua-reading-note a,.lua-share-story{border-bottom:1px solid #787e71;padding-bottom:3px}
+.lua-share-story{display:inline-block;margin-top:16px;font-size:14px}
+.lua-reading-column :is(h2,h3){scroll-margin-top:96px}
+html body main .related h2{font-size:clamp(27px,3vw,38px)!important}
+html body main .rel-card strong{font-size:clamp(19px,2vw,25px)!important}
+.lua-related-photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:13px}
+@media(max-width:740px){
+ .lua-reading-layout{grid-template-columns:1fr}
+ html body main article#article .cover{aspect-ratio:16/10!important}
+}
+</style>
 </head><body>
 <header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="blogs.html">Travel Journal</a><span>›</span><span id="crumb">Article</span></div>
@@ -123,6 +150,50 @@ document.getElementById('crumb').textContent=article.title;
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function p(parent,txt,cls){parent.append(el('p',cls||'',txt))}
 function section(parent,heading,paras){parent.append(el('h2','',heading));paras.forEach(t=>p(parent,t))}
+function relatedCard(a){
+  const card=el('a','rel-card');
+  card.href=a.url;
+  const src=window.LUA_BLOG_CONTENT?.[String(a.id)]?.cover||a.image;
+  if(src){
+    const photo=el('img','lua-related-photo');
+    photo.src=src;photo.alt='';photo.loading='lazy';photo.decoding='async';
+    photo.addEventListener('error',()=>photo.remove(),{once:true});
+    card.append(photo);
+  }
+  card.append(el('small','',a.topic),el('strong','',a.title),el('span','','Read story ↗'));
+  related.append(card);
+}
+function formatArticle(prose){
+  const cover=root.querySelector('.cover');
+  if(cover)root.prepend(cover);
+  const reading=el('div','lua-reading-layout');
+  const column=el('div','lua-reading-column');
+  const headings=[...prose.querySelectorAll('h2,h3')].filter(h=>h.textContent.trim());
+  if(headings.length>=2){
+    const toc=el('nav','lua-article-toc');
+    toc.setAttribute('aria-label','On this page');
+    toc.append(el('strong','','On this page'));
+    const list=el('ul');
+    headings.forEach((heading,i)=>{
+      if(!heading.id)heading.id='lua-article-section-'+(i+1);
+      const item=el('li');
+      const link=el('a','',heading.textContent.trim());
+      link.href='#'+encodeURIComponent(heading.id);
+      item.append(link);list.append(item);
+    });
+    toc.append(list);column.append(toc);
+  }
+  prose.before(reading);
+  column.append(prose);
+  const share=el('a','lua-share-story','Share by email ↗');
+  share.href='mailto:?subject='+encodeURIComponent(article.title)+'&body='+encodeURIComponent(location.origin+location.pathname+'?id='+id);
+  column.append(share);
+  const aside=el('aside','lua-reading-note');
+  const plan=el('a','','Plan your trip ↗');
+  plan.href='contact.html';
+  aside.append(el('h2','','Explore Vietnam with Lúa'),el('p','','Tell us what interests you and we’ll help shape a private journey.'),plan);
+  reading.append(column,aside);
+}
 // Original editorial content migrated from Lua Wellness Travel.
 const original=window.LUA_BLOG_CONTENT&&window.LUA_BLOG_CONTENT[String(id)];
 if(original&&original.html){
@@ -135,7 +206,8 @@ if(original&&original.html){
   const source=el('a','','Original article ↗');source.href=original.source;source.target='_blank';source.rel='noopener noreferrer';
   bottom.append(back,source);root.append(bottom);
   const nearby=all.filter(a=>a.id!==id && a.topic===topic).slice(0,3);
-  nearby.forEach(a=>{const card=el('a','rel-card');card.href=a.url;card.append(el('small','',a.topic),el('strong','',a.title),el('span','','Read story ↗'));related.append(card)});
+  nearby.forEach(relatedCard);
+  formatArticle(prose);
   return;
 }
 const intro={
@@ -270,8 +342,7 @@ if(originalUrl){const sourceLink=el('a','source-original','Read the complete ori
 root.append(info);
 const bottom=el('div','bottom');const back=el('a','back','← All Travel Journal articles');back.href='blogs.html';const plan=el('a','','Plan a journey ↗');plan.href='contact.html';bottom.append(back,plan);root.append(bottom);
 const others=all.filter(a=>a.id!==article.id&&a.topic===article.topic).slice(0,3);
-for(const a of (others.length?others:all.filter(a=>a.id!==article.id).slice(0,3))){
- const link=el('a','rel-card');link.href=a.url;link.append(el('small','',a.topic),el('strong','',a.title),el('span','','Read story ↗'));related.append(link);
-}
+(others.length?others:all.filter(a=>a.id!==article.id).slice(0,3)).forEach(relatedCard);
+formatArticle(prose);
 });
 </script></body></html>
