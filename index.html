@@ -3462,6 +3462,21 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
 html body main#home section#destinations.lua-dest-carousel{padding-bottom:clamp(20px,2.5vw,36px)!important;margin-bottom:0!important}
 html body main#home section#lua-selected-stays.lua-selected-stays{padding-top:clamp(24px,3vw,44px)!important;margin-top:0!important}
 </style>
+<style id="lua-transparent-home-menu">
+html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.open{
+ background:transparent!important;
+ border-color:transparent!important;
+ box-shadow:none!important;
+ backdrop-filter:none;
+}
+html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.open > a{
+ color:var(--home-ivory)!important;
+ text-shadow:0 1px 4px #16241b,0 1px 12px #16241b!important;
+}
+html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.open > a:is(:hover,:focus-visible){
+ background:rgba(22,36,27,.38)!important;
+}
+</style>
 </head>
 <body>
 
