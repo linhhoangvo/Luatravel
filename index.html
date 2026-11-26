@@ -3456,8 +3456,6 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
 <style id="lua-nature-video">
 .lua-cinematic-hero .lua-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;pointer-events:none;filter:none}
 .lua-cinematic-hero .lua-hero-video.is-playing{opacity:1}
-.lua-hero-motion{position:absolute;right:clamp(20px,4vw,72px);bottom:18px;z-index:5;background:#1b3028;color:#fbf8f0;border:1px solid #fbf8f099;border-radius:6px;padding:8px 12px;font:400 12px 'Jost',sans-serif}
-.lua-hero-motion[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -3473,7 +3471,6 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
   <div class="lua-cinematic-slide" style="background-image:url('assets/hotel-galleries/regent-phu-quoc/01.jpg')"></div>
  </div>
  <video class="lua-hero-video" muted loop playsinline preload="none" aria-hidden="true" data-src="assets/lua-travel-nature-river-cut.mp4"></video>
- <button type="button" class="lua-hero-motion" hidden>Pause video</button>
  <div class="lua-cinematic-copy">
   <h1>Vietnam, <em>your</em> way.</h1>
   <p>Extraordinary places, meaningful encounters, and journeys designed around you.</p>
@@ -3587,7 +3584,6 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
 <script>(function(){const track=document.getElementById('home-dest-track'),dots=document.getElementById('home-dest-dots'),prev=document.getElementById('home-dest-prev'),next=document.getElementById('home-dest-next');if(!track||!dots||!prev||!next)return;const cards=[...track.querySelectorAll('.destination')];let positions=[];function metrics(){const x=cards.map(c=>c.offsetLeft-cards[0].offsetLeft);const limit=Math.max(0,track.scrollWidth-track.clientWidth);positions=[...new Set(x.map(v=>Math.min(v,limit)).filter((v,i,a)=>i===0||v>a[i-1]+1))];if(!positions.length)positions=[0];}function activeIndex(){let best=0,dist=Infinity;positions.forEach((x,i)=>{const d=Math.abs(track.scrollLeft-x);if(d<dist){dist=d;best=i}});return best;}function paint(){const n=activeIndex();[...dots.children].forEach((b,i)=>{b.classList.toggle('active',i===n);b.setAttribute('aria-current',String(i===n));});prev.disabled=n===0;next.disabled=n===positions.length-1;}function render(){metrics();dots.replaceChildren();positions.forEach((p,i)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','Show destinations '+(i+1));button.addEventListener('click',()=>track.scrollTo({left:p,behavior:'smooth'}));dots.appendChild(button)});paint();}prev.addEventListener('click',()=>track.scrollTo({left:positions[Math.max(0,activeIndex()-1)],behavior:'smooth'}));next.addEventListener('click',()=>track.scrollTo({left:positions[Math.min(positions.length-1,activeIndex()+1)],behavior:'smooth'}));track.addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true});window.addEventListener('resize',render);render();})();</script><script>
 (() => {
   const video = document.querySelector('.lua-hero-video');
-  const button = document.querySelector('.lua-hero-motion');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   function startVideo(){
     if(reducedMotion.matches || navigator.connection?.saveData) return;
@@ -3597,23 +3593,14 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
   }
   video.addEventListener('playing', () => {
     video.classList.add('is-playing');
-    button.hidden = false;
-    button.textContent = 'Pause video';
   });
-  video.addEventListener('pause', () => { button.textContent = 'Play video'; });
   video.addEventListener('error', () => {
     video.classList.remove('is-playing');
-    button.hidden = true;
-  });
-  button.addEventListener('click', () => {
-    if(video.paused) startVideo();
-    else video.pause();
   });
   reducedMotion.addEventListener('change', () => {
     if(reducedMotion.matches){
       video.pause();
       video.classList.remove('is-playing');
-      button.hidden = true;
     }else startVideo();
   });
   startVideo();
