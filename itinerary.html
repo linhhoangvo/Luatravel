@@ -408,30 +408,20 @@ html body main p strong,html body main li strong{font-weight:500!important}
 </style>
 <link rel="stylesheet" href="assets/spectral-site.css">
 
-<style id="culinary-journey-details">
-.lt-tour .cj-overview p{font-size:16px;line-height:1.85;max-width:70ch}
-.lt-tour .cj-route{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:24px 0}
-.lt-tour .cj-route a{display:flex;flex-direction:column;gap:7px;height:100%;padding:17px 12px;border:1px solid #d8ded4;border-radius:5px;text-decoration:none;color:#273c2e}
-.lt-tour .cj-route strong{font-size:16px;font-weight:500}
-.lt-tour .cj-route span,.lt-tour .cj-stay-meta{font-size:14px;color:#596a59}
-.lt-tour .cj-stays{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
-.lt-tour .cj-stay{padding:22px;border:1px solid #d8ded4;border-radius:5px}
-.lt-tour .cj-stay h3{font-size:22px;font-weight:400;line-height:1.3;margin:9px 0 12px}
-.lt-tour .cj-stay p{font-size:16px;line-height:1.75;margin:0 0 12px}
-.lt-tour .cj-stay a{font-size:14px;color:#35543c;text-underline-offset:4px}
-.lt-tour .cj-alternatives summary{font-size:18px}
-.lt-tour .cj-alternatives ul{list-style:none;padding:0;display:grid;gap:14px}
-.lt-tour .cj-alternatives li{display:flex;flex-direction:column;gap:4px;font-size:16px}
-.lt-tour .cj-alternatives li span{font-size:14px;color:#596a59}
-.lt-tour .cj-alternatives p,.lt-tour .cj-booking-note{font-size:14px;line-height:1.75;color:#596a59}
-.lt-tour .cj-day-stay{font-size:14px!important;border-top:1px solid #dde2da;margin-top:18px;padding-top:12px;color:#526650}
-.lt-tour .cj-day-image{margin:22px 0 0}
-.lt-tour .cj-day-image img{display:block;width:100%;max-height:380px;object-fit:cover;border-radius:5px}
-.lt-tour .cj-day-image img[src$="cooking.jpg"]{width:min(100%,360px);height:auto;max-height:none}
-.lt-tour .cj-day-image figcaption{font-size:14px;color:#596a59;margin-top:8px}
-.lt-tour #culinary-overview,.lt-tour #culinary-route,.lt-tour #culinary-stays,.lt-tour #culinary-alternatives,.lt-tour [id^="culinary-day-"]{scroll-margin-top:100px}
-@media(max-width:800px){.lt-tour .cj-route{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){.lt-tour .cj-route{grid-template-columns:repeat(2,minmax(0,1fr))}.lt-tour .cj-stays{grid-template-columns:1fr}.lt-tour .cj-stay{padding:19px}}
+<style id="culinary-stay-cards">
+.lt-tour .lt-stay-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:24px}
+.lt-tour .lt-stay-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #d8ded4;border-radius:5px;color:inherit;text-decoration:none;background:#fff}
+.lt-tour .lt-stay-card:focus-visible{outline:2px solid #35543c;outline-offset:4px}
+.lt-tour .lt-stay-photo{overflow:hidden;aspect-ratio:16/10}
+.lt-tour .lt-stay-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+@media(hover:hover){.lt-tour .lt-stay-card:hover .lt-stay-photo img{transform:scale(1.025)}}
+.lt-tour .lt-stay-body{padding:19px 20px 22px}
+.lt-tour .lt-stay-body small{display:block;color:#596a59;font-size:14px;line-height:1.5}
+.lt-tour .lt-stay-body h3{font-size:22px;font-weight:400;line-height:1.3;margin:9px 0 12px}
+.lt-tour .lt-stay-body p{font-size:15px;line-height:1.75;margin:0 0 15px}
+.lt-tour .lt-stay-action{font-size:14px;color:#35543c;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:560px){.lt-tour .lt-stay-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.lt-tour .lt-stay-photo img{transition:none}}
 </style>
 </head><body><header class="header" style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Amazing Vietnam</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
@@ -557,55 +547,16 @@ document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>
 }).join('');
 
 if(selected==='culinary' && !isAdventure){
- const routeStops=[["Hanoi",3,1],["Hue",3,4],["Hoi An",4,7],["Quy Nhon coast",3,11],["Ho Chi Minh City",2,14]];
- const stays=[{"name":"Capella Hanoi","city":"Hanoi","nights":3,"slug":"capella-hanoi","copy":"An intimate city stay near Hoan Kiem Lake, well placed for market mornings, neighbourhood walks and evening dining."},{"name":"aNhill Boutique","city":"Hue","nights":3,"url":"https://www.designhotels.com/hotels/vietnam/hue/anhill-boutique/","copy":"A garden retreat on Thien An Hill, offering a quieter counterpoint to days exploring Hue's food and royal heritage."},{"name":"Namia River Retreat","city":"Hoi An","nights":4,"slug":"namia-river-retreat","copy":"A riverside villa base for four nights, with space to unwind between gardens, artisan visits and time in the Ancient Town."},{"name":"Zannier Bãi San Hô","city":"Quy Nhon coast","nights":3,"slug":"zannier-hotels-bai-san-ho","copy":"A secluded coastal retreat in the wider Quy Nhon region. Allow time for the resort transfer and enjoy the slower pace between excursions."},{"name":"Caravelle Saigon","city":"Ho Chi Minh City","nights":2,"url":"https://www.caravellehotel.com/","copy":"A central base beside the Opera House, convenient for discovering the city's cafés, historic streets and evening food scene."}];
- const collections=[{"title":"Heritage hotels and private villas","stays":[["Hanoi","Sofitel Legend Metropole Hanoi",3],["Hue","Azerai La Residence Hue",3],["Hoi An","Four Seasons Resort The Nam Hai",4],["Quy Nhon coast","Anantara Quy Nhon Villas",3],["Ho Chi Minh City","The Myst Dong Khoi",2]],"note":"A different collection of stays along the same five-stop route."},{"title":"City design and coastal resorts","stays":[["Hanoi","Fairmont Hanoi",3],["Hue","Silk Path Grand Hue Hotel",3],["Da Nang coastal base","InterContinental Danang Sun Peninsula Resort",4],["Quy Nhon coast","Avani Quy Nhon Resort & Spa",3],["Ho Chi Minh City","The Reverie Saigon",2]],"note":"The four-night Da Nang stay replaces the Hoi An base. Hoi An visits and driving times would be adjusted in your personal programme."}];
- const escapeText=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
- const section=(id,title,copy)=>{
-  const node=document.createElement('section');node.id=id;
-  const heading=document.createElement('h2');heading.textContent=title;node.appendChild(heading);
-  if(copy){const paragraph=document.createElement('p');paragraph.textContent=copy;node.appendChild(paragraph);}
-  return node;
- };
- const main=document.querySelector('.lt-main');
- const overview=section('culinary-overview','Vietnam, one table at a time',current.intro);
- overview.className='cj-overview';main.prepend(overview);
- const route=section('culinary-route','Five stops, fifteen nights','Move from the capital to the central coast, then finish in Ho Chi Minh City. Each stop leaves time to explore beyond scheduled visits.');
- const routeList=document.createElement('ol');routeList.className='cj-route';
- routeList.innerHTML=routeStops.map(([city,nights,day])=>'<li><a href="#culinary-day-'+day+'"><strong>'+escapeText(city)+'</strong><span>'+nights+' nights</span></a></li>').join('');
- route.appendChild(routeList);overview.after(route);
- const lodging=section('culinary-stays','Stays chosen for the journey','A suggested collection of city hotels, garden retreats and coastal stays. Rooms, inclusions and availability are confirmed in your personal proposal.');
- const cards=document.createElement('div');cards.className='cj-stays';
- cards.innerHTML=stays.map(stay=>{
-  const link=stay.slug?'hotel-detail.html?hotel='+stay.slug:stay.url;
-  return '<article class="cj-stay"><span class="cj-stay-meta">'+escapeText(stay.city)+' · '+stay.nights+' nights</span><h3>'+escapeText(stay.name)+'</h3><p>'+escapeText(stay.copy)+'</p><a href="'+link+'">Explore '+escapeText(stay.name)+'</a></article>';
- }).join('');
- lodging.appendChild(cards);document.querySelector('#itinerary').after(lodging);
- const alternatives=section('culinary-alternatives','Other ways to stay','Choose a complete collection or combine hotels to suit your preferred setting and travel budget.');
- alternatives.className='cj-alternatives';
- collections.forEach(collection=>{
-  const detail=document.createElement('details');const title=document.createElement('summary');title.textContent=collection.title;detail.appendChild(title);
-  const body=document.createElement('div');body.className='lt-detail-body';
-  body.innerHTML='<ul>'+collection.stays.map(([city,name,nights])=>'<li><strong>'+escapeText(name)+'</strong><span>'+escapeText(city)+' · '+nights+' nights</span></li>').join('')+'</ul><p>'+escapeText(collection.note)+'</p>';
-  detail.appendChild(body);alternatives.appendChild(detail);
- });
- lodging.after(alternatives);
- const note=document.createElement('p');note.className='cj-booking-note';note.textContent='Train seats, chef-hosted meals, producer visits, boat outings and restaurant bookings are arranged around availability, weather and your preferences. Any dining in a restricted heritage venue requires separate confirmation.';
- route.appendChild(note);
- const navigation=document.querySelector('.lt-section-nav-inner');
- [['#culinary-overview','Overview'],['#culinary-route','Route']].reverse().forEach(([href,label])=>{const a=document.createElement('a');a.href=href;a.textContent=label;navigation.prepend(a);});
- [['#culinary-stays','Stays'],['#culinary-alternatives','Alternatives']].forEach(([href,label])=>{const a=document.createElement('a');a.href=href;a.textContent=label;navigation.insertBefore(a,navigation.querySelector('a[href="#gallery"]'));});
- const dayNodes=[...document.querySelectorAll('#lt-days > details')];
- dayNodes.forEach((node,index)=>{
-  node.id='culinary-day-'+(index+1);
-  const stay=stays.find((item,i)=>index>=routeStops[i][2]-1 && index<routeStops[i][2]-1+item.nights);
-  if(stay){const line=document.createElement('p');line.className='cj-day-stay';line.textContent='Suggested stay · '+stay.name;node.querySelector('.lt-detail-body').appendChild(line);}
- });
- routeList.addEventListener('click',event=>{const a=event.target.closest('a');if(a){const target=document.querySelector(a.getAttribute('href'));if(target)target.open=true;}});
- const dayImages=[[5,'assets/culinary-journey/hue.png','Hue heritage and traditional dress'],[7,'assets/culinary-journey/cooking.jpg','Cooking traditions in Central Vietnam'],[10,'assets/culinary-journey/train.png','A scenic rail journey towards the Quy Nhon coast']];
- dayImages.forEach(([index,src,label])=>{const figure=document.createElement('figure');figure.className='cj-day-image';const img=document.createElement('img');img.src=src;img.alt=label;img.loading='lazy';const caption=document.createElement('figcaption');caption.textContent=label;figure.append(img,caption);dayNodes[index].querySelector('.lt-detail-body').appendChild(figure);});
+ const suggestedStays=[{"name":"Capella Hanoi","city":"Hanoi","nights":3,"image":"assets/hotel-galleries/capella-hanoi/01.jpg","href":"hotel-detail.html?hotel=capella-hanoi","copy":"A city base near Hoan Kiem Lake for market visits, neighbourhood walks and evening dining."},{"name":"aNhill Boutique","city":"Hue","nights":3,"image":"https://www.designhotels.com/media/3q4b3bta/s-anhill-boutique-hue-vietnam.jpg?format=webp&height=746&quality=80&v=1dd5c85507eb5b0&width=1920","href":"https://www.designhotels.com/hotels/vietnam/hue/anhill-boutique/","copy":"A garden retreat on Thien An Hill, with a quieter setting between visits to Hue's food and heritage sites."},{"name":"Namia River Retreat","city":"Hoi An","nights":4,"image":"assets/hotel-galleries/namia-river-retreat/01.jpg","href":"hotel-detail.html?hotel=namia-river-retreat","copy":"A riverside villa stay with space to unwind between gardens, artisan visits and the Ancient Town."},{"name":"Zannier Bãi San Hô","city":"Quy Nhon coast","nights":3,"image":"assets/hotel-galleries/zannier-hotels-bai-san-ho/01.jpg","href":"hotel-detail.html?hotel=zannier-hotels-bai-san-ho","copy":"A secluded coastal retreat in the wider Quy Nhon region for relaxed days between excursions."},{"name":"Caravelle Saigon","city":"Ho Chi Minh City","nights":2,"image":"https://www.caravellehotel.com/wp-content/uploads/FACADE-1.jpg","href":"https://www.caravellehotel.com/","copy":"A central stay beside the Opera House, convenient for cafés, historic streets and evening food experiences."}];
+ const escapeStayText=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+ const section=document.createElement('section');section.id='culinary-stays';
+ section.innerHTML='<span class="lt-section-no">WHERE TO STAY</span><h2>Suggested hotels</h2><p>A suggested collection of city hotels, garden retreats and coastal stays. Click a photo to explore the hotel. Availability, room types and inclusions are confirmed in your personal proposal.</p>';
+ const grid=document.createElement('div');grid.className='lt-stay-grid';
+ grid.innerHTML=suggestedStays.map(stay=>'<a class="lt-stay-card" href="'+escapeStayText(stay.href)+'"><div class="lt-stay-photo"><img src="'+escapeStayText(stay.image)+'" alt="'+escapeStayText(stay.name)+'" loading="lazy" decoding="async"></div><div class="lt-stay-body"><small>'+escapeStayText(stay.city)+' · '+stay.nights+' nights</small><h3>'+escapeStayText(stay.name)+'</h3><p>'+escapeStayText(stay.copy)+'</p><span class="lt-stay-action">Explore hotel</span></div></a>').join('');
+ section.appendChild(grid);document.querySelector('#itinerary').after(section);
+ const link=document.createElement('a');link.href='#culinary-stays';link.textContent='Hotels';
+ const navigation=document.querySelector('.lt-section-nav-inner');navigation.insertBefore(link,navigation.querySelector('a[href="#gallery"]'));
 }
-
 const adventurePhotos=[
 'ha%20noi%201.jpg','ha%20noi%202.jpg','https://cdn0897.cdn4s1.com/media/halong-bay-cruises/halong-luxury-cruises/arcady-cruises/1.jpg','Hue.jpg','Hues.jpg','%C4%90%C3%A0%20N%E1%BA%B5ng%201.jpg','%C4%90%C3%A0%20N%E1%BA%B5ng%203.jpg','hoi%20an%205.jpg','c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg','ho%20chi%20minh%20city%201.jpg','ho%20chi%20minh%20city%203.jpg','mekong%20moi.jpg'];
 const adventureLabels=['Hanoi','Hanoi local life','Ha Long Bay','Hue Imperial City','Hue heritage','Da Nang','Da Nang coastal scenery','Hoi An local life','Hoi An Ancient Town','Ho Chi Minh City','Ho Chi Minh City highlights','Mekong Delta'];
