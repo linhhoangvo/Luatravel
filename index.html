@@ -3416,6 +3416,34 @@ html body>main#home>section.hero.lua-cinematic-hero::after{
  background:linear-gradient(0deg,rgba(12,24,19,.65),transparent 72%),linear-gradient(90deg,rgba(12,24,19,.32),transparent 75%)!important;
 }
 </style>
+<style id="lua-immersive-home-hero">
+html body > header.header.lua-compact-header{
+ position:fixed!important;left:0!important;right:0!important;
+ background:linear-gradient(180deg,rgba(14,27,22,.52),transparent)!important;
+}
+html body > header.header.lua-compact-header .header-inner{min-height:91px!important}
+html body > header.header.lua-compact-header a.logo img.lua-mark{filter:brightness(0) invert(1)!important}
+html body > header.header.lua-compact-header a.logo .lua-logo-wordmark,
+html body > header.header.lua-compact-header button.menu{color:#fffdf7!important}
+html body > header.header.lua-compact-header .lua-header-plan{
+ background:var(--home-ivory)!important;color:var(--home-forest)!important;border-color:var(--home-ivory)!important;
+}
+html body > header.header.lua-compact-header .lua-header-plan:hover{background:var(--home-linen)!important}
+html body > header.header.lua-compact-header.lua-past-hero{background:var(--home-ivory)!important}
+html body > header.header.lua-compact-header.lua-past-hero a.logo img.lua-mark{filter:none!important}
+html body > header.header.lua-compact-header.lua-past-hero a.logo .lua-logo-wordmark,
+html body > header.header.lua-compact-header.lua-past-hero button.menu{color:var(--home-forest)!important}
+html body > header.header.lua-compact-header.lua-past-hero .lua-header-plan{
+ background:var(--home-forest)!important;color:var(--home-ivory)!important;border-color:var(--home-forest)!important;
+}
+html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
+ width:100%!important;margin:0!important;
+ height:clamp(480px,86svh,850px)!important;min-height:0!important;
+}
+@media(max-width:600px){
+ html body > header.header.lua-compact-header .header-inner{min-height:72px!important}
+}
+</style>
 </head>
 <body>
 
@@ -3555,6 +3583,18 @@ html body>main#home>section.hero.lua-cinematic-hero::after{
   slides[active].classList.remove('is-active');
   active=next;
  },6500);
+})();
+</script>
+<script id="lua-hero-header-state">
+(() => {
+  const header = document.querySelector('.lua-compact-header');
+  const hero = document.querySelector('.lua-cinematic-hero');
+  function updateHeader(){
+    header.classList.toggle('lua-past-hero',hero.getBoundingClientRect().bottom <= header.offsetHeight);
+  }
+  window.addEventListener('scroll',updateHeader,{passive:true});
+  window.addEventListener('resize',updateHeader);
+  updateHeader();
 })();
 </script>
 </body></html>
