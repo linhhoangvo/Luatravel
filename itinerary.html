@@ -400,6 +400,12 @@ html body main section:not(.hero) p,html body main article p,html body main li,h
 html body main p strong,html body main li strong{font-weight:500!important}
 @media(min-width:701px){html body .lua-about-story .lua-about-split>div:last-child p{font-size:16px!important;line-height:1.65!important}}
 </style>
+<style>
+.lt-day-photo{margin:18px 0 0;max-width:720px}
+.lt-day-photo img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;object-position:left center;border-radius:8px}
+.lt-day-photo figcaption,.lt-photo-credit{font-size:.8rem;line-height:1.5;margin-top:6px}
+.lt-day-photo a,.lt-photo-credit a{text-decoration:underline}
+</style>
 </head><body><header class="header" style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-tour">
 <div class="lt-hero"><img id="lt-hero-photo" src="hero lua.jpg" alt="Vietnam landscape"><div class="lt-hero-overlay"><span class="lt-hero-overline">LÚA TRAVEL &amp; TOURS / VIETNAM</span><div class="lt-hero-heading"><div><div class="lt-eyebrow" id="lt-kicker">Private Vietnam journey</div><h1 id="lt-title">Amazing Vietnam</h1></div><p id="lt-route">Hanoi • Mai Chau • Ninh Binh • Hoi An • Ho Chi Minh City</p></div></div></div>
 <nav class="lt-section-nav" aria-label="Explore this tour"><div class="lt-section-nav-inner"><a href="#highlights">Highlights</a><a href="#itinerary">Itinerary</a><a href="#gallery">Gallery</a><a href="#lt-faq">FAQs</a></div></nav><div class="lt-shell">
@@ -487,15 +493,35 @@ culinary:{included:['15 nights of accommodation as agreed in your quotation','Pr
 const service=serviceSets[isAdventure?'adventure':selected]||serviceSets.heritage;
 const serviceBlock=(heading,items)=>'<details open><summary>'+heading+'</summary><div class="lt-detail-body"><ul>'+items.map(x=>'<li>'+x+'</li>').join('')+'</ul></div></details>';
 document.querySelector('#lt-inclusions').innerHTML=serviceBlock("What's included",service.included)+serviceBlock("What's not included",service.excluded);
-document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>'<details'+(i===0?' open':'')+'><summary>'+title+'</summary><div class="lt-detail-body"><p>'+copy+'</p></div></details>').join('');
+const veteransPhotos={"long-bien-bridge":["assets/veterans-tour/long-bien-bridge.webp","Long Biên Bridge, Hanoi","Amenoc","CC0 1.0","https://creativecommons.org/publicdomain/zero/1.0/","https://commons.wikimedia.org/wiki/File:Long_Bien_bridge.jpg"],"ham-rong-bridge":["assets/veterans-tour/ham-rong-bridge.webp","Hàm Rồng Bridge, Thanh Hóa","Rolers.FTU","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0/","https://commons.wikimedia.org/wiki/File:Ham_Rong_Bridge.jpg"],"hien-luong-bridge":["assets/veterans-tour/hien-luong-bridge.webp","Hiền Lương Bridge, former DMZ","Bút Chiến","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0/","https://commons.wikimedia.org/wiki/File:C%E1%BA%A7u_Hi%E1%BB%81n_L%C6%B0%C6%A1ng_(nh%C3%ACn_t%E1%BB%AB_b%E1%BB%9D_Nam).JPG"],"vinh-moc-tunnels":["assets/veterans-tour/vinh-moc-tunnels.webp","Entrance to the Vịnh Mốc Tunnels","Lê Tấn Lộc","CC BY-SA 3.0","https://creativecommons.org/licenses/by-sa/3.0/","https://commons.wikimedia.org/wiki/File:Entrance_to_Vinh_Moc_Tunnels.JPG"],"a-shau-valley-archive":["assets/veterans-tour/a-shau-valley-archive.webp","A Shau Valley, archival photograph","U.S. Army courtesy photo","U.S. public domain",null,"https://commons.wikimedia.org/wiki/File:An_undated_photo_of_members_of_the_101st_Airborne_Delta_Raiders_resting_during_a_moment_of_downtime_in_the_A_Shau_valley_near_Hue%2C_Vietnam_700701-A-ZZ999-004.jpg"],"hai-van-pass":["assets/veterans-tour/hai-van-pass.webp","View from Hải Vân Pass","Vyacheslav Argenberg","CC BY 4.0","https://creativecommons.org/licenses/by/4.0/","https://commons.wikimedia.org/wiki/File:Hai_Van_Pass%2C_Vietnam%2C_View_northwards.jpg"],"war-remnants-museum":["assets/veterans-tour/war-remnants-museum.webp","War Remnants Museum, Ho Chi Minh City","Nick","CC BY 2.0","https://creativecommons.org/licenses/by/2.0/","https://commons.wikimedia.org/wiki/File:War_Remnants_Museum%2C_Ho_Chi_Minh_City_(49012737827).jpg"]};
+const veteranDayPhotos=[
+  ['ha%20noi%201.jpg','Hanoi'], veteransPhotos['long-bien-bridge'],
+  veteransPhotos['ham-rong-bridge'], ['Hue.jpg','Hue Imperial City'],
+  veteransPhotos['a-shau-valley-archive'], veteransPhotos['hien-luong-bridge'],
+  veteransPhotos['vinh-moc-tunnels'], veteransPhotos['hai-van-pass'],
+  ['hoi%20an%205.jpg','Hoi An Ancient Town'], ['ho%20chi%20minh%20city%201.jpg','Ho Chi Minh City'],
+  ['ho%20chi%20minh%20city%203.jpg','Ho Chi Minh City heritage'], veteransPhotos['war-remnants-museum'],
+  ['ho%20chi%20minh%20city%201.jpg','Ho Chi Minh City']
+];
+function itineraryPhoto([src,label,author,license,licenseUrl,source],className){
+  const licenseLabel=licenseUrl ? '<a href="'+licenseUrl+'">'+license+'</a>' : license;
+  const credit=source ? '<br><span class="lt-photo-credit"><a href="'+source+'">'+author+' / Wikimedia Commons</a> · '+licenseLabel+' · resized and converted to WebP</span>' : '';
+  return '<figure class="'+className+'"><img src="'+src+'" alt="'+label+'" loading="lazy" decoding="async"><figcaption>'+label+credit+'</figcaption></figure>';
+}
+const showVeteranPhotos=!isAdventure && selected==='veterans';
+document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>{
+  const photo=showVeteranPhotos ? itineraryPhoto(veteranDayPhotos[i],'lt-day-photo') : '';
+  return '<details'+(i===0?' open':'')+'><summary>'+title+'</summary><div class="lt-detail-body"><p>'+copy+'</p>'+photo+'</div></details>';
+}).join('');
 const adventurePhotos=[
 'ha%20noi%201.jpg','ha%20noi%202.jpg','https://cdn0897.cdn4s1.com/media/halong-bay-cruises/halong-luxury-cruises/arcady-cruises/1.jpg','Hue.jpg','Hues.jpg','%C4%90%C3%A0%20N%E1%BA%B5ng%201.jpg','%C4%90%C3%A0%20N%E1%BA%B5ng%203.jpg','hoi%20an%205.jpg','c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg','ho%20chi%20minh%20city%201.jpg','ho%20chi%20minh%20city%203.jpg','mekong%20moi.jpg'];
 const adventureLabels=['Hanoi','Hanoi local life','Ha Long Bay','Hue Imperial City','Hue heritage','Da Nang','Da Nang coastal scenery','Hoi An local life','Hoi An Ancient Town','Ho Chi Minh City','Ho Chi Minh City highlights','Mekong Delta'];
-const galleryItems=isAdventure?adventurePhotos.map((src,i)=>[src,adventureLabels[i]]):current.gallery;
+const veteranGallery=veteranDayPhotos.slice(0,-1);
+const galleryItems=showVeteranPhotos?veteranGallery:isAdventure?adventurePhotos.map((src,i)=>[src,adventureLabels[i]]):current.gallery;
 const gallery=document.querySelector('#lt-gallery');
 gallery.classList.remove('lt-gallery-two','lt-gallery-single','lt-interactive-gallery');
 gallery.classList.add('lt-photo-grid');
-gallery.innerHTML=galleryItems.map(([src,label])=>'<figure class="lt-photo-tile"><img src="'+src+'" alt="'+label+'" loading="lazy" decoding="async"><figcaption>'+label+'</figcaption></figure>').join('');
+gallery.innerHTML=galleryItems.map(photo=>itineraryPhoto(photo,'lt-photo-tile')).join('');
 const mapTerm=['essence','culinary'].includes(selected)?current.route.replaceAll(' · ',' '):isAdventure?'Ha Long Bay Hue Hoi An Ho Chi Minh City Vietnam':selected==='veterans'?'Hanoi Thanh Hoa Hue Dong Ha Hoi An Ho Chi Minh City Vietnam':selected==='central'?'Da Nang Hue Hoi An Vietnam':selected==='hanoisapa'?'Sapa Lao Cai Vietnam':selected==='hue'?'Hue Vietnam':selected==='food'||selected==='cycling'||selected==='wellness'?'Hoi An Vietnam':'Vietnam';document.querySelector('#lt-map').src='https://www.google.com/maps?q='+encodeURIComponent(mapTerm)+'&output=embed';document.querySelector('#lt-map-label').textContent=['essence','culinary'].includes(selected)?current.route:isAdventure?'Hanoi · Ha Long Bay · Hanoi · Hue · Da Nang · Hoi An · Ho Chi Minh City · Mekong Delta':(selected==='veterans'?'Hanoi · Thanh Hoa · Hue · A Luoi · Dong Ha · Hoi An · Ho Chi Minh City':selected==='central'?'Da Nang · Ba Na Hills · Hue · Hoi An':selected==='hanoisapa'?'Hanoi · Lao Cai · Sapa · Lao Chai · Ta Van · Ta Phin':'Vietnam — itineraries customised to your destinations');
 const related=[['essence','The Essence of Vietnam'],['culinary','A Taste of Vietnam'],['adventure','Amazing Vietnam'],['hue','Private Hue Cultural Experience'],['cycling','Hoi An Countryside by Bicycle'],['food','Hoi An Local Food & Hidden Bars'],['wellness','A Slower Stay in Hoi An'],['honeymoon','Vietnam Honeymoon Escape']];
 document.querySelector('#lt-related-grid').innerHTML=related.filter(x=>x[0]!==selected&&!(isAdventure&&x[0]==='adventure')).slice(0,3).map(([key,title])=>{const tour=tours[key],href=key==='adventure'?'itinerary.html?tour=heritage#vietnam-adventure':'itinerary.html?tour='+encodeURIComponent(key);return '<a class="lt-card" href="'+href+'"><img loading="lazy" src="'+tour.image+'" alt="'+title+'"><div class="lt-card-body"><small>VIETNAM · PRIVATE EXPERIENCE</small><h3>'+title+'</h3><span>Explore this journey ↗</span></div></a>'}).join('');
