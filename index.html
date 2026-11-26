@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#33483E"><meta name="description" content="Lua Travel & Tours creates tailor-made holidays, private tours and local experiences across Vietnam. Your local destination management partner in Hoi An.">
+<meta name="theme-color" content="#243E33"><meta name="description" content="Lua Travel & Tours creates tailor-made holidays, private tours and local experiences across Vietnam. Your local destination management partner in Hoi An.">
 <title>Lua Travel & Tours | Tailor-made journeys in Vietnam</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -3274,7 +3274,45 @@ html body main#home section.lua-foray-notes a{
  html body main#home section.lua-foray-notes h2{font-size:34px!important}
  html body main#home section.lua-foray-notes p{font-size:17px!important}
 }
-</style></head>
+</style><style id="lua-home-palette">
+:root{
+  --home-ivory:#FBF8F0;
+  --home-linen:#F2EBDD;
+  --home-sage:#E7ECE3;
+  --home-forest:#243E33;
+  --home-deep-forest:#1B3028;
+  --home-muted:#4F5B51;
+  --home-brass:#795D39;
+  --home-light-brass:#DBC19A;
+}
+html body{background:var(--home-ivory)!important;color:var(--home-forest)!important}
+html body main#home #destinations,
+html body main#home .lua-philosophy,
+html body main#home #travel-styles{background-color:var(--home-ivory)!important}
+html body main#home .lua-selected-stays{background:var(--home-sage)!important}
+html body main#home .lua-foray-journal{background:var(--home-linen)!important}
+html body main#home :is(#destinations,.lua-philosophy,#travel-styles,.lua-selected-stays,.lua-foray-journal) h2,
+html body main#home .lua-foray-story h3{color:var(--home-forest)!important}
+html body main#home :is(.lua-philosophy,#travel-styles,.lua-selected-stays,.lua-foray-journal) p{color:var(--home-muted)!important}
+html body main#home :is(#destinations,.lua-philosophy,#travel-styles) .eyebrow,
+html body main#home .lua-stays-eyebrow,
+html body main#home .lua-foray-section-heading>span,
+html body main#home .lua-foray-story>span{color:var(--home-brass)!important}
+html body main#home :is(.lua-featured-dest-more,.lua-featured-heading,.lua-stays-heading,.lua-foray-section-heading)>a{
+ color:var(--home-forest)!important;border-color:var(--home-brass)!important
+}
+html body main#home :is(.lua-featured-dest-more,.lua-featured-heading,.lua-stays-heading,.lua-foray-section-heading)>a:hover{color:var(--home-brass)!important}
+html body main#home .lua-how-split .lua-how-split-panel{background:var(--home-forest)!important;color:var(--home-ivory)!important}
+html body main#home .lua-how-split .lua-how-split-panel :is(h2,h3){color:var(--home-ivory)!important}
+html body main#home .lua-how-split .lua-how-split-panel p{color:#E7ECE3!important}
+html body main#home .lua-how-split .lua-how-split-eyebrow{color:var(--home-light-brass)!important}
+html body footer.footer.lua-site-footer{background:var(--home-deep-forest)!important}
+html body footer.footer.lua-site-footer .lua-footer-grid h4{color:var(--home-light-brass)!important}
+@media(max-width:880px){
+ html body>header.header nav.nav.open{background:var(--home-ivory)!important}
+}
+</style>
+</head>
 <body>
 
 <header class="header" style="position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:10000!important;background:transparent!important;background-color:transparent!important;border:0!important;box-shadow:none!important;margin:0!important;padding:0!important"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
@@ -3432,18 +3470,18 @@ html body main#home section.lua-foray-notes a{
    document.body.classList.toggle('lua-page-scrolled',scrolled);
    setImportant(header,'position','fixed');
    setImportant(header,'top','0');
-   setImportant(header,'background-color',scrolled?'#FAF9F6':'transparent');
-   setImportant(header,'background',scrolled?'#FAF9F6':'transparent');
+   setImportant(header,'background-color',scrolled?'var(--home-ivory)':'transparent');
+   setImportant(header,'background',scrolled?'var(--home-ivory)':'transparent');
    setImportant(header,'box-shadow',scrolled?'0 1px 10px rgba(25,35,25,.06)':'none');
    setImportant(wordmark,'color',scrolled?'#303D35':'#FFFDF7');
    setImportant(logo,'filter',scrolled?'none':'brightness(0) invert(1)');
    setImportant(menu,'color',scrolled?'#344136':'#FFFDF7');
    links.forEach(link=>{
-     const c=scrolled?'#39423D':'#FFFDF7';
+     const c=scrolled?'var(--home-forest)':'#FFFDF7';
      setImportant(link,'color',c);
      if(link.classList.contains('nav-cta')){
        setImportant(link,'background','transparent');
-       setImportant(link,'border-color',scrolled?'#B9BEAF':'rgba(255,255,255,.75)');
+       setImportant(link,'border-color',scrolled?'var(--home-brass)':'rgba(255,255,255,.75)');
      }
    });
    pending=false;
