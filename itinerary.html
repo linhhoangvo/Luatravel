@@ -487,7 +487,7 @@ document.querySelector('#lt-route').textContent=isAdventure?'Hanoi · Ha Long Ba
 
 document.querySelector('#lt-hero-photo').src=isAdventure?'Hue.jpg':current.image;
 document.querySelector('#lt-hero-photo').alt=current.title;
-if(selected==='honeymoon')document.querySelector('#lt-hero-photo').style.objectPosition='center 72%';
+if(selected==='honeymoon')document.querySelector('#lt-hero-photo').style.setProperty('object-position','center 72%','important');
 document.querySelector('#lt-highlights').innerHTML=list(current.highlights);
 
 const serviceSets={
