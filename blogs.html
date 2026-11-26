@@ -113,10 +113,30 @@ html body header.lua-journal-header nav>a.plan:hover{background:#eef0ec!importan
  html body header.lua-journal-header nav>a{font-size:13px!important}
 }
 </style>
+<style id="lua-journal-filter-pills">
+html body main .tools{border:0!important;padding:12px 0 14px!important;gap:12px 20px!important;flex-wrap:wrap}
+html body main .tools .categories{gap:7px!important}
+html body main .tools .categories button.filter{
+ min-height:36px;padding:7px 14px!important;border:1px solid transparent!important;
+ border-radius:999px!important;background:#ebeeeb!important;color:#374640!important;
+ font-size:14px!important;line-height:1.25!important;letter-spacing:0!important;
+}
+html body main .tools .categories button.filter.active{
+ background:#455953!important;color:#fff!important;
+}
+html body main .tools .categories button.filter:not(.active):hover{background:#dfe6e1!important}
+html body main .tools .categories button.filter:focus-visible,
+html body main .tools input.search:focus-visible{outline:2px solid #455953;outline-offset:3px}
+html body main .tools input.search{
+ border:1px solid #d8dfda!important;border-radius:999px!important;
+ background:#fff!important;padding:8px 14px!important;
+}
+@media(max-width:680px){html body main .tools input.search{width:100%!important}}
+</style>
 </head>
 <body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lúa Travel & Tours"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip ↗</a></nav></div></header>
 <main><div class="container"><section class="intro"><span class="eyebrow">Stories, guides & inspiration</span><h1 style="font-size:clamp(29px,3.2vw,44px)!important;line-height:1.12!important">The Lúa Travel Journal.</h1><p>Discover places, perspectives and thoughtful ways to travel through Vietnam. Browse our Vietnam travel guides and stories, and read each article directly in the Lua Travel Journal.</p></section>
-<div class="tools"><div class="categories" id="categories" aria-label="Filter articles by topic"></div><input class="search" type="search" id="search" placeholder="Search the journal..." aria-label="Search blog articles"></div>
+<div class="tools"><div class="categories" id="categories" role="group" aria-label="Filter articles by topic"></div><input class="search" type="search" id="search" placeholder="Search the journal..." aria-label="Search blog articles"></div>
 <div class="count" id="count" aria-live="polite"></div><div class="grid" id="articles"></div><div class="pager" id="pager"></div>
 
 </div></main>
