@@ -94,8 +94,22 @@ footer{background:#1B211C!important}
 html body main .intro h1{font-size:clamp(32px,4.6vw,62px)!important;line-height:1.12!important}
 html body main .journal-feature-copy h2{font-size:clamp(27px,3.2vw,44px)!important;line-height:1.15!important}
 </style>
+<style id="lua-journal-header-refined">
+html body header.lua-journal-header{background:#fdfdfc!important;border-bottom:1px solid #e7e8e4!important}
+html body header.lua-journal-header .header-row{min-height:68px!important;width:min(1180px,calc(100% - 52px))!important;gap:20px!important}
+html body header.lua-journal-header .logo img{width:44px!important;height:44px!important}
+html body header.lua-journal-header nav{gap:clamp(12px,2vw,27px)!important;flex-wrap:wrap}
+html body header.lua-journal-header nav>a{font-size:14px!important;font-weight:400!important;letter-spacing:0!important;color:#303b34!important}
+html body header.lua-journal-header nav>a.plan{padding:7px 12px!important;border:1px solid #bfc7bf!important;border-radius:5px!important}
+html body header.lua-journal-header nav>a.plan:hover{background:#eef0ec!important}
+@media(max-width:680px){
+ html body header.lua-journal-header .header-row{width:calc(100% - 30px)!important;padding-block:8px}
+ html body header.lua-journal-header nav{gap:7px 13px!important}
+ html body header.lua-journal-header nav>a{font-size:13px!important}
+}
+</style>
 </head>
-<body><header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lúa Travel & Tours"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lúa Travel & Tours"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip ↗</a></nav></div></header>
 <main><div class="container"><section class="intro"><span class="eyebrow">Stories, guides & inspiration</span><h1 style="font-size:clamp(29px,3.2vw,44px)!important;line-height:1.12!important">The Lúa Travel Journal.</h1><p>Discover places, perspectives and thoughtful ways to travel through Vietnam. Browse our Vietnam travel guides and stories, and read each article directly in the Lua Travel Journal.</p></section>
 <section class="journal-feature" id="featured-story" aria-label="Featured journal story"></section>
 <div class="tools"><div class="categories" id="categories" aria-label="Filter articles by topic"></div><input class="search" type="search" id="search" placeholder="Search the journal..." aria-label="Search blog articles"></div>
