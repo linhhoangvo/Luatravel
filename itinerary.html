@@ -503,10 +503,8 @@ const veteranDayPhotos=[
   ['ho%20chi%20minh%20city%203.jpg','Ho Chi Minh City heritage'], veteransPhotos['war-remnants-museum'],
   ['ho%20chi%20minh%20city%201.jpg','Ho Chi Minh City']
 ];
-function itineraryPhoto([src,label,author,license,licenseUrl,source],className){
-  const licenseLabel=licenseUrl ? '<a href="'+licenseUrl+'">'+license+'</a>' : license;
-  const credit=source ? '<br><span class="lt-photo-credit"><a href="'+source+'">'+author+' / Wikimedia Commons</a> · '+licenseLabel+' · resized and converted to WebP</span>' : '';
-  return '<figure class="'+className+'"><img src="'+src+'" alt="'+label+'" loading="lazy" decoding="async"><figcaption>'+label+credit+'</figcaption></figure>';
+function itineraryPhoto([src,label],className){
+  return '<figure class="'+className+'"><img src="'+src+'" alt="'+label+'" loading="lazy" decoding="async"><figcaption>'+label+'</figcaption></figure>';
 }
 const showVeteranPhotos=!isAdventure && selected==='veterans';
 document.querySelector('#lt-days').innerHTML=current.days.map(([title,copy],i)=>{
@@ -522,6 +520,16 @@ const gallery=document.querySelector('#lt-gallery');
 gallery.classList.remove('lt-gallery-two','lt-gallery-single','lt-interactive-gallery');
 gallery.classList.add('lt-photo-grid');
 gallery.innerHTML=galleryItems.map(photo=>itineraryPhoto(photo,'lt-photo-tile')).join('');
+if(showVeteranPhotos){
+  const credits=document.createElement('details');
+  credits.className='lt-photo-credit';
+  const items=Object.values(veteransPhotos).map(([,label,author,license,licenseUrl,source])=>{
+    const terms=licenseUrl ? '<a href="'+licenseUrl+'">'+license+'</a>' : license;
+    return '<li>'+label+' · <a href="'+source+'">'+author+' / Wikimedia Commons</a> · '+terms+' · resized and converted to WebP</li>';
+  });
+  credits.innerHTML='<summary>Photo credits</summary><ul>'+items.join('')+'</ul>';
+  gallery.after(credits);
+}
 const mapTerm=['essence','culinary'].includes(selected)?current.route.replaceAll(' · ',' '):isAdventure?'Ha Long Bay Hue Hoi An Ho Chi Minh City Vietnam':selected==='veterans'?'Hanoi Thanh Hoa Hue Dong Ha Hoi An Ho Chi Minh City Vietnam':selected==='central'?'Da Nang Hue Hoi An Vietnam':selected==='hanoisapa'?'Sapa Lao Cai Vietnam':selected==='hue'?'Hue Vietnam':selected==='food'||selected==='cycling'||selected==='wellness'?'Hoi An Vietnam':'Vietnam';document.querySelector('#lt-map').src='https://www.google.com/maps?q='+encodeURIComponent(mapTerm)+'&output=embed';document.querySelector('#lt-map-label').textContent=['essence','culinary'].includes(selected)?current.route:isAdventure?'Hanoi · Ha Long Bay · Hanoi · Hue · Da Nang · Hoi An · Ho Chi Minh City · Mekong Delta':(selected==='veterans'?'Hanoi · Thanh Hoa · Hue · A Luoi · Dong Ha · Hoi An · Ho Chi Minh City':selected==='central'?'Da Nang · Ba Na Hills · Hue · Hoi An':selected==='hanoisapa'?'Hanoi · Lao Cai · Sapa · Lao Chai · Ta Van · Ta Phin':'Vietnam — itineraries customised to your destinations');
 const related=[['essence','The Essence of Vietnam'],['culinary','A Taste of Vietnam'],['adventure','Amazing Vietnam'],['hue','Private Hue Cultural Experience'],['cycling','Hoi An Countryside by Bicycle'],['food','Hoi An Local Food & Hidden Bars'],['wellness','A Slower Stay in Hoi An'],['honeymoon','Vietnam Honeymoon Escape']];
 document.querySelector('#lt-related-grid').innerHTML=related.filter(x=>x[0]!==selected&&!(isAdventure&&x[0]==='adventure')).slice(0,3).map(([key,title])=>{const tour=tours[key],href=key==='adventure'?'itinerary.html?tour=heritage#vietnam-adventure':'itinerary.html?tour='+encodeURIComponent(key);return '<a class="lt-card" href="'+href+'"><img loading="lazy" src="'+tour.image+'" alt="'+title+'"><div class="lt-card-body"><small>VIETNAM · PRIVATE EXPERIENCE</small><h3>'+title+'</h3><span>Explore this journey ↗</span></div></a>'}).join('');
