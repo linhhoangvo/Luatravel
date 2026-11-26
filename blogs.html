@@ -77,7 +77,12 @@ html body header nav .plan{font-family:'Cormorant Garamond',Georgia,serif!import
 .count{font:300 12px 'Jost',sans-serif!important;margin:20px 0 25px!important}
 .grid{gap:62px 30px!important}
 .article{background:transparent!important;border:0!important;min-height:0!important;transform:none!important}
-.article .thumb{aspect-ratio:4/3!important;filter:saturate(.83)!important}
+.article :is(.thumb,.thumb-placeholder){
+ width:100%;height:auto;aspect-ratio:16/9!important;
+ border-radius:14px;object-fit:cover;object-position:center;
+ box-shadow:0 5px 16px rgba(32,39,34,.07);
+}
+.article .thumb{filter:saturate(.9)!important}
 .article:hover .thumb{filter:saturate(.91)!important}
 .article .card-body{padding:19px 0 0!important}
 .article .category{font-size:10px!important;font-weight:400!important;letter-spacing:.18em!important;color:#8D8B7E!important}
