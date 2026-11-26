@@ -1,0 +1,8 @@
+@font-face{font-family:"Lua Spectral";src:url("fonts/spectral/Spectral-Regular.ttf") format("truetype");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Lua Spectral";src:url("fonts/spectral/Spectral-Medium.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:"Lua Spectral";src:url("fonts/spectral/Spectral-Italic.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
+
+/* Match existing page-level type overrides while keeping size, weight and spacing. */
+:is(html,#lua-type-priority,#lua-type-priority#lua-type-priority) :is(body,body *):not(svg,svg *){
+  font-family:"Lua Spectral",Georgia,serif!important;
+}
