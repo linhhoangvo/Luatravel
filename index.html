@@ -3573,6 +3573,21 @@ html body main#home section#lua-selected-stays.lua-selected-stays .lua-stays-hea
   font-size:clamp(27px,2.6vw,40px)!important;
 }
 </style>
+<style id="lua-planning-steps">
+html body main#home .lua-planning{background:var(--home-ivory);padding:clamp(48px,6vw,88px) 0;scroll-margin-top:96px}
+.lua-planning-inner{width:min(1100px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(26px,6vw,96px);align-items:center}
+html body main#home .lua-planning h2{font-size:clamp(30px,3.2vw,44px);margin:0 0 24px;color:var(--home-forest)}
+.lua-planning ol{margin:0;padding-inline-start:24px}
+.lua-planning li{padding-inline-start:9px}
+.lua-planning li+li{margin-top:17px}
+.lua-planning li::marker{color:var(--home-brass);font-size:14px}
+html body main#home .lua-planning h3{font-size:21px;line-height:1.3;margin:0 0 4px;color:var(--home-forest)}
+html body main#home .lua-planning p{font-size:16px;line-height:1.55;color:var(--home-muted);margin:0}
+.lua-planning-note{padding:clamp(24px,4vw,45px);background:var(--home-linen);border-radius:8px}
+.lua-planning-note img{width:54px;height:54px;object-fit:contain;margin:0 0 10px}
+.lua-planning-note a{display:inline-block;margin-top:20px;color:var(--home-forest);border-bottom:1px solid var(--home-brass);padding-bottom:3px}
+@media(max-width:720px){.lua-planning-inner{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -3649,22 +3664,23 @@ html body main#home section#lua-selected-stays.lua-selected-stays .lua-stays-hea
 <aside class="lua-editorial-interlude" aria-label="Discover the spirit of Vietnam">
  <div class="lua-interlude-panel"><span class="lua-interlude-eyebrow">BEYOND THE FAMILIAR</span><h2>Discover the <em>extraordinary</em> in the everyday.</h2><p>Quiet moments, treasured places and a different way to experience Vietnam.</p><a href="destinations.html">Explore Vietnam <span aria-hidden="true">↗</span></a></div>
 </aside>
-<section class="section lua-how lua-how-split" id="how" aria-label="The Lúa Approach">
- <div class="container lua-how-split-wrap">
-  <figure class="lua-how-split-image">
-   <img src="mai%20chau.jpg" alt="Golden rice terraces and local life in Mai Chau, Vietnam" loading="lazy">
-   <figcaption>THOUGHTFULLY MADE IN VIETNAM</figcaption>
-  </figure>
-  <div class="lua-how-split-panel">
-   <span class="lua-how-split-eyebrow">THE LÚA APPROACH</span>
-   <h2>Vietnam, <em>at your pace.</em></h2>
-   <div class="lua-how-split-list">
-    <div class="lua-how-split-step"><h3>Personal by design</h3><p>Your itinerary takes shape around what interests you and how you like to travel.</p></div>
-    <div class="lua-how-split-step"><h3>Rooted in Vietnam</h3><p>From our base in Hội An, we work with local guides and hosts across Vietnam.</p></div>
-    <div class="lua-how-split-step"><h3>Care in every detail</h3><p>We look after the details, from your first conversation to your final day.</p></div>
-   </div>
-   <a class="lua-how-split-action" href="contact.html">Tell us your plans <span aria-hidden="true">↗</span></a>
+<section id="how" class="lua-planning" aria-labelledby="lua-planning-title">
+ <div class="lua-planning-inner">
+  <div>
+   <h2 id="lua-planning-title">How it works</h2>
+   <ol>
+    <li><h3>Find your inspiration</h3><p>Explore our journeys and see what draws you to Vietnam.</p></li>
+    <li><h3>Tell us what you have in mind</h3><p>Share your dates, interests and how you like to travel.</p></li>
+    <li><h3>Shape the journey together</h3><p>We design a private itinerary and refine it with you.</p></li>
+    <li><h3>Travel with local support</h3><p>Our team coordinates the details and is here when you need us.</p></li>
+   </ol>
   </div>
+  <aside class="lua-planning-note" aria-labelledby="lua-planning-note-title">
+   <img src="assets/lua-logo.svg?v=09e2846c" alt="" width="54" height="54" loading="lazy">
+   <h3 id="lua-planning-note-title">Plan with Lúa</h3>
+   <p>From our base in Hội An, we work with local guides and hosts across Vietnam to shape your trip around the places and experiences that matter to you.</p>
+   <a href="contact.html">Plan Your Trip <span aria-hidden="true">↗</span></a>
+  </aside>
  </div>
 </section>
 
