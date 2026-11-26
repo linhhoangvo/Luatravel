@@ -3523,50 +3523,6 @@ html body main#home section#how.lua-how.lua-how-split .lua-how-split-step h3{
 }
 html body main#home section#how.lua-how.lua-how-split .lua-how-split-step p{max-width:34ch!important}
 </style>
-<style id="lua-journal-editorial">
-html body main#home section.lua-foray-journal[aria-labelledby="lua-foray-journal-title"]{
- padding:clamp(42px,5vw,76px) 0!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-wrap{
- width:min(1160px,calc(100% - 64px))!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-section-heading{
- display:grid!important;grid-template-columns:1fr auto;align-items:end;gap:6px 20px;
- text-align:left!important;margin:0 0 26px!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-section-heading>span{grid-column:1/-1;margin:0!important}
-html body main#home section.lua-foray-journal .lua-foray-section-heading h2{
- font-size:clamp(30px,3.2vw,47px)!important;margin:0!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-section-heading>a{margin:0!important;justify-self:start}
-html body main#home section.lua-foray-journal .lua-foray-journal-grid{
- display:grid!important;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr)!important;
- grid-template-rows:auto auto!important;gap:24px clamp(24px,4vw,56px)!important;align-items:start!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-story:nth-child(n){
- margin:0!important;transform:none!important;min-width:0!important;width:auto!important;
- padding:0!important;grid-column:2!important;grid-row:auto!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature{
- grid-column:1!important;grid-row:1 / span 2!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image,
-html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{
- height:auto!important;aspect-ratio:2.45;overflow:hidden;border-radius:2px!important;
-}
-html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{aspect-ratio:1.2}
-html body main#home section.lua-foray-journal .lua-foray-story-image img{width:100%;height:100%;object-fit:cover}
-html body main#home section.lua-foray-journal .lua-foray-story h3{font-size:clamp(20px,2vw,29px)!important;margin:5px 0!important}
-html body main#home section.lua-foray-journal .lua-foray-story p{margin:0!important}
-@media(max-width:700px){
- html body main#home section.lua-foray-journal .lua-foray-wrap{width:calc(100% - 40px)!important}
- html body main#home section.lua-foray-journal .lua-foray-section-heading,
- html body main#home section.lua-foray-journal .lua-foray-journal-grid{grid-template-columns:1fr!important}
- html body main#home section.lua-foray-journal .lua-foray-story:nth-child(n){grid-area:auto / 1!important}
- html body main#home section.lua-foray-journal .lua-foray-story .lua-foray-story-image,
- html body main#home section.lua-foray-journal .lua-foray-story.lua-foray-story-feature .lua-foray-story-image{aspect-ratio:16/10}
-}
-</style>
 <style id="lua-featured-section-heading-scale">
 html body main#home section#destinations.lua-dest-carousel .section-top h2,
 html body main#home section#lua-selected-stays.lua-selected-stays .lua-stays-heading h2#lua-stays-title{
@@ -3662,8 +3618,8 @@ html body main#home .lua-planning p{font-size:16px;line-height:1.55;color:var(--
   </div>
  </div>
 </section>
-<aside class="lua-editorial-interlude" aria-label="Discover the spirit of Vietnam">
- <div class="lua-interlude-panel"><span class="lua-interlude-eyebrow">BEYOND THE FAMILIAR</span><h2>Discover the <em>extraordinary</em> in the everyday.</h2><p>Quiet moments, treasured places and a different way to experience Vietnam.</p><a href="destinations.html">Explore Vietnam <span aria-hidden="true">↗</span></a></div>
+<aside class="lua-editorial-interlude" aria-labelledby="lua-featured-article">
+ <div class="lua-interlude-panel"><span class="lua-interlude-eyebrow">THE LÚA JOURNAL</span><h2 id="lua-featured-article">Handmade Souvenirs in <em>Hoi An</em></h2><p>From lanterns to hand-stitched keepsakes, explore the crafts and makers behind some of Hoi An’s most memorable finds.</p><a href="blog-post.html?id=183">Read the story <span aria-hidden="true">↗</span></a></div>
 </aside>
 <section id="how" class="lua-planning" aria-labelledby="lua-planning-title">
  <div class="lua-planning-inner">
@@ -3687,16 +3643,6 @@ html body main#home .lua-planning p{font-size:16px;line-height:1.55;color:var(--
 
 
 
-<section class="lua-foray-journal" aria-labelledby="lua-foray-journal-title">
- <div class="lua-foray-wrap">
-  <div class="lua-foray-section-heading"><span>THE LÚA JOURNAL</span><h2 id="lua-foray-journal-title">Stories worth <em>sharing.</em></h2><a href="blogs.html">Explore the journal ↗</a></div>
-  <div class="lua-foray-journal-grid">
-   <a class="lua-foray-story lua-foray-story-feature" href="blog-post.html?id=183"><div class="lua-foray-story-image"><img loading="lazy" src="https://luawellnesstravel.com/uploads//Nhu-Y-picture/QKuhg8oWFNQpog5QYsdJ5aBQ9ZJ8ZcRJ2JzL9HGfe6VG2d1ZGQe8q77lrwMgKOLFK70Wqob1TMkAhIVjAeaiAwY4g8cUNN2WPsfKs9-F7LV7FoWOfHfVxsTiQm0b9A92gULTzlPjeqp-wz2gm7WPfq0xcBTscLrJesSUAxPfLiCUSD6oDwUk.webp" alt="Local crafts in Hoi An"></div><span>CULTURE &amp; EXPERIENCES</span><h3>Handmade Souvenirs in Hoi An</h3><p>Discover the beauty of local craftsmanship and the memories we carry home.</p></a>
-   <a class="lua-foray-story" href="blog-post.html?id=175"><div class="lua-foray-story-image"><img loading="lazy" src="https://luawellnesstravel.com/uploads//Nhu-Y-picture/19ab74c340ba2aa09bfcc57cd5023da0.webp" alt="Luxury wellness retreat in Vietnam"></div><span>WELLNESS</span><h3>Vietnam's Luxury Wellness Escapes</h3><p>A quieter way to discover the country, one thoughtful retreat at a time.</p></a>
-   <a class="lua-foray-story" href="blog-post.html?id=181"><div class="lua-foray-story-image"><img loading="lazy" src="https://luawellnesstravel.com/uploads//Nhu-Y-picture/yTt1HVgppeB6luLdfEszahE4hBvjMez1X7cden6cpN_pXe2UGe7VolGedlqBnq0nVaNQ1PSouizucsJEFCQTaqzvNoMKVXomkHbPdcv3JVnAygpm3wk46shpC2QfTfFTP_vhste8jJqFxfcduPmypC_-rZIp69Okehc0UTfke7AEoUB2lGAq.webp" alt="Thu Bon River near Hoi An"></div><span>A SENSE OF PLACE</span><h3>Stories Along the Thu Bon River</h3><p>Life, culture and gentle rhythms by the water in Hội An.</p></a>
-  </div>
- </div>
-</section>
 <section class="lua-foray-notes" aria-labelledby="lua-foray-notes-title">
  <div class="lua-foray-notes-inner"><span>LET VIETNAM INSPIRE YOU</span><h2 id="lua-foray-notes-title">A journey begins with <em>curiosity.</em></h2><p>Stories of extraordinary places, thoughtful journeys and the beauty of travelling slowly.</p><a href="mailto:info@luawellnesstravel.com?subject=Please%20send%20me%20L%C3%BAa%20travel%20notes">Request our travel notes ↗</a></div>
 </section>
