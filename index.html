@@ -3479,6 +3479,41 @@ html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.
 }
 </style>
 <link rel="stylesheet" href="assets/spectral-site.css">
+<style id="lua-approach-editorial">
+html body main#home section#how.lua-how.lua-how-split{
+ background:var(--home-ivory)!important;padding:clamp(44px,6vw,90px) 0!important;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-wrap{
+ width:min(1160px,calc(100% - 64px))!important;margin:0 auto!important;
+ grid-template-columns:1.08fr 1fr!important;gap:clamp(36px,6vw,90px)!important;
+ align-items:center!important;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-image{
+ min-height:0!important;height:auto!important;aspect-ratio:5/4;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-image img{filter:none!important}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-panel{
+ padding:0!important;background:transparent!important;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-eyebrow{
+ font-size:12px!important;letter-spacing:.14em!important;margin:0 0 18px!important;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-list{gap:18px!important}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-step{padding:0!important}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-step:not(:last-child)::after{content:none!important}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-step h3{
+ font-size:clamp(23px,2.1vw,30px)!important;margin:0 0 5px!important;
+}
+html body main#home section#how.lua-how.lua-how-split .lua-how-split-step p{
+ font-size:16px!important;line-height:1.55!important;letter-spacing:0!important;
+}
+@media(max-width:740px){
+ html body main#home section#how.lua-how.lua-how-split .lua-how-split-wrap{
+  width:calc(100% - 40px)!important;grid-template-columns:1fr!important;gap:26px!important;
+ }
+ html body main#home section#how.lua-how.lua-how-split .lua-how-split-image{aspect-ratio:4/3}
+}
+</style>
 </head>
 <body>
 
