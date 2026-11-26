@@ -3276,12 +3276,12 @@ html body main#home section.lua-foray-notes a{
 }
 </style><style id="lua-home-palette">
 :root{
-  --home-ivory:#FBF8F0;
-  --home-linen:#F6F0E5;
-  --home-forest:#243E33;
-  --home-deep-forest:#1B3028;
-  --home-muted:#4F5B51;
-  --home-brass:#795D39;
+  --home-ivory:#FDFDFC;
+  --home-linen:#F4F5F2;
+  --home-forest:#202321;
+  --home-deep-forest:#131715;
+  --home-muted:#525856;
+  --home-brass:#646B66;
 }
 html body{background:var(--home-ivory)!important;color:var(--home-forest)!important}
 html body main#home #destinations,
@@ -3336,7 +3336,7 @@ html body > header.header.lua-compact-header nav#navigation.open{
  display:flex!important;position:absolute!important;inset:100% 0 auto auto!important;
  flex-direction:column!important;align-items:stretch!important;gap:0!important;
  width:min(248px,100%)!important;max-height:70vh;overflow:auto;
- padding:9px 12px!important;margin:6px 0 0!important;background:rgba(251,248,240,.92)!important;
+ padding:9px 12px!important;margin:6px 0 0!important;background:rgba(253,253,252,.94)!important;
  backdrop-filter:blur(18px);
  border:1px solid rgba(232,223,208,.65)!important;border-radius:16px!important;
  box-shadow:0 6px 24px rgba(26,42,34,.09)!important;
@@ -3569,6 +3569,15 @@ html body main#home .lua-planning p{
 @media(max-width:720px){.lua-planning-inner{grid-template-columns:1fr}.lua-planning-image{aspect-ratio:16/10}}
 </style>
 <style>html body > header.header.lua-compact-header a.logo .lua-logo-wordmark{text-transform:none!important}</style>
+<style id="lua-home-neutral-finishes">
+html body main#home section#how.lua-planning{background:var(--home-linen)!important}
+html body main#home .lua-editorial-interlude .lua-interlude-panel{background:var(--home-linen)!important}
+html body main#home .lua-editorial-interlude .lua-interlude-panel :is(h2,a){color:var(--home-forest)!important}
+html body main#home .lua-editorial-interlude .lua-interlude-panel :is(p,.lua-interlude-eyebrow){color:var(--home-muted)!important}
+html body main#home .lua-editorial-interlude .lua-interlude-panel a{border-color:var(--home-brass)!important}
+html body > header.header.lua-compact-header.lua-past-hero .lua-header-plan{border-color:#929893!important}
+html body > header.header.lua-compact-header.lua-past-hero .lua-header-plan:hover{background:var(--home-linen)!important}
+</style>
 </head>
 <body>
 
