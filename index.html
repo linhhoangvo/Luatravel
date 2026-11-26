@@ -3400,6 +3400,22 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
  .lua-menu-label{display:none}
 }
 </style>
+<style id="lua-hero-editorial-alignment">
+html body main#home section.hero.lua-cinematic-hero .lua-cinematic-copy{
+ top:auto!important;bottom:clamp(38px,9vh,110px)!important;left:clamp(22px,5vw,96px)!important;
+ right:clamp(22px,5vw,96px)!important;transform:none!important;width:auto!important;text-align:left!important;
+}
+html body main#home section.hero.lua-cinematic-hero .lua-cinematic-copy :is(h1,p){
+ text-align:left!important;margin-left:0!important;margin-right:0!important;
+}
+html body main#home section.hero.lua-cinematic-hero .lua-cinematic-copy h1{
+ font-family:Spectral,Georgia,serif!important;font-size:clamp(2.5rem,5vw,5.6rem)!important;white-space:normal!important;
+}
+html body main#home section.hero.lua-cinematic-hero .lua-cinematic-copy p{max-width:34rem!important}
+html body>main#home>section.hero.lua-cinematic-hero::after{
+ background:linear-gradient(0deg,rgba(12,24,19,.65),transparent 72%),linear-gradient(90deg,rgba(12,24,19,.32),transparent 75%)!important;
+}
+</style>
 </head>
 <body>
 
