@@ -3310,10 +3310,44 @@ html body footer.footer.lua-site-footer .lua-footer-grid h4{color:var(--home-ivo
  html body>header.header nav.nav.open{background:var(--home-ivory)!important}
 }
 </style>
+<style id="lua-compact-home-header">
+html body > header.header.lua-compact-header .header-inner{position:relative!important;justify-content:space-between!important}
+.lua-header-actions{margin-left:auto;display:flex;align-items:center;gap:clamp(8px,2vw,25px)}
+html body > header.header.lua-compact-header .lua-header-plan{
+ display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+ border:1px solid rgba(255,255,255,.75);border-radius:2px;padding:10px 14px;
+ font:500 12px/1.4 'Jost',sans-serif;letter-spacing:.04em;color:#fffdf7;
+}
+html body > header.header.lua-compact-header .lua-header-plan:hover{box-shadow:inset 0 0 0 1px currentColor}
+html body > header.header.lua-compact-header button.menu{
+ display:grid!important;position:static!important;place-items:center;width:44px;height:44px;padding:0!important;
+ background:transparent!important;border:0!important;color:#fffdf7;cursor:pointer;
+}
+.lua-menu-bars{display:block;position:relative;width:22px;height:12px}
+.lua-menu-bars::before,.lua-menu-bars::after{
+ content:"";position:absolute;left:0;width:100%;height:1px;background:currentColor;
+}
+.lua-menu-bars::before{top:2px}.lua-menu-bars::after{bottom:2px}
+.menu[aria-expanded="true"] .lua-menu-bars::before{top:5px;transform:rotate(45deg)}
+.menu[aria-expanded="true"] .lua-menu-bars::after{bottom:6px;transform:rotate(-45deg)}
+html body > header.header.lua-compact-header nav#navigation:not(.open){display:none!important}
+html body > header.header.lua-compact-header nav#navigation.open{
+ display:flex!important;position:absolute!important;inset:100% 0 auto auto!important;
+ flex-direction:column!important;align-items:stretch!important;gap:0!important;
+ width:min(310px,100%)!important;max-height:70vh;overflow:auto;
+ padding:12px 21px!important;margin:0!important;background:var(--home-ivory)!important;
+ border:1px solid #ded5c7!important;box-shadow:0 8px 24px #182c271c!important;
+}
+html body > header.header.lua-compact-header nav#navigation.open > a{
+ display:block!important;color:var(--home-forest)!important;text-transform:none!important;
+ font:400 15px/1.4 'Jost',sans-serif!important;letter-spacing:.02em!important;padding:10px 0!important;
+}
+html body > header.header.lua-compact-header nav#navigation.open > a:hover{color:var(--home-brass)!important}
+</style>
 </head>
 <body>
 
-<header class="header" style="position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:10000!important;background:transparent!important;background-color:transparent!important;border:0!important;box-shadow:none!important;margin:0!important;padding:0!important"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header class="header lua-compact-header" style="position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:10000!important;background:transparent!important;background-color:transparent!important;border:0!important;box-shadow:none!important;margin:0!important;padding:0!important"><div class="container header-inner"><a class="logo" href="#home" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"><span class="lua-logo-wordmark">LÚA TRAVEL</span></a><div class="lua-header-actions"><a class="lua-header-plan" href="contact.html">Plan Your Trip <span aria-hidden="true">↗</span></a><button class="menu" type="button" aria-label="Open menu" aria-controls="navigation" aria-expanded="false"><span class="lua-menu-bars" aria-hidden="true"></span></button></div><nav class="nav" id="navigation" aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a></nav></div></header>
 <main id="home">
 <section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
 
@@ -3436,7 +3470,7 @@ html body footer.footer.lua-site-footer .lua-footer-grid h4{color:var(--home-ivo
 
 <div class="lua-footer-base"><div class="lua-footer-social" aria-label="Follow Lua Travel on social media"><a href="https://www.facebook.com/LuaWellnessTravel" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="https://www.instagram.com/lua_wellness_travel" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.8" r="1.2" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/company/luatravel/posts/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.1 3a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2zM3.4 8.7h3.4V21H3.4zM9 8.7h3.25v1.68h.05c.46-.87 1.59-1.94 3.28-1.94 3.5 0 4.15 2.21 4.15 5.08V21h-3.4v-6.67c0-1.59-.03-3.63-2.21-3.63-2.22 0-2.56 1.73-2.56 3.52V21H9z"/></svg></a></div><span>© 2026 Lua Travel &amp; Tours. All rights reserved.</span></div>
 </div></footer>
-<script>const yearNode=document.getElementById('year');if(yearNode)yearNode.textContent=new Date().getFullYear();const b=document.querySelector('.menu'),n=document.querySelector('.nav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));</script>
+<script>const yearNode=document.getElementById('year');if(yearNode)yearNode.textContent=new Date().getFullYear();const b=document.querySelector('.menu'),n=document.querySelector('.nav');b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close menu':'Open menu')});function closeHomeMenu(){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open menu');} n.addEventListener('click',e=>{if(e.target.closest('a'))closeHomeMenu();});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&n.classList.contains('open')){closeHomeMenu();b.focus();}});document.addEventListener('click',e=>{if(!b.closest('header').contains(e.target))closeHomeMenu();});</script>
 <script>(function(){const track=document.getElementById('home-dest-track'),dots=document.getElementById('home-dest-dots'),prev=document.getElementById('home-dest-prev'),next=document.getElementById('home-dest-next');if(!track||!dots||!prev||!next)return;const cards=[...track.querySelectorAll('.destination')];let positions=[];function metrics(){const x=cards.map(c=>c.offsetLeft-cards[0].offsetLeft);const limit=Math.max(0,track.scrollWidth-track.clientWidth);positions=[...new Set(x.map(v=>Math.min(v,limit)).filter((v,i,a)=>i===0||v>a[i-1]+1))];if(!positions.length)positions=[0];}function activeIndex(){let best=0,dist=Infinity;positions.forEach((x,i)=>{const d=Math.abs(track.scrollLeft-x);if(d<dist){dist=d;best=i}});return best;}function paint(){const n=activeIndex();[...dots.children].forEach((b,i)=>{b.classList.toggle('active',i===n);b.setAttribute('aria-current',String(i===n));});prev.disabled=n===0;next.disabled=n===positions.length-1;}function render(){metrics();dots.replaceChildren();positions.forEach((p,i)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','Show destinations '+(i+1));button.addEventListener('click',()=>track.scrollTo({left:p,behavior:'smooth'}));dots.appendChild(button)});paint();}prev.addEventListener('click',()=>track.scrollTo({left:positions[Math.max(0,activeIndex()-1)],behavior:'smooth'}));next.addEventListener('click',()=>track.scrollTo({left:positions[Math.min(positions.length-1,activeIndex()+1)],behavior:'smooth'}));track.addEventListener('scroll',()=>requestAnimationFrame(paint),{passive:true});window.addEventListener('resize',render);render();})();</script><script>
 (function(){
  const slides=Array.from(document.querySelectorAll('.lua-cinematic-slide'));
@@ -3459,7 +3493,7 @@ html body footer.footer.lua-site-footer .lua-footer-grid h4{color:var(--home-ivo
  const wordmark=header.querySelector('.lua-logo-wordmark');
  const logo=header.querySelector('img.lua-mark');
  const menu=header.querySelector('button.menu');
- const links=[...header.querySelectorAll('nav.nav > a')];
+ const links=[...header.querySelectorAll('.lua-header-plan')];
  const nav=header.querySelector('nav.nav');
  let pending=false;
  function setImportant(el,name,value){if(el)el.style.setProperty(name,value,'important');}
@@ -3477,7 +3511,7 @@ html body footer.footer.lua-site-footer .lua-footer-grid h4{color:var(--home-ivo
    links.forEach(link=>{
      const c=scrolled?'var(--home-forest)':'#FFFDF7';
      setImportant(link,'color',c);
-     if(link.classList.contains('nav-cta')){
+     if(link.classList.contains('lua-header-plan')){
        setImportant(link,'background','transparent');
        setImportant(link,'border-color',scrolled?'var(--home-brass)':'rgba(255,255,255,.75)');
      }
