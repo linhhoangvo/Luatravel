@@ -590,6 +590,13 @@ const related=[['essence','The Essence of Vietnam'],['culinary','A Taste of Viet
 document.querySelector('#lt-related-grid').innerHTML=related.filter(x=>x[0]!==selected&&!(isAdventure&&x[0]==='adventure')).slice(0,3).map(([key,title])=>{const tour=tours[key],href=key==='adventure'?'itinerary.html?tour=heritage#vietnam-adventure':'itinerary.html?tour='+encodeURIComponent(key);return '<a class="lt-card" href="'+href+'"><img loading="lazy" src="'+tour.image+'" alt="'+title+'"><div class="lt-card-body"><small>VIETNAM · PRIVATE EXPERIENCE</small><h3>'+title+'</h3><span>Explore this journey ↗</span></div></a>'}).join('');
 if(selected==='golf'){
  document.querySelector('#lt-ideas').placeholder='Travel dates, number of golfers, preferred courses or rounds, and plans for guests who don’t play.';
+ const link=document.createElement('a');
+ link.href='contact.html?interest=Vietnam%20Golf%20Holiday#enquiry';
+ link.textContent='Open the online enquiry form ↗';
+ const note=document.createElement('p');
+ note.className='lt-privacy';
+ note.append(link);
+ document.querySelector('#lt-customise').append(note);
 }
 document.querySelector('#lt-request').addEventListener('submit',function(e){e.preventDefault();const name=document.querySelector('#lt-name').value.trim(),email=document.querySelector('#lt-email').value.trim(),ideas=document.querySelector('#lt-ideas').value.trim();if(!name||!email||!ideas)return;const subject='Custom itinerary enquiry — '+current.title,body='Tour: '+current.title+'\nName: '+name+'\nEmail: '+email+'\n\nMy travel ideas:\n'+ideas;location.href='mailto:info@luawellnesstravel.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)});
 </script><footer class="footer lua-site-footer"><div class="lua-footer-inner">
