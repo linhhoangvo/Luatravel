@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Discover the places, people and experiences of Vietnam with Lúa Travel & Tours.">
-<title>Discover Vietnam | Lúa Travel & Tours</title>
+<meta name="description" content="Discover the places, people and experiences of Vietnam with Lua Travel.">
+<title>Discover Vietnam | Lua Travel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -115,7 +115,7 @@ html body main h4{font-family:"Cormorant Garamond",Georgia,serif}
 </style>
 <link rel="stylesheet" href="assets/spectral-site.css">
 </head><body>
-<header class="header"><div class="head-inner"><a class="brand" href="index.html"><img src="assets/lua-logo.svg" alt="Lúa Travel logo"><span>LÚA TRAVEL</span></a><button class="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav" id="site-nav"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a href="journal.html">Travel Journal</a><a class="cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header class="header"><div class="head-inner"><a class="brand" href="index.html"><img src="assets/lua-logo.svg" alt="Lua Travel logo"><span>LUA TRAVEL</span></a><button class="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav" id="site-nav"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a href="journal.html">Travel Journal</a><a class="cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main><section class="hero" id="hero"><div class="wrap"><div class="eyebrow">Vietnam, your way</div><h1 id="place-title"></h1><div class="sub" id="place-sub"></div></div></section><div class="wrap lua-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="destinations.html">Vietnam</a><span>›</span><span id="breadcrumb-name"></span></div>
 <section class="wrap lua-destination-lead"><p id="place-intro"></p></section><section class="wrap lua-tours-section" id="lua-destination-tours"><div class="lua-section-top"><h2 id="destination-tours-heading"></h2><span>Every Lúa journey can be tailored to you</span></div><div class="lua-tours-grid" id="destination-tours-grid"></div><a class="lua-rounded-link" href="tours.html">View all journeys <span>↗</span></a></section>
 <section class="wrap lua-insights" id="destination-guide">
@@ -141,8 +141,8 @@ const destinations={"hanoi":["Hanoi","A city best explored slowly.","Old quarter
 const params=new URLSearchParams(location.search);const requested=params.get('place')||'hoi-an';const aliases={'dalat':'da-lat','hoi-an-heritage':'hoi-an','ha-giang-loop':'ha-giang','sapa-highlands':'sapa','vietnam-landscape':'ha-giang'};
 const slug=aliases[requested]||requested;const d=destinations[slug]||destinations['hoi-an'];
 const img=(s)=>s.startsWith('http')?s:s;
-document.title=d[0]+' | Destinations | Lúa Travel & Tours';
-document.querySelector('meta[name="description"]').content='Explore '+d[0]+' with Lúa Travel & Tours. Local highlights, when to visit and tailor-made experiences.';
+document.title=d[0]+' | Destinations | Lua Travel';
+document.querySelector('meta[name="description"]').content='Explore '+d[0]+' with Lua Travel. Local highlights, when to visit and tailor-made experiences.';
 document.getElementById('hero').style.backgroundImage='url("'+img(d[9])+'")';
 document.getElementById('place-title').textContent=d[0];document.getElementById('place-sub').textContent=d[2];
 

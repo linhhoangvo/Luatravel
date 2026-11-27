@@ -1,4 +1,4 @@
-# Lua Travel & Tours — website operations
+# Lua Travel — website operations
 
 ## Shared components
 - `assets/site-system.css` is the central source for fonts (Jost / Cormorant Garamond), palette, core buttons and image placeholders.

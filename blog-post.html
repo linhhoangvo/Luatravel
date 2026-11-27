@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Travel Journal | Lua Travel & Tours</title><meta name="description" content="Travel inspiration and practical Vietnam guides by Lua Travel & Tours.">
+<title>Travel Journal | Lua Travel</title><meta name="description" content="Travel inspiration and practical Vietnam guides by Lua Travel.">
 <link rel="stylesheet" href="assets/site-system.css">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f5f5f2;color:#24342b;font-family:'Jost',Arial,sans-serif}
@@ -286,13 +286,13 @@ html body footer.footer.lua-site-footer .lua-footer-social a{width:32px!importan
 }
 </style>
 </head><body>
-<header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap head"><a href="index.html" aria-label="Lua Travel homepage"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><nav><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="blogs.html">Travel Journal</a><a href="travel-agents.html">For Travel Agents</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
 <main><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="blogs.html">Travel Journal</a><span>›</span><span id="crumb">Article</span></div>
 <article id="article" aria-live="polite"><p>Loading article…</p></article></div>
 <section class="related"><div class="wrap"><h2>Continue exploring.</h2><div class="rel-grid" id="related"></div></div></section></main>
 <footer class="footer lua-site-footer"><div class="lua-footer-inner">
 <div class="lua-footer-grid">
-<div class="lua-footer-company"><a href="index.html" aria-label="Lua Travel & Tours homepage"><img class="lua-footer-logo" src="assets/lua-logo.svg" alt="Lua Travel & Tours"></a><p class="lua-footer-brand-line">Lúa Travel</p><p class="lua-footer-address">Group 10, Son Pho 1 Block, Hoi An Dong Ward,<br>Da Nang City, Vietnam</p><a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><a href="https://wa.me/84988849593" target="_blank" rel="noopener noreferrer">WhatsApp: +84 988 849 593</a><a href="tel:+610474425066">Australia: +61 047 442 5066</a></div>
+<div class="lua-footer-company"><a href="index.html" aria-label="Lua Travel homepage"><img class="lua-footer-logo" src="assets/lua-logo.svg" alt="Lua Travel"></a><p class="lua-footer-brand-line">Lua Travel</p><p class="lua-footer-address">Group 10, Son Pho 1 Block, Hoi An Dong Ward,<br>Da Nang City, Vietnam</p><a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><a href="https://wa.me/84988849593" target="_blank" rel="noopener noreferrer">WhatsApp: +84 988 849 593</a><a href="tel:+610474425066">Australia: +61 047 442 5066</a></div>
 <div><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="tours.html">Our Tours</a></li><li><a href="hotels.html">Hotels</a></li><li><a href="cruise.html">Cruise</a></li></ul></div>
 <div><h4>Company</h4><ul><li><a href="about.html">About Lúa</a></li><li><a href="contact.html">Contact us</a></li><li><a href="contact.html?interest=Travel%20trade%20partnership">For travel agents</a></li></ul></div>
 <div><h4>Support</h4><ul><li><a href="faq.html">FAQs</a></li><li><a href="contact.html">Send an enquiry</a></li><li><a href="tel:+84388855913">Hotline / Zalo: +84 388 855 913</a></li></ul></div>
@@ -307,7 +307,7 @@ const id=Number(new URLSearchParams(location.search).get('id'));
 const article=all.find(a=>a.id===id),root=document.getElementById('article'),related=document.getElementById('related');
 if(!article){root.textContent='Sorry, this article could not be found.';return;}
 document.title=article.title+' | Lua Travel Journal';
-document.querySelector('meta[name="description"]').content=article.title+' — Vietnam travel insights and practical ideas by Lua Travel & Tours.';
+document.querySelector('meta[name="description"]').content=article.title+' — Vietnam travel insights and practical ideas by Lua Travel.';
 document.getElementById('crumb').textContent=article.title;
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function p(parent,txt,cls){parent.append(el('p',cls||'',txt))}
@@ -495,7 +495,7 @@ if(article.id===179){
  for(const [heading,paras] of guide[topic])section(prose,heading,paras);
 }
 section(prose,'Make the journey yours',[
-'The best choice depends on your interests, dates, travel companions and preferred pace. Lua Travel & Tours can help you connect the highlights with locally informed planning and practical arrangements.',
+'The best choice depends on your interests, dates, travel companions and preferred pace. Lua Travel can help you connect the highlights with locally informed planning and practical arrangements.',
 'Use this guide as a starting point, and confirm current information with your travel provider before making arrangements.'
 ]);
 const originalUrl=article.original_url||(article.id===183?'https://luawellnesstravel.com/b183-handmade-souvenirs-in-hoi-an-a-guide-to-local-crafts.html':'');
