@@ -284,6 +284,9 @@ if(interest?.trim().toLowerCase()==='vietnam golf holiday'){
 if(interest?.trim().toLowerCase()==='phong nha nature discovery'){
   if(location.hash!=='#enquiry') location.replace('itinerary.html?tour=phongnha');
 }
+if(interest?.trim().toLowerCase()==='phu quoc island retreat' && location.hash!=='#enquiry'){
+  location.replace('itinerary.html?tour=phuquoc');
+}
 const travelType=p.get('type');if(travelType&&/agent|partner|trade/i.test(travelType))form.elements.type.value='Travel agent / partner';
 })();
 </script></main><footer class="footer lua-site-footer"><div class="lua-footer-inner">
