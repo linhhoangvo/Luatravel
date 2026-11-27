@@ -3454,8 +3454,8 @@ html body main#home section#destinations.lua-dest-carousel{padding-bottom:clamp(
 html body main#home section#lua-selected-stays.lua-selected-stays{padding-top:clamp(24px,3vw,44px)!important;margin-top:0!important}
 </style>
 <style id="lua-transparent-home-menu">
-html body:has(> header.lua-compact-header nav#navigation.open) main#home .lua-cinematic-copy{
- visibility:hidden;
+html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.open{
+ transform:translateY(-24px);
 }
 html body > header.header.lua-compact-header:not(.lua-past-hero) nav#navigation.open{
  background:transparent!important;
