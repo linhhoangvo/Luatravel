@@ -264,7 +264,26 @@ html body main p strong,html body main li strong{font-weight:500!important}
 @media(min-width:701px){html body .lua-about-story .lua-about-split>div:last-child p{font-size:16px!important;line-height:1.65!important}}
 </style>
 <link rel="stylesheet" href="assets/spectral-site.css">
-</head><body><header class="header" style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header><main><div class="banner" style="--photo:url('https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp')"><div class="wrap"><span class="eyebrow">Lua Travel & Tours · Vietnam</span><h1>Let's plan your trip</h1><p>Tell us a little about your travel plans and we’ll help you shape the next steps.</p></div></div><section class="section"><div class="wrap contact"><div><span class="eyebrow">Start a conversation</span><h2>Tell us about your trip</h2><p>Let us know when you're travelling, who you're travelling with and which places you'd like to visit. We'll get back to you by email.</p><p><strong>Email:</strong> <a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><br><strong>Based in:</strong> Hoi An, Vietnam</p><p class="note">Submitting this form opens your email app with the information you entered. It does not send anything automatically.</p></div><form class="form" id="enquiry" method="POST" action="https://formsubmit.co/info@luawellnesstravel.com">
+</head><body><header class="header" style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel & Tours"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="contact.html">Contact</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header><main><div class="banner" style="--photo:url('https://luawellnesstravel.com/uploads/Tour/2026_04_30/69f341a5c404b350102274.webp')"><div class="wrap"><span class="eyebrow">Lua Travel & Tours · Vietnam</span><h1>Let's plan your trip</h1><p>Tell us a little about your travel plans and we’ll help you shape the next steps.</p></div></div>
+<section id="golf-holiday" class="section" aria-labelledby="golf-heading" hidden>
+  <div class="wrap">
+    <span class="eyebrow">A private journey by Lúa Travel</span>
+    <h2 id="golf-heading">Golf along Vietnam’s central coast</h2>
+    <p>Base yourself near Hội An or Đà Nẵng and choose how often you want to play. Start with a coastal round at Hoiana Shores, head inland for a round at Ba Na Hills, or build in a stay and a round at Laguna Lăng Cô. Leave room between tee times for Hội An’s Ancient Town, a beach afternoon, or dinner with your group.</p>
+    <h3>A suggested six-day break</h3>
+    <dl>
+      <dt><strong>Day 1 · Arrive in Đà Nẵng</strong></dt><dd>Transfer to your hotel and take the rest of the day at your own pace.</dd>
+      <dt><strong>Day 2 · Hoiana Shores</strong></dt><dd>Start with a coastal round, then spend the evening in Hội An.</dd>
+      <dt><strong>Day 3 · A day in Hội An</strong></dt><dd>Explore the Ancient Town, take a countryside ride, or keep the day free.</dd>
+      <dt><strong>Day 4 · Ba Na Hills</strong></dt><dd>Head inland for a round in the foothills and return to your hotel afterwards.</dd>
+      <dt><strong>Day 5 · A final round at Laguna Lăng Cô</strong></dt><dd>Play a third round or swap it for a resort day. You can also add an overnight stay in Lăng Cô.</dd>
+      <dt><strong>Day 6 · Depart from Đà Nẵng</strong></dt><dd>Plan your airport transfer around your flight.</dd>
+    </dl>
+    <p>We can arrange accommodation, tee times and private transfers, with separate plans for guests who don’t play. Your proposal will specify green fees, caddies, carts and club hire where applicable. Course selection and tee times depend on availability.</p>
+    <a class="btn" href="#enquiry">Plan my golf holiday ↗</a>
+  </div>
+</section>
+<section class="section"><div class="wrap contact"><div><span class="eyebrow">Start a conversation</span><h2>Tell us about your trip</h2><p>Let us know when you're travelling, who you're travelling with and which places you'd like to visit. We'll get back to you by email.</p><p><strong>Email:</strong> <a href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a><br><strong>Based in:</strong> Hoi An, Vietnam</p><p class="note">Submitting this form opens your email app with the information you entered. It does not send anything automatically.</p></div><form class="form" id="enquiry" method="POST" action="https://formsubmit.co/info@luawellnesstravel.com">
 <input type="hidden" name="_subject" value="Lua Travel: New travel enquiry">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://linhhoangvo.github.io/Luatravel/thank-you.html">
@@ -273,6 +292,13 @@ html body main p strong,html body main li strong{font-weight:500!important}
 (function(){
 const form=document.getElementById('enquiry'),p=new URLSearchParams(location.search);
 const interest=p.get('interest');if(interest)form.elements.interest.value=interest;
+if(interest?.trim().toLowerCase()==='vietnam golf holiday'){
+  document.title='Vietnam Golf Holidays | Lúa Travel';
+  document.querySelector('.banner h1').textContent='Vietnam Golf Holidays';
+  document.querySelector('.banner p').textContent='Private golf holidays with time for the coast, Hội An and the people you travel with.';
+  document.getElementById('golf-holiday').hidden=false;
+  form.elements.message.placeholder='Share the number of golfers, preferred courses or rounds, and plans for any non-golfing guests.';
+}
 const travelType=p.get('type');if(travelType&&/agent|partner|trade/i.test(travelType))form.elements.type.value='Travel agent / partner';
 })();
 </script></main><footer class="footer lua-site-footer"><div class="lua-footer-inner">
