@@ -2198,7 +2198,7 @@ html body>main#home .hero.lua-showcase-hero::after{
 }
 </style>
 
-<style id="lua-cinematic-slideshow-20261119">
+<style id="lua-cinematic-hero">
 html body>main#home>section.hero.lua-showcase-hero.lua-cinematic-hero{
  position:relative!important;display:block!important;isolation:isolate!important;
  height:100svh!important;min-height:670px!important;max-height:none!important;
@@ -2210,13 +2210,6 @@ html body>main#home>section.lua-cinematic-hero::after{
  background:linear-gradient(180deg,rgba(10,16,14,.5) 0%,rgba(10,16,14,.09) 36%,rgba(10,16,14,.25) 65%,rgba(10,16,14,.46) 100%)!important;
  pointer-events:none!important;
 }
-.lua-cinematic-slides{position:absolute;inset:0;z-index:1;overflow:hidden}
-.lua-cinematic-slide{
- position:absolute;inset:-1%;background-position:center center;background-size:cover;
- opacity:0;transform:scale(1.025);
- transition:opacity 2.4s ease-in-out,transform 9s ease-out;will-change:opacity;
-}
-.lua-cinematic-slide.is-active{opacity:1;transform:scale(1)}
 .lua-cinematic-copy{
  position:absolute;z-index:5;left:50%;top:51%;transform:translate(-50%,-50%);
  width:min(1100px,calc(100% - 48px));text-align:center;color:#FBF8F1;
@@ -2237,9 +2230,7 @@ html body .lua-cinematic-copy p{
  .lua-cinematic-copy{width:calc(100% - 36px);top:50%}
  html body .lua-cinematic-copy h1{font-size:clamp(2.65rem,10.2vw,5.4rem)!important;white-space:nowrap!important;margin-bottom:20px!important}
  html body .lua-cinematic-copy p{font-size:13px!important;letter-spacing:.02em!important;max-width:345px!important}
- .lua-cinematic-slide{background-position:57% center}
 }
-@media(prefers-reduced-motion:reduce){.lua-cinematic-slide{transition:none!important;transform:none!important}}
 </style>
 
 <style id="lua-cinematic-header-inside-hero-fix-20261119">
@@ -3454,7 +3445,6 @@ html body > main#home > section.hero.lua-showcase-hero.lua-cinematic-hero{
  html body > header.header.lua-compact-header .header-inner{min-height:72px!important}
 }
 </style>
-<link rel="preload" as="image" href="assets/hotel-galleries/namia-river-retreat/01.jpg" fetchpriority="high">
 <style id="lua-nature-video">
 .lua-cinematic-hero .lua-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;pointer-events:none;filter:none}
 .lua-cinematic-hero .lua-hero-video.is-playing{opacity:1}
@@ -3619,10 +3609,6 @@ html body footer.footer.lua-site-footer .lua-footer-social a{width:32px!importan
 <section class="hero lua-showcase-hero lua-cinematic-hero" aria-label="Vietnam, your way">
 
 
- <div class="lua-cinematic-slides" aria-hidden="true">
-  <div class="lua-cinematic-slide is-active" style="background-image:url('assets/hotel-galleries/namia-river-retreat/01.jpg')"></div>
-  <div class="lua-cinematic-slide" style="background-image:url('assets/hotel-galleries/regent-phu-quoc/01.jpg')"></div>
- </div>
  <video class="lua-hero-video" muted loop playsinline preload="none" aria-hidden="true" data-src="assets/lua-travel-nature-river-cut.mp4"></video>
  <div class="lua-cinematic-copy">
   <h1>Vietnam, <em>your</em> way.</h1>
