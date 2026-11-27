@@ -450,8 +450,10 @@ const referencePrices={
  adventure:{usd:2190,basis:'14 days'},
  hanoisapa:{usd:590,basis:'4 days / 3 nights'},
  central:{usd:890,basis:'6 days / 5 nights'},
- phuquoc:{usd:690,basis:'4 days / 3 nights',note:'Estimated only · Not a confirmed price'},
- 
+ phuquoc:{usd:690,basis:'4 days / 3 nights'},
+ honeymoon:{usd:1890,basis:'14 days / 13 nights'},
+ golf:{usd:1190,basis:'6 days'},
+ phongnha:{usd:280,basis:'4 days / 3 nights'},
  wellness:{usd:450,basis:'3 days'},
  heritage:{usd:990,basis:'7 days'},
  food:{usd:65,basis:'evening experience'},
@@ -465,7 +467,14 @@ if(selectedPrice){
  priceCard.querySelector('.lt-price-label').textContent='Estimated reference price · '+selectedPrice.basis;
  priceCard.querySelector('.lt-price-amount strong').textContent='US$'+selectedPrice.usd.toLocaleString('en-US');
  priceCard.querySelector('.lt-price-amount span').textContent='/ person';
- priceCard.querySelector('p').textContent=selectedPrice.note??'Illustrative planning estimate only, not a confirmed price or quotation. Based on an indicative arrangement for two adults; inclusions, accommodation category and duration may vary. Final pricing is confirmed after travel dates, group size and services are agreed.';
+ priceCard.querySelector('p').textContent='Estimated only · Not a confirmed price';
+}else if(['essence','culinary'].includes(selected)){
+ priceCard.hidden=false;
+ priceCard.querySelector('.lt-price-label').hidden=true;
+ const amount=priceCard.querySelector('.lt-price-amount');
+ amount.replaceChildren(amount.querySelector('strong'));
+ amount.firstElementChild.textContent='Price on request';
+ priceCard.querySelector('p').textContent='Tailored to your dates and preferences';
 }else{priceCard.hidden=true;}
 if(selected==='mekong'){
  priceCard.hidden=false;
