@@ -556,6 +556,7 @@ const tours={...details,adventure:{title:"Amazing Vietnam",tag:"14-day private t
 const current=isAdventure?tours.adventure:(tours[selected]||tours.heritage),list=(items)=>items.map(v=>'<li>'+v+'</li>').join('');
 const priceCard=document.querySelector('#lt-indicative-price');
 const referencePrices={
+ hoianstay:{usd:419,basis:'4 days / 3 nights'},
  dalat:{usd:480,basis:'3 days / 2 nights'},
  maichau:{usd:270,basis:'2 days / 1 night'},
  adventure:{usd:2190,basis:'14 days'},
