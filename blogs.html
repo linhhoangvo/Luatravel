@@ -63,11 +63,6 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid var
 .pager button:disabled { opacity:.45; cursor:default; }
 .pager button:enabled:hover { border-color:var(--olive); }
 .empty { grid-column:1/-1; margin:0; padding:30px 0; color:var(--muted); }
-footer { background:#1c211d; color:#ebe9df; padding:24px 0; font-size:14px; }
-footer a:focus-visible { outline-color:#ebe9df; }
-.foot { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-.foot img { display:block; width:43px; height:43px; object-fit:contain; filter:brightness(0) invert(1); }
-.foot p { margin:0; }
 @media(max-width:1000px) {
   .container { width:calc(100% - 58px); }
   .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -86,6 +81,7 @@ footer a:focus-visible { outline-color:#ebe9df; }
 }
 </style>
 <script src="assets/blog-archive.js" defer></script>
+<script src="assets/site-shared.js?v=20261128-footer" defer></script>
 </head>
 <body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip</a></nav></div></header>
 <main><div class="container"><section class="intro" aria-labelledby="journal-title">

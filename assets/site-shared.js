@@ -39,21 +39,25 @@ function prepare(){
       link.style.setProperty('text-transform','none','important');
     });
   }
-  const footer=document.querySelector('footer.lua-site-footer') || document.querySelector('footer') || document.createElement('footer');
+  const existingFooter=document.querySelector('footer.lua-site-footer') || document.querySelector('footer');
+  const footer=document.createElement('footer');
   footer.id='lua-shared-footer';
-  footer.classList.add('lua-site-footer');
   footer.innerHTML=footerMarkup;
-  if(!footer.isConnected)document.body.append(footer);
+  if(existingFooter)existingFooter.replaceWith(footer);
+  else document.body.append(footer);
   const footerStyle=document.createElement('style');
   footerStyle.textContent=`
 @font-face{font-family:Lua Footer Spectral;src:url("assets/fonts/spectral/Spectral-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
-html body footer#lua-shared-footer.lua-site-footer {
+html body footer#lua-shared-footer {
+  box-sizing:border-box;display:block;width:100%;margin:0!important;border:0!important;text-align:left!important;
   background:#1d211e!important;color:#cfd4ca!important;
   padding:clamp(34px,4vw,58px) 0 16px!important;
 }
 html body #lua-shared-footer :is(div,p,a,li,h4,span) {
-  font-family:"Lua Footer Spectral",Georgia,serif!important;font-weight:400!important;
+  font-family:"Lua Footer Spectral",Georgia,serif!important;font-weight:400!important;box-sizing:border-box;
 }
+html body #lua-shared-footer a {text-decoration:none;text-transform:none!important}
+html body #lua-shared-footer a:focus-visible {outline:2px solid #e1e7dd;outline-offset:3px}
 html body #lua-shared-footer .lua-footer-inner {
   width:min(1160px,calc(100% - 64px))!important;max-width:none!important;margin:0 auto!important;
 }
@@ -109,7 +113,7 @@ html body #lua-shared-footer a:hover {text-decoration:underline}
   document.head.append(footerStyle);
   document.querySelectorAll('main img').forEach(img=>{
     if(!img.hasAttribute('decoding'))img.decoding='async';
-    if(!img.hasAttribute('loading')&&!img.closest('.hero,.lua-showcase-hero,.lt-hero'))img.loading='lazy';
+    if(!img.hasAttribute('loading')&&img.fetchPriority!=='high'&&!img.closest('.hero,.lua-showcase-hero,.lt-hero'))img.loading='lazy';
     img.addEventListener('error',()=>{
       if(img.classList.contains('lua-image-error')||!img.parentElement)return;
       img.classList.add('lua-image-error');
