@@ -10,28 +10,52 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 .trade { --trade-ink:#27372e; --trade-green:#263c32; --trade-muted:#505e54; }
 .trade a { color:inherit; }
 .trade-wrap { width:min(1210px,calc(100% - 72px)); margin-inline:auto; }
-.trade-hero { display:grid; grid-template-columns:minmax(0,.94fr) minmax(0,1.22fr); margin:38px auto 0; background:var(--trade-hero-paper); color:#35443a; overflow:hidden; }
-.trade-hero-copy { position:relative; z-index:1; padding:clamp(34px,5.4vw,82px) clamp(32px,4.5vw,68px); align-self:center; }
-.trade-kicker { display:block; color:#526756; letter-spacing:.14em; text-transform:uppercase; }
-.trade-hero .trade-kicker { color:#6b5d45; }
-.trade-hero { --trade-hero-paper:#f2ede3; --lua-page-title:clamp(39px,4.1vw,63px); }
-.trade-hero h1 { margin:20px 0 22px; letter-spacing:-.035em; text-wrap:balance; }
-.trade-hero h1 em { font-weight:400; color:#526b57; }
-.trade-hero p { max-width:43ch; margin:0; color:#4b584e; }
-.trade-hero-image { position:relative; margin:0; min-height:clamp(420px,39vw,565px); }
-.trade-hero-image img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; object-position:center; filter:saturate(.88) contrast(.93); }
+.trade-hero {
+  --lua-page-title:clamp(38px,4.65vw,68px);
+  position:relative;
+  display:grid;
+  align-items:end;
+  isolation:isolate;
+  min-height:clamp(450px,44vw,620px);
+  width:min(1440px,calc(100% - 48px));
+  margin:0 auto;
+  overflow:hidden;
+  background:#27372e;
+  color:#fffaf1;
+}
+.trade-hero-copy {
+  z-index:1;
+  position:relative;
+  width:min(100%,580px);
+  padding:clamp(30px,5vw,76px);
+}
+.trade-kicker { display:block; color:#efe4ce; letter-spacing:.17em; text-transform:uppercase; }
+.trade-hero h1 { margin:15px 0 18px; letter-spacing:-.034em; max-width:13ch; }
+.trade-hero h1 em { font-weight:400; color:inherit; display:block; }
+.trade-hero p { max-width:39ch; margin:0; color:#fff8ec; }
+.trade-hero-image { position:absolute; inset:0; margin:0; }
+.trade-hero-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 54%;
+  filter:saturate(.86);
+}
 .trade-hero-image::after {
   content:"";
   position:absolute;
   inset:0;
+  background:linear-gradient(90deg,rgba(15,25,20,.85),rgba(15,25,20,.66) 28%,rgba(15,25,20,.26) 54%,transparent 78%),
+             linear-gradient(0deg,rgba(15,25,20,.31),transparent 45%);
   pointer-events:none;
-  background:linear-gradient(to right,var(--trade-hero-paper),rgba(242,237,227,.64) 4%, rgba(242,237,227,0) min(21%,135px));
 }
 .trade-actions { display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center; margin-top:27px; }
 .trade-button { display:inline-flex; justify-content:center; align-items:center; min-height:44px; padding:10px 18px; border:1px solid var(--trade-green); border-radius:0; background:var(--trade-green); color:#fff!important; text-decoration:none; cursor:pointer; }
 .trade-button:hover { background:#3a5346; }
-.trade-hero .trade-button { background:#31463a; border-color:#31463a; color:#fffaf1!important; border-radius:24px; padding-inline:22px; }
-.trade-hero .trade-button:hover { background:#435c4d; border-color:#435c4d; }
+.trade-hero .trade-button { background:#f3ecdc; border-color:#f3ecdc; color:#28382f!important; padding-inline:19px; }
+.trade-hero .trade-button:hover { background:#e7ddc9; border-color:#e7ddc9; }
+.trade-hero .trade-email { text-decoration-color:#ded1b5; }
 .trade a:focus-visible,.trade button:focus-visible,.trade :is(input,select,textarea):focus-visible { outline:2px solid #718873; outline-offset:3px; }
 .trade-email { text-decoration-color:#9a8567; text-underline-offset:5px; }
 .trade-services { padding:clamp(48px,7vw,95px) 0; }
@@ -62,10 +86,12 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 }
 @media(max-width:640px) {
   .trade-wrap { width:calc(100% - 36px); }
-  .trade-hero { grid-template-columns:1fr; margin-top:14px; }
-  .trade-hero-copy { padding:30px 24px; }
-  .trade-hero-image { min-height:0; aspect-ratio:4/3; }
-  .trade-hero-image::after { background:linear-gradient(to bottom,var(--trade-hero-paper),rgba(242,237,227,0) 44px); }
+  .trade-hero { width:calc(100% - 24px); min-height:440px; }
+  .trade-hero-copy { padding:27px 23px 30px; }
+  .trade-hero-image img { object-position:57% center; }
+  .trade-hero-image::after {
+    background:linear-gradient(0deg,rgba(15,25,20,.94),rgba(15,25,20,.70) 44%,rgba(15,25,20,.18) 76%,transparent);
+  }
 }
 @media(max-width:460px) {
   .trade-grid,.trade-steps,.enquiry { grid-template-columns:1fr; }
@@ -96,7 +122,7 @@ body { margin:0; background:#faf8f3; color:#27372e; }
     <div class="trade-hero-copy">
       <span class="trade-kicker">For travel agents</span>
       <h1 id="trade-title">Your local partner <em>in Vietnam</em></h1>
-      <p>From Hội An, we plan private trips across Vietnam with travel agents. We arrange stays, guides and transfers, and look after your clients while they’re here.</p>
+      <p>We’re based in Hội An and work with travel agents on private trips across Vietnam. Tell us what your clients have in mind, and we’ll help put the trip together.</p>
       <div class="trade-actions">
         <a class="trade-button" href="#request-rates">Request B2B rates</a>
         <a class="trade-email" href="mailto:info@luawellnesstravel.com?subject=Vietnam%20DMC%20partnership">Email our team</a>
