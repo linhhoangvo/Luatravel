@@ -37,6 +37,10 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid var
 .intro p { margin:0 0 25px; max-width:30ch; color:var(--muted); }
 .story-link { display:inline-flex; align-items:center; gap:12px; border-bottom:1px solid var(--line); padding-bottom:5px; font-size:14px; }
 .story-link:hover { border-color:var(--ink); }
+.story-link::after,.article .read::after {
+  content:''; width:7px; height:7px; border-top:1px solid currentColor;
+  border-right:1px solid currentColor; transform:rotate(45deg);
+}
 .intro-picture { display:block; align-self:stretch; min-height:clamp(380px,34vw,510px); position:relative; }
 .intro-picture img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; }
 .tools { display:flex; align-items:center; justify-content:space-between; gap:14px 24px; flex-wrap:wrap; }
@@ -83,13 +87,13 @@ footer a:focus-visible { outline-color:#ebe9df; }
 </style>
 <script src="assets/blog-archive.js" defer></script>
 </head>
-<body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip ↗</a></nav></div></header>
+<body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip</a></nav></div></header>
 <main><div class="container"><section class="intro" aria-labelledby="journal-title">
   <div class="intro-copy">
     <span class="eyebrow">Stories &amp; guides from Vietnam</span>
     <h1 id="journal-title">The Lua Travel <em>Journal.</em></h1>
     <p>Local culture, places to stay and thoughtful ways to explore Vietnam.</p>
-    <a class="story-link" href="blog-post.html?id=183">Handmade souvenirs in Hoi An <span aria-hidden="true">↗</span></a>
+    <a class="story-link" href="blog-post.html?id=183">Handmade souvenirs in Hoi An</a>
   </div>
   <a class="intro-picture" href="blog-post.html?id=183" aria-label="Read about handmade souvenirs in Hoi An" tabindex="-1">
     <img src="c4790bc6af2211bea9a9f19bb540dba5%20(2).jpg" alt="Yellow walls and bougainvillea in Hoi An" fetchpriority="high">
@@ -99,7 +103,7 @@ footer a:focus-visible { outline-color:#ebe9df; }
 <div class="count" id="count" aria-live="polite"></div><div class="grid" id="articles"></div><div class="pager" id="pager"></div>
 
 </div></main>
-<footer><div class="container foot"><a href="index.html"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><p>© 2026 Lua Travel · Vietnam</p><a href="contact.html">Get in touch ↗</a></div></footer>
+<footer><div class="container foot"><a href="index.html"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><p>© 2026 Lua Travel · Vietnam</p><a href="contact.html">Get in touch</a></div></footer>
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
 const all=window.LUA_BLOG_ARCHIVE||[];
@@ -162,7 +166,7 @@ function render(){
   cover.onerror=()=>{cover.onerror=null;cover.src=encodeURI(fallback[a.topic]||'hoi an 5.jpg')};
   const body=node('div','card-body');
   body.append(node('span','category',a.topic),node('h2','',a.title),node('div','meta',[a.date,a.author].filter(Boolean).join(' · ')));
-  const read=node('div','read');read.append(node('span','','Read story'),node('span','','↗'));body.append(read);
+  const read=node('div','read');read.textContent='Read story';body.append(read);
   card.append(cover,body);list.append(card);
  });
  if(!filtered.length)list.append(node('p','empty','No articles match your search.'));
