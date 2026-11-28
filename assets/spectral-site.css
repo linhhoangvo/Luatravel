@@ -2,7 +2,75 @@
 @font-face{font-family:"Lua Spectral";src:url("fonts/spectral/Spectral-Medium.ttf") format("truetype");font-style:normal;font-weight:500;font-display:swap}
 @font-face{font-family:"Lua Spectral";src:url("fonts/spectral/Spectral-Italic.ttf") format("truetype");font-style:italic;font-weight:400;font-display:swap}
 
-/* Match existing page-level type overrides while keeping size, weight and spacing. */
-:is(html,#lua-type-priority,#lua-type-priority#lua-type-priority) :is(body,body *):not(svg,svg *){
+/* Keep the existing homepage hierarchy as the reference for inside pages. */
+:root {
+  --lua-page-title:clamp(37.5px,5vw,84px);
+  --lua-section-title:clamp(27px,2.6vw,40px);
+  --lua-card-title:clamp(26px,2.3vw,32px);
+  --lua-small-title:clamp(15px,1.35vw,18px);
+  --lua-body-text:14px;
+  --lua-caption:11px;
+  --lua-control:13px;
+}
+@media (max-width:680px) {
+  :root { --lua-card-title:23px; }
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) :is(body,body *):not(svg,svg *) {
   font-family:"Lua Spectral",Georgia,serif!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) {
+  font-size:14px!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) header nav a {
+  font-size:11px!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) header a:is(.nav-cta,.cta,.plan,.hc-enquire,[href="contact.html"]) {
+  font-size:12px!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main h1 {
+  font-size:var(--lua-page-title)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main h2 {
+  font-size:var(--lua-section-title)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(h3,.article h2,.lj-card h2) {
+  font-size:var(--lua-card-title)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(h4,aside h2,summary) {
+  font-size:var(--lua-small-title)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(p,li,dt,dd,blockquote,figcaption,td,th) {
+  font-size:var(--lua-body-text)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(small,.eyebrow,.category,.meta,.count,[class$="-eyebrow"],[class$="-kicker"],[class$="-label"],[class$="-badge"]) {
+  font-size:var(--lua-caption)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(label,input,select,textarea,.filter,.btn,[class$="-btn"],[class$="-cta"],.story-link,.read,.pager button) {
+  font-size:var(--lua-control)!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main h1 :is(em,strong),
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main h2 :is(em,strong),
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main h3 :is(em,strong) {
+  font-size:inherit!important;
+}
+
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(h1,h2,h3) {
+  font-weight:400!important;
+  line-height:1.13!important;
+  overflow-wrap:anywhere;
+}
+:is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(p,li,dt,dd,blockquote) {
+  line-height:1.65!important;
 }
