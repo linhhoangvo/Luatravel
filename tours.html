@@ -309,7 +309,7 @@ html body header.header nav.nav > a.nav-cta:focus-visible {
 }
 </style>
 <link rel="stylesheet" href="assets/site-system.css">
-<script src="assets/site-shared.js?v=20261128-footer" defer></script>
+<script src="assets/site-shared.js?v=20261128-header" defer></script>
 <style id="lua-header-bg-f5f5f2">
 /* Soft off-white header matched to the provided color sample. */
 html body header.header,html body header.lj-header,html body header.lc-detail-header,html body header.hc-nav-wrap{background:#F5F5F2!important;background-color:#F5F5F2!important}
@@ -380,8 +380,23 @@ html body > header.header nav.nav > a:not(.nav-cta):is(:hover,:focus-visible) {
   }
 }
 </style>
-<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-type">
-</head><body><header class="header" style="background:#FFFFFF!important;background-color:#FFFFFF!important"><div class="wrap"><a class="brand" href="index.html" aria-label="Lua Travel home"><img class="lua-mark" src="assets/lua-logo.svg?v=20261112-green" alt="Lua Travel"></a><nav class="nav"><a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="about.html">About Lúa</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a class="nav-cta" href="contact.html">Plan your trip ↗</a></nav></div></header><main class="lt-page">
+<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-header">
+</head><body><header id="lua-page-header">
+  <div class="lua-page-header-inner">
+    <a class="lua-page-home" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a>
+    <button class="lua-page-menu" type="button" aria-expanded="false" aria-controls="lua-page-nav" hidden>Menu</button>
+    <nav id="lua-page-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="tours.html" aria-current="page">Our Tours</a>
+      <a href="about.html">About Lúa</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="cruise.html">Cruise</a>
+      <a href="blogs.html">Travel Journal</a>
+      <a class="lua-page-plan" href="contact.html">Plan Your Trip <span aria-hidden="true"></span></a>
+    </nav>
+  </div>
+</header><main class="lt-page">
 <section class="lt-top"><div class="wrap lt-top-inner"><div><span class="lt-eyebrow">Lua Travel</span><h1>Travel through Vietnam</h1><p>Thoughtful private journeys, local discoveries and ideas to make your own.</p></div><a href="contact.html">Plan a private trip ↗</a></div></section>
 <section class="lt-list"><div class="wrap"><div class="lt-count-row"><span><b id="lt-count">29</b> journeys &amp; travel ideas</span><span>Prices are planning estimates only. Your final quote depends on dates, group size and selected services.</span></div><div class="lt-layout">
 <aside class="lt-sidebar"><div class="lt-filter-top"><h2>Explore by interest</h2><button id="lt-reset" type="button">Reset</button></div><label for="lt-location">Destination</label><select id="lt-location"><option value="all">All destinations</option><option value="Across Vietnam">Across Vietnam</option><option value="Northern &amp; Central Vietnam">Northern &amp; Central Vietnam</option><option value="Hanoi">Hanoi</option><option value="Ha Long Bay">Ha Long Bay</option><option value="Sapa">Sapa</option><option value="Ha Giang">Ha Giang</option><option value="Mai Chau">Mai Chau</option><option value="Ninh Binh">Ninh Binh</option><option value="Hoi An">Hoi An</option><option value="Hue">Hue</option><option value="Phong Nha">Phong Nha</option><option value="Mekong Delta">Mekong Delta</option><option value="Phu Quoc">Phu Quoc</option><option value="Dalat">Dalat</option><option value="Ho Chi Minh City">Ho Chi Minh City</option><option value="Nha Trang">Nha Trang</option><option value="Mu Cang Chai">Mu Cang Chai</option><option value="Pu Luong">Pu Luong</option></select><h3>Travel style</h3><div class="lt-chips" role="group" aria-label="Choose travel style"><button type="button" data-style="all" aria-pressed="true" class="active">All styles</button><button type="button" data-style="Culture" aria-pressed="false" class="">Culture</button><button type="button" data-style="Nature" aria-pressed="false" class="">Nature</button><button type="button" data-style="Adventure" aria-pressed="false" class="">Adventure</button><button type="button" data-style="Romance" aria-pressed="false" class="">Romance</button><button type="button" data-style="Wellness" aria-pressed="false" class="">Wellness</button><button type="button" data-style="Active" aria-pressed="false" class="">Active</button><button type="button" data-style="Food" aria-pressed="false" class="">Food</button><button type="button" data-style="Cruise" aria-pressed="false" class="">Cruise</button><button type="button" data-style="Golf" aria-pressed="false" class="">Golf</button><button type="button" data-style="Beach" aria-pressed="false" class="">Beach</button><button type="button" data-style="Family" aria-pressed="false" class="">Family</button></div><div class="lt-sidebar-note"><h3>Have something else in mind?</h3><p>Share your dates and interests; we'll help put the details together.</p><a href="contact.html">Talk to Lúa ↗</a></div></aside>

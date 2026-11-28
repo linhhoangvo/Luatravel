@@ -81,10 +81,25 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid var
 }
 </style>
 <script src="assets/blog-archive.js" defer></script>
-<script src="assets/site-shared.js?v=20261128-footer" defer></script>
-<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-type">
+<script src="assets/site-shared.js?v=20261128-header" defer></script>
+<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-header">
 </head>
-<body><header class="lua-journal-header"><div class="container header-row"><a class="logo" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a><nav aria-label="Main navigation"><a href="destinations.html">Destinations</a><a href="tours.html">Our Tours</a><a href="hotels.html">Hotels</a><a href="about.html">About Lúa</a><a href="travel-agents.html">For Travel Agents</a><a class="plan" href="contact.html">Plan Your Trip</a></nav></div></header>
+<body><header id="lua-page-header">
+  <div class="lua-page-header-inner">
+    <a class="lua-page-home" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a>
+    <button class="lua-page-menu" type="button" aria-expanded="false" aria-controls="lua-page-nav" hidden>Menu</button>
+    <nav id="lua-page-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="tours.html">Our Tours</a>
+      <a href="about.html">About Lúa</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="cruise.html">Cruise</a>
+      <a href="blogs.html" aria-current="page">Travel Journal</a>
+      <a class="lua-page-plan" href="contact.html">Plan Your Trip <span aria-hidden="true"></span></a>
+    </nav>
+  </div>
+</header>
 <main><div class="container"><section class="intro" aria-labelledby="journal-title">
   <div class="intro-copy">
     <span class="eyebrow">Stories &amp; guides from Vietnam</span>

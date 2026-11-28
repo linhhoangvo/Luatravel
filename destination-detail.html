@@ -114,10 +114,25 @@ html body main h4{font-family:"Cormorant Garamond",Georgia,serif}
 }
 </style>
 
-<script src="assets/site-shared.js?v=20261128-footer" defer></script>
-<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-type">
+<script src="assets/site-shared.js?v=20261128-header" defer></script>
+<link rel="stylesheet" href="assets/spectral-site.css?v=20261128-header">
 </head><body>
-<header class="header"><div class="head-inner"><a class="brand" href="index.html"><img src="assets/lua-logo.svg" alt="Lua Travel logo"><span>LUA TRAVEL</span></a><button class="toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button><nav class="nav" id="site-nav"><a href="destinations.html">Destinations</a><a href="tours.html">Our tours</a><a href="hotels.html">Hotels</a><a href="cruise.html">Cruise</a><a href="about.html">About Lúa</a><a href="journal.html">Travel Journal</a><a class="cta" href="contact.html">Plan your trip ↗</a></nav></div></header>
+<header id="lua-page-header">
+  <div class="lua-page-header-inner">
+    <a class="lua-page-home" href="index.html" aria-label="Lua Travel home"><img src="assets/lua-logo.svg" alt="Lua Travel"></a>
+    <button class="lua-page-menu" type="button" aria-expanded="false" aria-controls="lua-page-nav" hidden>Menu</button>
+    <nav id="lua-page-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="tours.html">Our Tours</a>
+      <a href="about.html">About Lúa</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="cruise.html">Cruise</a>
+      <a href="blogs.html">Travel Journal</a>
+      <a class="lua-page-plan" href="contact.html">Plan Your Trip <span aria-hidden="true"></span></a>
+    </nav>
+  </div>
+</header>
 <main><section class="hero" id="hero"><div class="wrap"><div class="eyebrow">Vietnam, your way</div><h1 id="place-title"></h1><div class="sub" id="place-sub"></div></div></section><div class="wrap lua-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="destinations.html">Vietnam</a><span>›</span><span id="breadcrumb-name"></span></div>
 <section class="wrap lua-destination-lead"><p id="place-intro"></p></section><section class="wrap lua-tours-section" id="lua-destination-tours"><div class="lua-section-top"><h2 id="destination-tours-heading"></h2><span>Every Lúa journey can be tailored to you</span></div><div class="lua-tours-grid" id="destination-tours-grid"></div><a class="lua-rounded-link" href="tours.html">View all journeys <span>↗</span></a></section>
 <section class="wrap lua-insights" id="destination-guide">
@@ -199,5 +214,4 @@ document.getElementById('faq-list').innerHTML=faqItems.map((q,i)=>'<details'+(i=
 
 const suggestions=Object.keys(destinations).filter(k=>k!==slug).slice(0,4);
 document.getElementById('other-grid').innerHTML=suggestions.map(k=>'<a href="destination-detail.html?place='+encodeURIComponent(k)+'"><img loading="lazy" src="'+destinations[k][9]+'" alt="'+destinations[k][0]+'"><span>'+destinations[k][0]+' ↗</span></a>').join('');
-document.querySelector('.toggle').addEventListener('click',e=>{const n=document.querySelector('.nav');n.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',n.classList.contains('open'))});
 </script></body></html>

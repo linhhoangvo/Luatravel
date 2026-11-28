@@ -74,3 +74,80 @@
 :is(html,#lua-type-priority#lua-type-priority#lua-type-priority) body:not(:has(> main#home)) main :is(p,li,dt,dd,blockquote) {
   line-height:1.65!important;
 }
+
+/* Interior navigation shares the same layout and colors across page templates. */
+html body #lua-page-header {
+  position:relative!important;
+  inset:auto!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:#fff!important;
+  color:#19382f!important;
+}
+#lua-page-header .lua-page-header-inner {
+  width:min(1440px,calc(100% - 56px));
+  min-height:76px;
+  margin-inline:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+#lua-page-header .lua-page-home { display:block; flex:none; }
+#lua-page-header .lua-page-home img { display:block; width:42px; height:42px; object-fit:contain; filter:none; }
+html body #lua-page-header #lua-page-nav {
+  display:flex!important;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:12px clamp(14px,2.1vw,30px);
+  margin:0;
+  padding:0;
+  background:#fff!important;
+}
+html body #lua-page-header #lua-page-nav a {
+  color:#19382f!important;
+  background:transparent!important;
+  opacity:1!important;
+  text-decoration:none;
+  text-transform:none!important;
+  white-space:nowrap;
+  line-height:1.35!important;
+  letter-spacing:normal!important;
+}
+html body #lua-page-header #lua-page-nav a:hover { text-decoration:underline; text-underline-offset:4px; }
+#lua-page-header :is(a,button):focus-visible { outline:2px solid #365748; outline-offset:4px; }
+html body #lua-page-header #lua-page-nav .lua-page-plan {
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:9px 17px;
+  border:1px solid #cfd4cd;
+  border-radius:30px;
+  background:#f6f7f4!important;
+}
+.lua-page-plan span { width:5px; height:5px; border-top:1px solid; border-right:1px solid; }
+#lua-page-header .lua-page-menu {
+  display:none;
+  border:1px solid #cfd4cd;
+  border-radius:30px;
+  padding:7px 14px;
+  background:#f6f7f4;
+  color:#19382f;
+  font-size:12px;
+  cursor:pointer;
+}
+@media(max-width:760px) {
+  #lua-page-header .lua-page-header-inner { width:calc(100% - 36px); min-height:64px; flex-wrap:wrap; gap:0 16px; }
+  #lua-page-header .lua-page-menu:not([hidden]) { display:block; }
+  html body #lua-page-header #lua-page-nav { width:100%; justify-content:flex-start; padding:0 0 15px; }
+  html body #lua-page-header .lua-page-menu:not([hidden])[aria-expanded="false"] + #lua-page-nav { display:none!important; }
+  html body #lua-page-header .lua-page-menu:not([hidden])[aria-expanded="true"] + #lua-page-nav {
+    align-items:flex-start; flex-direction:column; gap:0;
+  }
+  html body #lua-page-header #lua-page-nav a { padding:8px 0; }
+  html body #lua-page-header #lua-page-nav .lua-page-plan { margin-top:7px; }
+}

@@ -39,6 +39,19 @@ function prepare(){
       link.style.setProperty('text-transform','none','important');
     });
   }
+  const pageMenu=header?.querySelector('.lua-page-menu');
+  if(pageMenu){
+    pageMenu.hidden=false;
+    pageMenu.addEventListener('click',()=>{
+      pageMenu.setAttribute('aria-expanded',String(pageMenu.getAttribute('aria-expanded')!=='true'));
+    });
+    header.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&pageMenu.getAttribute('aria-expanded')==='true'){
+        pageMenu.setAttribute('aria-expanded','false');
+        pageMenu.focus();
+      }
+    });
+  }
   const existingFooter=document.querySelector('footer.lua-site-footer') || document.querySelector('footer');
   const footer=document.createElement('footer');
   footer.id='lua-shared-footer';
