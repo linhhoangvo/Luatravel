@@ -54,7 +54,7 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid var
 .article { display:flex; flex-direction:column; min-width:0; }
 .article .thumb { display:block; width:100%; aspect-ratio:4/3; object-fit:cover; background:#e6e4da; }
 .article .card-body { display:flex; flex:1; flex-direction:column; align-items:flex-start; padding-top:17px; }
-.article h2 { font:500 clamp(25px,2.2vw,34px)/1.04 var(--serif); letter-spacing:-.02em; margin:8px 0 10px; }
+.article h2 { --lua-card-title:clamp(17px,1.5vw,22px); font:500 clamp(25px,2.2vw,34px)/1.04 var(--serif); letter-spacing:-.02em; margin:8px 0 10px; }
 .article .meta { color:var(--muted); font-size:13px; margin-top:auto; }
 .article .read { display:flex; gap:10px; align-items:center; margin-top:10px; color:var(--olive); font-size:13px; }
 .article:hover h2 { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }
@@ -103,7 +103,7 @@ a:focus-visible,button:focus-visible,input:focus-visible { outline:2px solid var
 <main><div class="container"><section class="intro" aria-labelledby="journal-title">
   <div class="intro-copy">
     <span class="eyebrow">Stories &amp; guides from Vietnam</span>
-    <h1 id="journal-title">The Lua Travel <em>Journal.</em></h1>
+    <h1 id="journal-title" style="--lua-page-title:clamp(31px,3.2vw,48px)">The Lua Travel <em>Journal.</em></h1>
     <p>Local culture, places to stay and thoughtful ways to explore Vietnam.</p>
     <a class="story-link" href="blog-post.html?id=183">Handmade souvenirs in Hoi An</a>
   </div>
