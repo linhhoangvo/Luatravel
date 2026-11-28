@@ -15,18 +15,20 @@ body { margin:0; background:#faf8f3; color:#27372e; }
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
   align-items:start;
-  gap:clamp(28px,5.5vw,84px);
+  gap:clamp(30px,4.6vw,70px);
   padding-block:clamp(40px,6vw,82px) 0;
 }
-.trade-intro h1 { margin:10px 0 16px; letter-spacing:-.035em; }
+.trade-intro h1 { margin:13px 0 16px; letter-spacing:-.035em; }
 .trade-intro h1 em { color:#596e5c; }
 .trade-kicker { color:#695e4a; letter-spacing:.14em; text-transform:uppercase; }
 .trade-intro p,.trade-enquiry > p { color:var(--trade-muted); margin:0 0 15px; }
 .trade-intro p { max-width:47ch; }
-.trade-photo { margin:25px 0 0; overflow:hidden; border-radius:4px; aspect-ratio:16/10; background:#e6e7dd; }
-.trade-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 57%; filter:saturate(.89); }
-.trade-enquiry { padding:clamp(20px,3.1vw,43px); background:#f0ece3; border-radius:5px; scroll-margin-top:24px; }
+.trade-photo { margin:25px 0 0; overflow:hidden; border-radius:4px; aspect-ratio:4/3; background:#e6e7dd; }
+.trade-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 58%; filter:saturate(.87); }
+.trade-enquiry { padding:clamp(20px,3.1vw,43px); background:#f1eee6; border-radius:7px; scroll-margin-top:24px; }
 .trade-enquiry h2 { margin:0 0 9px; letter-spacing:-.025em; }
+.trade-enquiry { --lua-section-title:clamp(25px,2.2vw,33px); }
+.trade-enquiry > p { max-width:48ch; }
 .trade-button { display:inline-flex; justify-content:center; align-items:center; min-height:44px; padding:10px 18px; border:1px solid var(--trade-green); border-radius:0; background:var(--trade-green); color:#fff!important; text-decoration:none; cursor:pointer; }
 .trade-button:hover { background:#3a5346; }
 .trade a:focus-visible,.trade button:focus-visible,.trade :is(input,select,textarea):focus-visible { outline:2px solid #718873; outline-offset:3px; }
@@ -42,11 +44,12 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 .trade-steps li { counter-increment:trade-step; }
 .trade-steps li::before { content:counter(trade-step,decimal-leading-zero); display:block; color:#526756; font-size:11px; letter-spacing:.1em; margin-bottom:9px; }
 .enquiry { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 16px; margin-top:19px; }
-.field { display:flex; flex-direction:column; gap:6px; }
-.field :is(input,select,textarea) { box-sizing:border-box; width:100%; min-height:43px; padding:9px 11px; border:1px solid #bcb5a5; border-radius:0; background:#fffefa; color:var(--trade-ink); }
+.field { display:flex; flex-direction:column; gap:5px; }
+.field :is(input,select,textarea) { box-sizing:border-box; width:100%; min-height:43px; padding:9px 11px; border:1px solid #bcb5a5; border-radius:4px; background:#fffefa; color:var(--trade-ink); }
 .field textarea { min-height:108px; resize:vertical; }
 .wide { grid-column:1/-1; }
-.form-note { margin:0; }
+.form-note { --lua-body-text:12px; margin:0; color:var(--trade-muted); }
+.enquiry .trade-button { border-radius:24px; padding-inline:22px; }
 .hp { position:absolute; left:-9999px; }
 @media(max-width:850px) {
   .trade-grid,.trade-steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -85,7 +88,7 @@ body { margin:0; background:#faf8f3; color:#27372e; }
     <div class="trade-intro">
       <span class="trade-kicker">For travel agents</span>
       <h1 id="trade-title">Work with <em>Lúa</em></h1>
-      <p>We’re a destination management company based in Hội An. We help travel agents plan private trips across Vietnam and look after the details on the ground.</p>
+      <p>We’re a local team in Hội An. Send us your clients’ plans and we’ll help put together their Vietnam itinerary, book the stays and services, and look after them while they’re here.</p>
       <p><a class="trade-email" href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a></p>
       <figure class="trade-photo">
         <img src="ninh%20binh.jpg" alt="Boats and limestone cliffs in Ninh Bình" fetchpriority="high" width="1200" height="800">
@@ -93,7 +96,7 @@ body { margin:0; background:#faf8f3; color:#27372e; }
     </div>
     <div class="trade-enquiry" id="request-rates">
       <h2 id="trade-contact-title">Request B2B rates</h2>
-      <p>Tell us what you’re planning. We’ll check availability and quote for your trip.</p>
+      <p>Share a few details and we’ll check availability and prepare a quote for your agency.</p>
 <form class="enquiry" method="POST" action="https://formsubmit.co/info@luawellnesstravel.com">
 <input type="hidden" name="_subject" value="Lua Travel: New B2B trade enquiry">
 <input type="hidden" name="_template" value="table">
@@ -102,11 +105,11 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 <label class="field">Contact name *<input name="name" required autocomplete="name"></label>
 <label class="field">Business email *<input type="email" name="email" required autocomplete="email"></label>
-<label class="field">Agency / company *<input name="agency" required autocomplete="organization"></label>
-<label class="field">Based in *<input name="country" required placeholder="Country / market"></label>
-<label class="field">Type of request<select name="request_type"><option>B2B net rates</option><option>Tailor-made itinerary</option><option>Ground handling partnership</option><option>Group or incentive travel</option><option>Other</option></select></label>
-<label class="field">Approximate dates<input name="travel_dates" placeholder="Dates or season"></label>
-<label class="field wide">Tell us what you need *<textarea name="message" required placeholder="Destinations, clients, group size, services and any specific requirements"></textarea></label>
+<label class="field">Agency name *<input name="agency" required autocomplete="organization"></label>
+<label class="field">Agency country *<input name="country" required autocomplete="country-name"></label>
+<label class="field">What can we help with?<select name="request_type"><option>B2B net rates</option><option>Tailor-made itinerary</option><option>Ground handling partnership</option><option>Group or incentive travel</option><option>Other</option></select></label>
+<label class="field">Travel dates (optional)<input name="travel_dates" placeholder="Dates or season"></label>
+<label class="field wide">Trip or partnership brief *<textarea name="message" required placeholder="For example, Hanoi to Hội An in March, four guests, with private guides and transfers."></textarea></label>
 <p class="form-note wide">Your information is used to respond to your enquiry. This form uses a third-party submission service. Please avoid sending payment card or passport details.</p>
 <div class="wide"><button type="submit" class="trade-button">Send trade enquiry</button></div>
 </form>
