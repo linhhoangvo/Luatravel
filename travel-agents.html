@@ -10,52 +10,25 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 .trade { --trade-ink:#27372e; --trade-green:#263c32; --trade-muted:#505e54; }
 .trade a { color:inherit; }
 .trade-wrap { width:min(1210px,calc(100% - 72px)); margin-inline:auto; }
-.trade-hero {
-  --lua-page-title:clamp(38px,4.65vw,68px);
-  position:relative;
+.trade-opening {
+  --lua-page-title:clamp(40px,4vw,60px);
   display:grid;
-  align-items:end;
-  isolation:isolate;
-  min-height:clamp(450px,44vw,620px);
-  width:min(1440px,calc(100% - 48px));
-  margin:0 auto;
-  overflow:hidden;
-  background:#27372e;
-  color:#fffaf1;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  align-items:start;
+  gap:clamp(28px,5.5vw,84px);
+  padding-block:clamp(40px,6vw,82px) 0;
 }
-.trade-hero-copy {
-  z-index:1;
-  position:relative;
-  width:min(100%,580px);
-  padding:clamp(30px,5vw,76px);
-}
-.trade-kicker { display:block; color:#efe4ce; letter-spacing:.17em; text-transform:uppercase; }
-.trade-hero h1 { margin:15px 0 18px; letter-spacing:-.034em; max-width:13ch; }
-.trade-hero h1 em { font-weight:400; color:inherit; display:block; }
-.trade-hero p { max-width:39ch; margin:0; color:#fff8ec; }
-.trade-hero-image { position:absolute; inset:0; margin:0; }
-.trade-hero-image img {
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 54%;
-  filter:saturate(.86);
-}
-.trade-hero-image::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,rgba(15,25,20,.85),rgba(15,25,20,.66) 28%,rgba(15,25,20,.26) 54%,transparent 78%),
-             linear-gradient(0deg,rgba(15,25,20,.31),transparent 45%);
-  pointer-events:none;
-}
-.trade-actions { display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center; margin-top:27px; }
+.trade-intro h1 { margin:10px 0 16px; letter-spacing:-.035em; }
+.trade-intro h1 em { color:#596e5c; }
+.trade-kicker { color:#695e4a; letter-spacing:.14em; text-transform:uppercase; }
+.trade-intro p,.trade-enquiry > p { color:var(--trade-muted); margin:0 0 15px; }
+.trade-intro p { max-width:47ch; }
+.trade-photo { margin:25px 0 0; overflow:hidden; border-radius:4px; aspect-ratio:16/10; background:#e6e7dd; }
+.trade-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 57%; filter:saturate(.89); }
+.trade-enquiry { padding:clamp(20px,3.1vw,43px); background:#f0ece3; border-radius:5px; scroll-margin-top:24px; }
+.trade-enquiry h2 { margin:0 0 9px; letter-spacing:-.025em; }
 .trade-button { display:inline-flex; justify-content:center; align-items:center; min-height:44px; padding:10px 18px; border:1px solid var(--trade-green); border-radius:0; background:var(--trade-green); color:#fff!important; text-decoration:none; cursor:pointer; }
 .trade-button:hover { background:#3a5346; }
-.trade-hero .trade-button { background:#f3ecdc; border-color:#f3ecdc; color:#28382f!important; padding-inline:19px; }
-.trade-hero .trade-button:hover { background:#e7ddc9; border-color:#e7ddc9; }
-.trade-hero .trade-email { text-decoration-color:#ded1b5; }
 .trade a:focus-visible,.trade button:focus-visible,.trade :is(input,select,textarea):focus-visible { outline:2px solid #718873; outline-offset:3px; }
 .trade-email { text-decoration-color:#9a8567; text-underline-offset:5px; }
 .trade-services { padding:clamp(48px,7vw,95px) 0; }
@@ -63,17 +36,12 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 .trade-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px clamp(24px,5vw,72px); }
 .trade-grid article { max-width:34ch; }
 .trade-grid h3,.trade-steps h3 { margin:0 0 8px; letter-spacing:-.02em; }
-.trade-grid p,.trade-steps p,.trade-contact p { margin:0; color:var(--trade-muted); }
+.trade-grid p,.trade-steps p { margin:0; color:var(--trade-muted); }
 .trade-process { background:#efeee6; padding:clamp(42px,6vw,75px) 0; }
 .trade-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px clamp(20px,3vw,42px); list-style:none; counter-reset:trade-step; margin:0; padding:0; }
 .trade-steps li { counter-increment:trade-step; }
 .trade-steps li::before { content:counter(trade-step,decimal-leading-zero); display:block; color:#526756; font-size:11px; letter-spacing:.1em; margin-bottom:9px; }
-.trade-contact { scroll-margin-top:24px; padding:clamp(48px,7vw,95px) 0; }
-.trade-contact-layout { display:grid; grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr); gap:28px clamp(32px,6vw,86px); align-items:start; }
-.trade-contact-copy { padding-top:12px; }
-.trade-contact-copy .trade-section-heading { margin:0 0 15px; }
-.trade-contact-copy p + p { margin-top:15px; overflow-wrap:anywhere; }
-.enquiry { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding:clamp(19px,3vw,35px); background:#f3eee5; }
+.enquiry { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 16px; margin-top:19px; }
 .field { display:flex; flex-direction:column; gap:6px; }
 .field :is(input,select,textarea) { box-sizing:border-box; width:100%; min-height:43px; padding:9px 11px; border:1px solid #bcb5a5; border-radius:0; background:#fffefa; color:var(--trade-ink); }
 .field textarea { min-height:108px; resize:vertical; }
@@ -82,16 +50,11 @@ body { margin:0; background:#faf8f3; color:#27372e; }
 .hp { position:absolute; left:-9999px; }
 @media(max-width:850px) {
   .trade-grid,.trade-steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .trade-contact-layout { grid-template-columns:1fr; }
+  .trade-opening { grid-template-columns:1fr; }
 }
 @media(max-width:640px) {
   .trade-wrap { width:calc(100% - 36px); }
-  .trade-hero { width:calc(100% - 24px); min-height:440px; }
-  .trade-hero-copy { padding:27px 23px 30px; }
-  .trade-hero-image img { object-position:57% center; }
-  .trade-hero-image::after {
-    background:linear-gradient(0deg,rgba(15,25,20,.94),rgba(15,25,20,.70) 44%,rgba(15,25,20,.18) 76%,transparent);
-  }
+  .trade-photo { aspect-ratio:3/2; }
 }
 @media(max-width:460px) {
   .trade-grid,.trade-steps,.enquiry { grid-template-columns:1fr; }
@@ -118,19 +81,36 @@ body { margin:0; background:#faf8f3; color:#27372e; }
   </div>
 </header>
 <main class="trade">
-  <section class="trade-hero trade-wrap" aria-labelledby="trade-title">
-    <div class="trade-hero-copy">
+  <section class="trade-opening trade-wrap" aria-labelledby="trade-title">
+    <div class="trade-intro">
       <span class="trade-kicker">For travel agents</span>
-      <h1 id="trade-title">Your local partner <em>in Vietnam</em></h1>
-      <p>We’re based in Hội An and work with travel agents on private trips across Vietnam. Tell us what your clients have in mind, and we’ll help put the trip together.</p>
-      <div class="trade-actions">
-        <a class="trade-button" href="#request-rates">Request B2B rates</a>
-        <a class="trade-email" href="mailto:info@luawellnesstravel.com?subject=Vietnam%20DMC%20partnership">Email our team</a>
-      </div>
+      <h1 id="trade-title">Work with <em>Lúa</em></h1>
+      <p>We’re a destination management company based in Hội An. We help travel agents plan private trips across Vietnam and look after the details on the ground.</p>
+      <p><a class="trade-email" href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a></p>
+      <figure class="trade-photo">
+        <img src="ninh%20binh.jpg" alt="Boats and limestone cliffs in Ninh Bình" fetchpriority="high" width="1200" height="800">
+      </figure>
     </div>
-    <figure class="trade-hero-image">
-      <img src="ninh%20binh.jpg" alt="Limestone mountains and river scenery in Ninh Bình" fetchpriority="high" width="1200" height="800">
-    </figure>
+    <div class="trade-enquiry" id="request-rates">
+      <h2 id="trade-contact-title">Request B2B rates</h2>
+      <p>Tell us what you’re planning. We’ll check availability and quote for your trip.</p>
+<form class="enquiry" method="POST" action="https://formsubmit.co/info@luawellnesstravel.com">
+<input type="hidden" name="_subject" value="Lua Travel: New B2B trade enquiry">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://linhhoangvo.github.io/Luatravel/thank-you.html">
+<input type="hidden" name="source" value="For Travel Agents">
+<input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="field">Contact name *<input name="name" required autocomplete="name"></label>
+<label class="field">Business email *<input type="email" name="email" required autocomplete="email"></label>
+<label class="field">Agency / company *<input name="agency" required autocomplete="organization"></label>
+<label class="field">Based in *<input name="country" required placeholder="Country / market"></label>
+<label class="field">Type of request<select name="request_type"><option>B2B net rates</option><option>Tailor-made itinerary</option><option>Ground handling partnership</option><option>Group or incentive travel</option><option>Other</option></select></label>
+<label class="field">Approximate dates<input name="travel_dates" placeholder="Dates or season"></label>
+<label class="field wide">Tell us what you need *<textarea name="message" required placeholder="Destinations, clients, group size, services and any specific requirements"></textarea></label>
+<p class="form-note wide">Your information is used to respond to your enquiry. This form uses a third-party submission service. Please avoid sending payment card or passport details.</p>
+<div class="wide"><button type="submit" class="trade-button">Send trade enquiry</button></div>
+</form>
+    </div>
   </section>
 
   <section class="trade-services trade-wrap" aria-labelledby="trade-services-title">
@@ -157,28 +137,6 @@ body { margin:0; background:#faf8f3; color:#27372e; }
     </div>
   </section>
 
-  <section class="trade-contact" id="request-rates" aria-labelledby="trade-contact-title">
-    <div class="trade-wrap trade-contact-layout">
-      <div class="trade-contact-copy">
-        <h2 class="trade-section-heading" id="trade-contact-title">Request B2B rates</h2>
-        <p>If you have a trip in mind, send us the dates, group size and services you need. We quote rates and check availability for each request.</p>
-        <p><a class="trade-email" href="mailto:info@luawellnesstravel.com">info@luawellnesstravel.com</a></p>
-      </div>
-<form class="enquiry" method="POST" action="https://formsubmit.co/info@luawellnesstravel.com">
-<input type="hidden" name="_subject" value="Lua Travel: New B2B trade enquiry">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://linhhoangvo.github.io/Luatravel/thank-you.html">
-<input type="hidden" name="source" value="For Travel Agents">
-<input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label class="field">Contact name *<input name="name" required autocomplete="name"></label>
-<label class="field">Business email *<input type="email" name="email" required autocomplete="email"></label>
-<label class="field">Agency / company *<input name="agency" required autocomplete="organization"></label>
-<label class="field">Based in *<input name="country" required placeholder="Country / market"></label>
-<label class="field">Type of request<select name="request_type"><option>B2B net rates</option><option>Tailor-made itinerary</option><option>Ground handling partnership</option><option>Group or incentive travel</option><option>Other</option></select></label>
-<label class="field">Approximate dates<input name="travel_dates" placeholder="Dates or season"></label>
-<label class="field wide">Tell us what you need *<textarea name="message" required placeholder="Destinations, clients, group size, services and any specific requirements"></textarea></label>
-<p class="form-note wide">Your information is used to respond to your enquiry. This form uses a third-party submission service. Please avoid sending payment card or passport details.</p>
-<div class="wide"><button type="submit" class="trade-button">Send trade enquiry</button></div>
-</form></div></section>
+  
 </main><footer><div class="wrap"><span>© 2026 Lua Travel · Vietnam</span><span><a href="contact.html">Contact us</a> · <a href="faq.html">FAQs</a></span></div></footer>
 </body></html>
