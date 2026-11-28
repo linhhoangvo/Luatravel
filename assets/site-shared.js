@@ -88,7 +88,7 @@ html body #lua-shared-footer .lua-footer-company>a:not(:first-child) {margin:0 0
 html body #lua-shared-footer .lua-footer-address {margin:10px 0 6px!important}
 html body #lua-shared-footer .lua-footer-base {
   display:flex!important;align-items:center;justify-content:space-between;gap:16px;
-  margin:0!important;padding:12px 0 0!important;border-top:1px solid #ffffff26!important;
+  margin:0!important;padding:12px 0 0!important;border-top:0!important;
   color:#cfd4ca!important;font-size:11px!important;
 }
 html body #lua-shared-footer .lua-footer-social {display:flex;gap:10px}
