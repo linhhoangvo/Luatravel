@@ -48,20 +48,10 @@ body { margin:0; background:#faf8f3; color:#27372e; }
   gap:26px clamp(24px,4vw,62px);
 }
 .trade-details { --lua-card-title:clamp(20px,1.65vw,25px); }
-.trade-grid h3,.trade-steps h3 { margin:0 0 5px; letter-spacing:-.018em; }
-.trade-grid p,.trade-steps p { margin:0; color:var(--trade-muted); max-width:42ch; }
-.trade-steps { display:grid; gap:17px; list-style:none; counter-reset:trade-step; margin:0; padding:0; }
-.trade-steps li { counter-increment:trade-step; display:grid; grid-template-columns:2.2rem minmax(0,1fr); gap:0 12px; }
-.trade-steps li::before {
-  content:counter(trade-step,decimal-leading-zero);
-  grid-column:1;
-  grid-row:1 / span 2;
-  margin-top:4px;
-  color:#726047;
-  font-size:11px;
-  letter-spacing:.09em;
-}
-.trade-steps li > * { grid-column:2; }
+.trade-grid h3 { margin:0 0 5px; letter-spacing:-.018em; }
+.trade-grid p { margin:0; color:var(--trade-muted); max-width:42ch; }
+.trade-process-copy p { max-width:62ch; margin:0; color:var(--trade-muted); }
+.trade-process-copy p + p { margin-top:13px; }
 .trade-brief-link { display:inline-block; margin-top:16px; text-decoration-color:#94836a; text-underline-offset:5px; }
 .enquiry { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 16px; margin-top:19px; }
 .field { display:flex; flex-direction:column; gap:5px; }
@@ -141,26 +131,24 @@ body { margin:0; background:#faf8f3; color:#27372e; }
   <section class="trade-services" aria-labelledby="trade-services-title">
     <h2 class="trade-section-heading" id="trade-services-title">What we arrange</h2>
     <div class="trade-grid">
-      <article><h3>Private itineraries</h3><p>From a few days in central Vietnam to a trip across the country, we plan each itinerary around your clients’ interests, pace and budget.</p></article>
-      <article><h3>Hotels &amp; resorts</h3><p>We suggest hotels and room categories, then check availability and booking terms with each property.</p></article>
-      <article><h3>Guides &amp; experiences</h3><p>Book local guides, market visits, countryside outings and workshops with local makers.</p></article>
-      <article><h3>Transfers &amp; logistics</h3><p>We arrange airport pickups, private drivers and transfers between stops.</p></article>
-      <article><h3>Groups &amp; celebrations</h3><p>We can help plan family celebrations, small-group trips and incentive travel.</p></article>
-      <article><h3>Ground support</h3><p>You’ll have a local contact for supplier coordination and any changes along the way.</p></article>
+      <article><h3>Private itineraries</h3><p>We plan private trips, from a few days in Hội An and Huế to longer stays across Vietnam.</p></article>
+      <article><h3>Hotels &amp; resorts</h3><p>We suggest places to stay and check room availability and booking terms with the hotels.</p></article>
+      <article><h3>Guides &amp; experiences</h3><p>We arrange local guides, market visits, countryside outings and workshops with local makers.</p></article>
+      <article><h3>Transfers &amp; logistics</h3><p>Airport pickups, private drivers and transfers between towns.</p></article>
+      <article><h3>Groups &amp; celebrations</h3><p>We also arrange family celebrations, small-group trips and incentive travel.</p></article>
+      <article><h3>Ground support</h3><p>Our team in Hội An is your point of contact while your clients are in Vietnam.</p></article>
     </div>
   </section>
 
   <section class="trade-process" aria-labelledby="trade-process-title">
     <div>
-      <h2 class="trade-section-heading" id="trade-process-title">How we work with you</h2>
+      <h2 class="trade-section-heading" id="trade-process-title">Working with Lúa</h2>
       <a class="trade-brief-link" href="#request-rates">Send us your brief</a>
     </div>
-    <ol class="trade-steps" role="list">
-        <li><h3>Share your brief</h3><p>Send us your clients’ dates, group size, budget and any places they have in mind.</p></li>
-        <li><h3>Discuss the route</h3><p>We’ll suggest where to go, how long to stay and what to book along the way.</p></li>
-        <li><h3>Review the proposal</h3><p>We’ll send a quote with rates, inclusions and booking terms for you to review.</p></li>
-        <li><h3>Confirm the trip</h3><p>Once you confirm, we’ll coordinate the bookings and stay available during the trip.</p></li>
-    </ol>
+    <div class="trade-process-copy">
+      <p>Email us your clients’ dates, how many people are travelling and what they’d like to do. If they already have a route or a hotel in mind, send that through too.</p>
+      <p>We’ll check what’s available and send you a quote to review. Once you confirm, we’ll book the agreed services. If plans change during the trip, you can reach us in Hội An.</p>
+    </div>
   </section>
   </div>
 
